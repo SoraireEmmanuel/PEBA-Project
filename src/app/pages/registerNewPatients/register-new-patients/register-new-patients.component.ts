@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./register-new-patients.component.css']
 })
 export class RegisterNewPatientsComponent implements OnInit {
-  lengua=["Español","Portugues","Ingles"];
+  lengua=["Español","Italiano","Guarani", "Otro (Especificar)"];
   dominancia=["Ambidiestro","Diestro","Zurdo"];
   estudios=["Primaria Incompleta","Primaria Completa","Secundaria Incompleta","Secundaria Completa", "Terciario Incompleto","Terciario Completo","Universitario Incompleto", "Universitario Completo","Sin Estudios"];
   forma:FormGroup;
@@ -18,6 +18,7 @@ export class RegisterNewPatientsComponent implements OnInit {
       iniciales:['', [Validators.required, Validators.minLength(2)] ],
       nacimiento:['', Validators.required],
       lengua:['', Validators.required],
+      lenguaotra:[''],
       dominancia:['', Validators.required],
       estudios:['', Validators.required]
     });

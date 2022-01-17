@@ -1,71 +1,56 @@
-<div
-  class="container-sm bg-success bg-gradient mt-3 text-white border text-center shadow-lg p-3 mb-5 bg-body rounded"
->
-  <h3>Ingresar Paciente Nuevo</h3>
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+  <strong>Ayuda: </strong> bla bla bla bla bla.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+
+
+<div class="container-sm bg-success bg-gradient mt-3 text-white border text-center shadow-lg p-3 mb-5 bg-body rounded">
+  <h3>Registrar Nuevo Paciente</h3>
   <hr />
-  <form
-    class="row needs-validation"
-    autocomplete="off"
-    [formGroup]="forma"
-    (ngSubmit)="crearPaciente()"
-  >
-    <div class="col-md-2">
-      <label for="validationCustom01" class="form-label">First name</label>
-      <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-      <label for="iniciales" class="form-label"
-        >Iniciales del Paciente</label
-      >
-      <input
-        class="form-control"
-        type="text"
-        placeholder="Ej: MES"
-        name="iniciales"
-        formControlName="iniciales"
-        style="text-transform: uppercase"
-      />
+  <form class="row needs-validation" autocomplete="off" [formGroup]="forma" (ngSubmit)="crearPaciente()">
+    <div class="form-floating col-md-6">
+      <input class="form-control" type="text" placeholder="Ej: MES" name="iniciales" formControlName="iniciales"
+        for="iniciales" />
+      <label for="iniciales" class="lb"> Iniciales del Paciente</label>
     </div>
-    <div class="col-md-2">
-      <label for="validationCustom01" class="form-label"
-        >Fecha de Nacimiento</label
-      ><br />
-      <input
-        class="form-control"
-        type="date"
-        name="nacimiento"
-        formControlName="nacimiento"
-      />
-    </div>
-    <div class="col-md-2">
-      <label for="validationCustom01" class="form-label">Lengua Materna: </label
-      ><br />
-      <select class="form-select" name="idioma" formControlName="lengua">
+    <div class="col-md-6 form-floating">
+      <input class="form-control" type="date" name="nacimiento" formControlName="nacimiento" for="nacimiento" />
+      <label for="nacimiento" class="lb">Fecha de Nacimiento</label>
+    </div >
+
+    <div class="col-md-6 form-floating mt-3">
+      <select class="form-select" name="lengua" formControlName="lengua" for="lengua">
+        <option selected disabled>Seleccione una opcion</option>
         <option *ngFor="let leng of lengua" [value]="leng">{{ leng }}</option>
       </select>
+      <label for="lengua" class="lb">Lengua Materna: </label>
     </div>
-    <div class="col-md-2">
-      <label for="validationCustom01" class="form-label"
-        >Dominancia Manual: </label
-      ><br />
-      <select
-        class="form-select"
-        name="dominancia"
-        formControlName="dominancia"
-      >
+    <div class="form-floating col-md-6 mt-3" *ngIf="forma.value.lengua=='Otro (Especificar)'">
+      <input class="form-control" type="text" placeholder="¿Cual?" name="lenguaotra" formControlName="lenguaotra"
+        for="lenguaotra" />
+      <label for="lenguaotra" class="lb"> ¿Cual?</label>
+    </div>
+
+    <div class="col-md-6 form-floating mt-3">
+      <select class="form-select" name="dominancia" formControlName="dominancia" for="dominancia">
+        <option selected disabled>Seleccione una opcion</option>
         <option *ngFor="let dom of dominancia" [value]="dom">{{ dom }}</option>
       </select>
+      <label for="dominancia" class="lb">Dominancia Manual: </label>
     </div>
-    <div class="col-md-2">
-      <label for="validationCustom01" class="form-label">Estudios: </label>
-      <br />
-      <select class="form-select" name="estudios" formControlName="estudios">
+    <div class="col-md-6 form-floating mt-3">
+      <select class="form-select" name="estudios" formControlName="estudios" for="estudios">
+        <option selected disabled>Seleccione una opcion</option>
         <option *ngFor="let est of estudios" [value]="est">{{ est }}</option>
       </select>
+      <label for="estudios" class="lb">Estudios: </label>
     </div>
-    <div class="col-12" style="text-align: center">
-      <button type="submit" class="btn btn-outline-light">Registrar Paciente</button>
+    <div class="col-12 mt-4">
+      <button type="submit" class="btn btn-outline-light">
+        Registrar Paciente
+      </button>
     </div>
   </form>
 </div>
+{{forma.value | json}}
