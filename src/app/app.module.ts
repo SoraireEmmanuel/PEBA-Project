@@ -17,6 +17,7 @@ import { MyPatientsComponent } from './pages/myPatients/my-patients/my-patients.
 import { RegisterNewPatientsComponent } from './pages/registerNewPatients/register-new-patients/register-new-patients.component';
 import { NewProtocolComponent } from './pages/newProtocol/new-protocol/new-protocol.component';
 import { HistoricalComponent } from './pages/historical/historical/historical.component';
+import { ProtocolForUserComponent } from './pages/protocol-for-user/protocol-for-user.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HistoricalComponent } from './pages/historical/historical/historical.co
     MyPatientsComponent,
     RegisterNewPatientsComponent,
     NewProtocolComponent,
-    HistoricalComponent
+    HistoricalComponent,
+    ProtocolForUserComponent
   ],
   imports: [
     BrowserModule,
