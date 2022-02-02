@@ -1,0 +1,318 @@
+<div class="container-sm mt-2 bg-info bg-gradient border text-left shadow-lg p-3 mb-5 bg-body rounded">
+  <div class="text-center">
+    <h2>Nuevo Protocolo - Síntomas Neurológicos Actuales</h2>
+  </div>
+  <hr />
+  <!--Alerta-->
+  <div class="row mt-2">
+    <div class="col-md-2 ">
+      <h6>Alerta:</h6>
+    </div>
+    <div class="col-md-3 ">
+      <div class="form-check ">
+        <input class="form-check-input" type="radio" id="alteradoConservado" name="alterado" value="CONSERVADO"
+          formControlName="alteradoConservado" />
+        <label class="form-check-label" for="alteradoConservado">Conservado</label>
+      </div>
+      <div class="form-check ">
+        <input class="form-check-input" type="radio" id="alteradoAlterado" name="alterado" value="ALTERADO"
+          formControlName="alerta" />
+        <label class="form-check-label" for="alteradoAlterado">Alterado</label>
+      </div>
+    </div>
+    <div class="col-md-4 form-floating">
+      <select class="form-select" id="alertaDropdown" name="alertaDropdown" formControlName="alertaDropdown">
+        <option></option>
+      </select>
+      <label for="AlertaDropdown" class="ml-3">Tipo de alteracion</label>
+    </div>
+    <div class="col-md-3">
+      <div class="form-floating ">
+        <input type="text" class="form-control" id="alertaOtraAlteracion" name="alertaOtraAlteracion"
+          formControlName="alertaOtraAlteracion" placeholder="¿Cual?" />
+        <label for="alertaOtraAlteracion">¿Cual?</label>
+      </div>
+    </div>
+  </div>
+  <hr class="mt-2" />
+  <!--Estado emocional-->
+  <div class="row mt-2">
+    <div class="col-md-2">
+      <h6>Estado emocional:</h6>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="estadoEmocional" name="estadoEmocional" value="CONSERVADO" formControlName="estadoEmocional" />
+        <label class="form-check-label" for="estadoEmocional">Conservado</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="estadoEmocional2" name="estadoEmocional" value="ALTERADO" formControlName="estadoEmocional" />
+        <label class="form-check-label" for="estadoEmocional2">Alterado</label>
+      </div>
+    </div>
+    <div class="col-md-4 form-floating ">
+      <select class="form-select" name="estadoEmocionalDropdown" id="estadoEmocionalDropdown" formControlName="estadoEmocionalDropdown">
+        <option></option>
+      </select>
+      <label for="estadoEmocionalDropdown" class="ml-3">Tipo de alteracion</label>
+    </div>
+    <div class="col-md-3 form-floating">
+      <input type="text" class="form-control" id="estadoEmocionalOtrasAlteraciones" name="estadoEmocionalOtrasAlteraciones" formControlName="estadoEmocionalOtrasAlteraciones" placeholder="¿Cual?"/>
+      <label for="estadoEmocionalOtrasAlteraciones" class="ml-3">¿Cual?</label>
+    </div>
+  </div>
+  <hr class="mt-2" />
+  <!--Fuerza-->
+  <div class="row mt-2">
+    <div class="col-md-2">
+      <h6>Fuerza:</h6>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="fuerza" name="fuerza" value="CONSERVADO"
+          formControlName="fuerza" />
+        <label class="form-check-label" for="fuerza">Conservado</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="fuerza2" name="fuerza" value="ALTERADO"
+          formControlName="fuerza" />
+        <label class="form-check-label" for="fuerza2">Alterado</label>
+      </div>
+    </div>
+    <div class="col-md-4 form-floating">
+      <select class="form-select" name="fuerzaOpcion" id="fuerzaopcion" formControlName="fuerzaOpcion">
+        <option></option>
+      </select>
+      <label for="fuerzaopcion">Tipo de alteracion</label>
+    </div>
+    <div class="col-md-3 form-floating">
+      <input type="text" class="form-control" id="fuerzaopcion2" name="fuerzaOpcionOtro"
+        formControlName="fuerzaOpcionOtro" />
+      <label for="fuerzaopcion2">Cual?</label>
+    </div>
+  </div>
+  <hr class="mt-2" />
+  <!--Coordinacion Motora-->
+  <div class="row mt-2">
+    <div class="col-md-2">
+      <h6>Coordinación motora:</h6>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="coordinacionc" name="coordinacionmotora" value="CONSERVADO"
+          formControlName="coordinacionmotora" />
+        <label class="form-check-label" for="coordinacionc">Conservado</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="coordinacionc2" name="coordinacionmotora" value="ALTERADO"
+          formControlName="coordinacionmotora" />
+        <label class="form-check-label" for="coordinacionc2">Alterado</label>
+      </div>
+    </div>
+    <div class="col-md-4 form-floating">
+      <select class="form-select" name="coordinacionmotoraOpcion" id="coordinacioncopcion"
+        formControlName="coordinacionmotoraOpcion">
+        <option></option>
+      </select>
+      <label for="fuerzaopcion">Tipo de alteracion</label>
+    </div>
+    <div class="col-md-3 form-floating">
+      <input type="text" class="form-control" id="coordinacioncopcion2" name="coordinacionmotoraOpcionOtro"
+        formControlName="coordinacionmotoraOpcionOtro" />
+      <label for="coordinacioncopcion2">Cual?</label>
+    </div>
+  </div>
+  <hr class="mt-2" />
+  <!--Sensibilidad-->
+  <div class="row mt-2">
+    <div class="col-md-2">
+      <h6>Sensibilidad:</h6>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="sensibilidad" name="sensibilidad" value="CONSERVADO"
+          formControlName="sensibilidad" />
+        <label class="form-check-label" for="sensibilidad">Conservado</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="sensibilidad2" name="sensibilidad" value="ALTERADO"
+          formControlName="sensibilidad" />
+        <label class="form-check-label" for="sensibilidad2">Alterado</label>
+      </div>
+    </div>
+    <div class="col-md-4 form-floating">
+      <select class="form-select" name="sensibilidadOpcion" id="sensibilidadopcion"
+        formControlName="sensibilidadOpcion">
+        <option></option>
+      </select>
+      <label for="fuerzaopcion">Tipo de alteracion</label>
+    </div>
+    <div class="col-md-3 form-floating">
+      <input type="text" class="form-control" id="sensibilidadopcion2" name="sensibilidadOpcionOtro"
+        formControlName="sensibilidadOpcionOtro" />
+      <label for="sensibilidadopcion2">Cual?</label>
+    </div>
+  </div>
+  <hr class="mt-2" />
+
+  <!--Vision-->
+  <div class="row mt-2">
+    <div class="col-md-2">
+      <h6>Visión:</h6>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="vision" name="vision" value="CONSERVADO"
+          formControlName="vision" />
+        <label class="form-check-label" for="vision">Conservado</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="vision2" name="vision" value="ALTERADO"
+          formControlName="vision" />
+        <label class="form-check-label" for="vision2">Alterado</label>
+      </div>
+    </div>
+    <div class="col-md-4 form-floating">
+      <select class="form-select" name="visionOpcion" id="visionopcion" formControlName="visionOpcion">
+        <option></option>
+      </select>
+      <label for="visionopcion">Tipo de alteracion</label>
+    </div>
+    <div class="col-md-3 form-floating">
+      <input type="text" class="form-control" id="visionopcion2" name="visionOpcionOtro"
+        formControlName="visionOpcionOtro" />
+      <label for="visionopcion2">Cual?</label>
+    </div>
+  </div>
+  <hr class="mt-2" />
+  <!--Audicion-->
+  <div class="row mt-2">
+    <div class="col-md-2">
+      <h6>Audición:</h6>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="audicion" name="audicion" value="CONSERVADO"
+          formControlName="audicion" />
+        <label class="form-check-label" for="audicion">Conservado</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="audicion2" name="audicion" value="ALTERADO"
+          formControlName="audicion" />
+        <label class="form-check-label" for="audicion2">Alterado</label>
+      </div>
+    </div>
+    <div class="col-md-4 form-floating">
+      <select class="form-select" name="audicionOpcion" id="audicionopcion" formControlName="audicionOpcion">
+        <option></option>
+      </select>
+      <label for="audicionopcion">Tipo de alteracion</label>
+    </div>
+  </div>
+  <hr class="mt-2" />
+
+  <!--Atención espacial-->
+  <div class="row mt-2">
+    <div class="col-md-2">
+      <h6>Atención espacial:</h6>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="atencionespacial" name="atencionespacial" value="CONSERVADO"
+          formControlName="atencionespacial" />
+        <label class="form-check-label" for="atencionespacial">Conservado</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="atencionespacial2" name="atencionespacial" value="ALTERADO"
+          formControlName="atencionespacial" />
+        <label class="form-check-label" for="atencionespacial2">Alterado</label>
+      </div>
+    </div>
+    <div class="col-md-4 form-floating">
+      <select class="form-select" name="atencionespacialOpcion" id="atencionespacialOpcion"
+        formControlName="atencionespacialOpcion">
+        <option></option>
+      </select>
+      <label for="atencionespacialopcion">Tipo de alteracion</label>
+    </div>
+  </div>
+  <hr class="mt-2" />
+  <!--Praxia manual-->
+  <div class="row mt-2">
+    <div class="col-md-2">
+      <h6>Praxia manual:</h6>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="praxiamanual" name="praxiaManual" value="CONSERVADO"
+          formControlName="praxiaManual" />
+        <label class="form-check-label" for="praxiamanual">Conservado</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="praxiamanual2" name="praxiaManual" value="ALTERADO"
+          formControlName="praxiaManual" />
+        <label class="form-check-label" for="praxiamanual2">Alterado</label>
+      </div>
+    </div>
+    <div class="col-md-4 form-floating">
+      <select class="form-select" name="praxiaManualOpcion" id="praxiamanualopcion"
+        formControlName="praxiaManualOpcion">
+        <option></option>
+      </select>
+      <label for="praxiamanualopcion">Tipo de alteracion</label>
+    </div>
+  </div>
+  <hr class="mt-2" />
+  <!--Praxia orolinguofaciales-->
+  <div class="row mt-2">
+    <div class="col-md-4">
+      <h6>Praxia orolinguofaciales:</h6>
+    </div>
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="praxiaorolinguofaciales" name="praxiaOrolinguofaciales"
+          value="CONSERVADO" formControlName="praxiaOrolinguofaciales" />
+        <label class="form-check-label" for="praxiaorolinguofaciales">Conservado</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="praxiaorolinguofaciales2" name="praxiaOrolinguofaciales"
+          value="ALTERADO" formControlName="praxiaOrolinguofaciales" />
+        <label class="form-check-label" for="praxiaorolinguofaciales2">Alterado</label>
+      </div>
+    </div>
+  </div>
+  <hr class="mt-2" />
+  <!--Deglución-->
+  <div class="row mt-2">
+    <div class="col-md-2">
+      <h6>Deglución:</h6>
+    </div>
+    <div class="col-md-3">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="deglución" name="deglucion" value="CONSERVADO"
+          formControlName="deglucion" />
+        <label class="form-check-label" for="deglución">Conservado</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="deglucion2" name="deglucion" value="ALTERADO"
+          formControlName="deglucion" />
+        <label class="form-check-label" for="deglucion2">Alterado</label>
+      </div>
+    </div>
+    <div class="col-md-4 form-floating">
+      <select class="form-select" name="deglucionOpcion" id="deglucionopcion" formControlName="deglucionOpcion">
+        <option></option>
+      </select>
+      <label for="deglucionopcion">Tipo de alteracion</label>
+    </div>
+  </div>
+  <hr class="mt-2" />
+  <div class="row">
+    <div class="col-md-6">
+      <button class="btn btn-sucess">Anterior</button>
+    </div>
+    <div class="col-md-6" style="text-align: right">
+      <button class="btn btn-sucess">Siguiente</button>
+    </div>
+  </div>
+</div>

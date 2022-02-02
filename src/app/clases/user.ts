@@ -1,4 +1,4 @@
-export class user{
+export class Account{
   user:string='';
   token:string='';
   tokenExpiration:Date=new Date();

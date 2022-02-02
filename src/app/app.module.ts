@@ -18,6 +18,15 @@ import { RegisterNewPatientsComponent } from './pages/registerNewPatients/regist
 import { NewProtocolComponent } from './pages/newProtocol/new-protocol/new-protocol.component';
 import { HistoricalComponent } from './pages/historical/historical/historical.component';
 import { ProtocolForUserComponent } from './pages/protocol-for-user/protocol-for-user.component';
+import { PatientIdentificationComponent } from './pages/newProtocol/patient-identification/patient-identification.component';
+import { CurrentNeurologicalSymptomsComponent } from './pages/newProtocol/current-neurological-symptoms/current-neurological-symptoms.component';
+import { AuditiveComprehensionComponent } from './pages/newProtocol/auditive-comprehension/auditive-comprehension.component';
+import { OralExpressionComponent } from './pages/newProtocol/oral-expression/oral-expression.component';
+import { RepetitionComponent } from './pages/newProtocol/repetition/repetition.component';
+import { DenominationComponent } from './pages/newProtocol/denomination/denomination.component';
+import { ReadingComponent } from './pages/newProtocol/reading/reading.component';
+import { WritingComponent } from './pages/newProtocol/writing/writing.component';
+import { TestSummaryComponent } from './pages/newProtocol/test-summary/test-summary.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +41,16 @@ import { ProtocolForUserComponent } from './pages/protocol-for-user/protocol-for
     RegisterNewPatientsComponent,
     NewProtocolComponent,
     HistoricalComponent,
-    ProtocolForUserComponent
+    ProtocolForUserComponent,
+    PatientIdentificationComponent,
+    CurrentNeurologicalSymptomsComponent,
+    AuditiveComprehensionComponent,
+    OralExpressionComponent,
+    RepetitionComponent,
+    DenominationComponent,
+    ReadingComponent,
+    WritingComponent,
+    TestSummaryComponent
   ],
   imports: [
     BrowserModule,
