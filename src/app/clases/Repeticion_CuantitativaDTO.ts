@@ -9,6 +9,7 @@ export class Repeticion_CuantitativaDTO{
   Treyo:number=null;
   Almusipa:number=null;
   isComplete:boolean = null;
+  SubTotal:number=0
   constructor(){
 
   }

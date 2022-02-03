@@ -1,4 +1,4 @@
-<div class="container-sm mt-2 bg-info bg-gradient border text-left shadow-lg p-3 mb-5 bg-body rounded">
+<div class="container-sm mt-2 bg-info bg-gradient border shadow-lg p-3 mb-5 bg-body rounded">
   <div class="text-center">
     <h2>Nuevo Protocolo - Síntomas Neurológicos Actuales</h2>
   </div>
@@ -11,25 +11,26 @@
     <div class="col-md-3 ">
       <div class="form-check ">
         <input class="form-check-input" type="radio" id="alteradoConservado" name="alterado" value="CONSERVADO"
-          formControlName="alteradoConservado" />
+          [(ngModel)]="symptoms.Alerta" />
         <label class="form-check-label" for="alteradoConservado">Conservado</label>
       </div>
       <div class="form-check ">
         <input class="form-check-input" type="radio" id="alteradoAlterado" name="alterado" value="ALTERADO"
-          formControlName="alerta" />
+          [(ngModel)]="symptoms.Alerta" />
         <label class="form-check-label" for="alteradoAlterado">Alterado</label>
       </div>
     </div>
-    <div class="col-md-4 form-floating">
-      <select class="form-select" id="alertaDropdown" name="alertaDropdown" formControlName="alertaDropdown">
-        <option></option>
+    <div class="col-md-4 form-floating" *ngIf="symptoms.Alerta === 'ALTERADO'">
+      <select class="form-select" id="alertaDropdown" name="alertaDropdown" [(ngModel)]="symptoms.AlertaTipoAlteracion">
+        <option [disabled]="true" [defaultSelected]="true">Seleccione un tipo de alteracion</option>
+        <option *ngFor="let alert of dropdownOptions.alertaOpciones" [value]="alert">{{alert}} </option>
       </select>
       <label for="AlertaDropdown" class="ml-3">Tipo de alteracion</label>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3" *ngIf="symptoms.AlertaTipoAlteracion === 'Otro'">
       <div class="form-floating ">
         <input type="text" class="form-control" id="alertaOtraAlteracion" name="alertaOtraAlteracion"
-          formControlName="alertaOtraAlteracion" placeholder="¿Cual?" />
+          placeholder="¿Cual?" [(ngModel)]="symptoms.AlertaTipoAlteracionOtro" />
         <label for="alertaOtraAlteracion">¿Cual?</label>
       </div>
     </div>
@@ -42,22 +43,28 @@
     </div>
     <div class="col-md-3">
       <div class="form-check">
-        <input class="form-check-input" type="radio" id="estadoEmocional" name="estadoEmocional" value="CONSERVADO" formControlName="estadoEmocional" />
+        <input class="form-check-input" type="radio" id="estadoEmocional" name="estadoEmocional" value="CONSERVADO"
+          [(ngModel)]="symptoms.EstadoEmocional" />
         <label class="form-check-label" for="estadoEmocional">Conservado</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" id="estadoEmocional2" name="estadoEmocional" value="ALTERADO" formControlName="estadoEmocional" />
+        <input class="form-check-input" type="radio" id="estadoEmocional2" name="estadoEmocional" value="ALTERADO"
+          [(ngModel)]="symptoms.EstadoEmocional" />
         <label class="form-check-label" for="estadoEmocional2">Alterado</label>
       </div>
     </div>
-    <div class="col-md-4 form-floating ">
-      <select class="form-select" name="estadoEmocionalDropdown" id="estadoEmocionalDropdown" formControlName="estadoEmocionalDropdown">
-        <option></option>
+    <div class="col-md-4 form-floating" *ngIf="symptoms.EstadoEmocional === 'ALTERADO'">
+      <select class="form-select" name="estadoEmocionalDropdown" id="estadoEmocionalDropdown"
+        [(ngModel)]="symptoms.EstadoEmocionalTipoAlteracion">
+        <option [disabled]="true" [defaultSelected]="true">Seleccione un tipo de alteracion</option>
+        <option *ngFor="let estado of dropdownOptions.estadoEmocionalOpciones" [value]="estado">{{estado}}</option>
       </select>
       <label for="estadoEmocionalDropdown" class="ml-3">Tipo de alteracion</label>
     </div>
-    <div class="col-md-3 form-floating">
-      <input type="text" class="form-control" id="estadoEmocionalOtrasAlteraciones" name="estadoEmocionalOtrasAlteraciones" formControlName="estadoEmocionalOtrasAlteraciones" placeholder="¿Cual?"/>
+    <div class="col-md-3 form-floating" *ngIf="symptoms.EstadoEmocionalTipoAlteracion === 'Otro'">
+      <input type="text" class="form-control" id="estadoEmocionalOtrasAlteraciones"
+        [(ngModel)]="symptoms.EstadoEmocionalTipoAlteracionOtro" name="estadoEmocionalOtrasAlteraciones"
+        placeholder="¿Cual?" />
       <label for="estadoEmocionalOtrasAlteraciones" class="ml-3">¿Cual?</label>
     </div>
   </div>
@@ -70,25 +77,26 @@
     <div class="col-md-3">
       <div class="form-check">
         <input class="form-check-input" type="radio" id="fuerza" name="fuerza" value="CONSERVADO"
-          formControlName="fuerza" />
+          [(ngModel)]="symptoms.Fuerza" />
         <label class="form-check-label" for="fuerza">Conservado</label>
       </div>
       <div class="form-check">
         <input class="form-check-input" type="radio" id="fuerza2" name="fuerza" value="ALTERADO"
-          formControlName="fuerza" />
+          [(ngModel)]="symptoms.Fuerza" />
         <label class="form-check-label" for="fuerza2">Alterado</label>
       </div>
     </div>
-    <div class="col-md-4 form-floating">
-      <select class="form-select" name="fuerzaOpcion" id="fuerzaopcion" formControlName="fuerzaOpcion">
-        <option></option>
+    <div class="col-md-4 form-floating" *ngIf="symptoms.Fuerza === 'ALTERADO'">
+      <select class="form-select" name="fuerzaOpcion" id="fuerzaopcion" [(ngModel)]="symptoms.FuerzaTipoAlteracion">
+        <option [disabled]="true" [defaultSelected]="true">Seleccione un tipo de alteracion</option>
+        <option *ngFor="let fuerza of dropdownOptions.fuerzaOpciones" [value]="fuerza">{{fuerza}}</option>
       </select>
-      <label for="fuerzaopcion">Tipo de alteracion</label>
+      <label for="fuerzaopcion" class="ml-3">Tipo de alteracion</label>
     </div>
-    <div class="col-md-3 form-floating">
-      <input type="text" class="form-control" id="fuerzaopcion2" name="fuerzaOpcionOtro"
-        formControlName="fuerzaOpcionOtro" />
-      <label for="fuerzaopcion2">Cual?</label>
+    <div class="col-md-3 form-floating" *ngIf="symptoms.FuerzaTipoAlteracion === 'Otro'">
+      <input type="text" class="form-control" id="fuerzaopcion2" name="fuerzaOpcionOtro" placeholder="¿Cual?"
+        [(ngModel)]="symptoms.FuerzaTipoAlteracionOtro" />
+      <label class="ms-3" for="fuerzaopcion2">¿Cual?</label>
     </div>
   </div>
   <hr class="mt-2" />
@@ -100,26 +108,28 @@
     <div class="col-md-3">
       <div class="form-check">
         <input class="form-check-input" type="radio" id="coordinacionc" name="coordinacionmotora" value="CONSERVADO"
-          formControlName="coordinacionmotora" />
+          [(ngModel)]="symptoms.CondicionMotora" />
         <label class="form-check-label" for="coordinacionc">Conservado</label>
       </div>
       <div class="form-check">
         <input class="form-check-input" type="radio" id="coordinacionc2" name="coordinacionmotora" value="ALTERADO"
-          formControlName="coordinacionmotora" />
+          [(ngModel)]="symptoms.CondicionMotora" />
         <label class="form-check-label" for="coordinacionc2">Alterado</label>
       </div>
     </div>
-    <div class="col-md-4 form-floating">
+    <div class="col-md-4 form-floating" *ngIf="symptoms.CondicionMotora === 'ALTERADO'">
       <select class="form-select" name="coordinacionmotoraOpcion" id="coordinacioncopcion"
-        formControlName="coordinacionmotoraOpcion">
-        <option></option>
+        [(ngModel)]="symptoms.CondicionMotoraTipoAlteracion">
+        <option [disabled]="true" [defaultSelected]="true">Seleccione un tipo de alteracion</option>
+        <option *ngFor="let coordinacion of dropdownOptions.coordinacioncOpciones" [value]="coordinacion">
+          {{coordinacion}}</option>
       </select>
-      <label for="fuerzaopcion">Tipo de alteracion</label>
+      <label for="fuerzaopcion" class="ml-3">Tipo de alteracion</label>
     </div>
-    <div class="col-md-3 form-floating">
+    <div class="col-md-3 form-floating" *ngIf="symptoms.CondicionMotoraTipoAlteracion === 'Otro'">
       <input type="text" class="form-control" id="coordinacioncopcion2" name="coordinacionmotoraOpcionOtro"
-        formControlName="coordinacionmotoraOpcionOtro" />
-      <label for="coordinacioncopcion2">Cual?</label>
+        placeholder="¿Cual?" [(ngModel)]="symptoms.CondicionMotoraTipoAlteracionOtro" />
+      <label for="coordinacioncopcion2" class="ms-3">¿Cual?</label>
     </div>
   </div>
   <hr class="mt-2" />
@@ -131,26 +141,28 @@
     <div class="col-md-3">
       <div class="form-check">
         <input class="form-check-input" type="radio" id="sensibilidad" name="sensibilidad" value="CONSERVADO"
-          formControlName="sensibilidad" />
+          [(ngModel)]="symptoms.Sensibilidad" />
         <label class="form-check-label" for="sensibilidad">Conservado</label>
       </div>
       <div class="form-check">
         <input class="form-check-input" type="radio" id="sensibilidad2" name="sensibilidad" value="ALTERADO"
-          formControlName="sensibilidad" />
+          [(ngModel)]="symptoms.Sensibilidad" />
         <label class="form-check-label" for="sensibilidad2">Alterado</label>
       </div>
     </div>
-    <div class="col-md-4 form-floating">
+    <div class="col-md-4 form-floating" *ngIf="symptoms.Sensibilidad === 'ALTERADO'">
       <select class="form-select" name="sensibilidadOpcion" id="sensibilidadopcion"
-        formControlName="sensibilidadOpcion">
-        <option></option>
+        [(ngModel)]="symptoms.SensibilidadTipoAlteracion">
+        <option [disabled]="true" [defaultSelected]="true">Seleccione un tipo de alteracion</option>
+        <option *ngFor="let sensibilidad of dropdownOptions.sensibilidadOpciones" [value]="sensibilidad">
+          {{sensibilidad}} </option>
       </select>
-      <label for="fuerzaopcion">Tipo de alteracion</label>
+      <label for="fuerzaopcion" class="ml-3">Tipo de alteracion</label>
     </div>
-    <div class="col-md-3 form-floating">
+    <div class="col-md-3 form-floating" *ngIf="symptoms.SensibilidadTipoAlteracion">
       <input type="text" class="form-control" id="sensibilidadopcion2" name="sensibilidadOpcionOtro"
-        formControlName="sensibilidadOpcionOtro" />
-      <label for="sensibilidadopcion2">Cual?</label>
+        placeholder="¿Cual?" [(ngModel)]="symptoms.SensibilidadTipoAlteracionOtro" />
+      <label for="sensibilidadopcion2" class="ms-3">¿Cual?</label>
     </div>
   </div>
   <hr class="mt-2" />
@@ -163,25 +175,26 @@
     <div class="col-md-3">
       <div class="form-check">
         <input class="form-check-input" type="radio" id="vision" name="vision" value="CONSERVADO"
-          formControlName="vision" />
+          [(ngModel)]="symptoms.Vision" />
         <label class="form-check-label" for="vision">Conservado</label>
       </div>
       <div class="form-check">
         <input class="form-check-input" type="radio" id="vision2" name="vision" value="ALTERADO"
-          formControlName="vision" />
+          [(ngModel)]="symptoms.Vision" />
         <label class="form-check-label" for="vision2">Alterado</label>
       </div>
     </div>
-    <div class="col-md-4 form-floating">
-      <select class="form-select" name="visionOpcion" id="visionopcion" formControlName="visionOpcion">
-        <option></option>
+    <div class="col-md-4 form-floating" *ngIf="symptoms.Vision === 'ALTERADO'">
+      <select class="form-select" name="visionOpcion" id="visionopcion" [(ngModel)]="symptoms.VisionTipoAlteracion">
+        <option [disabled]="true" [defaultSelected]="true">Seleccione un tipo de alteracion</option>
+        <option *ngFor="let vision of dropdownOptions.visionOpciones" [value]="vision">{{vision}}</option>
       </select>
-      <label for="visionopcion">Tipo de alteracion</label>
+      <label for="visionopcion" class="ml-3">Tipo de alteracion</label>
     </div>
-    <div class="col-md-3 form-floating">
-      <input type="text" class="form-control" id="visionopcion2" name="visionOpcionOtro"
-        formControlName="visionOpcionOtro" />
-      <label for="visionopcion2">Cual?</label>
+    <div class="col-md-3 form-floating" *ngIf="symptoms.VisionTipoAlteracion==='Otro'">
+      <input type="text" class="form-control" id="visionopcion2" name="visionOpcionOtro" placeholder="¿Cual?"
+        [(ngModel)]="symptoms.VisionTipoAlteracionOtro" />
+      <label for="visionopcion2" class="ms-3">¿Cual?</label>
     </div>
   </div>
   <hr class="mt-2" />
@@ -193,20 +206,22 @@
     <div class="col-md-3">
       <div class="form-check">
         <input class="form-check-input" type="radio" id="audicion" name="audicion" value="CONSERVADO"
-          formControlName="audicion" />
+          [(ngModel)]="symptoms.Audicion" />
         <label class="form-check-label" for="audicion">Conservado</label>
       </div>
       <div class="form-check">
         <input class="form-check-input" type="radio" id="audicion2" name="audicion" value="ALTERADO"
-          formControlName="audicion" />
+          [(ngModel)]="symptoms.Audicion" />
         <label class="form-check-label" for="audicion2">Alterado</label>
       </div>
     </div>
-    <div class="col-md-4 form-floating">
-      <select class="form-select" name="audicionOpcion" id="audicionopcion" formControlName="audicionOpcion">
-        <option></option>
+    <div class="col-md-4 form-floating" *ngIf="symptoms.Audicion === 'ALTERADO'">
+      <select class="form-select" name="audicionOpcion" id="audicionopcion"
+        [(ngModel)]="symptoms.AudicionTipoAlteracion">
+        <option [disabled]="true" [defaultSelected]="true">Seleccione un tipo de alteracion</option>
+        <option *ngFor="let audicion of dropdownOptions.audicionOpciones">{{audicion}}</option>
       </select>
-      <label for="audicionopcion">Tipo de alteracion</label>
+      <label for="audicionopcion" class="ml-3">Tipo de alteracion</label>
     </div>
   </div>
   <hr class="mt-2" />
@@ -219,21 +234,23 @@
     <div class="col-md-3">
       <div class="form-check">
         <input class="form-check-input" type="radio" id="atencionespacial" name="atencionespacial" value="CONSERVADO"
-          formControlName="atencionespacial" />
+          [(ngModel)]="symptoms.AtencionEspacial" />
         <label class="form-check-label" for="atencionespacial">Conservado</label>
       </div>
       <div class="form-check">
         <input class="form-check-input" type="radio" id="atencionespacial2" name="atencionespacial" value="ALTERADO"
-          formControlName="atencionespacial" />
+          [(ngModel)]="symptoms.AtencionEspacial" />
         <label class="form-check-label" for="atencionespacial2">Alterado</label>
       </div>
     </div>
-    <div class="col-md-4 form-floating">
+    <div class="col-md-4 form-floating" *ngIf="symptoms.AtencionEspacial ==='ALTERADO'">
       <select class="form-select" name="atencionespacialOpcion" id="atencionespacialOpcion"
-        formControlName="atencionespacialOpcion">
-        <option></option>
+        [(ngModel)]="symptoms.AtencionEspacialTipoAlteracion">
+        <option [disabled]="true" [defaultSelected]="true">Seleccione un tipo de alteracion</option>
+        <option *ngFor="let atencionEspacial of dropdownOptions.atencionespacialOpciones" [value]="atencionEspacial">
+          {{atencionEspacial}}</option>
       </select>
-      <label for="atencionespacialopcion">Tipo de alteracion</label>
+      <label for="atencionespacialopcion" class="ml-3">Tipo de alteracion</label>
     </div>
   </div>
   <hr class="mt-2" />
@@ -245,21 +262,23 @@
     <div class="col-md-3">
       <div class="form-check">
         <input class="form-check-input" type="radio" id="praxiamanual" name="praxiaManual" value="CONSERVADO"
-          formControlName="praxiaManual" />
+          [(ngModel)]="symptoms.PraxiaManual" />
         <label class="form-check-label" for="praxiamanual">Conservado</label>
       </div>
       <div class="form-check">
         <input class="form-check-input" type="radio" id="praxiamanual2" name="praxiaManual" value="ALTERADO"
-          formControlName="praxiaManual" />
+          [(ngModel)]="symptoms.PraxiaManual" />
         <label class="form-check-label" for="praxiamanual2">Alterado</label>
       </div>
     </div>
-    <div class="col-md-4 form-floating">
+    <div class="col-md-4 form-floating" *ngIf="symptoms.PraxiaManual==='ALTERADO'">
       <select class="form-select" name="praxiaManualOpcion" id="praxiamanualopcion"
-        formControlName="praxiaManualOpcion">
-        <option></option>
+        [(ngModel)]="symptoms.PraxiaManualTipoAlteracion">
+        <option [disabled]="true" [defaultSelected]="true">Seleccione un tipo de alteracion</option>
+        <option *ngFor="let praxiaManual of dropdownOptions.praxiamanualOpciones" [value]="praxiaManual">
+          {{praxiaManual}}</option>
       </select>
-      <label for="praxiamanualopcion">Tipo de alteracion</label>
+      <label for="praxiamanualopcion" class="ml-3">Tipo de alteracion</label>
     </div>
   </div>
   <hr class="mt-2" />
@@ -269,14 +288,14 @@
       <h6>Praxia orolinguofaciales:</h6>
     </div>
     <div class="col-md-6">
-      <div class="form-check">
+      <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" id="praxiaorolinguofaciales" name="praxiaOrolinguofaciales"
-          value="CONSERVADO" formControlName="praxiaOrolinguofaciales" />
+          value="CONSERVADO" />
         <label class="form-check-label" for="praxiaorolinguofaciales">Conservado</label>
       </div>
-      <div class="form-check">
+      <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" id="praxiaorolinguofaciales2" name="praxiaOrolinguofaciales"
-          value="ALTERADO" formControlName="praxiaOrolinguofaciales" />
+          value="ALTERADO" />
         <label class="form-check-label" for="praxiaorolinguofaciales2">Alterado</label>
       </div>
     </div>
@@ -290,29 +309,31 @@
     <div class="col-md-3">
       <div class="form-check">
         <input class="form-check-input" type="radio" id="deglución" name="deglucion" value="CONSERVADO"
-          formControlName="deglucion" />
+          [(ngModel)]="symptoms.Deglucion" />
         <label class="form-check-label" for="deglución">Conservado</label>
       </div>
       <div class="form-check">
         <input class="form-check-input" type="radio" id="deglucion2" name="deglucion" value="ALTERADO"
-          formControlName="deglucion" />
+          [(ngModel)]="symptoms.Deglucion" />
         <label class="form-check-label" for="deglucion2">Alterado</label>
       </div>
     </div>
-    <div class="col-md-4 form-floating">
-      <select class="form-select" name="deglucionOpcion" id="deglucionopcion" formControlName="deglucionOpcion">
-        <option></option>
+    <div class="col-md-4 form-floating" *ngIf="symptoms.Deglucion ==='ALTERADO'">
+      <select class="form-select" name="deglucionOpcion" id="deglucionopcion"
+        [(ngModel)]="symptoms.DeglucionTipoAlteracion">
+        <option [disabled]="true" [defaultSelected]="true">Seleccione un tipo de alteracion</option>
+        <option *ngFor="let deglucion of dropdownOptions.deglucionOpciones" [value]="deglucion">{{deglucion}}</option>
       </select>
-      <label for="deglucionopcion">Tipo de alteracion</label>
+      <label for="deglucionopcion" class="ml-3">Tipo de alteracion</label>
     </div>
   </div>
   <hr class="mt-2" />
   <div class="row">
     <div class="col-md-6">
-      <button class="btn btn-sucess">Anterior</button>
+      <button class="btn btn-success">Anterior</button>
     </div>
-    <div class="col-md-6" style="text-align: right">
-      <button class="btn btn-sucess">Siguiente</button>
+    <div class="col-md-6 text-right">
+      <button class="btn btn-success">Siguiente</button>
     </div>
   </div>
 </div>

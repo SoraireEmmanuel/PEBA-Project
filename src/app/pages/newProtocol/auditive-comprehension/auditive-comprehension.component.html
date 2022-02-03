@@ -1,1 +1,108 @@
-<p>auditive-comprehension works!</p>
+<div class="container-sm mt-2 bg-warning bg-gradient text-black border shadow-lg p-3 mb-5 bg-body rounded" >
+  <div class="text-center">
+  <h2>Evaluacion del Lenguaje - Comprensión Auditiva</h2>
+</div>
+  <hr>
+  <!--Emaprejamiento palabra oida-dibujo-->
+  <div class="">
+    <h5>Emparejamiento palabra oída-dibujo</h5>
+    <div class="row">
+      <div class="col-md-6 ">
+        <h6> Señale la OVEJA (lámina: oreja, plancha, oveja, vaca): </h6>
+      </div>
+      <div class="col-md-4 ">
+        <select class="form-select" name="p1p1" id="p1p1" [(ngModel)]="ComprensionAuditivaCuantitativa.SenialeLaOveja" >
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option *ngFor="let q of QuestionOptions.Question1and2and3" [ngValue]="q.valor">{{q.etiqueta}}</option>
+        </select>
+      </div>
+      <div class="col-md-2 ">
+        <span>Puntuacion: {{ComprensionAuditivaCuantitativa.SenialeLaOveja}}</span>
+      </div>
+    </div>
+  </div>
+  <!--Comandos Oidos-->
+  <div class="row mt-1">
+    <div class=" col-md-6">
+      <h6>Señale el PATO (lámina: vaso, plato, revólver, pato): </h6>
+    </div>
+    <div class="col-md-4 ">
+      <select class="form-select" name="p1p2" id="p1p2" [(ngModel)]="ComprensionAuditivaCuantitativa.SenialeElPato">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of QuestionOptions.Question1and2and3" [value]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2 ">
+      <span>Puntuacion: {{ComprensionAuditivaCuantitativa.SenialeElPato}}</span>
+    </div>
+  </div>
+  <hr class="mt-2">
+  <div class="mt-1">
+    <h5 >Comandos oidos</h5>
+    <div class="row">
+      <div class="col-md-6 ">
+        <h6>Tóquese la oreja: </h6>
+      </div>
+      <div class="col-md-4 ">
+        <select class="form-select" name="p1p3" id="p1p3">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option *ngFor="let p of QuestionOptions.Question1and2and3" [value]=p.valor>{{p.etiqueta}}</option>
+        </select>
+      </div>
+      <div class="col-md-2 ">
+        <span>Puntuacion: {{ComprensionAuditivaCuantitativa.ToqueseLaOreja}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class=" col-md-6">
+      <h6>Señale el techo y luego mueva su cabeza: </h6>
+    </div>
+    <div class="col-md-4 ">
+      <select class="form-select" name="p1p4" id="p1p4" >
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of QuestionOptions.Question4" [value]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2 ">
+      <span>Puntuacion: {{ComprensionAuditivaCuantitativa.SenialeElTecho}}</span>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class=" col-md-6">
+      <h6>Señale la puerta, abra la boca y luego cierre los ojos: </h6>
+    </div>
+    <div class="col-md-4 ">
+      <select class="form-select" name="p1p5" id="p1p5">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of QuestionOptions.Question5" [value]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <span>Puntuacion: {{ComprensionAuditivaCuantitativa.SenialeLaPuerta}}</span>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class=" col-md-6">
+    </div>
+    <div class="col-md-4 ">
+      <button class="btn btn-secondary">Agregar Observaciones Cualitativas</button>
+    </div>
+    <div class="col-md-2 ">
+      <span>Total: {{ComprensionAuditivaCuantitativa.Subtotal}}</span>
+    </div>
+  </div>
+  <hr class="mt-1" >
+  <div class="row">
+    <div class="col-md-4">
+      <button class="btn btn-success " >Anterior</button>
+    </div>
+    <div class="col-md-4 text-center">
+      <button class="btn btn-danger " >Suspender Paso del Protocolo</button>
+    </div>
+    <div class="col-md-4 text-right" >
+      <button class=" btn btn-success" >Siguiente</button>
+    </div>
+  </div>
+</div>
+

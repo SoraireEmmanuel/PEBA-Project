@@ -1,10 +1,11 @@
 export class ComprensionAuditiva_CuantitativaDTO{
-  SenialeElPato:number=0;
-  ToqueseLaOreja:number=0;
-  SenialeElTecho:number=0;
-  SenialeLaPuerta:number=0;
-  SenialeLaOveja:number=0;
+  SenialeElPato:number=null;
+  ToqueseLaOreja:number=null;
+  SenialeElTecho:number=null;
+  SenialeLaPuerta:number=null;
+  SenialeLaOveja:number=null;
   isComplete:boolean = null;
+  Subtotal:number = 0;
   contrustor(){
 
   }

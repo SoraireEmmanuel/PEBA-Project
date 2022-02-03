@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProtocoloDTO } from 'src/app/clases/ProtocoloDTO';
 
 @Component({
   selector: 'app-new-protocol',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-protocol.component.css']
 })
 export class NewProtocolComponent implements OnInit {
-
-  constructor() { }
+  Protocol:ProtocoloDTO;
+  viewComponent:number;
+  constructor() {
+    this.viewComponent=1;
+  }
 
   ngOnInit(): void {
   }
-
 }
