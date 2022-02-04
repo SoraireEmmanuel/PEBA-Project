@@ -1,1 +1,122 @@
-<p>test-summary works!</p>
+<div class="container-sm mt-2 bg-warning bg-gradient text-black border shadow-lg p-3 mb-5 bg-body rounded">
+  <div class="text-center">
+    <h2>Evaluacion del Lenguaje - Resultado</h2>
+  </div>
+  <hr>
+  <div>
+    <table class="table  table-secondary table-sm table-striped table-bordered ">
+      <thead>
+        <tr class="text-white">
+          <th class="bg-secondary" scope="col">Tarea</th>
+          <th class="bg-secondary" scope="col">Puntaje</th>
+          <th class="bg-secondary" scope="col">Nivel Funcional</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Comprensión auditiva</th>
+          <td>tp1/6</td>
+          <td>
+            <div [ngSwitch]="nivelFuncionalPorPaso[0]">
+              <span *ngSwitchCase=6>{{nivelesFuncionales[0]}}</span>
+              <span *ngSwitchCase=5>{{nivelesFuncionales[1]}}</span>
+              <span *ngSwitchCase=4 >{{nivelesFuncionales[2]}}</span>
+              <span *ngSwitchCase=3 >{{nivelesFuncionales[2]}}</span>
+              <span *ngSwitchCase=2 >{{nivelesFuncionales[3]}}</span>
+              <span *ngSwitchCase=1 >{{nivelesFuncionales[3]}}</span>
+              <span *ngSwitchCase=0 >{{nivelesFuncionales[3]}}</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Expresión oral:</th>
+          <td>{{nivelFuncionalPorPaso[1]}}/6</td>
+          <td><div [ngSwitch]="nivelFuncionalPorPaso[0]">
+            <span *ngSwitchCase=6>{{nivelesFuncionales[0]}}</span>
+            <span *ngSwitchCase=5>{{nivelesFuncionales[1]}}</span>
+            <span *ngSwitchCase=4 >{{nivelesFuncionales[2]}}</span>
+            <span *ngSwitchCase=3 >{{nivelesFuncionales[2]}}</span>
+            <span *ngSwitchCase=2 >{{nivelesFuncionales[3]}}</span>
+            <span *ngSwitchCase=1 >{{nivelesFuncionales[3]}}</span>
+            <span *ngSwitchCase=0 >{{nivelesFuncionales[3]}}</span>
+          </div></td>
+        </tr>
+        <tr>
+          <th scope="row">Repetición: </th>
+          <td>tp3/6</td>
+          <td><div [ngSwitch]="nivelFuncionalPorPaso[0]">
+            <span *ngSwitchCase=6>{{nivelesFuncionales[0]}}</span>
+            <span *ngSwitchCase=5>{{nivelesFuncionales[1]}}</span>
+            <span *ngSwitchCase=4 >{{nivelesFuncionales[2]}}</span>
+            <span *ngSwitchCase=3 >{{nivelesFuncionales[2]}}</span>
+            <span *ngSwitchCase=2 >{{nivelesFuncionales[3]}}</span>
+            <span *ngSwitchCase=1 >{{nivelesFuncionales[3]}}</span>
+            <span *ngSwitchCase=0 >{{nivelesFuncionales[3]}}</span>
+          </div></td>
+        </tr>
+        <tr>
+          <th scope="row">Denominación: </th>
+          <td>tp4/6</td>
+          <td><div [ngSwitch]="nivelFuncionalPorPaso[0]">
+            <span *ngSwitchCase=6>{{nivelesFuncionales[0]}}</span>
+            <span *ngSwitchCase=5>{{nivelesFuncionales[1]}}</span>
+            <span *ngSwitchCase=4 >{{nivelesFuncionales[2]}}</span>
+            <span *ngSwitchCase=3 >{{nivelesFuncionales[2]}}</span>
+            <span *ngSwitchCase=2 >{{nivelesFuncionales[3]}}</span>
+            <span *ngSwitchCase=1 >{{nivelesFuncionales[3]}}</span>
+            <span *ngSwitchCase=0 >{{nivelesFuncionales[3]}}</span>
+          </div></td>
+        </tr>
+        <tr>
+          <th scope="row">Lectura: </th>
+          <td>tp5/6</td>
+          <td><div [ngSwitch]="nivelFuncionalPorPaso[0]">
+            <span *ngSwitchCase=6>{{nivelesFuncionales[0]}}</span>
+            <span *ngSwitchCase=5>{{nivelesFuncionales[1]}}</span>
+            <span *ngSwitchCase=4 >{{nivelesFuncionales[2]}}</span>
+            <span *ngSwitchCase=3 >{{nivelesFuncionales[2]}}</span>
+            <span *ngSwitchCase=2 >{{nivelesFuncionales[3]}}</span>
+            <span *ngSwitchCase=1 >{{nivelesFuncionales[3]}}</span>
+            <span *ngSwitchCase=0 >{{nivelesFuncionales[3]}}</span>
+          </div></td>
+        </tr>
+        <tr>
+          <th scope="row">Escritura:</th>
+          <td>tp6/6</td>
+          <td><div [ngSwitch]="nivelFuncionalPorPaso[0]">
+            <span *ngSwitchCase=6>{{nivelesFuncionales[0]}}</span>
+            <span *ngSwitchCase=5>{{nivelesFuncionales[1]}}</span>
+            <span *ngSwitchCase=4 >{{nivelesFuncionales[2]}}</span>
+            <span *ngSwitchCase=3 >{{nivelesFuncionales[2]}}</span>
+            <span *ngSwitchCase=2 >{{nivelesFuncionales[3]}}</span>
+            <span *ngSwitchCase=1 >{{nivelesFuncionales[3]}}</span>
+            <span *ngSwitchCase=0 >{{nivelesFuncionales[3]}}</span>
+          </div></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th scope="row">Total</th>
+          <td  colspan="2">tpt/36</td>
+        </tr>
+      </tfoot>
+    </table>
+    <div class="mt-1">
+      <div class="form-floating">
+        <textarea class="form-control" id="conclusiones" style="height: 70px" name="conclusiones"
+          placeholder="Conclusiones y recomendaciones"></textarea>
+        <label for="conclusiones">Conclusiones y recomendaciones</label>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row mt-1">
+    <div class="col-md-6">
+      <button class="btn btn-success">Anterior</button>
+    </div>
+    <div class="col-md-6 text-right">
+      <button class="btn btn-success me-1">Finalizar Protocolo</button>
+      <button class="btn btn-success">Ver Protocolo</button>
+    </div>
+  </div>
+</div>

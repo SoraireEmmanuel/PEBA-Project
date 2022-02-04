@@ -1,1 +1,160 @@
-<p>writing works!</p>
+<div class="container-sm mt-2 bg-warning bg-gradient text-black border shadow-lg p-3 mb-5 bg-body rounded">
+  <div class="text-center">
+    <h2>Evaluacion del Lenguaje - Escritura</h2>
+  </div>
+  <hr>
+  <h5>Dictado de letras por el nombre </h5>
+  <div class="row mt-1">
+    <div class="col-md-6">
+      <h6>Escriba la letra EME: </h6>
+    </div>
+    <div class="col-md-4">
+      <select class="form-select" name="p6p1" id="p6p1" [(ngModel)]="EscrituraCuantitativa.EME">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.Question1and2and3and4and7and8 " [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <span>Puntuacion: {{EscrituraCuantitativa.EME}}</span>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-md-6">
+      <h6>Escriba la letra ZETA: </h6>
+    </div>
+    <div class="col-md-4">
+      <select class="form-select" name="p6p2" id="p6p2" [(ngModel)]="EscrituraCuantitativa.ZETA">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.Question1and2and3and4and7and8 " [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2 ">
+      <span>Puntuacion: {{EscrituraCuantitativa.ZETA}}</span>
+    </div>
+  </div>
+  <hr class="mt-1">
+  <h5>Dictado de palabras </h5>
+  <div class="row mt-1">
+    <div class="col-md-6">
+      <h6>Mano: </h6>
+    </div>
+    <div class="col-md-4 ">
+      <select class="form-select" name="p6p3" id="p6p3" [(ngModel)]="EscrituraCuantitativa.ManoMano">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.Question1and2and3and4and7and8 " [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2 ">
+      <span>Puntuacion: {{EscrituraCuantitativa.ManoMano}}</span>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-md-6">
+      <h6>Gente: </h6>
+    </div>
+    <div class="col-md-4 ">
+      <select class="form-select" name="p6p4" id="p6p4" [(ngModel)]="EscrituraCuantitativa.Gente">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.Question1and2and3and4and7and8 " [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <span>Puntuacion: {{EscrituraCuantitativa.Gente}}</span>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-md-6">
+      <h6>Esperanza: </h6>
+    </div>
+    <div class="col-md-4 ">
+      <select class="form-select" name="p6p5" id="p6p5" [(ngModel)]="EscrituraCuantitativa.Esperanza">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.Question5and6and9 " [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <span>Puntuacion: {{EscrituraCuantitativa.Esperanza}}</span>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-md-6">
+      <h6>Aclaración: </h6>
+    </div>
+    <div class="col-md-4">
+      <select class="form-select" name="p6p6" id="p6p6" [(ngModel)]="EscrituraCuantitativa.Aclaracion">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.Question5and6and9 " [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <span>Puntuacion: {{EscrituraCuantitativa.Aclaracion}}</span>
+    </div>
+  </div>
+  <hr>
+  <h5>Dictado de no palabras </h5>
+  <div class="row mt-1">
+    <div class="col-md-6">
+      <h6>Jo: </h6>
+    </div>
+    <div class="col-md-4 ">
+      <select class="form-select" name="p6p7" id="p6p7" [(ngModel)]="EscrituraCuantitativa.Jo">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.Question1and2and3and4and7and8 " [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <span>Puntuacion: {{EscrituraCuantitativa.Jo}}</span>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-md-6">
+      <h6>Guela: </h6>
+    </div>
+    <div class="col-md-4">
+      <select class="form-select" name="p6p8" id="p6p8" [(ngModel)]="EscrituraCuantitativa.Guela">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.Question1and2and3and4and7and8 " [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <span>Puntuacion: {{EscrituraCuantitativa.Guela}}</span>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-md-6">
+      <h6>Dirchole: </h6>
+    </div>
+    <div class="col-md-4 ">
+      <select class="form-select" name="p6p9" id="p6p9" [(ngModel)]="EscrituraCuantitativa.Dirchole">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.Question5and6and9 " [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <span>Puntuacion: {{EscrituraCuantitativa.Dirchole}}</span>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-4 ">
+      <button class="btn btn-secondary">Agregar Observaciones Cualitativas</button>
+    </div>
+    <div class="col-md-2 ">
+      <span>Total: {{EscrituraCuantitativa.SubTotal}}</span>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-4">
+      <button  class="btn btn-success">Anterior</button>
+    </div>
+    <div class="col-md-4 text-center">
+      <button class="btn btn-danger">Suspender Paso del Proto </button>
+    </div>
+    <div class="col-md-4 text-right">
+      <button class="btn btn-success">Siguiente</button>
+    </div>
+
+  </div>
+</div>

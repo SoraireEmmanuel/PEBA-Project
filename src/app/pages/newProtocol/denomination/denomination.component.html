@@ -1,1 +1,87 @@
-<p>denomination works!</p>
+
+  <div class="container-sm mt-2 bg-warning bg-gradient text-black border shadow-lg p-3 mb-5 bg-body rounded" >
+    <div class="text-center">
+      <h2> Evaluacion del Lenguaje - Denominación </h2>
+    </div>
+    <hr >
+    <div class="row mt-1">
+      <div class="col-md-6">
+        <h6>¿Qué es esto? (Lámina “cama”): </h6>
+      </div>
+      <div class="col-md-4 ">
+        <select class="form-select" name="p4p1" id="p4p1" [(ngModel)]="DenominacionCuantitativa.LaminaCama">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option *ngFor="let p of DropdownOptions.Question1and3" [ngValue]=p.valor>{{p.etiqueta}}</option>
+        </select>
+
+      </div>
+      <div class="col-md-2">
+        <span>Puntuacion: {{DenominacionCuantitativa.LaminaCama}}</span>
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class="col-md-6">
+        <h6>¿Qué es esto? (Lámina “violín”): </h6>
+      </div>
+      <div class="col-md-4 ">
+        <select class="form-select" name="p4p2" id="p4p2" [(ngModel)]="DenominacionCuantitativa.LaminaViolin">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option *ngFor="let p of DropdownOptions.Question2and4" [ngValue]=p.valor>{{p.etiqueta}}</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <span>Puntuacion: {{DenominacionCuantitativa.LaminaViolin}}</span>
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class=" col-md-6">
+        <h6>¿Qué hace esta persona? (Lámina “come”): </h6>
+      </div>
+      <div class="col-md-4 ">
+        <select  class="form-select" name="p4p3" id="p4p3" [(ngModel)]="DenominacionCuantitativa.LaminaCome">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option *ngFor="let p of DropdownOptions.Question1and3" [ngValue]=p.valor>{{p.etiqueta}}</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <span>Puntuacion: {{DenominacionCuantitativa.LaminaCome}}</span>
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class="col-md-6">
+        <h6>¿Qué hace esta persona? (Lámina “rema”): </h6>
+      </div>
+      <div class="col-md-4 ">
+        <select class="form-select" name="p4p4" id="p4p4" [(ngModel)]="DenominacionCuantitativa.LaminaRema">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option *ngFor="let p of DropdownOptions.Question2and4" [ngValue]=p.valor>{{p.etiqueta}}</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <span>Puntuacion: {{DenominacionCuantitativa.LaminaRema}}</span>
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class="col-md-6">
+      </div>
+      <div class="col-md-4 ">
+        <button class="btn btn-secondary" >Agregar Observaciones Cualitativas</button>
+      </div>
+      <div class="col-md-2">
+        <span>Total: {{DenominacionCuantitativa.SubTotal}}</span>
+      </div>
+    </div>
+    <hr >
+    <div class="row">
+      <div class="col-md-4">
+        <button class="btn btn-success" >Anterior</button>
+      </div>
+      <div class="col-md-4 text-center">
+        <button class="btn btn-danger" >Suspender Paso Del Protocolo</button>
+      </div>
+      <div class="col-md-4 text-right" >
+        <button class="btn btn-success">Siguiente</button>
+      </div>
+    </div>
+
+  </div>

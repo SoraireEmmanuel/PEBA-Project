@@ -1,1 +1,193 @@
-<p>reading works!</p>
+<div class="container-sm mt-2 bg-warning bg-gradient text-black border shadow-lg p-3 mb-5 bg-body rounded">
+  <div class="text-center">
+    <h2>Evaluacion del Lenguaje - Lectura </h2>
+  </div>
+  <hr>
+  <h5>Emparejamiento palabra escrita-dibujo </h5>
+  <div class="row mt-1">
+    <div class="col-md-6">
+      <h6>Mono (lámina: reloj, mono, león, moño): </h6>
+    </div>
+    <div class="col-md-4">
+      <select class="form-select" name="p5p1" id="p5p1" [(ngModel)]="LecturaCuantitativa.Mono">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.QuestionBetween1to10" [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2 ">
+      <span>Puntuacion: {{LecturaCuantitativa.Mono}}</span>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-md-6">
+      <h6>Arco (lámina: martillo, flecha, arco, barco): </h6>
+    </div>
+    <div class="col-md-4">
+      <select class="form-select" name="p5p2" id="p5p2" [(ngModel)]="LecturaCuantitativa.Arco">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.QuestionBetween1to10" [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <span>Puntuacion:{{LecturaCuantitativa.Arco}}</span>
+    </div>
+  </div>
+  <!--Lectura en voz alta de palabras-->
+  <hr>
+  <h5>Lectura en voz alta de palabras </h5>
+  <div class="row mt-1">
+    <div class="col-md-6">
+      <h6>Casa: </h6>
+    </div>
+    <div class="col-md-4">
+      <select class="form-select" name="p5p3" id="p5p3" [(ngModel)]="LecturaCuantitativa.Casa">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.QuestionBetween1to10 " [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2 ">
+      <span>Puntuacion:{{LecturaCuantitativa.Casa}}</span>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class=" col-md-6">
+      <h6>Grito: </h6>
+    </div>
+    <div class="col-md-4 ">
+      <select class="form-select" name="p5p4" id="p5p4" [(ngModel)]="LecturaCuantitativa.Grito">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.QuestionBetween1to10 " [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2 ">
+      <span>Puntuacion:{{LecturaCuantitativa.Grito}}</span>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class=" col-md-6">
+      <h6>Estatua: </h6>
+    </div>
+    <div class="col-md-4 ">
+      <select class="form-select" name="p5p5" id="p5p5" [(ngModel)]="LecturaCuantitativa.Estatua">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.QuestionBetween1to10 " [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2 ">
+      <span>Puntuacion:{{LecturaCuantitativa.Estatua}}</span>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-md-6">
+      <h6>Comunidad: </h6>
+    </div>
+    <div class="col-md-4 ">
+      <select class="form-select" name="p5p6" id="p5p6" [(ngModel)]="LecturaCuantitativa.Comunidad">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.QuestionBetween1to10" [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2 ">
+      <span>Puntuacion:{{LecturaCuantitativa.Comunidad}}</span>
+    </div>
+  </div>
+  <!--Lectura en voz alta de no-palabras-->
+  <hr>
+  <h5>Lectura en voz alta de no-palabras </h5>
+  <div class="row mt-1">
+    <div class="col-md-6">
+      <h6>Ne: </h6>
+    </div>
+    <div class="col-md-4 ">
+      <select class="form-select" name="p5p7" id="p5p7" [(ngModel)]="LecturaCuantitativa.Ne">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.QuestionBetween1to10 " [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <span>Puntuacion:{{LecturaCuantitativa.Ne}}</span>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class=" col-md-6">
+      <h6>Cho: </h6>
+    </div>
+    <div class="col-md-4">
+      <select class="form-select" name="p5p8" id="p5p8" [(ngModel)]="LecturaCuantitativa.Cho">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.QuestionBetween1to10" [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2 ">
+      <span>Puntuacion:{{LecturaCuantitativa.Cho}}</span>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-md-6">
+      <h6>Bleja: </h6>
+    </div>
+    <div class="col-md-4">
+      <select class="form-select" name="p5p9" id="p5p9" [(ngModel)]="LecturaCuantitativa.Bleja">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.QuestionBetween1to10 " [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <span>Puntuacion:{{LecturaCuantitativa.Bleja}}</span>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-md-6">
+      <h6>Tudipro: </h6>
+    </div>
+    <div class="col-md-4 ">
+      <select class="form-select" name="p5p10" id="p5p10" [(ngModel)]="LecturaCuantitativa.Tudipro">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.QuestionBetween1to10 " [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <span>Puntuacion:{{LecturaCuantitativa.Tudipro}}</span>
+    </div>
+  </div>
+  <!--Comando escrito-->
+  <hr class="mt-1">
+  <h5>Comando escrito </h5>
+  <div class="row mt-1">
+    <div class="col-md-6">
+      <h6>Saque la lengua y salude con la mano: </h6>
+    </div>
+    <div class="col-md-4">
+      <select class="form-select" name="p5p11" id="p5p11" [(ngModel)]="LecturaCuantitativa.SaqueLaMano">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.Question11 " [ngValue]=p.valor>{{p.etiqueta}}</option>
+      </select>
+    </div>
+    <div class="col-md-2 ">
+      <span>Puntuacion:{{LecturaCuantitativa.SaqueLaMano}}</span>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-4 ">
+      <button class="btn btn-secondary">Agregar Observaciones Cualitativas</button>
+    </div>
+    <div class="col-md-2 ">
+      <span>Total: {{LecturaCuantitativa.SubTotal}}</span>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-4">
+      <button class="btn btn-success">Anterior</button>
+    </div>
+    <div class="col-md-4 text-center">
+      <button class="btn btn-danger">Suspender Paso del Protocolo</button>
+    </div>
+    <div class="col-md-4 text-right">
+      <button class="btn btn-success">Siguiente</button>
+    </div>
+  </div>
+
+</div>
