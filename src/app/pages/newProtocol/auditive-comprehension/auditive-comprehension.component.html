@@ -1,7 +1,7 @@
-<div class="container-sm mt-2 bg-warning bg-gradient text-black border shadow-lg p-3 mb-5 bg-body rounded" >
+<div class="container-sm mt-2 bg-warning bg-gradient text-black border shadow-lg p-3 mb-5 bg-body rounded">
   <div class="text-center">
-  <h2>Evaluacion del Lenguaje - Comprensión Auditiva</h2>
-</div>
+    <h2>Evaluacion del Lenguaje - Comprensión Auditiva</h2>
+  </div>
   <hr>
   <!--Emaprejamiento palabra oida-dibujo-->
   <div class="">
@@ -11,7 +11,8 @@
         <h6> Señale la OVEJA (lámina: oreja, plancha, oveja, vaca): </h6>
       </div>
       <div class="col-md-4 ">
-        <select class="form-select" name="p1p1" id="p1p1" [(ngModel)]="ComprensionAuditivaCuantitativa.SenialeLaOveja" >
+        <select class="form-select" name="p1p1" id="p1p1" [(ngModel)]="ComprensionAuditivaCuantitativa.SenialeLaOveja"
+          [disabled]="ComprensionAuditivaCuantitativa.WasSuspended" (change)="total()">
           <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
           <option *ngFor="let q of QuestionOptions.Question1and2and3" [ngValue]="q.valor">{{q.etiqueta}}</option>
         </select>
@@ -21,32 +22,34 @@
       </div>
     </div>
   </div>
-  <!--Comandos Oidos-->
   <div class="row mt-1">
     <div class=" col-md-6">
       <h6>Señale el PATO (lámina: vaso, plato, revólver, pato): </h6>
     </div>
     <div class="col-md-4 ">
-      <select class="form-select" name="p1p2" id="p1p2" [(ngModel)]="ComprensionAuditivaCuantitativa.SenialeElPato">
+      <select class="form-select" name="p1p2" id="p1p2" [(ngModel)]="ComprensionAuditivaCuantitativa.SenialeElPato"
+        [disabled]="ComprensionAuditivaCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
-        <option *ngFor="let p of QuestionOptions.Question1and2and3" [value]=p.valor>{{p.etiqueta}}</option>
+        <option *ngFor="let p of QuestionOptions.Question1and2and3" [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
     </div>
     <div class="col-md-2 ">
       <span>Puntuacion: {{ComprensionAuditivaCuantitativa.SenialeElPato}}</span>
     </div>
   </div>
+    <!--Comandos Oidos-->
   <hr class="mt-2">
   <div class="mt-1">
-    <h5 >Comandos oidos</h5>
+    <h5>Comandos oidos</h5>
     <div class="row">
       <div class="col-md-6 ">
         <h6>Tóquese la oreja: </h6>
       </div>
       <div class="col-md-4 ">
-        <select class="form-select" name="p1p3" id="p1p3">
+        <select class="form-select" name="p1p3" id="p1p3" [disabled]="ComprensionAuditivaCuantitativa.WasSuspended"
+        [(ngModel)]="ComprensionAuditivaCuantitativa.ToqueseLaOreja" (change)="total()">
           <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
-          <option *ngFor="let p of QuestionOptions.Question1and2and3" [value]=p.valor>{{p.etiqueta}}</option>
+          <option *ngFor="let p of QuestionOptions.Question1and2and3" [ngValue]=p.valor>{{p.etiqueta}}</option>
         </select>
       </div>
       <div class="col-md-2 ">
@@ -59,9 +62,10 @@
       <h6>Señale el techo y luego mueva su cabeza: </h6>
     </div>
     <div class="col-md-4 ">
-      <select class="form-select" name="p1p4" id="p1p4" >
+      <select class="form-select" name="p1p4" id="p1p4" [disabled]="ComprensionAuditivaCuantitativa.WasSuspended"
+      [(ngModel)]="ComprensionAuditivaCuantitativa.SenialeElTecho" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
-        <option *ngFor="let p of QuestionOptions.Question4" [value]=p.valor>{{p.etiqueta}}</option>
+        <option *ngFor="let p of QuestionOptions.Question4" [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
     </div>
     <div class="col-md-2 ">
@@ -73,36 +77,136 @@
       <h6>Señale la puerta, abra la boca y luego cierre los ojos: </h6>
     </div>
     <div class="col-md-4 ">
-      <select class="form-select" name="p1p5" id="p1p5">
+      <select class="form-select" name="p1p5" id="p1p5" [disabled]="ComprensionAuditivaCuantitativa.WasSuspended"
+      [(ngModel)]="ComprensionAuditivaCuantitativa.SenialeLaPuerta" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
-        <option *ngFor="let p of QuestionOptions.Question5" [value]=p.valor>{{p.etiqueta}}</option>
+        <option *ngFor="let p of QuestionOptions.Question5" [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
     </div>
     <div class="col-md-2">
       <span>Puntuacion: {{ComprensionAuditivaCuantitativa.SenialeLaPuerta}}</span>
     </div>
   </div>
+  <!--Total and Quealitative-->
   <div class="row mt-2">
+
     <div class=" col-md-6">
     </div>
     <div class="col-md-4 ">
-      <button class="btn btn-secondary">Agregar Observaciones Cualitativas</button>
+      <button class="btn btn-secondary" (click)="open(cualitat)">Agregar Observaciones Cualitativas</button>
     </div>
     <div class="col-md-2 ">
       <span>Total: {{ComprensionAuditivaCuantitativa.Subtotal}}</span>
     </div>
   </div>
-  <hr class="mt-1" >
+  <hr class="mt-1">
+  <!--footer button-->
   <div class="row">
     <div class="col-md-4">
-      <button class="btn btn-success " >Anterior</button>
+      <button class="btn btn-success ">Anterior</button>
     </div>
     <div class="col-md-4 text-center">
-      <button class="btn btn-danger " >Suspender Paso del Protocolo</button>
+      <button class="btn btn-danger " (click)="open(suspended)" [disabled]="ComprensionAuditivaCuantitativa.WasSuspended">Suspender Paso del Protocolo</button>
     </div>
-    <div class="col-md-4 text-right" >
-      <button class=" btn btn-success" >Siguiente</button>
+    <div class="col-md-4 text-right">
+      <button class=" btn btn-success">Siguiente</button>
     </div>
   </div>
 </div>
-
+{{ComprensionAuditivaCualitativa | json}}
+<br>
+{{ComprensionAuditivaCuantitativa | json}}
+<br>
+{{CopyComprensionAuditivaCaulitativa | json}}
+<!--Pop Up Qualitative Options-->
+<ng-template #cualitat let-modal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4>Observaciones Cualitativas de la Comprension Auditiva</h4>
+    <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-md-3"><label class="">Emparejamiento palabra oída-dibujo </label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="PO" id="PO" [(ngModel)]="ComprensionAuditivaCualitativa.PalabraOidaAlterada">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option  [ngValue]="0">Normal</option>
+          <option  [ngValue]="1">Alterado</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="PO1" [(ngModel)]="ComprensionAuditivaCualitativa.POErroresFormales">
+          <label class="form-check-label" for="PO1">Errores formales</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="PO2" [(ngModel)]="ComprensionAuditivaCualitativa.POErroresSemanticos">
+          <label class="form-check-label" for="PO2">Errores semánticos</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="PO3" [(ngModel)]="ComprensionAuditivaCualitativa.POErroresNoRelacionados">
+          <label class="form-check-label" for="PO3">Errores no relacionados</label>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-3"><label class="">Comandos oídos</label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="CO" id="CO" [(ngModel)]="ComprensionAuditivaCualitativa.ComandosOidosAlterada">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option  [ngValue]="0">Normal</option>
+          <option  [ngValue]="1">Alterado</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="CO1" [(ngModel)]="ComprensionAuditivaCualitativa.COOmiteParteDelComando">
+          <label class="form-check-label" for="CO1">Omite parte del comando</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="CO2" [(ngModel)]="ComprensionAuditivaCualitativa.COSustituyeParteDelComando">
+          <label class="form-check-label" for="CO2">Sustituye parte del comando</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="CO3" [(ngModel)]="ComprensionAuditivaCualitativa.COCambiaElOrdenDelComando">
+          <label class="form-check-label" for="CO3">Cambia el orden del comando</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col-md-6 d-grid gap-2">
+        <button class="btn btn-success" type="submit" (click)="saved()" (click)="modal.close()">Guardar</button>
+      </div>
+      <div class="col-md-6 d-grid gap-2">
+        <button type="button" class="btn btn-danger" (click)="cancel()" (click)="modal.close()" >
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<!--Pop Up Suspend step-->
+<ng-template #suspended let-modal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4>¿Esta seguro que desea suspender este paso del protocolo?</h4>
+    <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col-md-6 d-grid gap-2">
+        <button class="btn btn-success" type="button" (click)="suspend()" (click)="modal.close()">Suspender</button>
+      </div>
+      <div class="col-md-6 d-grid gap-2">
+        <button type="button" class="btn btn-danger" (click)="modal.close()">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>

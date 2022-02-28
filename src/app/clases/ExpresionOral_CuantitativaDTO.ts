@@ -4,7 +4,8 @@ export class ExpresionOral_CuantitativaDTO{
   LaminaElParque:number=null;
   LaminaConsultaMedica:number=null;
   isComplete:boolean = null;
-  SubTotal:number=0
+  SubTotal:number=0;
+  WasSuspended:boolean=false;
   constructor(){
 
   }

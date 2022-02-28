@@ -1,17 +1,19 @@
-<div class="container-sm mt-2 bg-warning bg-gradient text-black border shadow-lg p-3 mb-5 bg-body rounded" >
+<div class="container-sm mt-2 bg-warning bg-gradient text-black border shadow-lg p-3 mb-5 bg-body rounded">
   <div>
     <div class="text-center">
       <h2>Evaluacion del Lenguaje - Expresion Oral (habla incluida)</h2>
     </div>
     <hr>
+    <!--Oral Expresion questions-->
     <div class="row mt-1">
       <div class=" col-md-6">
         <h6>Diga su nombre completo: </h6>
       </div>
       <div class="col-md-4 ">
-        <select class="form-select" name="p2p1" id="p2p1" [(ngModel)]="ExpresionOral.DigaSuNombre">
+        <select class="form-select" name="p2p1" id="p2p1" [(ngModel)]="ExpresionOral.DigaSuNombre"
+        [disabled]="ExpresionOral.WasSuspended" (change)="total()">
           <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
-          <option *ngFor="let p of DropdownOptions.Question1and2 " [value]=p.valor>{{p.etiqueta}}</option>
+          <option *ngFor="let p of DropdownOptions.Question1and2 " [ngValue]=p.valor>{{p.etiqueta}}</option>
         </select>
       </div>
       <div class="col-md-2">
@@ -23,9 +25,10 @@
         <h6>¿En que ciudad nacio? </h6>
       </div>
       <div class="col-md-4">
-        <select  class="form-select" name="p2p2" id="p2p2" [(ngModel)]="ExpresionOral.EnQueCiudadNacio">
+        <select class="form-select" name="p2p2" id="p2p2" [(ngModel)]="ExpresionOral.EnQueCiudadNacio"
+        [disabled]="ExpresionOral.WasSuspended" (change)="total()">
           <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
-          <option *ngFor="let p of DropdownOptions.Question1and2 " [value]=p.valor>{{p.etiqueta}}</option>
+          <option *ngFor="let p of DropdownOptions.Question1and2 " [ngValue]=p.valor>{{p.etiqueta}}</option>
         </select>
       </div>
       <div class="col-md-2">
@@ -37,9 +40,10 @@
         <h6>Diga que ve en la lamina (lamina: "El Parque") </h6>
       </div>
       <div class="col-md-4">
-        <select class="form-select" name="p2p3" id="p2p3" [(ngModel)]="ExpresionOral.LaminaElParque">
+        <select class="form-select" name="p2p3" id="p2p3" [(ngModel)]="ExpresionOral.LaminaElParque"
+        [disabled]="ExpresionOral.WasSuspended" (change)="total()">
           <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
-          <option *ngFor="let p of DropdownOptions.Question3and4" [value]=p.valor>{{p.etiqueta}}</option>
+          <option *ngFor="let p of DropdownOptions.Question3and4" [ngValue]=p.valor>{{p.etiqueta}}</option>
         </select>
       </div>
       <div class="col-md-2 ">
@@ -51,32 +55,35 @@
         <h6>Diga que ve en la lamina (lamina: "Consulta Medica") </h6>
       </div>
       <div class="col-md-4 ">
-        <select class="form-select" name="p2p4" id="p2p4" [(ngModel)]="ExpresionOral.LaminaConsultaMedica">
+        <select class="form-select" name="p2p4" id="p2p4" [(ngModel)]="ExpresionOral.LaminaConsultaMedica"
+        [disabled]="ExpresionOral.WasSuspended" (change)="total()">
           <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
-          <option *ngFor="let p of  DropdownOptions.Question3and4"  [value]=p.valor>{{p.etiqueta}}</option>
+          <option *ngFor="let p of  DropdownOptions.Question3and4" [ngValue]=p.valor>{{p.etiqueta}}</option>
         </select>
       </div>
       <div class="col-md-2">
         <span>Puntuacion: {{ExpresionOral.LaminaConsultaMedica}}</span>
       </div>
     </div>
+    <!--Total and qealitative-->
     <div class="row mt-1">
       <div class=" col-md-6">
       </div>
       <div class="col-md-4 ">
-        <button class="btn btn-secondary">Agregar Observaciones Cualitativas</button>
+        <button class="btn btn-secondary" (click)="open(cualitat)">Agregar Observaciones Cualitativas</button>
       </div>
       <div class="col-md-2 ">
         <span>Total: {{ExpresionOral.SubTotal}}</span>
       </div>
     </div>
-    <hr class="mt-1" >
+    <!--footer button-->
+    <hr class="mt-1">
     <div class="row">
       <div class="col-md-4">
-        <button class="btn btn-success" >Anterior</button>
+        <button class="btn btn-success">Anterior</button>
       </div>
       <div class="col-md-4 text-center">
-        <button class="btn btn-danger" >Suspender Paso del Protocolo</button>
+        <button class="btn btn-danger" (click)="open(suspended)" [disabled]="ExpresionOral.WasSuspended">Suspender Paso del Protocolo</button>
       </div>
       <div class="col-md-4 text-right">
         <button class="btn btn-success">Siguiente</button>
@@ -84,3 +91,141 @@
     </div>
   </div>
 </div>
+
+
+<!--Pop Up Qualitative Options-->
+<ng-template #cualitat let-modal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4>Observaciones Cualitativas de la Comprension Auditiva</h4>
+    <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-md-3"><label class="">Fluencia</label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="Fluencia" id="Fluencia" [(ngModel)]="ExpresionOralCualitativa.Fluencia">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Normal</option>
+          <option [ngValue]="1">Alterada No fluente</option>
+          <option [ngValue]="2">Alterada Logorrea</option>
+        </select>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-3"><label class="">Prosodia</label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="Prosodia" id="Prosodia" [(ngModel)]="ExpresionOralCualitativa.Prosodia">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Normal</option>
+          <option [ngValue]="1">Alterada Disprosodia</option>
+        </select>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-3"><label class="">Articulación </label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="Articulacion" id="Articulacion"
+          [(ngModel)]="ExpresionOralCualitativa.Articulacion">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Normal</option>
+          <option [ngValue]="1">Alterada Errores fonéticos</option>
+        </select>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-3"><label class="">Codificación Fonológica </label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="CF" id="CF" [(ngModel)]="ExpresionOralCualitativa.CodificacionFonologica">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Normal</option>
+          <option [ngValue]="1">Alterada Errores fonémicos</option>
+        </select>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-3"><label class="">Procesamiento Sintáctico</label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="PS" id="PS" [(ngModel)]="ExpresionOralCualitativa.ProcesamientoSintaxtico">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Normal</option>
+          <option [ngValue]="1">Alterada Agramatismo</option>
+        </select>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-3"><label class="">Procesamiento Léxico</label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="PL" id="PL"
+          [(ngModel)]="ExpresionOralCualitativa.ProcesamientoLexicoAlterado">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Normal</option>
+          <option [ngValue]="1">Alterada</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="PL1" [(ngModel)]="ExpresionOralCualitativa.PLAnomias">
+          <label class="form-check-label" for="PL1">Anomias</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="PL2" [(ngModel)]="ExpresionOralCualitativa.PLParafasias">
+          <label class="form-check-label" for="PL2">Parafasias</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="PL3" [(ngModel)]="ExpresionOralCualitativa.PLNeologismo">
+          <label class="form-check-label" for="PL3">Neologismos</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="PL4"
+            [(ngModel)]="ExpresionOralCualitativa.PLEstereotipias">
+          <label class="form-check-label" for="PL4">Estereotipias</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="PL5"
+            [(ngModel)]="ExpresionOralCualitativa.PLPerseveraciones">
+          <label class="form-check-label" for="PL5">Perseveraciones</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="PL6" [(ngModel)]="ExpresionOralCualitativa.PLMuletillas">
+          <label class="form-check-label" for="PL6">Muletillas</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col-md-6 d-grid gap-2">
+        <button class="btn btn-success" type="button" (click)="saved()" (click)="modal.close()">Guardar</button>
+      </div>
+      <div class="col-md-6 d-grid gap-2">
+        <button type="button" class="btn btn-danger" (click)="cancel()" (click)="modal.close()">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<!--Pop Up Suspend step-->
+<ng-template #suspended let-modal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4>¿Esta seguro que desea suspender este paso del protocolo?</h4>
+    <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col-md-6 d-grid gap-2">
+        <button class="btn btn-success" type="button" (click)="suspend()" (click)="modal.close()">Suspender</button>
+      </div>
+      <div class="col-md-6 d-grid gap-2">
+        <button type="button" class="btn btn-danger" (click)="modal.close()">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
