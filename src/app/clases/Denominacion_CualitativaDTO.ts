@@ -5,10 +5,10 @@ export class Denominacion_CualitativaDTO{
   PLAnomia:boolean=null;
   PLParafasiasFormales:boolean=null;
   PLParafasiasMorfologicas:boolean=null;
-  PLParafasiasSemánticas:boolean=null;
+  PLParafasiasSemanticas:boolean=null;
   PLCircunloquios:boolean=null;
   PLNeologismos:boolean=null;
-  PLEstereotipías:boolean=null;
+  PLEstereotipias:boolean=null;
   PLPerseveraciones:boolean=null;
   PLMuletillas:boolean=null;
 

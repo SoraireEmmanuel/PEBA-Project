@@ -10,9 +10,10 @@
       <h6>Sol: </h6>
     </div>
     <div class="col-md-4 ">
-      <select  class="form-select" name="p3p1" id="p3p1" [(ngModel)]="RepeticionCuantitativa.Sol">
+      <select  class="form-select" name="p3p1" id="p3p1" [(ngModel)]="RepeticionCuantitativa.Sol"
+      [disabled]="RepeticionCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
-        <option *ngFor="let p of DropdownOptions.Question1and2and4and7and8" [value]=p.valor>{{p.etiqueta}}</option>
+        <option *ngFor="let p of DropdownOptions.Question1and2and4and7and8" [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
     </div>
     <div class="col-md-2 ">
@@ -24,9 +25,10 @@
       <h6>Precio: </h6>
     </div>
     <div class="col-md-4 ">
-      <select  class="form-select" name="p3p2" id="p3p2" [(ngModel)]="RepeticionCuantitativa.Precio">
+      <select  class="form-select" name="p3p2" id="p3p2" [(ngModel)]="RepeticionCuantitativa.Precio"
+      [disabled]="RepeticionCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
-        <option *ngFor="let p of DropdownOptions.Question1and2and4and7and8" [value]=p.valor>{{p.etiqueta}}</option>
+        <option *ngFor="let p of DropdownOptions.Question1and2and4and7and8" [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
     </div>
     <div class="col-md-2">
@@ -38,9 +40,10 @@
       <h6>Pensamiento: </h6>
     </div>
     <div class="col-md-4 ">
-      <select  class="form-select" name="p3p3" id="p3p3" [(ngModel)]="RepeticionCuantitativa.Pensamiento">
+      <select  class="form-select" name="p3p3" id="p3p3" [(ngModel)]="RepeticionCuantitativa.Pensamiento"
+      [disabled]="RepeticionCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
-        <option *ngFor="let p of DropdownOptions.Question3and9" [value]=p.valor>{{p.etiqueta}}</option>
+        <option *ngFor="let p of DropdownOptions.Question3and9" [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
     </div>
     <div class="col-md-2 ">
@@ -55,9 +58,10 @@
       <h6>Mucho Ruido: </h6>
     </div>
     <div class="col-md-4 ">
-      <select  class="form-select" name="p3p4" id="p3p4" [(ngModel)]="RepeticionCuantitativa.MuchoRuido">
+      <select  class="form-select" name="p3p4" id="p3p4" [(ngModel)]="RepeticionCuantitativa.MuchoRuido"
+      [disabled]="RepeticionCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
-        <option *ngFor="let p of DropdownOptions.Question1and2and4and7and8" [value]=p.valor>{{p.etiqueta}}</option>
+        <option *ngFor="let p of DropdownOptions.Question1and2and4and7and8" [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
     </div>
     <div class="col-md-2 ">
@@ -69,9 +73,10 @@
       <h6>El Hombre guardo las herramientas: </h6>
     </div>
     <div class="col-md-4 ">
-      <select class="form-select" name="p3p5" id="p3p5" [(ngModel)]="RepeticionCuantitativa.ElHombreGuardo">
+      <select class="form-select" name="p3p5" id="p3p5" [(ngModel)]="RepeticionCuantitativa.ElHombreGuardo"
+      [disabled]="RepeticionCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
-        <option *ngFor="let p of DropdownOptions.Question5" [value]=p.valor>{{p.etiqueta}}</option>
+        <option *ngFor="let p of DropdownOptions.Question5" [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
     </div>
     <div class="col-md-2 ">
@@ -83,9 +88,10 @@
       <h6>La Mujer le regalo un libro a su Hijo: </h6>
     </div>
     <div class="col-md-4 ">
-      <select class="form-select" name="p3p6" id="p3p6" [(ngModel)]="RepeticionCuantitativa.LaMujerRegalo">
+      <select class="form-select" name="p3p6" id="p3p6" [(ngModel)]="RepeticionCuantitativa.LaMujerRegalo"
+      [disabled]="RepeticionCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
-        <option *ngFor="let p of DropdownOptions.Question6" [value]=p.valor>{{p.etiqueta}}</option>
+        <option *ngFor="let p of DropdownOptions.Question6" [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
     </div>
     <div class="col-md-2 ">
@@ -100,9 +106,10 @@
       <h6>Fo: </h6>
     </div>
     <div class="col-md-4 ">
-      <select  class="form-select" name="p3p7" id="p3p7" [(ngModel)]="RepeticionCuantitativa.Fo">
+      <select  class="form-select" name="p3p7" id="p3p7" [(ngModel)]="RepeticionCuantitativa.Fo"
+      [disabled]="RepeticionCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
-        <option *ngFor="let p of DropdownOptions.Question1and2and4and7and8" [value]=p.valor>{{p.etiqueta}}</option>
+        <option *ngFor="let p of DropdownOptions.Question1and2and4and7and8" [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
     </div>
     <div class="col-md-2 ">
@@ -114,9 +121,10 @@
       <h6>Treyo: </h6>
     </div>
     <div class="col-md-4 ">
-      <select  class="form-select" name="p3p8" id="p3p8" [(ngModel)]="RepeticionCuantitativa.Treyo" >
+      <select  class="form-select" name="p3p8" id="p3p8" [(ngModel)]="RepeticionCuantitativa.Treyo"
+      [disabled]="RepeticionCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
-        <option *ngFor="let p of DropdownOptions.Question1and2and4and7and8" [value]=p.valor>{{p.etiqueta}}</option>
+        <option *ngFor="let p of DropdownOptions.Question1and2and4and7and8" [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
     </div>
     <div class="col-md-2 ">
@@ -128,34 +136,162 @@
       <h6>Almusipa: </h6>
     </div>
     <div class="col-md-4 ">
-      <select  class="form-select" name="p3p9" id="p3p9" >
-        <option *ngFor="let p of DropdownOptions.Question3and9" [value]=p.valor>{{p.etiqueta}}</option>
+      <select  class="form-select" name="p3p9" id="p3p9" [(ngModel)]="RepeticionCuantitativa.Almusipa"
+      [disabled]="RepeticionCuantitativa.WasSuspended" (change)="total()">
+        <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+        <option *ngFor="let p of DropdownOptions.Question3and9" [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
     </div>
     <div class="col-md-2 ">
       <span>Puntuacion:{{RepeticionCuantitativa.Almusipa}}</span>
     </div>
   </div>
+  <!--Total and qealitative-->
   <div class="row mt-1">
     <div class=" col-md-6">
     </div>
     <div class="col-md-4">
-      <button class="btn btn-secondary " >Agregar Observaciones Caulitativas</button>
+      <button class="btn btn-secondary " (click)="open(cualitat)">Agregar Observaciones Caulitativas</button>
     </div>
     <div class="col-md-2 ">
       <span>Total: {{RepeticionCuantitativa.SubTotal}}</span>
     </div>
   </div>
   <hr class="mt-1">
+  <!--footer button-->
   <div class="row">
     <div class="col-md-4">
       <button class="btn btn-success" >Anterior</button>
     </div>
     <div class="col-md-4 text-center">
-      <button class="btn btn-danger" >Suspender Paso del Protocolo</button>
+      <button class="btn btn-danger" (click)="open(suspended)" [disabled]="RepeticionCuantitativa.WasSuspended">Suspender Paso del Protocolo</button>
     </div>
     <div class="col-md-4 text-right" >
       <button class="btn btn-success" >Siguiente</button>
     </div>
   </div>
 </div>
+
+
+
+<!--Pop Up Qualitative Options-->
+<ng-template #cualitat let-modal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4>Observaciones Cualitativas de la Repeticion</h4>
+    <button class="close" aria-label="close" type="button" (click)="cancel()" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-md-3"><label class="">Artuculación</label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="Articulacion" id="Articulacion" [(ngModel)]="RepeticionCualitativa.Articulacion">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Normal</option>
+          <option [ngValue]="1">Alterada Errores fonéticos</option>
+        </select>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-3"><label class="">Codificación fonológica</label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="CF" id="CF" [(ngModel)]="RepeticionCualitativa.CodificacionFonologica">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Normal</option>
+          <option [ngValue]="1">Alterada</option>
+        </select>
+      </div>
+      <div class="col-md-6" *ngIf="RepeticionCualitativa.CodificacionFonologica==1">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="CF1" [(ngModel)]="RepeticionCualitativa.CFFonemicos">
+          <label class="form-check-label" for="CF1">Fonémicos</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="CF2" [(ngModel)]="RepeticionCualitativa.CFLexicalizacionDeNoPalabras">
+          <label class="form-check-label" for="CF2">Lexicalización de no palabras</label>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-3"><label class="">Procesamiento léxico </label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="PL" id="PL"
+          [(ngModel)]="RepeticionCualitativa.ProcesamientoLexico">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Normal</option>
+          <option [ngValue]="1">Alterada</option>
+        </select>
+      </div>
+      <div class="col-md-6" *ngIf="RepeticionCualitativa.ProcesamientoLexico == 1">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="PL1" [(ngModel)]="RepeticionCualitativa.PLParafasiasFormales">
+          <label class="form-check-label" for="PL1">Parafasias formales</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="PL2" [(ngModel)]="RepeticionCualitativa.PLParafasiasMorfologicas">
+          <label class="form-check-label" for="PL2">Parafasias morfológicas</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="PL3" [(ngModel)]="RepeticionCualitativa.PLParafasiasSemanticas">
+          <label class="form-check-label" for="PL3">Parafasias semánticas</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="PL4" [(ngModel)]="RepeticionCualitativa.PLNeologismos">
+          <label class="form-check-label" for="PL4">Neologismos</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="PL5" [(ngModel)]="RepeticionCualitativa.PLEstereotipias">
+          <label class="form-check-label" for="PL5">Estereotipias</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="PL6" [(ngModel)]="RepeticionCualitativa.PLPerseveraciones">
+          <label class="form-check-label" for="PL6">Perseveraciones</label>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-3"><label class="">Procesamiento sintáctico </label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="PS" id="PS" [(ngModel)]="RepeticionCualitativa.ProcesamientoSintaxtico">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Normal</option>
+          <option [ngValue]="1">Alterado Agramatismo</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col-md-6 d-grid gap-2">
+        <button class="btn btn-success" type="button" (click)="saved()" (click)="modal.close()">Guardar</button>
+      </div>
+      <div class="col-md-6 d-grid gap-2">
+        <button type="button" class="btn btn-danger" (click)="cancel()" (click)="modal.close()">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<!--Pop Up Suspend step-->
+<ng-template #suspended let-modal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4>¿Esta seguro que desea suspender este paso del protocolo?</h4>
+    <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col-md-6 d-grid gap-2">
+        <button class="btn btn-success" type="button" (click)="suspend()" (click)="modal.close()">Suspender</button>
+      </div>
+      <div class="col-md-6 d-grid gap-2">
+        <button type="button" class="btn btn-danger" (click)="modal.close()">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -4,7 +4,8 @@ export class Denominacion_CuantitativaDTO{
   LaminaCome:number=null;
   LaminaRema:number=null;
   isComplete:boolean = null;
-  SubTotal:number=0
+  SubTotal:number=0;
+  WasSuspended:boolean=false;
   constructor(){
 
   }

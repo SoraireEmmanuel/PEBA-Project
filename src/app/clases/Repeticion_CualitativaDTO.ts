@@ -1,12 +1,12 @@
 export class Repeticion_CualitativaDTO{
   Articulacion:number=null;
-  CodificacionFonologica:boolean=null;
+  CodificacionFonologica:number=null;
   CFFonemicos:boolean=null;
-  CFLexicalizaciónDeNoPalabras:boolean=null;
-  ProcesamientoLexico:boolean=null;
+  CFLexicalizacionDeNoPalabras:boolean=null;
+  ProcesamientoLexico:number=null;
   PLParafasiasFormales:boolean=null;
   PLParafasiasMorfologicas:boolean=null;
-  PLParafaciasSemanticas:boolean=null;
+  PLParafasiasSemanticas:boolean=null;
   PLNeologismos:boolean=null;
   PLEstereotipias:boolean=null;
   PLPerseveraciones:boolean=null;
