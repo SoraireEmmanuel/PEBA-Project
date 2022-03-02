@@ -3,13 +3,15 @@
     <h2>Evaluacion del Lenguaje - Escritura</h2>
   </div>
   <hr>
+  <!--Letter dictation by name-->
   <h5>Dictado de letras por el nombre </h5>
   <div class="row mt-1">
     <div class="col-md-6">
       <h6>Escriba la letra EME: </h6>
     </div>
     <div class="col-md-4">
-      <select class="form-select" name="p6p1" id="p6p1" [(ngModel)]="EscrituraCuantitativa.EME">
+      <select class="form-select" name="p6p1" id="p6p1" [(ngModel)]="EscrituraCuantitativa.EME"
+      [disabled]="EscrituraCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.Question1and2and3and4and7and8 " [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -23,7 +25,8 @@
       <h6>Escriba la letra ZETA: </h6>
     </div>
     <div class="col-md-4">
-      <select class="form-select" name="p6p2" id="p6p2" [(ngModel)]="EscrituraCuantitativa.ZETA">
+      <select class="form-select" name="p6p2" id="p6p2" [(ngModel)]="EscrituraCuantitativa.ZETA"
+      [disabled]="EscrituraCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.Question1and2and3and4and7and8 " [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -33,13 +36,15 @@
     </div>
   </div>
   <hr class="mt-1">
+  <!--Word dictation-->
   <h5>Dictado de palabras </h5>
   <div class="row mt-1">
     <div class="col-md-6">
       <h6>Mano: </h6>
     </div>
     <div class="col-md-4 ">
-      <select class="form-select" name="p6p3" id="p6p3" [(ngModel)]="EscrituraCuantitativa.ManoMano">
+      <select class="form-select" name="p6p3" id="p6p3" [(ngModel)]="EscrituraCuantitativa.ManoMano"
+      [disabled]="EscrituraCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.Question1and2and3and4and7and8 " [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -53,7 +58,8 @@
       <h6>Gente: </h6>
     </div>
     <div class="col-md-4 ">
-      <select class="form-select" name="p6p4" id="p6p4" [(ngModel)]="EscrituraCuantitativa.Gente">
+      <select class="form-select" name="p6p4" id="p6p4" [(ngModel)]="EscrituraCuantitativa.Gente"
+      [disabled]="EscrituraCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.Question1and2and3and4and7and8 " [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -67,7 +73,8 @@
       <h6>Esperanza: </h6>
     </div>
     <div class="col-md-4 ">
-      <select class="form-select" name="p6p5" id="p6p5" [(ngModel)]="EscrituraCuantitativa.Esperanza">
+      <select class="form-select" name="p6p5" id="p6p5" [(ngModel)]="EscrituraCuantitativa.Esperanza"
+      [disabled]="EscrituraCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.Question5and6and9 " [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -81,7 +88,8 @@
       <h6>Aclaración: </h6>
     </div>
     <div class="col-md-4">
-      <select class="form-select" name="p6p6" id="p6p6" [(ngModel)]="EscrituraCuantitativa.Aclaracion">
+      <select class="form-select" name="p6p6" id="p6p6" [(ngModel)]="EscrituraCuantitativa.Aclaracion"
+      [disabled]="EscrituraCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.Question5and6and9 " [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -91,13 +99,15 @@
     </div>
   </div>
   <hr>
+  <!--Dictation of No word-->
   <h5>Dictado de no palabras </h5>
   <div class="row mt-1">
     <div class="col-md-6">
       <h6>Jo: </h6>
     </div>
     <div class="col-md-4 ">
-      <select class="form-select" name="p6p7" id="p6p7" [(ngModel)]="EscrituraCuantitativa.Jo">
+      <select class="form-select" name="p6p7" id="p6p7" [(ngModel)]="EscrituraCuantitativa.Jo"
+      [disabled]="EscrituraCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.Question1and2and3and4and7and8 " [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -111,7 +121,8 @@
       <h6>Guela: </h6>
     </div>
     <div class="col-md-4">
-      <select class="form-select" name="p6p8" id="p6p8" [(ngModel)]="EscrituraCuantitativa.Guela">
+      <select class="form-select" name="p6p8" id="p6p8" [(ngModel)]="EscrituraCuantitativa.Guela"
+      [disabled]="EscrituraCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.Question1and2and3and4and7and8 " [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -125,7 +136,8 @@
       <h6>Dirchole: </h6>
     </div>
     <div class="col-md-4 ">
-      <select class="form-select" name="p6p9" id="p6p9" [(ngModel)]="EscrituraCuantitativa.Dirchole">
+      <select class="form-select" name="p6p9" id="p6p9" [(ngModel)]="EscrituraCuantitativa.Dirchole"
+      [disabled]="EscrituraCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.Question5and6and9 " [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -134,27 +146,178 @@
       <span>Puntuacion: {{EscrituraCuantitativa.Dirchole}}</span>
     </div>
   </div>
+   <!--Total and qealitative-->
   <div class="row mt-1">
     <div class="col-md-6">
     </div>
     <div class="col-md-4 ">
-      <button class="btn btn-secondary">Agregar Observaciones Cualitativas</button>
+      <button class="btn btn-secondary" (click)="open(cualitat)" >Agregar Observaciones Cualitativas</button>
     </div>
     <div class="col-md-2 ">
       <span>Total: {{EscrituraCuantitativa.SubTotal}}</span>
     </div>
   </div>
   <hr>
+   <!--footer button-->
   <div class="row">
     <div class="col-md-4">
       <button  class="btn btn-success">Anterior</button>
     </div>
     <div class="col-md-4 text-center">
-      <button class="btn btn-danger">Suspender Paso del Proto </button>
+      <button class="btn btn-danger" [disabled]="EscrituraCuantitativa.WasSuspended" (click)="open(suspended)">
+        Suspender Paso del Protocolo </button>
     </div>
     <div class="col-md-4 text-right">
       <button class="btn btn-success">Siguiente</button>
     </div>
-
   </div>
 </div>
+
+
+
+<!--Pop Up Qualitative Options-->
+<ng-template #cualitat let-modal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4>Observaciones Cualitativas de la Escritura</h4>
+    <button class="close" aria-label="close" type="button" (click)="cancel()" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-md-3"><label class="">Movilidad de la mano dominante</label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="MMDP" id="MMDP" [(ngModel)]="EscruturaCualitativa.MovilidadDeLaManoDominante">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Normal</option>
+          <option [ngValue]="1">Alterada No fluente</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="MMDP1" [(ngModel)]="EscruturaCualitativa.MMDPlejia">
+          <label class="form-check-label" for="MMDP1">Plejía</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="MMDP2" [(ngModel)]="EscruturaCualitativa.MMDParesiaDeLaManoDominante">
+          <label class="form-check-label" for="MMDP2">Paresia de la mano dominante</label>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-3"><label class="">Mano no dominante</label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="MND" id="MND" [(ngModel)]="EscruturaCualitativa.ManoNoDominante">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Utiliza la mano no dominante para escribir</option>
+          <option [ngValue]="1">No utiliza la mano no dominante para escribir</option>
+        </select>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-3"><label class="">Grafismo</label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="Grafismo" id="Grafismo"
+          [(ngModel)]="EscruturaCualitativa.Grafismo">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Normal</option>
+          <option [ngValue]="1">Alterado, omite o sustituye rasgos de las letras</option>
+        </select>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-3"><label class="">Deletreo</label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="Deletreo" id="Deletreo" [(ngModel)]="EscruturaCualitativa.Deletreo">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Normal</option>
+          <option [ngValue]="1">Alterada</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="D1" [(ngModel)]="EscruturaCualitativa.DOmision">
+          <label class="form-check-label" for="D1">Omisión</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="D2" [(ngModel)]="EscruturaCualitativa.DSustitucion">
+          <label class="form-check-label" for="D2">Sustitución</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="D3" [(ngModel)]="EscruturaCualitativa.DAdicionDeLetrasQueResultanEnNoPalabra">
+          <label class="form-check-label" for="D3">Adición de letras que resultan en no palabra</label>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-3"><label class="">Ortografía</label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="O" id="O" [(ngModel)]="EscruturaCualitativa.Ortografia">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Normal</option>
+          <option [ngValue]="1">Alterada</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="O1" [(ngModel)]="EscruturaCualitativa.OErroresFonologicamentePlausibles" >
+          <label class="form-check-label" for="O1">Errores fonológicamente plausibles</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="O2" [(ngModel)]="EscruturaCualitativa.OParagrafiasFormales" >
+          <label class="form-check-label" for="O2">Paragrafias formales</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="O3" [(ngModel)]="EscruturaCualitativa.OParagrafiasMorfologicas" >
+          <label class="form-check-label" for="O3">Paragrafias morfológicas</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="O4" [(ngModel)]="EscruturaCualitativa.OParagrafiasSemanticas" >
+          <label class="form-check-label" for="O4">Paragrafias semánticas</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="O5" [(ngModel)]="EscruturaCualitativa.OLexicalizacionDeNoPalabras" >
+          <label class="form-check-label" for="O5">Lexicalización de no palabras</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col-md-6 d-grid gap-2">
+        <button class="btn btn-success" type="button" (click)="saved()" (click)="modal.close()">Guardar</button>
+      </div>
+      <div class="col-md-6 d-grid gap-2">
+        <button type="button" class="btn btn-danger" (click)="cancel()" (click)="modal.close()">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<!--Pop Up Suspend step-->
+<ng-template #suspended let-modal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4>¿Esta seguro que desea suspender este paso del protocolo?</h4>
+    <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col-md-6 d-grid gap-2">
+        <button class="btn btn-success" type="button" (click)="suspend()" (click)="modal.close()">Suspender</button>
+      </div>
+      <div class="col-md-6 d-grid gap-2">
+        <button type="button" class="btn btn-danger" (click)="modal.close()">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+
+
+

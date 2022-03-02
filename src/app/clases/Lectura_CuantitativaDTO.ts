@@ -12,7 +12,7 @@ export class Lectura_CuantitativaDTO{
   SaqueLaMano:number = null;
   isComplete:boolean = null;
   SubTotal:Number = 0;
-
+  WasSuspended:boolean=false;
   constructor(){
 
   }

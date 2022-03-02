@@ -3,13 +3,15 @@
     <h2>Evaluacion del Lenguaje - Lectura </h2>
   </div>
   <hr>
+  <!--Emparejamiento palabra escrita-dibujo-->
   <h5>Emparejamiento palabra escrita-dibujo </h5>
   <div class="row mt-1">
     <div class="col-md-6">
       <h6>Mono (lámina: reloj, mono, león, moño): </h6>
     </div>
     <div class="col-md-4">
-      <select class="form-select" name="p5p1" id="p5p1" [(ngModel)]="LecturaCuantitativa.Mono">
+      <select class="form-select" name="p5p1" id="p5p1" [(ngModel)]="LecturaCuantitativa.Mono"
+        [disabled]="LecturaCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.QuestionBetween1to10" [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -23,7 +25,8 @@
       <h6>Arco (lámina: martillo, flecha, arco, barco): </h6>
     </div>
     <div class="col-md-4">
-      <select class="form-select" name="p5p2" id="p5p2" [(ngModel)]="LecturaCuantitativa.Arco">
+      <select class="form-select" name="p5p2" id="p5p2" [(ngModel)]="LecturaCuantitativa.Arco"
+        [disabled]="LecturaCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.QuestionBetween1to10" [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -40,7 +43,8 @@
       <h6>Casa: </h6>
     </div>
     <div class="col-md-4">
-      <select class="form-select" name="p5p3" id="p5p3" [(ngModel)]="LecturaCuantitativa.Casa">
+      <select class="form-select" name="p5p3" id="p5p3" [(ngModel)]="LecturaCuantitativa.Casa"
+        [disabled]="LecturaCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.QuestionBetween1to10 " [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -54,7 +58,8 @@
       <h6>Grito: </h6>
     </div>
     <div class="col-md-4 ">
-      <select class="form-select" name="p5p4" id="p5p4" [(ngModel)]="LecturaCuantitativa.Grito">
+      <select class="form-select" name="p5p4" id="p5p4" [(ngModel)]="LecturaCuantitativa.Grito"
+        [disabled]="LecturaCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.QuestionBetween1to10 " [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -68,7 +73,8 @@
       <h6>Estatua: </h6>
     </div>
     <div class="col-md-4 ">
-      <select class="form-select" name="p5p5" id="p5p5" [(ngModel)]="LecturaCuantitativa.Estatua">
+      <select class="form-select" name="p5p5" id="p5p5" [(ngModel)]="LecturaCuantitativa.Estatua"
+        [disabled]="LecturaCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.QuestionBetween1to10 " [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -82,7 +88,8 @@
       <h6>Comunidad: </h6>
     </div>
     <div class="col-md-4 ">
-      <select class="form-select" name="p5p6" id="p5p6" [(ngModel)]="LecturaCuantitativa.Comunidad">
+      <select class="form-select" name="p5p6" id="p5p6" [(ngModel)]="LecturaCuantitativa.Comunidad"
+        [disabled]="LecturaCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.QuestionBetween1to10" [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -99,7 +106,8 @@
       <h6>Ne: </h6>
     </div>
     <div class="col-md-4 ">
-      <select class="form-select" name="p5p7" id="p5p7" [(ngModel)]="LecturaCuantitativa.Ne">
+      <select class="form-select" name="p5p7" id="p5p7" [(ngModel)]="LecturaCuantitativa.Ne"
+        [disabled]="LecturaCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.QuestionBetween1to10 " [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -113,7 +121,8 @@
       <h6>Cho: </h6>
     </div>
     <div class="col-md-4">
-      <select class="form-select" name="p5p8" id="p5p8" [(ngModel)]="LecturaCuantitativa.Cho">
+      <select class="form-select" name="p5p8" id="p5p8" [(ngModel)]="LecturaCuantitativa.Cho"
+        [disabled]="LecturaCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.QuestionBetween1to10" [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -127,7 +136,8 @@
       <h6>Bleja: </h6>
     </div>
     <div class="col-md-4">
-      <select class="form-select" name="p5p9" id="p5p9" [(ngModel)]="LecturaCuantitativa.Bleja">
+      <select class="form-select" name="p5p9" id="p5p9" [(ngModel)]="LecturaCuantitativa.Bleja"
+        [disabled]="LecturaCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.QuestionBetween1to10 " [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -141,7 +151,8 @@
       <h6>Tudipro: </h6>
     </div>
     <div class="col-md-4 ">
-      <select class="form-select" name="p5p10" id="p5p10" [(ngModel)]="LecturaCuantitativa.Tudipro">
+      <select class="form-select" name="p5p10" id="p5p10" [(ngModel)]="LecturaCuantitativa.Tudipro"
+        [disabled]="LecturaCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.QuestionBetween1to10 " [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -158,7 +169,8 @@
       <h6>Saque la lengua y salude con la mano: </h6>
     </div>
     <div class="col-md-4">
-      <select class="form-select" name="p5p11" id="p5p11" [(ngModel)]="LecturaCuantitativa.SaqueLaMano">
+      <select class="form-select" name="p5p11" id="p5p11" [(ngModel)]="LecturaCuantitativa.SaqueLaMano"
+        [disabled]="LecturaCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.Question11 " [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
@@ -167,27 +179,175 @@
       <span>Puntuacion:{{LecturaCuantitativa.SaqueLaMano}}</span>
     </div>
   </div>
-  <div class="row mt-1">
+  <!--Total and qealitative-->
+   <div class="row mt-1">
     <div class="col-md-6">
     </div>
     <div class="col-md-4 ">
-      <button class="btn btn-secondary">Agregar Observaciones Cualitativas</button>
+      <button class="btn btn-secondary" (click)="open(cualitat)">Agregar Observaciones Cualitativas</button>
     </div>
     <div class="col-md-2 ">
       <span>Total: {{LecturaCuantitativa.SubTotal}}</span>
     </div>
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-md-4">
-      <button class="btn btn-success">Anterior</button>
-    </div>
-    <div class="col-md-4 text-center">
-      <button class="btn btn-danger">Suspender Paso del Protocolo</button>
-    </div>
-    <div class="col-md-4 text-right">
-      <button class="btn btn-success">Siguiente</button>
-    </div>
-  </div>
-
 </div>
+<!--footer button-->
+<hr>
+<div class="row">
+  <div class="col-md-4">
+    <button class="btn btn-success">Anterior</button>
+  </div>
+  <div class="col-md-4 text-center">
+    <button class="btn btn-danger" [disabled]="LecturaCuantitativa.WasSuspended" (click)="open(suspended)">Suspender
+      Paso del Protocolo</button>
+  </div>
+  <div class="col-md-4 text-right">
+    <button class="btn btn-success">Siguiente</button>
+  </div>
+</div>
+</div>
+
+
+
+<!--Pop Up Qualitative Options-->
+<ng-template #cualitat let-modal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4>Observaciones Cualitativas de la Comprension Auditiva</h4>
+    <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-md-3"><label class="">Lectura de no palabras</label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="LecturaNoPalabras" id="LecturaNoPalabras"
+          [(ngModel)]="LecturaCualitativa.LecturaDeNoPalabras">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Normal</option>
+          <option [ngValue]="1">Alterada</option>
+        </select>
+      </div>
+      <div class="col-md-6" *ngIf="LecturaCualitativa.LecturaDeNoPalabras ==1">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="LNP1" [(ngModel)]="LecturaCualitativa.LNPLexicalizacionDeNoPalabras">
+          <label class="form-check-label" for="LNP1">Omisión de parte</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="LNP2" [(ngModel)]="LecturaCualitativa.LNPNoPalabrasErroneas">
+          <label class="form-check-label" for="LNP2">Sustitución de parte</label>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-3"><label class="">Lectura de palabras</label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="LecturaPalabras" id="LecturaPalabras"
+          [(ngModel)]="LecturaCualitativa.LecturaDePalabras">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Normal</option>
+          <option [ngValue]="1">Alterada</option>
+        </select>
+      </div>
+      <div class="col-md-6" *ngIf="LecturaCualitativa.LecturaDePalabras ==1">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="LP1" [(ngModel)]="LecturaCualitativa.LPParalexiasFormales">
+          <label class="form-check-label" for="LP1">Paralexias formales</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="LP2" [(ngModel)]="LecturaCualitativa.LPParalexiasMorfologicas">
+          <label class="form-check-label" for="LP2">Paralexias morfológicas</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="LP3" [(ngModel)]="LecturaCualitativa.LPParalexiasSemanticas">
+          <label class="form-check-label" for="LP3">Paralexias semánticas</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="LP4" [(ngModel)]="LecturaCualitativa.LPSustitucionPorNoPalabras">
+          <label class="form-check-label" for="LP4">Sustitución por no palabras</label>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-3"><label class="">Emparejamiento palabra escrita-dibujo </label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="EPED" id="EPED"
+          [(ngModel)]="LecturaCualitativa.EmparejamientoPalabraEscritaDibujo">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Normal</option>
+          <option [ngValue]="1">Alterada</option>
+        </select>
+      </div>
+      <div class="col-md-6" *ngIf="LecturaCualitativa.EmparejamientoPalabraEscritaDibujo ==1">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="EPEDE1" [(ngModel)]="LecturaCualitativa.EPEDErroresFormales">
+          <label class="form-check-label" for="EPEDE1">Errores formales</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="EPEDE2" [(ngModel)]="LecturaCualitativa.EPEDErroresSemanticos">
+          <label class="form-check-label" for="EPEDE2">Errores semánticos</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="EPEDE3" [(ngModel)]="LecturaCualitativa.EPEDErroresNoRelacionados">
+          <label class="form-check-label" for="EPEDE3">Errores no relacionados</label>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-3"><label class="">Comprensión de comando escrito </label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="CCE" id="CCE" [(ngModel)]="LecturaCualitativa.ComprensionDeComandoEscrito">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Normal</option>
+          <option [ngValue]="1">Alterada</option>
+        </select>
+      </div>
+      <div class="col-md-6" *ngIf="LecturaCualitativa.ComprensionDeComandoEscrito ==1">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="CCE1" [(ngModel)]="LecturaCualitativa.CDCEOmisionDeParte">
+          <label class="form-check-label" for="CCE1">Omisión de parte</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="CCE2" [(ngModel)]="LecturaCualitativa.CDCESustitucionDeParte">
+          <label class="form-check-label" for="CCE2">Sustitución de parte</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="CCE3" [(ngModel)]="LecturaCualitativa.CDCEAlteracionDelOrden">
+          <label class="form-check-label" for="CCE3">Alteración del orden</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col-md-6 d-grid gap-2">
+        <button class="btn btn-success" type="button" (click)="saved()" (click)="modal.close()">Guardar</button>
+      </div>
+      <div class="col-md-6 d-grid gap-2">
+        <button type="button" class="btn btn-danger" (click)="cancel()" (click)="modal.close()">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<!--Pop Up Suspend step-->
+<ng-template #suspended let-modal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4>¿Esta seguro que desea suspender este paso del protocolo?</h4>
+    <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col-md-6 d-grid gap-2">
+        <button class="btn btn-success" type="button" (click)="suspend()" (click)="modal.close()">Suspender</button>
+      </div>
+      <div class="col-md-6 d-grid gap-2">
+        <button type="button" class="btn btn-danger" (click)="modal.close()">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>

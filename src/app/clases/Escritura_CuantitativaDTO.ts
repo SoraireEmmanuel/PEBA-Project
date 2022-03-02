@@ -11,6 +11,7 @@ export class Escritura_CuantitativaDTO{
   ZETA:number=null;
   isComplete:boolean = null;
   SubTotal:number=0;
+  WasSuspended:boolean=false;
   constructor(){
 
   }
