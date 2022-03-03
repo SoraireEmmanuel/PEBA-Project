@@ -1,15 +1,16 @@
-<div class="container-sm mt-2 bg-warning bg-gradient text-black border shadow-lg p-3 mb-5 bg-body rounded">
+<div class="container-sm mt-2 bg-success bg-gradient text-black border shadow-lg p-3 mb-5 bg-body rounded">
   <div class="text-center">
-    <h2>Evaluacion del Lenguaje - Resultado</h2>
+    <h2>Evaluacion del Lenguaje - Resultados</h2>
   </div>
-  <hr>
+  <h5 class="mb-0">Resumen de puntaje por Tarea</h5>
+  <hr class="mt-0">
   <div>
-    <table class="table  table-secondary table-sm table-striped table-bordered ">
+    <table class="table  table-secondary table-sm table-striped table-bordered mb-0">
       <thead>
         <tr class="text-white">
           <th class="bg-secondary" scope="col">Tarea</th>
           <th class="bg-secondary" scope="col">Puntaje</th>
-          <th class="bg-secondary" scope="col">Nivel Funcional</th>
+          <th class="bg-secondary" scope="col">Valoracion</th>
         </tr>
       </thead>
       <tbody>
@@ -101,15 +102,53 @@
         </tr>
       </tfoot>
     </table>
-    <div class="mt-1">
+    <span style="color: rgba(255, 255, 255, 0.795);" class="mt-0">* 6: Conservado; 5 alteración leve; 3 y 4 alteración moderada; 1 y 2 alteración severa.</span>
+    <h5 class="mb-0 mt-4">Resumen de Observaciones Cualitativas</h5>
+    <hr class="mt-0">
+    <table class="table  table-secondary table-sm table-striped table-bordered mb-0 ">
+      <thead>
+        <tr class="text-white">
+          <th class="bg-secondary" scope="col">Tarea</th>
+          <th class="bg-secondary" scope="col">Observaciones Cualitativas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Comprensión auditiva:</th>
+          <td>{{nivelFuncionalPorPaso[0]}}/6</td>
+        </tr>
+        <tr>
+          <th scope="row">Expresión oral:</th>
+          <td>{{nivelFuncionalPorPaso[1]}}/6</td>
+        </tr>
+        <tr>
+          <th scope="row">Repetición: </th>
+          <td>tp3/6</td>
+        </tr>
+        <tr>
+          <th scope="row">Denominación: </th>
+          <td>tp4/6</td>
+        </tr>
+        <tr>
+          <th scope="row">Lectura: </th>
+          <td>tp5/6</td>
+        </tr>
+        <tr>
+          <th scope="row">Escritura:</th>
+          <td>tp6/6</td>
+        </tr>
+      </tbody>
+    </table>
+    <h5 class="mb-0">Conclusiones y comentarios</h5>
+    <hr class="mt-0">
+    <div class="mt-1 mb-4">
       <div class="form-floating">
         <textarea class="form-control" id="conclusiones" style="height: 70px" name="conclusiones"
           placeholder="Conclusiones y recomendaciones"></textarea>
-        <label for="conclusiones">Conclusiones y recomendaciones</label>
+        <label for="conclusiones">Introduzca sus Conclusiones y Comentarios</label>
       </div>
     </div>
   </div>
-  <hr>
   <div class="row mt-1">
     <div class="col-md-6">
       <button class="btn btn-success" (click)="back()" >Anterior</button>

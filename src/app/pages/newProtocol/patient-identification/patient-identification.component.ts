@@ -12,7 +12,8 @@ export class PatientIdentificationComponent implements OnInit {
   @Input() dataEntry: number;
   @Output() event = new EventEmitter<number>();
   PatientIdentification: PatientIdentification = new PatientIdentification();
-  PatientDate: patient = new patient();
+  patient:patient=new patient();
+
   constructor() {
 
   }

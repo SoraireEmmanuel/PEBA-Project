@@ -1,56 +1,60 @@
-<div class="alert alert-info alert-dismissible fade show" role="alert">
-  <strong>Ayuda: </strong> bla bla bla bla bla.
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-
-
-
-<div class="container-sm bg-success bg-gradient mt-3 text-white border text-center shadow-lg p-3 mb-5 bg-body rounded">
-  <h3>Registrar Nuevo Paciente</h3>
+<div class="container-sm bg-success bg-gradient mt-3 border shadow-lg p-3 mb-5 bg-body rounded">
+  <div class="text-center">
+    <h3>Registrar Nuevo Paciente</h3>
+  </div>
   <hr />
-  <form class="row needs-validation" autocomplete="off" [formGroup]="forma" (ngSubmit)="crearPaciente()">
-    <div class="form-floating col-md-6">
-      <input class="form-control" type="text" placeholder="Ej: MES" name="iniciales" formControlName="iniciales"
-        for="iniciales" />
-      <label for="iniciales" class="lb"> Iniciales del Paciente</label>
-    </div>
-    <div class="col-md-6 form-floating">
-      <input class="form-control" type="date" name="nacimiento" formControlName="nacimiento" for="nacimiento" />
-      <label for="nacimiento" class="lb">Fecha de Nacimiento</label>
+    <div class="row  ">
+    <div class="col-auto">
+      <label for="iniciales" class="form-label "> Iniciales del Paciente</label>
+      <input class="form-control" type="text" placeholder="Ej: MES" name="iniciales" id="iniciales" [(ngModel)]="patient.initials"/>
+      </div>
+    <div class="col-auto ">
+      <label for="nacimiento" class="form-label ">Fecha de Nacimiento</label>
+      <input class="form-control" type="date" name="nacimiento" id="nacimiento" [(ngModel)]="patient.brithDate"/>
     </div >
-
-    <div class="col-md-6 form-floating mt-3">
-      <select class="form-select" name="lengua" formControlName="lengua" for="lengua">
-        <option selected disabled>Seleccione una opcion</option>
-        <option *ngFor="let leng of lengua" [value]="leng">{{ leng }}</option>
+    <div class="col-auto" >
+      <label for="lengua" class="form-label ">Lengua Materna </label>
+      <select class="form-select" name="lengua"  id="lengua" [(ngModel)]="patient.nativeLanguage">
+        <option [selected]="true" [disabled]="true" [ngValue]="null" >Seleccione una opcion</option>
+        <option *ngFor="let option of registerOptions.lengua" [ngValue]="option.value">{{ option.description }}</option>
       </select>
-      <label for="lengua" class="lb">Lengua Materna: </label>
     </div>
-    <div class="form-floating col-md-6 mt-3" *ngIf="forma.value.lengua=='Otro (Especificar)'">
-      <input class="form-control" type="text" placeholder="¿Cual?" name="lenguaotra" formControlName="lenguaotra"
-        for="lenguaotra" />
-      <label for="lenguaotra" class="lb"> ¿Cual?</label>
+    <div class="col-auto"  >
+      <label for="lenguaotra" class=" form-label"> ¿Cual?</label>
+      <input class="form-control" type="text" placeholder="¿Cual?" name="lenguaotra" [(ngModel)]="patient.otherLenguage"
+        id="lenguaotra" [disabled]="patient.nativeLanguage!=3">
     </div>
-
-    <div class="col-md-6 form-floating mt-3">
-      <select class="form-select" name="dominancia" formControlName="dominancia" for="dominancia">
-        <option selected disabled>Seleccione una opcion</option>
-        <option *ngFor="let dom of dominancia" [value]="dom">{{ dom }}</option>
+    <div class="col-auto" >
+      <label for="bilingue" class="form-label ">¿Es bilingüe?</label>
+      <select class="form-select" name="bilingue" id="biligue" [(ngModel)]="patient.isBilingual">
+        <option [selected]="true" [disabled]="true" [ngValue]="null">Seleccione una opcion</option>
+        <option *ngFor="let option of registerOptions.bilingue" [ngValue]="option.value">{{option.description}}</option>
       </select>
-      <label for="dominancia" class="lb">Dominancia Manual: </label>
     </div>
-    <div class="col-md-6 form-floating mt-3">
-      <select class="form-select" name="estudios" formControlName="estudios" for="estudios">
-        <option selected disabled>Seleccione una opcion</option>
-        <option *ngFor="let est of estudios" [value]="est">{{ est }}</option>
+    <div class="col-auto"  >
+      <label for="bilingueCual" class=" form-label"> ¿Idioma?</label>
+      <input class="form-control" type="text" placeholder="¿Idioma?" name="bilingueCual" [(ngModel)]="patient.bilingualLanguage"
+        id="bilingueCual" [disabled]="patient.isBilingual!=1"/>
+    </div>
+    <div class="col-auto">
+      <label for="dominancia" class="form-label ">Dominancia Manual: </label>
+      <select class="form-select" name="dominancia" id="dominancia" [(ngModel)]="patient.handDominance">
+        <option [selected]="true" [disabled]="true" [ngValue]="null">Seleccione una opcion</option>
+        <option *ngFor="let option of registerOptions.dominancia" [ngValue]="option.value">{{ option.description }}</option>
       </select>
-      <label for="estudios" class="lb">Estudios: </label>
     </div>
-    <div class="col-12 mt-4">
+    <div class="col-auto">
+      <label for="estudios" class=" form-label">Estudios: </label>
+      <select class="form-select" name="estudios" id="estudios" [(ngModel)]="patient.studies">
+        <option [selected]="true" [disabled]="true" [ngValue]="null">Seleccione una opcion</option>
+        <option *ngFor="let option of registerOptions.estudios" [ngValue]="option.value" >{{ option.description }}</option>
+      </select>
+    </div>
+    <div class="col-12 mt-4 text-center ">
       <button type="submit" class="btn btn-outline-light">
         Registrar Paciente
       </button>
     </div>
-  </form>
+  </div>
 </div>
-{{forma.value | json}}
+

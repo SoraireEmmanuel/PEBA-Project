@@ -1,6 +1,6 @@
 export class PatientIdentification{
   Id_Paciente:number=0;
-  FechaProtocolo:Date=new Date();
+  FechaProtocolo:string='';
   ResumenClinico:string='';
   Total:number=0;
   ConclusionesRecomendaciones:string='';
