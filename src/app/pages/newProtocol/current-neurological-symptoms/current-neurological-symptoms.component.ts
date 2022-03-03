@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NeurologicalSymptomsDropdownOption } from 'src/app/clases/NeurologicalSymptomsDropdownOption';
 import { SintomasNeurologicosDTO } from 'src/app/clases/SintomasNeurologicosDTO';
 
@@ -8,6 +8,7 @@ import { SintomasNeurologicosDTO } from 'src/app/clases/SintomasNeurologicosDTO'
   styleUrls: ['./current-neurological-symptoms.component.css']
 })
 export class CurrentNeurologicalSymptomsComponent implements OnInit {
+  @Output() event = new EventEmitter<number>();
   symptoms:SintomasNeurologicosDTO=new SintomasNeurologicosDTO();
   dropdownOptions:NeurologicalSymptomsDropdownOption=new NeurologicalSymptomsDropdownOption;
   constructor() { }
@@ -16,5 +17,11 @@ export class CurrentNeurologicalSymptomsComponent implements OnInit {
   }
 alerta(){
   console.log(this.symptoms.Alerta)
+}
+next() {
+  this.event.emit(1)
+}
+back() {
+  this.event.emit(-1)
 }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Lectura_CualitativaDTO } from 'src/app/clases/Lectura_CualitativaDTO';
 import { Lectura_CuantitativaDTO } from 'src/app/clases/Lectura_CuantitativaDTO';
 import { QuestionStep5 } from 'src/app/clases/QuestionStep5';
@@ -10,6 +10,7 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./reading.component.css']
 })
 export class ReadingComponent implements OnInit {
+  @Output() event = new EventEmitter<number>();
 DropdownOptions:QuestionStep5=new QuestionStep5();
 LecturaCuantitativa:Lectura_CuantitativaDTO=new Lectura_CuantitativaDTO();
 LecturaCualitativa:Lectura_CualitativaDTO=new Lectura_CualitativaDTO();
@@ -82,5 +83,10 @@ CopyLecturaCualitativa:Lectura_CualitativaDTO=new Lectura_CualitativaDTO();
 
   }
 
-
+  next() {
+    this.event.emit(1)
+  }
+  back() {
+    this.event.emit(-1)
+  }
 }

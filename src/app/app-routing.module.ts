@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: 'registerNewPatient', component:RegisterNewPatientsComponent},
   {path: 'newProtocol', component:NewProtocolComponent},
   {path: 'historical', component:HistoricalComponent},
-  {path: 'register', component:RegisterComponent},
+  //{path: 'register', component:RegisterComponent},
   {path: 'home', component:HomeComponent },
   {path: '**', pathMatch: 'full', redirectTo:'home'}
 ];

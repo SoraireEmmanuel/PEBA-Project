@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Denominacion_CualitativaDTO } from 'src/app/clases/Denominacion_CualitativaDTO';
 import { Denominacion_CuantitativaDTO } from 'src/app/clases/Denominacion_CuantitativaDTO';
 import { QuestionStep4 } from 'src/app/clases/QuestionStep4';
@@ -10,6 +10,7 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./denomination.component.css']
 })
 export class DenominationComponent implements OnInit {
+  @Output() event = new EventEmitter<number>();
 DenominacionCuantitativa:Denominacion_CuantitativaDTO=new Denominacion_CuantitativaDTO();
 DropdownOptions:QuestionStep4=new QuestionStep4();
 DenominacionCualitativa:Denominacion_CualitativaDTO= new Denominacion_CualitativaDTO();
@@ -64,5 +65,12 @@ CopyDenominacionCualitativa:Denominacion_CualitativaDTO= new Denominacion_Cualit
     this.DenominacionCualitativa.PLParafasiasSemanticas=this.CopyDenominacionCualitativa.PLParafasiasSemanticas;
     this.DenominacionCualitativa.PLPerseveraciones=this.CopyDenominacionCualitativa.PLPerseveraciones;
     this.DenominacionCualitativa.ProcesamientoLexico=this.CopyDenominacionCualitativa.ProcesamientoLexico;
+  }
+
+  next() {
+    this.event.emit(1)
+  }
+  back() {
+    this.event.emit(-1)
   }
 }

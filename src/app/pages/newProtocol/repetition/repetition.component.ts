@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { QuestionsStep3 } from 'src/app/clases/QuestionsStep3';
 import { Repeticion_CuantitativaDTO } from 'src/app/clases/Repeticion_CuantitativaDTO';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -10,6 +10,7 @@ import { Repeticion_CualitativaDTO } from 'src/app/clases/Repeticion_Cualitativa
   styleUrls: ['./repetition.component.css']
 })
 export class RepetitionComponent implements OnInit {
+  @Output() event = new EventEmitter<number>();
   DropdownOptions:QuestionsStep3=new QuestionsStep3();
   RepeticionCuantitativa:Repeticion_CuantitativaDTO=new Repeticion_CuantitativaDTO();
   RepeticionCualitativa:Repeticion_CualitativaDTO=new Repeticion_CualitativaDTO();
@@ -70,4 +71,10 @@ export class RepetitionComponent implements OnInit {
 
   }
 
+next() {
+  this.event.emit(1)
+}
+back() {
+  this.event.emit(-1)
+}
 }

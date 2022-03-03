@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProtocoloDTO } from 'src/app/clases/ProtocoloDTO';
 
+
 @Component({
   selector: 'app-new-protocol',
   templateUrl: './new-protocol.component.html',
@@ -8,11 +9,20 @@ import { ProtocoloDTO } from 'src/app/clases/ProtocoloDTO';
 })
 export class NewProtocolComponent implements OnInit {
   Protocol:ProtocoloDTO;
-  viewComponent:number;
+  Progress:number=0;
   constructor() {
-    this.viewComponent=1;
-  }
 
+  }
   ngOnInit(): void {
   }
+
+progressEvent(event:number){
+console.log(event)
+this.Progress=this.Progress+event;
+window.scroll({
+  top: 0,
+  left: 0,
+  behavior: 'smooth',
+});
+}
 }

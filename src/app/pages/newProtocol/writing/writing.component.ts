@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Escritura_CualitativaDTO } from 'src/app/clases/Escritura_CualitativaDTO';
 import { Escritura_CuantitativaDTO } from 'src/app/clases/Escritura_CuantitativaDTO';
 import { QuestionStep6 } from 'src/app/clases/QuestionStep6';
@@ -10,6 +10,7 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./writing.component.css']
 })
 export class WritingComponent implements OnInit {
+  @Output() event = new EventEmitter<number>();
 DropdownOptions:QuestionStep6= new QuestionStep6();
 EscrituraCuantitativa:Escritura_CuantitativaDTO=new Escritura_CuantitativaDTO();
 EscruturaCualitativa:Escritura_CualitativaDTO=new Escritura_CualitativaDTO();
@@ -74,5 +75,12 @@ CopyEscruturaCualitativa:Escritura_CualitativaDTO=new Escritura_CualitativaDTO()
     this.EscruturaCualitativa.OParagrafiasMorfologicas=this.CopyEscruturaCualitativa.OParagrafiasMorfologicas;
     this.EscruturaCualitativa.OParagrafiasSemanticas=this.CopyEscruturaCualitativa.OParagrafiasSemanticas;
     this.EscruturaCualitativa.Ortografia=this.CopyEscruturaCualitativa.Ortografia;
+  }
+
+  next() {
+    this.event.emit(1)
+  }
+  back() {
+    this.event.emit(-1)
   }
 }

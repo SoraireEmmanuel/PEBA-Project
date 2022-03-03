@@ -161,13 +161,13 @@
   <!--footer button-->
   <div class="row">
     <div class="col-md-4">
-      <button class="btn btn-success" >Anterior</button>
+      <button class="btn btn-success" (click)="back()" >Anterior</button>
     </div>
     <div class="col-md-4 text-center">
       <button class="btn btn-danger" (click)="open(suspended)" [disabled]="RepeticionCuantitativa.WasSuspended">Suspender Paso del Protocolo</button>
     </div>
     <div class="col-md-4 text-right" >
-      <button class="btn btn-success" >Siguiente</button>
+      <button class="btn btn-success" (click)="next()" >Siguiente</button>
     </div>
   </div>
 </div>

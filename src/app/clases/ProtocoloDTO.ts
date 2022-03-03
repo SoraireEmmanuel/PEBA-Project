@@ -1,3 +1,4 @@
+
 import { ComprensionAuditiva_CualitativaDTO } from "./ComprensionAuditiva_CualitativaDTO";
 import { ComprensionAuditiva_CuantitativaDTO } from "./ComprensionAuditiva_CuantitativaDTO";
 import { Denominacion_CualitativaDTO } from "./Denominacion_CualitativaDTO";

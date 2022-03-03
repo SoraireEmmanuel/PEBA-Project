@@ -1,156 +1,90 @@
-<button
-  type="button"
-  class="btn btn-outline-danger ms-2"
-  (click)="open(register)"
->
+<button type="button" class="btn btn-outline-danger ms-2" (click)="open(register)">
   Registrarse
 </button>
 <ng-template #register let-modal>
   <div class="modal-header">
     <h4>Formulario de Registro del Profesional</h4>
-    <button
-      class="close"
-      aria-label="close"
-      type="button"
-      (click)="modal.dismiss()"
-    >
+    <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-    <form class="row g-3 needs-validation" autocomplete="off" (ngSubmit)="crearCuenta()" [formGroup]="forma" >
+    <div class="row">
       <div class="col-md-12">
         <h6>Datos Personales</h6>
       </div>
-      <div class="col-md-3">
+    </div>
+    <div class="row">
+      <div class="col-md-6">
         <label for="apellido" class="form-label">Apellido</label>
-        <input
-          #nombre
-          type="text"
-          class="form-control"
-          name="apellido"
-          placeholder="Apellido"
-          formControlName="apellido"
-        />
-        <div class="alert alert-danger pt-1 pb-1" *ngIf="apellidoValido()">
-          *Este campo es obligatorio, el nombre tiene que tener mas de dos
-          letras.
-        </div>
+        <input type="text" class="form-control" name="apellido" placeholder="Apellido" [(ngModel)]="register1.apellido" />
       </div>
-      <div class="col-md-3">
+      <div class="col-md-6">
         <label for="nombre" class="form-label">Nombre</label>
-        <input
-          type="text"
-          class="form-control"
-          name="nombre"
-          placeholder="Nombre"
-          formControlName="nombre"
-        />
-        <div class="alert alert-danger pt-1 pb-1" *ngIf="nombreValido()">
-          *Este campo es obligatorio, el apellido tiene que tener mas de dos
-          letras.
-        </div>
+        <input type="text" class="form-control" name="nombre" placeholder="Nombre" [(ngModel)]="register1.nombre"/>
       </div>
-      <div class="col-md-3">
-        <label for="profesion" class="form-label"
-          >Profesion</label
-        >
-        <select
-          class="form-select"
-          name="profesion"
-          formControlName="profesion"
-        >
-        <option *ngFor="let prof of profesion" [value]=prof>{{prof}}</option></select>
-        <div class="alert alert-danger pt-1 pb-1" *ngIf="profesionValido()">
-          *Este campo es obligatorio, debe seleccionar una profesion.
-        </div>
+    </div>
+    <div class="row " >
+      <div class="col-md-4">
+        <label for="profesion" class="form-label">Profesion</label>
+        <select class="form-select" name="profesion" [(ngModel)]="register1.profesion">
+          <option [ngValue]=null disabled selected>Seleccione una Profesion</option>
+          <option *ngFor="let prof of profesion" [ngValue]=prof.value>{{prof.description}}</option>
+        </select>
       </div>
-      <div class="col-md-3">
-        <label for="matricula" class="form-label">Matricula</label>
-        <input
-          type="text"
-          class="form-control"
-          name="matricula"
-          formControlName="matricula"
-          placeholder="Matricula"
-        />
-        <div class="alert alert-danger pt-1 pb-1" *ngIf="matriculaValido()">
-          *Este campo es obligatorio, debe ingresar su matricula.
-        </div>
+      <div class="col-md-4">
+        <label for="matricula" class="form-label">¿Cual?</label>
+        <input type="text" class="form-control" name="Otro" placeholder="¿Cual?" [disabled]="register1.profesion!=4"
+        [(ngModel)]="register1.cual"/>
       </div>
+      <div class="col-md-4">
+        <label for="matricula" class="form-label">Matricula (opcional)</label>
+        <input type="text" class="form-control" name="matricula" placeholder="Matricula" [(ngModel)]="register1.matricula" />
+      </div>
+    </div>
+    <div class="row mt-4">
       <div class="col-md-12">
         <h6>Datos de la Cuenta</h6>
       </div>
+    </div>
+    <div class="row">
       <div class="col-md-4">
         <label for="correo" class="form-label">Email</label>
-        <input
-          class="form-control"
-          type="email"
-          name="correo"
-          formControlName="correo"
-          placeholder="Correo Electronico"
-        />
-        <div class="alert alert-danger pt-1 pb-1" *ngIf="mailValido()">
-          *Este campo es obligatorio, formato de mail no aceptado.
-        </div>
+        <input class="form-control" type="email" name="correo" placeholder="Correo Electronico" [(ngModel)]="register1.mail" />
       </div>
       <div class="col-md-4">
         <label for="password1" class="form-label">Contraseña</label>
-        <input
-          class="form-control"
-          name="password1"
-          formControlName="password1"
-          placeholder="Contraseña"
-        />
-        <div class="alert alert-danger pt-1 pb-1" *ngIf="password1Valido()">
-          *Este campo es obligatorio. La contraseña tiene que tener mas de 6
-          caracteres, y debe incluir matusculas, minusculas y numeros.
-        </div>
+        <input class="form-control" name="password1" placeholder="Contraseña" [(ngModel)]="register1.password1" />
       </div>
       <div class="col-md-4">
-        <label for="password2" class="form-label"
-          >Repita la Contraseña</label
-        >
-        <input
-          type="text"
-          class="form-control"
-          name="password2"
-          formControlName="password2"
-          placeholder="Repita la Contraseña"
-        />
-        <div class="alert alert-danger pt-1 pb-1" *ngIf="password2Valido()">
-          *Este campo es obligatorio. Las contraseñas no coinciden.
-        </div>
+        <label for="password2" class="form-label">Repita la Contraseña</label>
+        <input type="text" class="form-control" name="password2"  placeholder="Repita la Contraseña" [(ngModel)]="register1.password2"/>
       </div>
-      <div class="col-md-12 d-flex align-items-center">
+    </div>
+    <div class="row">
+      <div class="col-md-12 mt-5 d-flex align-items-center">
         <div class="form-check">
-          <input
-          class="form-check-input"
-          type="checkbox"
-          name="tyc"
-          formControlName="tyc"
-          />
+          <input class="form-check-input" type="checkbox" name="tyc"
+          [(ngModel)]="register1.terminosycondiciones"/>
           <label class="form-check-label" for="tyc">
             Estoy de acuerdo con los
-            <a (click)="open2()" class="termsConditions"
-              >Terminos y Condiciones</a
-            >
+            <a (click)="open2()" class="termsConditions">Terminos y Condiciones</a>
           </label>
-          <div class="alert alert-danger pt-1 pb-1" *ngIf="terminosValido()">
-            *Tiene que aceptar los terminos y condiciones.
-          </div>
         </div>
       </div>
-      <div class="col-md-6 d-grid gap-2">
-        <button class="btn btn-success" type="submit">Registrar</button>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col-md-6 mt-2" >
+        <button class="btn btn-success" type="button">Registrar</button>
       </div>
-      <div class="col-md-6 d-grid gap-2">
+      <div class="col-md-6 mt-2">
         <button type="button" class="btn btn-danger" (click)="modal.close()">
           Cancelar
         </button>
       </div>
-    </form>
+    </div>
   </div>
-  <div class="modal-footer"></div>
-</ng-template>
 
+</ng-template>

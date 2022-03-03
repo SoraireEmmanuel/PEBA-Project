@@ -15,7 +15,7 @@
       <tbody>
         <tr>
           <th scope="row">Comprensión auditiva</th>
-          <td>tp1/6</td>
+          <td>{{nivelFuncionalPorPaso[0]}}/6</td>
           <td>
             <div [ngSwitch]="nivelFuncionalPorPaso[0]">
               <span *ngSwitchCase=6>{{nivelesFuncionales[0]}}</span>
@@ -112,7 +112,7 @@
   <hr>
   <div class="row mt-1">
     <div class="col-md-6">
-      <button class="btn btn-success">Anterior</button>
+      <button class="btn btn-success" (click)="back()" >Anterior</button>
     </div>
     <div class="col-md-6 text-right">
       <button class="btn btn-success me-1">Finalizar Protocolo</button>

@@ -1,19 +1,15 @@
 export class register{
-  nombre:string='';
-  apellido:string='';
-  profesion:string='';
-  matricula:string='';
-  password:string='';
-  mail:string='';
+  nombre:string=null;
+  apellido:string=null;
+  profesion:number=null;
+  cual:string=null;
+  matricula:string=null;
+  password1:string=null;
+  password2:string=null;
+  mail:string=null;
   terminosycondiciones:boolean=false;
 
   contrustor(){
-    this.nombre='';
-    this.apellido='';
-    this.profesion='';
-    this.matricula='';
-    this.password='';
-    this.mail='';
-    this.terminosycondiciones=false;
+
   }
 }

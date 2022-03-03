@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ComprensionAuditiva_CuantitativaDTO } from 'src/app/clases/ComprensionAuditiva_CuantitativaDTO';
 import { QuestionsStep1 } from 'src/app/clases/QuestionsStep1';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap'
@@ -10,6 +10,7 @@ import { ComprensionAuditiva_CualitativaDTO } from 'src/app/clases/ComprensionAu
   styleUrls: ['./auditive-comprehension.component.css']
 })
 export class AuditiveComprehensionComponent implements OnInit {
+  @Output() event = new EventEmitter<number>();
   QuestionOptions:QuestionsStep1=new QuestionsStep1();
   ComprensionAuditivaCuantitativa:ComprensionAuditiva_CuantitativaDTO= new ComprensionAuditiva_CuantitativaDTO();
   ComprensionAuditivaCualitativa:ComprensionAuditiva_CualitativaDTO=new ComprensionAuditiva_CualitativaDTO();
@@ -51,7 +52,11 @@ export class AuditiveComprehensionComponent implements OnInit {
     this.ComprensionAuditivaCualitativa.POErroresNoRelacionados = this.CopyComprensionAuditivaCaulitativa.POErroresNoRelacionados;
     this.ComprensionAuditivaCualitativa.POErroresSemanticos = this.CopyComprensionAuditivaCaulitativa.POErroresSemanticos;
     this.ComprensionAuditivaCualitativa.PalabraOidaAlterada = this.CopyComprensionAuditivaCaulitativa.PalabraOidaAlterada;
-
   }
-
+  next() {
+    this.event.emit(1)
+  }
+  back() {
+    this.event.emit(-1)
+  }
 }

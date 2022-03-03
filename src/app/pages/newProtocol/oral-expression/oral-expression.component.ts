@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ExpresionOral_CualitativaDTO } from 'src/app/clases/ExpresionOral_CualitativaDTO';
 import { ExpresionOral_CuantitativaDTO } from 'src/app/clases/ExpresionOral_CuantitativaDTO';
 import { QuestionsStep2 } from 'src/app/clases/QuestionsStep2';
@@ -10,6 +10,7 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./oral-expression.component.css']
 })
 export class OralExpressionComponent implements OnInit {
+@Output() event = new EventEmitter<number>();
 DropdownOptions:QuestionsStep2=new QuestionsStep2();
 ExpresionOral:ExpresionOral_CuantitativaDTO=new ExpresionOral_CuantitativaDTO();
 ExpresionOralCualitativa:ExpresionOral_CualitativaDTO=new ExpresionOral_CualitativaDTO();
@@ -62,5 +63,12 @@ CopyExpresionOralCualitativa:ExpresionOral_CualitativaDTO=new ExpresionOral_Cual
     this.ExpresionOralCualitativa.ProcesamientoSintaxtico= this.CopyExpresionOralCualitativa.ProcesamientoSintaxtico;
     this.ExpresionOralCualitativa.Prosodia= this.CopyExpresionOralCualitativa.Prosodia;
 
+  }
+
+  next() {
+    this.event.emit(1)
+  }
+  back() {
+    this.event.emit(-1)
   }
 }
