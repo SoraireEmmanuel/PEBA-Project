@@ -56,6 +56,7 @@ console.log(this.register1)
       this.register1.terminosycondiciones=res;
       console.log(this.register1.terminosycondiciones)
     });
+
   }
 //Modal Function
 open(register){

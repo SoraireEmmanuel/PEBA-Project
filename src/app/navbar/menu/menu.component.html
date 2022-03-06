@@ -1,12 +1,11 @@
 <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
   <li class="nav-item">
-
-    <a class="nav-link active" aria-current="page" href="#"> <i class="fa fa-home fa-1x"></i> Mis Pacientes</a>
+    <a class="nav-link" style="cursor:pointer;" aria-current="page"  (click)="navigateMisPacientes()" [ngClass]="{'active':active==0}"  >
+      <i class="fa fa-home fa-1x"></i> Mis Pacientes</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" aria-current="page" href="#"><i class="fa fa-user-injured fa-1x"></i> Registrar Nuevo Paciente</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" aria-current="page" href="#"><i class="fa fa-chalkboard-teacher fa-1x"></i> Nuevo Protocolo</a>
+    <a class="nav-link" style="cursor:pointer;" aria-current="page" (click)="navigateResgitrarNuevoPaciente()" [ngClass]="{'active':active==1}" >
+      <i class="fa fa-user-injured fa-1x"></i> Registrar Nuevo Paciente</a>
   </li>
 </ul>
+{{active}}

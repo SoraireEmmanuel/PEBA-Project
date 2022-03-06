@@ -7,19 +7,25 @@ import { ProtocoloDTO } from 'src/app/clases/ProtocoloDTO';
   styleUrls: ['./test-summary.component.css']
 })
 export class TestSummaryComponent implements OnInit {
-  @Input() dataEntry:ProtocoloDTO;
+  @Input() protocol:ProtocoloDTO;
   @Output() event = new EventEmitter<number>();
-nivelesFuncionales:string[]=['Conservado','Alteracion Leve','Alteracion Moderada','Alteracion Severa']
-nivelFuncionalPorPaso:string[]=['2.2','','','','','']
+  @Output() sendProtocol = new EventEmitter<ProtocoloDTO>();
+
+  ProtocolSummary:ProtocoloDTO=new ProtocoloDTO();
+  nivelesFuncionales:string[]=['Conservado','Alteracion Leve','Alteracion Moderada','Alteracion Severa']
+  nivelFuncionalPorPaso:string[]=['2.2','','','','','']
   constructor() { }
 
   ngOnInit(): void {
+    this.ProtocolSummary=this.protocol;
   }
   next() {
     this.event.emit(1)
+    this.sendProtocol.emit(this.ProtocolSummary);
   }
   back() {
     this.event.emit(-1)
+
   }
 
 }

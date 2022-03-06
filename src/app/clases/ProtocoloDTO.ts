@@ -18,19 +18,19 @@ export class ProtocoloDTO{
   ResumenClinico:string=null;
   Total: number=null;
   ConclusionesRecomendaciones:string=null
-  SintomasNeurologicosDTO:SintomasNeurologicosDTO;
-  ComprensionAuditiva_CuantitativaDTO:ComprensionAuditiva_CuantitativaDTO;
-  Denominacion_CuantitativaDTO:Denominacion_CuantitativaDTO;
-  Escritura_CuantitativaDTO:Escritura_CuantitativaDTO;
-  ExpresionOral_CuantitativaSTO:ExpresionOral_CuantitativaDTO;
-  Lectura_CuantitativaDTO:Lectura_CuantitativaDTO;
-  Repeticion_CuantitativaDTO:Repeticion_CuantitativaDTO;
-  ComprensionAuditiva_CualitativaDTO:ComprensionAuditiva_CualitativaDTO;
-  Denominacion_CualitativaDTO:Denominacion_CualitativaDTO;
-  Escritura_CualitativaDTO:Escritura_CualitativaDTO;
-  ExpresionOral_CualitativaSTO:ExpresionOral_CualitativaDTO;
-  Lectura_CualitativaDTO:Lectura_CualitativaDTO;
-  Repeticion_CualitativaDTO:Repeticion_CualitativaDTO;
+  SintomasNeurologicosDTO:SintomasNeurologicosDTO=new SintomasNeurologicosDTO();
+  ComprensionAuditiva_CuantitativaDTO:ComprensionAuditiva_CuantitativaDTO=new ComprensionAuditiva_CuantitativaDTO();
+  Denominacion_CuantitativaDTO:Denominacion_CuantitativaDTO=new Denominacion_CuantitativaDTO();
+  Escritura_CuantitativaDTO:Escritura_CuantitativaDTO=new Escritura_CuantitativaDTO();
+  ExpresionOral_CuantitativaSTO:ExpresionOral_CuantitativaDTO=new ExpresionOral_CuantitativaDTO();
+  Lectura_CuantitativaDTO:Lectura_CuantitativaDTO=new Lectura_CuantitativaDTO();
+  Repeticion_CuantitativaDTO:Repeticion_CuantitativaDTO= new Repeticion_CuantitativaDTO();
+  ComprensionAuditiva_CualitativaDTO:ComprensionAuditiva_CualitativaDTO= new ComprensionAuditiva_CualitativaDTO();
+  Denominacion_CualitativaDTO:Denominacion_CualitativaDTO= new Denominacion_CualitativaDTO();
+  Escritura_CualitativaDTO:Escritura_CualitativaDTO= new Escritura_CualitativaDTO();
+  ExpresionOral_CualitativaSTO:ExpresionOral_CualitativaDTO = new ExpresionOral_CualitativaDTO();
+  Lectura_CualitativaDTO:Lectura_CualitativaDTO =new Lectura_CualitativaDTO();
+  Repeticion_CualitativaDTO:Repeticion_CualitativaDTO= new Repeticion_CualitativaDTO();
 
   constructor(){
 

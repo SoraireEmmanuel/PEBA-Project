@@ -1,8 +1,10 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Denominacion_CualitativaDTO } from 'src/app/clases/Denominacion_CualitativaDTO';
 import { Denominacion_CuantitativaDTO } from 'src/app/clases/Denominacion_CuantitativaDTO';
 import { QuestionStep4 } from 'src/app/clases/QuestionStep4';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Repeticion_CuantitativaDTO } from 'src/app/clases/Repeticion_CuantitativaDTO';
+import { Repeticion_CualitativaDTO } from 'src/app/clases/Repeticion_CualitativaDTO';
 
 @Component({
   selector: 'app-denomination',
@@ -11,6 +13,10 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class DenominationComponent implements OnInit {
   @Output() event = new EventEmitter<number>();
+  @Output() emitCualitativa = new EventEmitter<Denominacion_CualitativaDTO>();
+  @Output() emitCuantitativa = new EventEmitter<Denominacion_CuantitativaDTO>();
+  @Input() denominacioncuantitativa:Denominacion_CuantitativaDTO;
+  @Input() denominacioncualitativa:Denominacion_CualitativaDTO;
 DenominacionCuantitativa:Denominacion_CuantitativaDTO=new Denominacion_CuantitativaDTO();
 DropdownOptions:QuestionStep4=new QuestionStep4();
 DenominacionCualitativa:Denominacion_CualitativaDTO= new Denominacion_CualitativaDTO();
@@ -21,6 +27,8 @@ CopyDenominacionCualitativa:Denominacion_CualitativaDTO= new Denominacion_Cualit
    }
 
   ngOnInit(): void {
+    this.DenominacionCualitativa=this.denominacioncualitativa;
+    this.DenominacionCuantitativa=this.denominacioncuantitativa
   }
   open(register){
     const modalRef = this._ModalService.open(register, { size: 'xl' })
@@ -69,6 +77,8 @@ CopyDenominacionCualitativa:Denominacion_CualitativaDTO= new Denominacion_Cualit
 
   next() {
     this.event.emit(1)
+    this.emitCualitativa.emit(this.DenominacionCualitativa);
+    this.emitCuantitativa.emit(this.DenominacionCuantitativa);
   }
   back() {
     this.event.emit(-1)

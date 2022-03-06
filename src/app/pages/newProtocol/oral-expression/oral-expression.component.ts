@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ExpresionOral_CualitativaDTO } from 'src/app/clases/ExpresionOral_CualitativaDTO';
 import { ExpresionOral_CuantitativaDTO } from 'src/app/clases/ExpresionOral_CuantitativaDTO';
 import { QuestionsStep2 } from 'src/app/clases/QuestionsStep2';
@@ -10,7 +10,11 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./oral-expression.component.css']
 })
 export class OralExpressionComponent implements OnInit {
+@Input() oralcuantitativa: ExpresionOral_CuantitativaDTO;
+@Input() oralcualitativa: ExpresionOral_CualitativaDTO;
 @Output() event = new EventEmitter<number>();
+@Output() emitCualitativa = new EventEmitter<ExpresionOral_CualitativaDTO>();
+@Output() emitCuantitativa= new EventEmitter<ExpresionOral_CuantitativaDTO>();
 DropdownOptions:QuestionsStep2=new QuestionsStep2();
 ExpresionOral:ExpresionOral_CuantitativaDTO=new ExpresionOral_CuantitativaDTO();
 ExpresionOralCualitativa:ExpresionOral_CualitativaDTO=new ExpresionOral_CualitativaDTO();
@@ -19,9 +23,12 @@ CopyExpresionOralCualitativa:ExpresionOral_CualitativaDTO=new ExpresionOral_Cual
   constructor(public _ModalService:NgbModal, config: NgbModalConfig) {
     config.backdrop = 'static';
     config.keyboard = false;
+
    }
 
   ngOnInit(): void {
+    this.ExpresionOral=this.oralcuantitativa;
+    this.ExpresionOralCualitativa=this.oralcualitativa;
   }
   open(register){
     const modalRef = this._ModalService.open(register, { size: 'xl' })
@@ -67,6 +74,8 @@ CopyExpresionOralCualitativa:ExpresionOral_CualitativaDTO=new ExpresionOral_Cual
 
   next() {
     this.event.emit(1)
+    this.emitCualitativa.emit(this.ExpresionOralCualitativa);
+    this.emitCuantitativa.emit(this.ExpresionOral);
   }
   back() {
     this.event.emit(-1)

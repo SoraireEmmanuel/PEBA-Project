@@ -9,13 +9,62 @@
   <div *ngIf="Progress >= 7" class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">Escritura</div>
   <div *ngIf="Progress >= 8" class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 16%" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100">Resumen</div>
 </div>
-<app-patient-identification [dataEntry]="Progress" (event)="progressEvent($event)" *ngIf="Progress==0" ></app-patient-identification>
-<app-current-neurological-symptoms (event)="progressEvent($event)" *ngIf="Progress==1"></app-current-neurological-symptoms>
-<app-auditive-comprehension (event)="progressEvent($event)" *ngIf="Progress==2"></app-auditive-comprehension>
-<app-oral-expression (event)="progressEvent($event)" *ngIf="Progress==3"></app-oral-expression>
-<app-repetition (event)="progressEvent($event)" *ngIf="Progress==4"></app-repetition>
-<app-denomination (event)="progressEvent($event)" *ngIf="Progress==5"></app-denomination>
-<app-reading (event)="progressEvent($event)" *ngIf="Progress==6"></app-reading>
-<app-writing (event)="progressEvent($event)" *ngIf="Progress==7"></app-writing>
-<app-test-summary (event)="progressEvent($event)" *ngIf="Progress==8"></app-test-summary>
+<app-patient-identification
+[protocolEntry]="PatientIdentification"
+[dataEntry]="Progress"
+(event)="progressEvent($event)"
+(protocolPatien)="chargePatientIdentificator($event)"
+*ngIf="Progress==0" ></app-patient-identification>
+<app-current-neurological-symptoms
+[symptomsEntry]="Protocol.SintomasNeurologicosDTO"
+(event)="progressEvent($event)"
+*ngIf="Progress==1"></app-current-neurological-symptoms>
+<app-auditive-comprehension
+  [auditivecuantitativa]="Protocol.ComprensionAuditiva_CuantitativaDTO"
+  [auditivecualitativa]="Protocol.ComprensionAuditiva_CualitativaDTO"
+  (emitCualitativa)="chargeAuditiveCuantitativa($event)"
+  (emitCuantitativa)="chargeAuditiveCuantitativa($event)"
+  (event)="progressEvent($event)"
+  *ngIf="Progress==2"></app-auditive-comprehension>
+<app-oral-expression
+  (event)="progressEvent($event)"
+  [oralcuantitativa]="Protocol.ExpresionOral_CuantitativaSTO"
+  [oralcualitativa]="Protocol.ExpresionOral_CualitativaSTO"
+  (emitCualitativa)="chargeOralCuantitativa($event)"
+  (emitCuantitativa)="chargeOralCuantitativa($event)"
+  *ngIf="Progress==3"></app-oral-expression>
+<app-repetition
+  (event)="progressEvent($event)"
+  [repeticioncuantitativa]="Protocol.Repeticion_CuantitativaDTO"
+  [repeticioncualitativa]="Protocol.Repeticion_CualitativaDTO"
+  (emitCualitativa)="chargeRepeticionCualitativa($event)"
+  (emitCuantitativa)="chargeRepeticionCuantitativa($event)"
+  *ngIf="Progress==4"></app-repetition>
+<app-denomination
+  (event)="progressEvent($event)"
+  [denominacioncuantitativa]="Protocol.Denominacion_CuantitativaDTO"
+  [denominacioncualitativa]="Protocol.Denominacion_CualitativaDTO"
+  (emitCualitativa)="chargeDeniminacionCualitativa($event)"
+  (emitCuantitativa)="chargeDenominacionCuantitativa($event)"
+  *ngIf="Progress==5"></app-denomination>
+<app-reading
+  (event)="progressEvent($event)"
+  [lecturacuantitativa]="Protocol.Lectura_CuantitativaDTO"
+  [lecturacualitativa]="Protocol.Lectura_CualitativaDTO"
+  (emitCualitativa)="chargeReadingCualitativa($event)"
+  (emitCuantitativa)="chargeReadingCuantitativa($event)"
+  *ngIf="Progress==6"></app-reading>
+<app-writing
+(event)="progressEvent($event)"
+[escrituracuantitativa]="Protocol.Escritura_CuantitativaDTO"
+[escrituracualitativa]="Protocol.Escritura_CualitativaDTO"
+(emitCualitativa)="chargeWritingCualitativa($event)"
+(emitCuantitativa)="chargeWritingCuantitativa($event)"
+*ngIf="Progress==7"></app-writing>
+<app-test-summary
+(event)="progressEvent($event)"
+[protocol]="Protocol"
+(emit)="sendProtocol($event)"
+*ngIf="Progress==8"></app-test-summary>
+
 

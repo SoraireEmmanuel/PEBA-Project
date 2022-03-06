@@ -46,13 +46,14 @@
       <label for="protocoldate" class="form-label">Fecha del protocolo</label>
     </div>
     <div class="col-auto">
-      <input type="date" id="protocoldate" class="form-control" name="protocoldate">
+      <input type="date" id="protocoldate" class="form-control" name="protocoldate"
+      [(ngModel)]="PatientIdentification.FechaProtocolo">
     </div>
   </div>
   <div class="mt-4">
     <div class="form-floating ">
       <textarea class="form-control lh-lg" id="resumenclinico" name="resumenclinico" placeholder="Resumen Clinico"
-        style="height: 100px;"></textarea>
+        style="height: 100px;" [(ngModel)]="PatientIdentification.ResumenClinico" ></textarea>
       <label for="resumenclinico">Resumen Clinico</label>
     </div>
   </div>

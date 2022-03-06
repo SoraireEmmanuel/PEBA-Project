@@ -7,9 +7,10 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <app-menu class="navbar-nav me-auto mb-2 mb-lg-0"></app-menu>
-        <app-login *ngIf="true"></app-login>
-        <app-logout></app-logout>
+        <app-menu *ngIf="loginstate" class="navbar-nav me-auto mb-2 mb-lg-0"></app-menu>
+        <div *ngIf="!loginstate" class="navbar-nav me-auto mb-2 mb-lg-0"></div>
+        <app-login *ngIf="!loginstate" ></app-login>
+        <app-logout *ngIf="loginstate"></app-logout>
     </div>
   </div>
 </nav>

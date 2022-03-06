@@ -1,8 +1,10 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Lectura_CualitativaDTO } from 'src/app/clases/Lectura_CualitativaDTO';
 import { Lectura_CuantitativaDTO } from 'src/app/clases/Lectura_CuantitativaDTO';
 import { QuestionStep5 } from 'src/app/clases/QuestionStep5';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 @Component({
   selector: 'app-reading',
@@ -11,6 +13,10 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ReadingComponent implements OnInit {
   @Output() event = new EventEmitter<number>();
+  @Output() emitCualitativa = new EventEmitter<Lectura_CualitativaDTO>();
+  @Output()emitCuantitativa = new EventEmitter<Lectura_CuantitativaDTO>();
+  @Input() lecturacuantitativa: Lectura_CuantitativaDTO;
+  @Input() lecturacualitativa: Lectura_CualitativaDTO;
 DropdownOptions:QuestionStep5=new QuestionStep5();
 LecturaCuantitativa:Lectura_CuantitativaDTO=new Lectura_CuantitativaDTO();
 LecturaCualitativa:Lectura_CualitativaDTO=new Lectura_CualitativaDTO();
@@ -21,7 +27,10 @@ CopyLecturaCualitativa:Lectura_CualitativaDTO=new Lectura_CualitativaDTO();
    }
 
   ngOnInit(): void {
+    this.LecturaCualitativa=this.lecturacualitativa;
+    this.LecturaCuantitativa=this.lecturacuantitativa
   }
+
   open(register){
     const modalRef = this._ModalService.open(register, { size: 'xl' })
   }
@@ -85,6 +94,8 @@ CopyLecturaCualitativa:Lectura_CualitativaDTO=new Lectura_CualitativaDTO();
 
   next() {
     this.event.emit(1)
+    this.emitCualitativa.emit(this.LecturaCualitativa);
+    this.emitCuantitativa.emit(this.LecturaCuantitativa);
   }
   back() {
     this.event.emit(-1)

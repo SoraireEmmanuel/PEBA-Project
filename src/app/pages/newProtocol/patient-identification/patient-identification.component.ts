@@ -10,7 +10,9 @@ import { PatientIdentification } from 'src/app/clases/PatientIdentification';
 })
 export class PatientIdentificationComponent implements OnInit {
   @Input() dataEntry: number;
+  @Input() protocolEntry: PatientIdentification;
   @Output() event = new EventEmitter<number>();
+  @Output() protocolPatien = new EventEmitter<PatientIdentification>();
   PatientIdentification: PatientIdentification = new PatientIdentification();
   patient:patient=new patient();
 
@@ -18,10 +20,13 @@ export class PatientIdentificationComponent implements OnInit {
 
   }
   ngOnInit(): void {
+    this.PatientIdentification=this.protocolEntry;
+
   }
 
   next() {
     this.event.emit(1)
+    this.protocolPatien.emit(this.PatientIdentification);
   }
   back() {
     this.event.emit(-1)

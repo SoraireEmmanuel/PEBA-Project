@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Escritura_CualitativaDTO } from 'src/app/clases/Escritura_CualitativaDTO';
 import { Escritura_CuantitativaDTO } from 'src/app/clases/Escritura_CuantitativaDTO';
 import { QuestionStep6 } from 'src/app/clases/QuestionStep6';
@@ -11,6 +11,10 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class WritingComponent implements OnInit {
   @Output() event = new EventEmitter<number>();
+  @Output () emitCualitativa = new EventEmitter<Escritura_CualitativaDTO>();
+  @Output () emitCuantitativa = new EventEmitter<Escritura_CuantitativaDTO>();
+  @Input () escrituracuantitativa:Escritura_CuantitativaDTO;
+  @Input () escrituracualitativa:Escritura_CualitativaDTO;
 DropdownOptions:QuestionStep6= new QuestionStep6();
 EscrituraCuantitativa:Escritura_CuantitativaDTO=new Escritura_CuantitativaDTO();
 EscruturaCualitativa:Escritura_CualitativaDTO=new Escritura_CualitativaDTO();
@@ -21,6 +25,8 @@ CopyEscruturaCualitativa:Escritura_CualitativaDTO=new Escritura_CualitativaDTO()
   }
 
   ngOnInit(): void {
+    this.EscrituraCuantitativa=this.escrituracuantitativa;
+    this.EscruturaCualitativa= this.escrituracualitativa;
   }
   open(register){
     const modalRef = this._ModalService.open(register, { size: 'xl' })
@@ -79,6 +85,8 @@ CopyEscruturaCualitativa:Escritura_CualitativaDTO=new Escritura_CualitativaDTO()
 
   next() {
     this.event.emit(1)
+    this.emitCualitativa.emit(this.EscruturaCualitativa);
+    this.emitCuantitativa.emit(this.EscrituraCuantitativa);
   }
   back() {
     this.event.emit(-1)

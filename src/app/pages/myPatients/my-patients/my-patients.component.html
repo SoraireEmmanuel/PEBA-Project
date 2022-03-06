@@ -1,30 +1,22 @@
-<div class="alert alert-info alert-dismissible fade show" role="alert">
-  <strong>Ayuda: </strong> En esta seccion bla bla bla . . . .
-  <button
-    type="button"
-    class="btn-close"
-    data-bs-dismiss="alert"
-    aria-label="Close"
-  ></button>
-</div>
-
-<div
-  class="container-sm mt-3 bg-success bg-gradient text-white border text-center shadow-lg p-3 mb-5 bg-body rounded"
->
-  <h3>Mis Pacientes</h3>
-  <div class="container">
-    <div class="input-group mb-3">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Buscar paciente por ID o parte del mismo"
-      />
-      <button class="btn btn-secondary" type="button" id="button-addon2">
-        Button
-      </button>
+<div  class="container-sm mt-3 bg-success bg-gradient text-white border shadow-lg p-3 mb-5 bg-body rounded">
+  <div class="text-center">
+    <h3>Mis Pacientes </h3>
+  </div>
+  <div class="row container mt-5">
+    <div class=" col-md-12 " >
+      <label for="exampleDataList" class="form-label">Buscar Paciente:</label>
+      <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+      <datalist id="datalistOptions" >
+        <option [ngValue]="0" (click)="fa(1)" >Todos mis pacientes</option>
+        <option [ngValue]="1">New York</option>
+        <option [ngValue]="2">Seattle</option>
+        <option [ngValue]="3">Los Angeles</option>
+        <option [ngValue]="4">Chicago</option>
+      </datalist>
     </div>
   </div>
-  <div class="container">
+
+  <div class="container mt-3">
     <table class="table table-bordered tabl-striped table-light">
       <thead class="table-dark">
         <tr>
@@ -41,7 +33,7 @@
           <td>b</td>
           <td>
             <div>
-              <button class="btn btn-success m-1 rounded-3">
+              <button class="btn btn-success m-1 rounded-3" (click)="navigateNewProtocol()">
                 Nuevo Protocolo
               </button>
               <button class="btn btn-success ms-1 rounded-3">
@@ -54,3 +46,4 @@
     </table>
   </div>
 </div>
+

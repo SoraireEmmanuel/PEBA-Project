@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'myPatients', component:MyPatientsComponent},
   {path: 'registerNewPatient', component:RegisterNewPatientsComponent},
   {path: 'newProtocol', component:NewProtocolComponent},
-  {path: 'historical', component:HistoricalComponent},
+  //{path: 'historical', component:HistoricalComponent},
   //{path: 'register', component:RegisterComponent},
   {path: 'home', component:HomeComponent },
   {path: '**', pathMatch: 'full', redirectTo:'home'}
