@@ -28,7 +28,8 @@ CopyLecturaCualitativa:Lectura_CualitativaDTO=new Lectura_CualitativaDTO();
 
   ngOnInit(): void {
     this.LecturaCualitativa=this.lecturacualitativa;
-    this.LecturaCuantitativa=this.lecturacuantitativa
+    this.LecturaCuantitativa=this.lecturacuantitativa;
+    this.CopyLecturaCualitativa=this.lecturacualitativa;
   }
 
   open(register){

@@ -77,10 +77,10 @@ export class NewProtocolComponent implements OnInit {
     this.Protocol.Lectura_CuantitativaDTO = event;
   }
   chargeWritingCualitativa(event:Escritura_CualitativaDTO){
-
+    this.Protocol.Escritura_CualitativaDTO=event;
   }
   chargeWritingCuantitativa(event:Escritura_CuantitativaDTO){
-
+    this.Protocol.Escritura_CuantitativaDTO=event;
   }
   sendProtocol(event: ProtocoloDTO){
 

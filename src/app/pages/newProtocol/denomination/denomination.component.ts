@@ -28,7 +28,8 @@ CopyDenominacionCualitativa:Denominacion_CualitativaDTO= new Denominacion_Cualit
 
   ngOnInit(): void {
     this.DenominacionCualitativa=this.denominacioncualitativa;
-    this.DenominacionCuantitativa=this.denominacioncuantitativa
+    this.DenominacionCuantitativa=this.denominacioncuantitativa;
+    this.CopyDenominacionCualitativa=this.denominacioncualitativa;
   }
   open(register){
     const modalRef = this._ModalService.open(register, { size: 'xl' })

@@ -25,6 +25,9 @@ export class RepetitionComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.RepeticionCualitativa=this.repeticioncualitativa;
+    this.RepeticionCuantitativa=this.repeticioncuantitativa;
+    this.CopyRepeticionCualitativa=this.repeticioncualitativa;
   }
   open(register){
     const modalRef = this._ModalService.open(register, { size: 'xl' })
@@ -77,6 +80,8 @@ export class RepetitionComponent implements OnInit {
 
 next() {
   this.event.emit(1)
+  this.emitCualitativa.emit(this.RepeticionCualitativa)
+  this.emitCuantitativa.emit(this.repeticioncuantitativa)
 }
 back() {
   this.event.emit(-1)

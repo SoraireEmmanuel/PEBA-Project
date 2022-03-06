@@ -29,6 +29,7 @@ CopyExpresionOralCualitativa:ExpresionOral_CualitativaDTO=new ExpresionOral_Cual
   ngOnInit(): void {
     this.ExpresionOral=this.oralcuantitativa;
     this.ExpresionOralCualitativa=this.oralcualitativa;
+    this.CopyExpresionOralCualitativa=this.oralcualitativa;
   }
   open(register){
     const modalRef = this._ModalService.open(register, { size: 'xl' })

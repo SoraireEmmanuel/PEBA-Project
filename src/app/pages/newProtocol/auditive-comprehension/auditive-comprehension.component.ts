@@ -27,6 +27,7 @@ export class AuditiveComprehensionComponent implements OnInit {
   ngOnInit(): void {
     this.ComprensionAuditivaCualitativa=this.auditivecualitativa;
     this.ComprensionAuditivaCuantitativa=this.auditivecuantitativa;
+    this.CopyComprensionAuditivaCaulitativa=this.auditivecualitativa;
   }
   open(register){
     const modalRef = this._ModalService.open(register, { size: 'xl' })

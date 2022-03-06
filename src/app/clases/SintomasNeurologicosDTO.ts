@@ -26,9 +26,7 @@ export class SintomasNeurologicosDTO{
   PraxiaManual:string=null;
   PraxiaManualTipoAlteracion:string=null;
   PraxiaManualTipoAlteracionOtro:string=null;
-  PraxiaOronguofaciales:string=null;
-  PraxiaOronguofacialesTipoAlteracion:string=null;
-  PraxiaOronguofacialesTipoAlteracionOtro:string=null;
+  PraxiaOrolinguofaciales:string=null;
   Deglucion:string=null;
   DeglucionTipoAlteracion:string=null;
   DeglucionTipoAlteracionOtro:string=null;

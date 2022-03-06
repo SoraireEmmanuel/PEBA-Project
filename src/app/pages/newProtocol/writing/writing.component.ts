@@ -27,6 +27,7 @@ CopyEscruturaCualitativa:Escritura_CualitativaDTO=new Escritura_CualitativaDTO()
   ngOnInit(): void {
     this.EscrituraCuantitativa=this.escrituracuantitativa;
     this.EscruturaCualitativa= this.escrituracualitativa;
+    this.CopyEscruturaCualitativa=this.escrituracualitativa;
   }
   open(register){
     const modalRef = this._ModalService.open(register, { size: 'xl' })
