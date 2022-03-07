@@ -146,6 +146,7 @@ export class AuditiveComprehensionComponent implements OnInit {
       this.event.emit(1)
       this.emitCualitativa.emit(this.ComprensionAuditivaCualitativa);
       this.emitCuantitativa.emit(this.ComprensionAuditivaCuantitativa);
+      return
     }
     if(this.ComprensionAuditivaCuantitativa.SenialeElPato!=null || this.ComprensionAuditivaCuantitativa.SenialeElTecho!=null||
       this.ComprensionAuditivaCuantitativa.SenialeLaOveja!=null || this.ComprensionAuditivaCuantitativa.SenialeLaPuerta!=null ||
@@ -153,6 +154,7 @@ export class AuditiveComprehensionComponent implements OnInit {
         this.event.emit(1)
         this.emitCualitativa.emit(this.ComprensionAuditivaCualitativa);
         this.emitCuantitativa.emit(this.ComprensionAuditivaCuantitativa);
+        return
       }
   }
   back() {

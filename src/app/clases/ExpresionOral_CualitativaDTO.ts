@@ -3,7 +3,7 @@ export class ExpresionOral_CualitativaDTO{
   Prosodia:number=null;
   Articulacion:number=null;
   CodificacionFonologica:number=null;
-  ProcesamientoLexicoAlterado:boolean=null;
+  ProcesamientoLexicoAlterado:number=null;
   PLAnomias:boolean=null;
   PLParafasias:boolean=null;
   PLNeologismo:boolean=null;

@@ -159,37 +159,38 @@
       <div class="col-md-3"><label class="">Procesamiento Léxico</label></div>
       <div class="col-md-3">
         <select class="form-select" name="PL" id="PL"
-          [(ngModel)]="ExpresionOralCualitativa.ProcesamientoLexicoAlterado">
+          [(ngModel)]="ExpresionOralCualitativa.ProcesamientoLexicoAlterado"
+          (change)="popUpValidation()">
           <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
           <option [ngValue]="0">Normal</option>
           <option [ngValue]="1">Alterada</option>
         </select>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6" *ngIf="ExpresionOralCualitativa.ProcesamientoLexicoAlterado==1">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="PL1" [(ngModel)]="ExpresionOralCualitativa.PLAnomias">
+          <input class="form-check-input" type="checkbox" id="PL1" [(ngModel)]="ExpresionOralCualitativa.PLAnomias" (change)="popUpValidation()">
           <label class="form-check-label" for="PL1">Anomias</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="PL2" [(ngModel)]="ExpresionOralCualitativa.PLParafasias">
+          <input class="form-check-input" type="checkbox" id="PL2" [(ngModel)]="ExpresionOralCualitativa.PLParafasias" (change)="popUpValidation()">
           <label class="form-check-label" for="PL2">Parafasias</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="PL3" [(ngModel)]="ExpresionOralCualitativa.PLNeologismo">
+          <input class="form-check-input" type="checkbox" id="PL3" [(ngModel)]="ExpresionOralCualitativa.PLNeologismo" (change)="popUpValidation()">
           <label class="form-check-label" for="PL3">Neologismos</label>
         </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="PL4"
-            [(ngModel)]="ExpresionOralCualitativa.PLEstereotipias">
+            [(ngModel)]="ExpresionOralCualitativa.PLEstereotipias" (change)="popUpValidation()">
           <label class="form-check-label" for="PL4">Estereotipias</label>
         </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="PL5"
-            [(ngModel)]="ExpresionOralCualitativa.PLPerseveraciones">
+            [(ngModel)]="ExpresionOralCualitativa.PLPerseveraciones" (change)="popUpValidation()">
           <label class="form-check-label" for="PL5">Perseveraciones</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="PL6" [(ngModel)]="ExpresionOralCualitativa.PLMuletillas">
+          <input class="form-check-input" type="checkbox" id="PL6" [(ngModel)]="ExpresionOralCualitativa.PLMuletillas" (change)="popUpValidation()">
           <label class="form-check-label" for="PL6">Muletillas</label>
         </div>
       </div>
@@ -199,7 +200,7 @@
   <div class="modal-footer">
     <div class="row">
       <div class="col-md-6 d-grid gap-2">
-        <button class="btn btn-success" type="button" (click)="saved()" (click)="modal.close()">Guardar</button>
+        <button class="btn btn-success" type="button" (click)="saved()" (click)="modal.close()" [disabled]="!popupsave" >Guardar</button>
       </div>
       <div class="col-md-6 d-grid gap-2">
         <button type="button" class="btn btn-danger" (click)="cancel()" (click)="modal.close()">
