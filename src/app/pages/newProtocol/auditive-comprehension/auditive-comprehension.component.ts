@@ -123,10 +123,25 @@ export class AuditiveComprehensionComponent implements OnInit {
     this.ComprensionAuditivaCualitativa.PalabraOidaAlterada = this.CopyComprensionAuditivaCaulitativa.PalabraOidaAlterada;
   }
   next() {
-    this.event.emit(1)
-    this.emitCualitativa.emit(this.ComprensionAuditivaCualitativa);
-    this.emitCuantitativa.emit(this.ComprensionAuditivaCuantitativa);
-
+    if((this.ComprensionAuditivaCuantitativa.SenialeElPato==null || this.ComprensionAuditivaCuantitativa.SenialeElTecho==null||
+      this.ComprensionAuditivaCuantitativa.SenialeLaOveja==null || this.ComprensionAuditivaCuantitativa.SenialeLaPuerta==null ||
+      this.ComprensionAuditivaCuantitativa.ToqueseLaOreja==null)&& this.ComprensionAuditivaCuantitativa.WasSuspended==false
+      ){
+        console.log('todos los campos cuantitativos son requeridos. Si el ')
+        return
+      }
+    if(this.ComprensionAuditivaCuantitativa.WasSuspended==true){
+      this.event.emit(1)
+      this.emitCualitativa.emit(this.ComprensionAuditivaCualitativa);
+      this.emitCuantitativa.emit(this.ComprensionAuditivaCuantitativa);
+    }
+    if(this.ComprensionAuditivaCuantitativa.SenialeElPato!=null || this.ComprensionAuditivaCuantitativa.SenialeElTecho!=null||
+      this.ComprensionAuditivaCuantitativa.SenialeLaOveja!=null || this.ComprensionAuditivaCuantitativa.SenialeLaPuerta!=null ||
+      this.ComprensionAuditivaCuantitativa.ToqueseLaOreja!=null){
+        this.event.emit(1)
+        this.emitCualitativa.emit(this.ComprensionAuditivaCualitativa);
+        this.emitCuantitativa.emit(this.ComprensionAuditivaCuantitativa);
+      }
   }
   back() {
     this.event.emit(-1)
