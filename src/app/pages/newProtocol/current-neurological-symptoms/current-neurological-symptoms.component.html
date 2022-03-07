@@ -11,7 +11,7 @@
     <div class="col-md-2 ">
       <div class="form-check ">
         <input class="form-check-input" type="radio" id="alteradoConservado" name="alterado" value="CONSERVADO"
-          [(ngModel)]="symptoms.Alerta" />
+          [(ngModel)]="symptoms.Alerta" (change)="clearAlerta()"/>
         <label class="form-check-label" for="alteradoConservado">Conservado</label>
       </div>
       <div class="form-check ">
@@ -22,12 +22,13 @@
     </div>
     <div class="col-md-5" *ngIf="symptoms.Alerta === 'ALTERADO'">
           <label for="alertaDropdown" class="form-label ">Tipo de alteracion</label>
-          <select class="form-select" id="alertaDropdown" name="alertaDropdown" [(ngModel)]="symptoms.AlertaTipoAlteracion">
+          <select class="form-select" id="alertaDropdown" name="alertaDropdown" [(ngModel)]="symptoms.AlertaTipoAlteracion"
+          (change)="clearAlertaCual()">
             <option [disabled]="true" [selected]="true" [ngValue]="null">Seleccione un tipo de alteracion</option>
             <option *ngFor="let alert of dropdownOptions.alertaOpciones" [ngValue]="alert">{{alert}} </option>
           </select>
     </div>
-    <div class="col-md-3" *ngIf="symptoms.AlertaTipoAlteracion === 'Otro'">
+    <div class="col-md-3" *ngIf="symptoms.AlertaTipoAlteracion === 'Otro'"     >
       <div class=" ">
         <label for="alertaOtraAlteracion" class="¿Cual?">¿Cual?</label>
         <input type="text" class="form-control" id="alertaOtraAlteracion" name="alertaOtraAlteracion"
@@ -44,7 +45,7 @@
     <div class="col-md-2">
       <div class="form-check">
         <input class="form-check-input" type="radio" id="estadoEmocional" name="estadoEmocional" value="CONSERVADO"
-          [(ngModel)]="symptoms.EstadoEmocional" />
+          [(ngModel)]="symptoms.EstadoEmocional" (change)="clearEstadoEmocional()"/>
         <label class="form-check-label" for="estadoEmocional">Conservado</label>
       </div>
       <div class="form-check">
@@ -56,7 +57,7 @@
     <div class="col-md-5 " *ngIf="symptoms.EstadoEmocional === 'ALTERADO'">
       <label for="estadoEmocionalDropdown" class="form-label">Tipo de alteracion</label>
       <select class="form-select" name="estadoEmocionalDropdown" id="estadoEmocionalDropdown"
-        [(ngModel)]="symptoms.EstadoEmocionalTipoAlteracion">
+        [(ngModel)]="symptoms.EstadoEmocionalTipoAlteracion" (change)="clearEstadoEmocionalCual()">
         <option [disabled]="true" [selected]="true" [ngValue]="null"  >Seleccione un tipo de alteracion</option>
         <option *ngFor="let estado of dropdownOptions.estadoEmocionalOpciones" [ngValue]="estado">{{estado}}</option>
       </select>
@@ -77,7 +78,7 @@
     <div class="col-md-2">
       <div class="form-check">
         <input class="form-check-input" type="radio" id="fuerza" name="fuerza" value="CONSERVADO"
-          [(ngModel)]="symptoms.Fuerza" />
+          [(ngModel)]="symptoms.Fuerza" (change)="clearFuerza()" />
         <label class="form-check-label" for="fuerza">Conservado</label>
       </div>
       <div class="form-check">
@@ -88,7 +89,8 @@
     </div>
     <div class="col-md-5 " *ngIf="symptoms.Fuerza === 'ALTERADO'">
       <label for="fuerzaopcion" class=" form-label">Tipo de alteracion</label>
-      <select class="form-select" name="fuerzaOpcion" id="fuerzaopcion" [(ngModel)]="symptoms.FuerzaTipoAlteracion">
+      <select class="form-select" name="fuerzaOpcion" id="fuerzaopcion" [(ngModel)]="symptoms.FuerzaTipoAlteracion"
+      (change)="clearFuerzaCual()">
         <option [disabled]="true"  [ngValue]="null" [selected]="true">Seleccione un tipo de alteracion</option>
         <option *ngFor="let fuerza of dropdownOptions.fuerzaOpciones" [ngValue]="fuerza">{{fuerza}}</option>
       </select>
@@ -108,7 +110,7 @@
     <div class="col-md-2">
       <div class="form-check">
         <input class="form-check-input" type="radio" id="coordinacionc" name="coordinacionmotora" value="CONSERVADO"
-          [(ngModel)]="symptoms.CondicionMotora" />
+          [(ngModel)]="symptoms.CondicionMotora" (change)="clearCoordinacion()" />
         <label class="form-check-label" for="coordinacionc">Conservado</label>
       </div>
       <div class="form-check">
@@ -120,7 +122,7 @@
     <div class="col-md-5 " *ngIf="symptoms.CondicionMotora === 'ALTERADO'">
       <label for="fuerzaopcion" class=" form-label ">Tipo de alteracion</label>
       <select class="form-select" name="coordinacionmotoraOpcion" id="coordinacioncopcion"
-        [(ngModel)]="symptoms.CondicionMotoraTipoAlteracion">
+        [(ngModel)]="symptoms.CondicionMotoraTipoAlteracion" (change)="clearCoordinacionCual()">
         <option [disabled]="true" [ngValue]="null" [selected]="true">Seleccione un tipo de alteracion</option>
         <option *ngFor="let coordinacion of dropdownOptions.coordinacioncOpciones" [ngValue]="coordinacion">
           {{coordinacion}}</option>
@@ -141,7 +143,7 @@
     <div class="col-md-2">
       <div class="form-check">
         <input class="form-check-input" type="radio" id="sensibilidad" name="sensibilidad" value="CONSERVADO"
-          [(ngModel)]="symptoms.Sensibilidad" />
+          [(ngModel)]="symptoms.Sensibilidad" (change)="clearSensibilidad()"  />
         <label class="form-check-label" for="sensibilidad">Conservado</label>
       </div>
       <div class="form-check">
@@ -153,7 +155,7 @@
     <div class="col-md-5 " *ngIf="symptoms.Sensibilidad === 'ALTERADO'">
       <label for="fuerzaopcion" class="form-label">Tipo de alteracion</label>
       <select class="form-select" name="sensibilidadOpcion" id="sensibilidadopcion"
-        [(ngModel)]="symptoms.SensibilidadTipoAlteracion">
+        [(ngModel)]="symptoms.SensibilidadTipoAlteracion" (change)="clearSensibilidadCual()">
         <option [disabled]="true" [selected]="true" [ngValue]="null" >Seleccione un tipo de alteracion</option>
         <option *ngFor="let sensibilidad of dropdownOptions.sensibilidadOpciones" [ngValue]="sensibilidad">
           {{sensibilidad}} </option>
@@ -174,7 +176,7 @@
     <div class="col-md-2">
       <div class="form-check">
         <input class="form-check-input" type="radio" id="vision" name="vision" value="CONSERVADO"
-          [(ngModel)]="symptoms.Vision" />
+          [(ngModel)]="symptoms.Vision" (change)="clearVision()" />
         <label class="form-check-label" for="vision">Conservado</label>
       </div>
       <div class="form-check">
@@ -208,7 +210,7 @@
     <div class="col-md-2">
       <div class="form-check">
         <input class="form-check-input" type="radio" id="audicion" name="audicion" value="CONSERVADO"
-          [(ngModel)]="symptoms.Audicion" />
+          [(ngModel)]="symptoms.Audicion"  (change)="clearAudicion()"/>
         <label class="form-check-label" for="audicion">Conservado</label>
       </div>
       <div class="form-check">
@@ -243,7 +245,7 @@
     <div class="col-md-2">
       <div class="form-check">
         <input class="form-check-input" type="radio" id="atencionespacial" name="atencionespacial" value="CONSERVADO"
-          [(ngModel)]="symptoms.AtencionEspacial" />
+          [(ngModel)]="symptoms.AtencionEspacial" (change)="clearAtencionEspacial()" />
         <label class="form-check-label" for="atencionespacial">Conservado</label>
       </div>
       <div class="form-check">
@@ -271,7 +273,7 @@
     <div class="col-md-2">
       <div class="form-check">
         <input class="form-check-input" type="radio" id="praxiamanual" name="praxiaManual" value="CONSERVADO"
-          [(ngModel)]="symptoms.PraxiaManual" />
+          [(ngModel)]="symptoms.PraxiaManual" (change)="clearPraxiaManual()"/>
         <label class="form-check-label" for="praxiamanual">Conservado</label>
       </div>
       <div class="form-check">
@@ -319,7 +321,7 @@
     <div class="col-md-2">
       <div class="form-check">
         <input class="form-check-input" type="radio" id="deglución" name="deglucion" value="CONSERVADO"
-          [(ngModel)]="symptoms.Deglucion" />
+          [(ngModel)]="symptoms.Deglucion" (change)="clearDeglucion()" />
         <label class="form-check-label" for="deglución">Conservado</label>
       </div>
       <div class="form-check">
