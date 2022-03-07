@@ -75,7 +75,6 @@ export class OralExpressionComponent implements OnInit {
     } else {
       this.popupsave = true;
     }
-
   }
   open(register) {
     const modalRef = this._ModalService.open(register, { size: 'xl' })
