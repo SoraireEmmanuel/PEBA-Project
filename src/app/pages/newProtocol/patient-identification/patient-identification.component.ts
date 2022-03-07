@@ -21,14 +21,17 @@ export class PatientIdentificationComponent implements OnInit {
   }
   ngOnInit(): void {
     this.PatientIdentification=this.protocolEntry;
-
   }
 
   next() {
+  if(this.PatientIdentification.FechaProtocolo==null){
+    console.log('La fecha del protocolo es un dato obligatorio');
+  }
+  else{
     this.event.emit(1)
     this.protocolPatien.emit(this.PatientIdentification);
   }
-  back() {
-    this.event.emit(-1)
+
   }
+
 }
