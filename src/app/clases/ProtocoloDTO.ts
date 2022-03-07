@@ -35,4 +35,12 @@ export class ProtocoloDTO{
   constructor(){
 
   }
+  totalCalcultaion(){
+    this.Total=this.Denominacion_CuantitativaDTO.SubTotal+
+                this.Repeticion_CuantitativaDTO.SubTotal+
+                this.Lectura_CuantitativaDTO.SubTotal+
+                this.Escritura_CuantitativaDTO.SubTotal+
+                this.ExpresionOral_CuantitativaSTO.SubTotal+
+                this.ComprensionAuditiva_CuantitativaDTO.Subtotal;
+  }
 }

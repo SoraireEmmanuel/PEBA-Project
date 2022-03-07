@@ -11,7 +11,7 @@ export class Lectura_CuantitativaDTO{
   Tudipro:number = null;
   SaqueLaMano:number = null;
   isComplete:boolean = null;
-  SubTotal:Number = 0;
+  SubTotal:number = 0;
   WasSuspended:boolean=false;
   constructor(){
 

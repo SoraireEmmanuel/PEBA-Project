@@ -16,93 +16,44 @@
       <tbody>
         <tr>
           <th scope="row">Comprensión auditiva</th>
-          <td>{{nivelFuncionalPorPaso[0]}}/6</td>
-          <td>
-            <div [ngSwitch]="nivelFuncionalPorPaso[0]">
-              <span *ngSwitchCase=6>{{nivelesFuncionales[0]}}</span>
-              <span *ngSwitchCase=5>{{nivelesFuncionales[1]}}</span>
-              <span *ngSwitchCase=4 >{{nivelesFuncionales[2]}}</span>
-              <span *ngSwitchCase=3 >{{nivelesFuncionales[2]}}</span>
-              <span *ngSwitchCase=2 >{{nivelesFuncionales[3]}}</span>
-              <span *ngSwitchCase=1 >{{nivelesFuncionales[3]}}</span>
-              <span *ngSwitchCase=0 >{{nivelesFuncionales[3]}}</span>
-            </div>
-          </td>
+          <td>{{ProtocolSummary.ComprensionAuditiva_CuantitativaDTO.Subtotal}}/6</td>
+          <td> {{valuation.Auditiva}} </td>
         </tr>
         <tr>
           <th scope="row">Expresión oral:</th>
-          <td>{{nivelFuncionalPorPaso[1]}}/6</td>
-          <td><div [ngSwitch]="nivelFuncionalPorPaso[0]">
-            <span *ngSwitchCase=6>{{nivelesFuncionales[0]}}</span>
-            <span *ngSwitchCase=5>{{nivelesFuncionales[1]}}</span>
-            <span *ngSwitchCase=4 >{{nivelesFuncionales[2]}}</span>
-            <span *ngSwitchCase=3 >{{nivelesFuncionales[2]}}</span>
-            <span *ngSwitchCase=2 >{{nivelesFuncionales[3]}}</span>
-            <span *ngSwitchCase=1 >{{nivelesFuncionales[3]}}</span>
-            <span *ngSwitchCase=0 >{{nivelesFuncionales[3]}}</span>
-          </div></td>
+          <td>{{ProtocolSummary.ExpresionOral_CuantitativaSTO.SubTotal}}/6</td>
+          <td> {{valuation.Oral}} </td>
         </tr>
         <tr>
           <th scope="row">Repetición: </th>
-          <td>tp3/6</td>
-          <td><div [ngSwitch]="nivelFuncionalPorPaso[0]">
-            <span *ngSwitchCase=6>{{nivelesFuncionales[0]}}</span>
-            <span *ngSwitchCase=5>{{nivelesFuncionales[1]}}</span>
-            <span *ngSwitchCase=4 >{{nivelesFuncionales[2]}}</span>
-            <span *ngSwitchCase=3 >{{nivelesFuncionales[2]}}</span>
-            <span *ngSwitchCase=2 >{{nivelesFuncionales[3]}}</span>
-            <span *ngSwitchCase=1 >{{nivelesFuncionales[3]}}</span>
-            <span *ngSwitchCase=0 >{{nivelesFuncionales[3]}}</span>
-          </div></td>
+          <td>{{ProtocolSummary.Repeticion_CuantitativaDTO.SubTotal}}/6</td>
+          <td> {{valuation.Repeticion}}  </td>
         </tr>
         <tr>
           <th scope="row">Denominación: </th>
-          <td>tp4/6</td>
-          <td><div [ngSwitch]="nivelFuncionalPorPaso[0]">
-            <span *ngSwitchCase=6>{{nivelesFuncionales[0]}}</span>
-            <span *ngSwitchCase=5>{{nivelesFuncionales[1]}}</span>
-            <span *ngSwitchCase=4 >{{nivelesFuncionales[2]}}</span>
-            <span *ngSwitchCase=3 >{{nivelesFuncionales[2]}}</span>
-            <span *ngSwitchCase=2 >{{nivelesFuncionales[3]}}</span>
-            <span *ngSwitchCase=1 >{{nivelesFuncionales[3]}}</span>
-            <span *ngSwitchCase=0 >{{nivelesFuncionales[3]}}</span>
-          </div></td>
+          <td>{{ProtocolSummary.Denominacion_CuantitativaDTO.SubTotal}}/6</td>
+          <td> {{valuation.Denominacion}} </td>
         </tr>
         <tr>
           <th scope="row">Lectura: </th>
-          <td>tp5/6</td>
-          <td><div [ngSwitch]="nivelFuncionalPorPaso[0]">
-            <span *ngSwitchCase=6>{{nivelesFuncionales[0]}}</span>
-            <span *ngSwitchCase=5>{{nivelesFuncionales[1]}}</span>
-            <span *ngSwitchCase=4 >{{nivelesFuncionales[2]}}</span>
-            <span *ngSwitchCase=3 >{{nivelesFuncionales[2]}}</span>
-            <span *ngSwitchCase=2 >{{nivelesFuncionales[3]}}</span>
-            <span *ngSwitchCase=1 >{{nivelesFuncionales[3]}}</span>
-            <span *ngSwitchCase=0 >{{nivelesFuncionales[3]}}</span>
-          </div></td>
+          <td>{{ProtocolSummary.Lectura_CuantitativaDTO.SubTotal}}/6</td>
+          <td> {{valuation.Lectura}}  </td>
         </tr>
         <tr>
           <th scope="row">Escritura:</th>
-          <td>tp6/6</td>
-          <td><div [ngSwitch]="nivelFuncionalPorPaso[0]">
-            <span *ngSwitchCase=6>{{nivelesFuncionales[0]}}</span>
-            <span *ngSwitchCase=5>{{nivelesFuncionales[1]}}</span>
-            <span *ngSwitchCase=4 >{{nivelesFuncionales[2]}}</span>
-            <span *ngSwitchCase=3 >{{nivelesFuncionales[2]}}</span>
-            <span *ngSwitchCase=2 >{{nivelesFuncionales[3]}}</span>
-            <span *ngSwitchCase=1 >{{nivelesFuncionales[3]}}</span>
-            <span *ngSwitchCase=0 >{{nivelesFuncionales[3]}}</span>
-          </div></td>
+          <td>{{ProtocolSummary.Escritura_CuantitativaDTO.SubTotal}}/6</td>
+          <td> {{valuation.Escritura}} </td>
         </tr>
       </tbody>
       <tfoot>
         <tr>
           <th scope="row">Total</th>
-          <td  colspan="2">tpt/36</td>
+          <td  colspan="2">{{ProtocolSummary.Total}}/36</td>
         </tr>
       </tfoot>
     </table>
     <span style="color: rgba(255, 255, 255, 0.795);" class="mt-0">* 6: Conservado; 5 alteración leve; 3 y 4 alteración moderada; 1 y 2 alteración severa.</span>
+    <!--Resumen Cualitativo-->
     <h5 class="mb-0 mt-4">Resumen de Observaciones Cualitativas</h5>
     <hr class="mt-0">
     <table class="table  table-secondary table-sm table-striped table-bordered mb-0 ">
@@ -115,30 +66,42 @@
       <tbody>
         <tr>
           <th scope="row">Comprensión auditiva:</th>
-          <td>{{nivelFuncionalPorPaso[0]}}/6</td>
+          <td> {{SummaryCualitative[0].EmparejamientoPalabraOida}}<br>
+          {{SummaryCualitative[0].ComandosOidos}} </td>
         </tr>
         <tr>
           <th scope="row">Expresión oral:</th>
-          <td>{{nivelFuncionalPorPaso[1]}}/6</td>
+          <td>
+
+          </td>
         </tr>
         <tr>
           <th scope="row">Repetición: </th>
-          <td>tp3/6</td>
+          <td>
+
+          </td>
         </tr>
         <tr>
           <th scope="row">Denominación: </th>
-          <td>tp4/6</td>
+          <td>
+
+          </td>
         </tr>
         <tr>
           <th scope="row">Lectura: </th>
-          <td>tp5/6</td>
+          <td>
+
+          </td>
         </tr>
         <tr>
           <th scope="row">Escritura:</th>
-          <td>tp6/6</td>
+          <td>
+
+          </td>
         </tr>
       </tbody>
     </table>
+    <!--Conclusiones y comentarios-->
     <h5 class="mb-0">Conclusiones y comentarios</h5>
     <hr class="mt-0">
     <div class="mt-1 mb-4">
@@ -154,8 +117,7 @@
       <button class="btn btn-success" (click)="back()" >Anterior</button>
     </div>
     <div class="col-md-6 text-right">
-      <button class="btn btn-success me-1">Finalizar Protocolo</button>
-      <button class="btn btn-success">Ver Protocolo</button>
+      <button class="btn btn-success me-1" (click)="sendProtocolFunction()" >Finalizar Protocolo</button>
     </div>
   </div>
 </div>

@@ -48,18 +48,21 @@ export class NewProtocolComponent implements OnInit {
   }
   chargeAuditiveCuantitativa(event: ComprensionAuditiva_CuantitativaDTO) {
     this.Protocol.ComprensionAuditiva_CuantitativaDTO = event;
+    this.Protocol.totalCalcultaion();
   }
   chargeAuditiveCualitativa(event: ComprensionAuditiva_CualitativaDTO) {
     this.Protocol.ComprensionAuditiva_CualitativaDTO = event;
   }
   chargeOralCuantitativa(event: ExpresionOral_CuantitativaDTO) {
     this.Protocol.ExpresionOral_CuantitativaSTO = event;
+    this.Protocol.totalCalcultaion();
   }
   chargeOralCualitativa(event: ExpresionOral_CualitativaDTO) {
     this.Protocol.ExpresionOral_CualitativaSTO = event;
   }
   chargeRepeticionCuantitativa(event: Repeticion_CuantitativaDTO) {
     this.Protocol.Repeticion_CuantitativaDTO = event;
+    this.Protocol.totalCalcultaion();
   }
   chargeRepeticionCualitativa(event: Repeticion_CualitativaDTO) {
     this.Protocol.Repeticion_CualitativaDTO = event;
@@ -69,20 +72,23 @@ export class NewProtocolComponent implements OnInit {
   }
   chargeDenominacionCuantitativa(event: Denominacion_CuantitativaDTO) {
     this.Protocol.Denominacion_CuantitativaDTO = event;
+    this.Protocol.totalCalcultaion();
   }
   chargeReadingCualitativa(event: Lectura_CualitativaDTO) {
     this.Protocol.Lectura_CualitativaDTO = event;
   }
   chargeReadingCuantitativa(event: Lectura_CuantitativaDTO) {
     this.Protocol.Lectura_CuantitativaDTO = event;
+    this.Protocol.totalCalcultaion();
   }
   chargeWritingCualitativa(event:Escritura_CualitativaDTO){
     this.Protocol.Escritura_CualitativaDTO=event;
   }
   chargeWritingCuantitativa(event:Escritura_CuantitativaDTO){
     this.Protocol.Escritura_CuantitativaDTO=event;
+    this.Protocol.totalCalcultaion();
   }
   sendProtocol(event: ProtocoloDTO){
-
+    //console.log(event);
   }
 }

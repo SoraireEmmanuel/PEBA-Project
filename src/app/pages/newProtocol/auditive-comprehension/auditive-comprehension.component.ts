@@ -19,6 +19,7 @@ export class AuditiveComprehensionComponent implements OnInit {
   ComprensionAuditivaCuantitativa:ComprensionAuditiva_CuantitativaDTO= new ComprensionAuditiva_CuantitativaDTO();
   ComprensionAuditivaCualitativa:ComprensionAuditiva_CualitativaDTO=new ComprensionAuditiva_CualitativaDTO();
   CopyComprensionAuditivaCaulitativa:ComprensionAuditiva_CualitativaDTO= new ComprensionAuditiva_CualitativaDTO();
+  popupsave:boolean;
   constructor( public _ModalService:NgbModal, config: NgbModalConfig) {
     config.backdrop = 'static';
     config.keyboard = false;
@@ -28,6 +29,67 @@ export class AuditiveComprehensionComponent implements OnInit {
     this.ComprensionAuditivaCualitativa=this.auditivecualitativa;
     this.ComprensionAuditivaCuantitativa=this.auditivecuantitativa;
     this.CopyComprensionAuditivaCaulitativa=this.auditivecualitativa;
+    this.popUpValidation();
+  }
+  clear(){
+    if(this.ComprensionAuditivaCualitativa.ComandosOidosAlterada==0 ){
+      this.ComprensionAuditivaCualitativa.COOmiteParteDelComando=null;
+      this.ComprensionAuditivaCualitativa.COCambiaElOrdenDelComando=null;
+      this.ComprensionAuditivaCualitativa.COSustituyeParteDelComando=null;
+    }
+    if(this.ComprensionAuditivaCualitativa.PalabraOidaAlterada==0 ){
+      this.ComprensionAuditivaCualitativa.POErroresFormales=null;
+      this.ComprensionAuditivaCualitativa.POErroresNoRelacionados=null;
+      this.ComprensionAuditivaCualitativa.POErroresSemanticos=null
+    }
+  }
+  popUpValidation(){
+    var CO:boolean=true;
+    var PO:boolean=true;
+    if(this.ComprensionAuditivaCualitativa.ComandosOidosAlterada==null && this.ComprensionAuditivaCualitativa.PalabraOidaAlterada==null ){
+      this.popupsave=true;
+      return
+    }
+    if(this.ComprensionAuditivaCualitativa.ComandosOidosAlterada==1){
+      if((this.ComprensionAuditivaCualitativa.COCambiaElOrdenDelComando==null || this.ComprensionAuditivaCualitativa.COCambiaElOrdenDelComando==false) &&
+        (this.ComprensionAuditivaCualitativa.COOmiteParteDelComando==null || this.ComprensionAuditivaCualitativa.COOmiteParteDelComando==false) &&
+        (this.ComprensionAuditivaCualitativa.COSustituyeParteDelComando==null || this.ComprensionAuditivaCualitativa.COSustituyeParteDelComando==false)){
+          CO=false;
+        }else{
+          if(this.ComprensionAuditivaCualitativa.COCambiaElOrdenDelComando==false&&
+            this.ComprensionAuditivaCualitativa.COOmiteParteDelComando==false&&
+            this.ComprensionAuditivaCualitativa.COSustituyeParteDelComando==false){
+              CO=false;
+            }
+            else{
+              CO=true;
+            }
+        }
+    }
+    if(this.ComprensionAuditivaCualitativa.PalabraOidaAlterada==1){
+      if((this.ComprensionAuditivaCualitativa.POErroresFormales==null || this.ComprensionAuditivaCualitativa.POErroresFormales==false)&&
+        (this.ComprensionAuditivaCualitativa.POErroresNoRelacionados==null||this.ComprensionAuditivaCualitativa.POErroresNoRelacionados==false)&&
+        (this.ComprensionAuditivaCualitativa.POErroresSemanticos==null||this.ComprensionAuditivaCualitativa.POErroresSemanticos==false)){
+          PO=false;
+        }else{
+          if(this.ComprensionAuditivaCualitativa.POErroresFormales==false&&
+            this.ComprensionAuditivaCualitativa.POErroresNoRelacionados==false&&
+            this.ComprensionAuditivaCualitativa.POErroresSemanticos==false){
+              PO=false;
+          }
+          else{
+            PO=true
+          }
+        }
+    }
+    if(CO == false || PO == false){
+      this.popupsave=false;
+      return
+    }
+    else{
+      this.popupsave=true;
+      return
+    }
   }
   open(register){
     const modalRef = this._ModalService.open(register, { size: 'xl' })
@@ -63,7 +125,8 @@ export class AuditiveComprehensionComponent implements OnInit {
   next() {
     this.event.emit(1)
     this.emitCualitativa.emit(this.ComprensionAuditivaCualitativa);
-    this.emitCuantitativa.emit(this.ComprensionAuditivaCuantitativa)
+    this.emitCuantitativa.emit(this.ComprensionAuditivaCuantitativa);
+
   }
   back() {
     this.event.emit(-1)
