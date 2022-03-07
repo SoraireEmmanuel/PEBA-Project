@@ -28,8 +28,19 @@ export class AuditiveComprehensionComponent implements OnInit {
   ngOnInit(): void {
     this.ComprensionAuditivaCualitativa=this.auditivecualitativa;
     this.ComprensionAuditivaCuantitativa=this.auditivecuantitativa;
-    this.CopyComprensionAuditivaCaulitativa=this.auditivecualitativa;
+    //this.CopyComprensionAuditivaCaulitativa=this.auditivecualitativa;
+    this.copycharge();
     this.popUpValidation();
+  }
+  copycharge(){
+    this.CopyComprensionAuditivaCaulitativa.COCambiaElOrdenDelComando=this.auditivecualitativa.COCambiaElOrdenDelComando;
+    this.CopyComprensionAuditivaCaulitativa.COOmiteParteDelComando=this.auditivecualitativa.COOmiteParteDelComando;
+    this.CopyComprensionAuditivaCaulitativa.COSustituyeParteDelComando=this.auditivecualitativa.COSustituyeParteDelComando;
+    this.CopyComprensionAuditivaCaulitativa.ComandosOidosAlterada=this.auditivecualitativa.ComandosOidosAlterada;
+    this.CopyComprensionAuditivaCaulitativa.POErroresFormales=this.auditivecualitativa.POErroresFormales;
+    this.CopyComprensionAuditivaCaulitativa.POErroresNoRelacionados=this.auditivecualitativa.POErroresNoRelacionados;
+    this.CopyComprensionAuditivaCaulitativa.POErroresSemanticos=this.auditivecualitativa.POErroresSemanticos;
+    this.CopyComprensionAuditivaCaulitativa.PalabraOidaAlterada=this.auditivecualitativa.PalabraOidaAlterada;
   }
   clear(){
     if(this.ComprensionAuditivaCualitativa.ComandosOidosAlterada==0 ){
@@ -113,6 +124,7 @@ export class AuditiveComprehensionComponent implements OnInit {
     this.CopyComprensionAuditivaCaulitativa.PalabraOidaAlterada=this.ComprensionAuditivaCualitativa.PalabraOidaAlterada;
   }
   cancel(){
+
     this.ComprensionAuditivaCualitativa.COCambiaElOrdenDelComando = this.CopyComprensionAuditivaCaulitativa.COCambiaElOrdenDelComando;
     this.ComprensionAuditivaCualitativa.COOmiteParteDelComando = this.CopyComprensionAuditivaCaulitativa.COOmiteParteDelComando;
     this.ComprensionAuditivaCualitativa.COSustituyeParteDelComando = this.CopyComprensionAuditivaCaulitativa.COSustituyeParteDelComando;
