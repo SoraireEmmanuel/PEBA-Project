@@ -222,7 +222,7 @@
       <div class="col-md-3"><label class="">Lectura de no palabras</label></div>
       <div class="col-md-3">
         <select class="form-select" name="LecturaNoPalabras" id="LecturaNoPalabras"
-          [(ngModel)]="LecturaCualitativa.LecturaDeNoPalabras">
+          [(ngModel)]="LecturaCualitativa.LecturaDeNoPalabras" (change)="popUpValidation()" (change)="clear()">
           <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
           <option [ngValue]="0">Normal</option>
           <option [ngValue]="1">Alterada</option>
@@ -230,12 +230,12 @@
       </div>
       <div class="col-md-6" *ngIf="LecturaCualitativa.LecturaDeNoPalabras ==1">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="LNP1" [(ngModel)]="LecturaCualitativa.LNPLexicalizacionDeNoPalabras">
-          <label class="form-check-label" for="LNP1">Omisión de parte</label>
+          <input class="form-check-input" type="checkbox" id="LNP1" [(ngModel)]="LecturaCualitativa.LNPLexicalizacionDeNoPalabras" (change)="popUpValidation()">
+          <label class="form-check-label" for="LNP1">Lexicalización de no palabras</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="LNP2" [(ngModel)]="LecturaCualitativa.LNPNoPalabrasErroneas">
-          <label class="form-check-label" for="LNP2">Sustitución de parte</label>
+          <input class="form-check-input" type="checkbox" id="LNP2" [(ngModel)]="LecturaCualitativa.LNPNoPalabrasErroneas" (change)="popUpValidation()">
+          <label class="form-check-label" for="LNP2">No palabras erróneas</label>
         </div>
       </div>
     </div>
@@ -243,7 +243,7 @@
       <div class="col-md-3"><label class="">Lectura de palabras</label></div>
       <div class="col-md-3">
         <select class="form-select" name="LecturaPalabras" id="LecturaPalabras"
-          [(ngModel)]="LecturaCualitativa.LecturaDePalabras">
+          [(ngModel)]="LecturaCualitativa.LecturaDePalabras" (change)="popUpValidation()" (change)="clear()">
           <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
           <option [ngValue]="0">Normal</option>
           <option [ngValue]="1">Alterada</option>
@@ -251,19 +251,19 @@
       </div>
       <div class="col-md-6" *ngIf="LecturaCualitativa.LecturaDePalabras ==1">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="LP1" [(ngModel)]="LecturaCualitativa.LPParalexiasFormales">
+          <input class="form-check-input" type="checkbox" id="LP1" [(ngModel)]="LecturaCualitativa.LPParalexiasFormales" (change)="popUpValidation()">
           <label class="form-check-label" for="LP1">Paralexias formales</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="LP2" [(ngModel)]="LecturaCualitativa.LPParalexiasMorfologicas">
+          <input class="form-check-input" type="checkbox" id="LP2" [(ngModel)]="LecturaCualitativa.LPParalexiasMorfologicas" (change)="popUpValidation()">
           <label class="form-check-label" for="LP2">Paralexias morfológicas</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="LP3" [(ngModel)]="LecturaCualitativa.LPParalexiasSemanticas">
+          <input class="form-check-input" type="checkbox" id="LP3" [(ngModel)]="LecturaCualitativa.LPParalexiasSemanticas" (change)="popUpValidation()">
           <label class="form-check-label" for="LP3">Paralexias semánticas</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="LP4" [(ngModel)]="LecturaCualitativa.LPSustitucionPorNoPalabras">
+          <input class="form-check-input" type="checkbox" id="LP4" [(ngModel)]="LecturaCualitativa.LPSustitucionPorNoPalabras" (change)="popUpValidation()">
           <label class="form-check-label" for="LP4">Sustitución por no palabras</label>
         </div>
       </div>
@@ -271,7 +271,7 @@
     <div class="row mt-3">
       <div class="col-md-3"><label class="">Emparejamiento palabra escrita-dibujo </label></div>
       <div class="col-md-3">
-        <select class="form-select" name="EPED" id="EPED"
+        <select class="form-select" name="EPED" id="EPED" (change)="popUpValidation()" (change)="clear()"
           [(ngModel)]="LecturaCualitativa.EmparejamientoPalabraEscritaDibujo">
           <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
           <option [ngValue]="0">Normal</option>
@@ -280,15 +280,15 @@
       </div>
       <div class="col-md-6" *ngIf="LecturaCualitativa.EmparejamientoPalabraEscritaDibujo ==1">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="EPEDE1" [(ngModel)]="LecturaCualitativa.EPEDErroresFormales">
+          <input class="form-check-input" type="checkbox" id="EPEDE1" [(ngModel)]="LecturaCualitativa.EPEDErroresFormales" (change)="popUpValidation()">
           <label class="form-check-label" for="EPEDE1">Errores formales</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="EPEDE2" [(ngModel)]="LecturaCualitativa.EPEDErroresSemanticos">
+          <input class="form-check-input" type="checkbox" id="EPEDE2" [(ngModel)]="LecturaCualitativa.EPEDErroresSemanticos" (change)="popUpValidation()">
           <label class="form-check-label" for="EPEDE2">Errores semánticos</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="EPEDE3" [(ngModel)]="LecturaCualitativa.EPEDErroresNoRelacionados">
+          <input class="form-check-input" type="checkbox" id="EPEDE3" [(ngModel)]="LecturaCualitativa.EPEDErroresNoRelacionados" (change)="popUpValidation()">
           <label class="form-check-label" for="EPEDE3">Errores no relacionados</label>
         </div>
       </div>
@@ -296,7 +296,8 @@
     <div class="row mt-3">
       <div class="col-md-3"><label class="">Comprensión de comando escrito </label></div>
       <div class="col-md-3">
-        <select class="form-select" name="CCE" id="CCE" [(ngModel)]="LecturaCualitativa.ComprensionDeComandoEscrito">
+        <select class="form-select" name="CCE" id="CCE" [(ngModel)]="LecturaCualitativa.ComprensionDeComandoEscrito"
+        (change)="popUpValidation()" (change)="clear()">
           <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
           <option [ngValue]="0">Normal</option>
           <option [ngValue]="1">Alterada</option>
@@ -304,15 +305,15 @@
       </div>
       <div class="col-md-6" *ngIf="LecturaCualitativa.ComprensionDeComandoEscrito ==1">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="CCE1" [(ngModel)]="LecturaCualitativa.CDCEOmisionDeParte">
+          <input class="form-check-input" type="checkbox" id="CCE1" [(ngModel)]="LecturaCualitativa.CDCEOmisionDeParte" (change)="popUpValidation()">
           <label class="form-check-label" for="CCE1">Omisión de parte</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="CCE2" [(ngModel)]="LecturaCualitativa.CDCESustitucionDeParte">
+          <input class="form-check-input" type="checkbox" id="CCE2" [(ngModel)]="LecturaCualitativa.CDCESustitucionDeParte" (change)="popUpValidation()">
           <label class="form-check-label" for="CCE2">Sustitución de parte</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="CCE3" [(ngModel)]="LecturaCualitativa.CDCEAlteracionDelOrden">
+          <input class="form-check-input" type="checkbox" id="CCE3" [(ngModel)]="LecturaCualitativa.CDCEAlteracionDelOrden" (change)="popUpValidation()">
           <label class="form-check-label" for="CCE3">Alteración del orden</label>
         </div>
       </div>
@@ -321,7 +322,7 @@
   <div class="modal-footer">
     <div class="row">
       <div class="col-md-6 d-grid gap-2">
-        <button class="btn btn-success" type="button" (click)="saved()" (click)="modal.close()">Guardar</button>
+        <button class="btn btn-success" type="button" (click)="saved()" (click)="modal.close()" [disabled]="!popupsave" >Guardar</button>
       </div>
       <div class="col-md-6 d-grid gap-2">
         <button type="button" class="btn btn-danger" (click)="cancel()" (click)="modal.close()">
