@@ -128,7 +128,8 @@
       <div class="col-md-3"><label class="">Procesamiento léxico </label></div>
       <div class="col-md-3">
         <select class="form-select" name="PL" id="PL"
-          [(ngModel)]="DenominacionCualitativa.ProcesamientoLexico">
+          [(ngModel)]="DenominacionCualitativa.ProcesamientoLexico"
+          (change)="popUpValidation()" (change)="clear()">
           <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
           <option [ngValue]="0">Normal</option>
           <option [ngValue]="1">Alterada</option>
@@ -136,41 +137,48 @@
       </div>
       <div class="col-md-6" *ngIf="DenominacionCualitativa.ProcesamientoLexico == 1">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="PL1" [(ngModel)]="DenominacionCualitativa.PLAnomia">
+          <input class="form-check-input" type="checkbox" id="PL1" [(ngModel)]="DenominacionCualitativa.PLAnomia"
+          (change)="popUpValidation()">
           <label class="form-check-label" for="PL1">Anomias</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="PL2" [(ngModel)]="DenominacionCualitativa.PLParafasiasFormales">
+          <input class="form-check-input" type="checkbox" id="PL2" [(ngModel)]="DenominacionCualitativa.PLParafasiasFormales"
+          (change)="popUpValidation()">
           <label class="form-check-label" for="PL2">Parafasias formales</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="PL3" [(ngModel)]="DenominacionCualitativa.PLParafasiasMorfologicas">
+          <input class="form-check-input" type="checkbox" id="PL3" [(ngModel)]="DenominacionCualitativa.PLParafasiasMorfologicas"
+          (change)="popUpValidation()">
           <label class="form-check-label" for="PL3">Parafasias morfológicas</label>
         </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="PL4"
-            [(ngModel)]="DenominacionCualitativa.PLParafasiasSemanticas">
+            [(ngModel)]="DenominacionCualitativa.PLParafasiasSemanticas" (change)="popUpValidation()">
           <label class="form-check-label" for="PL4">Parafasias semánticas</label>
         </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="PL5"
-            [(ngModel)]="DenominacionCualitativa.PLCircunloquios">
+            [(ngModel)]="DenominacionCualitativa.PLCircunloquios" (change)="popUpValidation()">
           <label class="form-check-label" for="PL5">Circunloquios</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="PL6" [(ngModel)]="DenominacionCualitativa.PLNeologismos">
+          <input class="form-check-input" type="checkbox" id="PL6" [(ngModel)]="DenominacionCualitativa.PLNeologismos"
+          (change)="popUpValidation()">
           <label class="form-check-label" for="PL6">Neologismos</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="PL7" [(ngModel)]="DenominacionCualitativa.PLEstereotipias">
+          <input class="form-check-input" type="checkbox" id="PL7" [(ngModel)]="DenominacionCualitativa.PLEstereotipias"
+          (change)="popUpValidation()">
           <label class="form-check-label" for="PL7">Estereotipías</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="PL8" [(ngModel)]="DenominacionCualitativa.PLPerseveraciones">
+          <input class="form-check-input" type="checkbox" id="PL8" [(ngModel)]="DenominacionCualitativa.PLPerseveraciones"
+          (change)="popUpValidation()">
           <label class="form-check-label" for="PL8">Perseveraciones</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="PL9" [(ngModel)]="DenominacionCualitativa.PLMuletillas">
+          <input class="form-check-input" type="checkbox" id="PL9" [(ngModel)]="DenominacionCualitativa.PLMuletillas"
+          (change)="popUpValidation()">
           <label class="form-check-label" for="PL9">Muletillas</label>
         </div>
       </div>
@@ -179,7 +187,7 @@
   <div class="modal-footer">
     <div class="row">
       <div class="col-md-6 d-grid gap-2">
-        <button class="btn btn-success" type="button" (click)="saved()" (click)="modal.close()">Guardar</button>
+        <button class="btn btn-success" type="button" (click)="saved()" (click)="modal.close()" [disabled]="!popupsave">Guardar</button>
       </div>
       <div class="col-md-6 d-grid gap-2">
         <button type="button" class="btn btn-danger" (click)="cancel()" (click)="modal.close()">

@@ -198,7 +198,7 @@
       <div class="col-md-3"><label class="">Codificación fonológica</label></div>
       <div class="col-md-3">
         <select class="form-select" name="CF" id="CF" [(ngModel)]="RepeticionCualitativa.CodificacionFonologica"
-        (change)="popUpValidation()">
+        (change)="popUpValidation()" (change)="clear()">
           <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
           <option [ngValue]="0">Normal</option>
           <option [ngValue]="1">Alterada</option>
@@ -219,7 +219,7 @@
     <div class="row mt-3">
       <div class="col-md-3"><label class="">Procesamiento léxico </label></div>
       <div class="col-md-3">
-        <select class="form-select" name="PL" id="PL" (change)="popUpValidation()"
+        <select class="form-select" name="PL" id="PL" (change)="popUpValidation()" (change)="clear()"
           [(ngModel)]="RepeticionCualitativa.ProcesamientoLexico">
           <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
           <option [ngValue]="0">Normal</option>

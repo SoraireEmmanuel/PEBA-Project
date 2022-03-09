@@ -3,8 +3,6 @@ import { Denominacion_CualitativaDTO } from 'src/app/clases/Denominacion_Cualita
 import { Denominacion_CuantitativaDTO } from 'src/app/clases/Denominacion_CuantitativaDTO';
 import { QuestionStep4 } from 'src/app/clases/QuestionStep4';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { Repeticion_CuantitativaDTO } from 'src/app/clases/Repeticion_CuantitativaDTO';
-import { Repeticion_CualitativaDTO } from 'src/app/clases/Repeticion_CualitativaDTO';
 
 @Component({
   selector: 'app-denomination',
@@ -21,6 +19,7 @@ DenominacionCuantitativa:Denominacion_CuantitativaDTO=new Denominacion_Cuantitat
 DropdownOptions:QuestionStep4=new QuestionStep4();
 DenominacionCualitativa:Denominacion_CualitativaDTO= new Denominacion_CualitativaDTO();
 CopyDenominacionCualitativa:Denominacion_CualitativaDTO= new Denominacion_CualitativaDTO();
+popupsave:boolean;
   constructor(public _ModalService:NgbModal, config: NgbModalConfig) {
     config.backdrop = 'static';
     config.keyboard = false;
@@ -29,16 +28,62 @@ CopyDenominacionCualitativa:Denominacion_CualitativaDTO= new Denominacion_Cualit
   ngOnInit(): void {
     this.DenominacionCualitativa=this.denominacioncualitativa;
     this.DenominacionCuantitativa=this.denominacioncuantitativa;
-    this.CopyDenominacionCualitativa=this.denominacioncualitativa;
+    //this.CopyDenominacionCualitativa=this.denominacioncualitativa;
+    this.copycharge();
+    this.popUpValidation();
+  }
+  copycharge(){
+    this.CopyDenominacionCualitativa.Articulacion=this.denominacioncualitativa.Articulacion;
+    this.CopyDenominacionCualitativa.CodificacionFonologica=this.denominacioncualitativa.CodificacionFonologica;
+    this.CopyDenominacionCualitativa.PLAnomia=this.denominacioncualitativa.PLAnomia;
+    this.CopyDenominacionCualitativa.PLCircunloquios=this.denominacioncualitativa.PLCircunloquios;
+    this.CopyDenominacionCualitativa.PLEstereotipias=this.denominacioncualitativa.PLEstereotipias;
+    this.CopyDenominacionCualitativa.PLMuletillas=this.denominacioncualitativa.PLMuletillas;
+    this.CopyDenominacionCualitativa.PLNeologismos=this.denominacioncualitativa.PLNeologismos;
+    this.CopyDenominacionCualitativa.PLParafasiasFormales=this.denominacioncualitativa.PLParafasiasFormales;
+    this.CopyDenominacionCualitativa.PLParafasiasMorfologicas=this.denominacioncualitativa.PLParafasiasMorfologicas;
+    this.CopyDenominacionCualitativa.PLParafasiasSemanticas=this.denominacioncualitativa.PLParafasiasSemanticas;
+    this.CopyDenominacionCualitativa.PLPerseveraciones=this.denominacioncualitativa.PLPerseveraciones;
+    this.CopyDenominacionCualitativa.ProcesamientoLexico=this.denominacioncualitativa.ProcesamientoLexico;
+  }
+  clear(){
+    if (this.DenominacionCualitativa.ProcesamientoLexico == 0) {
+      this.DenominacionCualitativa.PLAnomia = null;
+      this.DenominacionCualitativa.PLCircunloquios = null;
+      this.DenominacionCualitativa.PLEstereotipias = null;
+      this.DenominacionCualitativa.PLCircunloquios = null;
+      this.DenominacionCualitativa.PLNeologismos = null;
+      this.DenominacionCualitativa.PLMuletillas = null;
+      this.DenominacionCualitativa.PLParafasiasMorfologicas=null;
+      this.DenominacionCualitativa.PLParafasiasSemanticas=null;
+      this.DenominacionCualitativa.PLPerseveraciones=null;
+    }
+  }
+  popUpValidation(){
+    if(this.DenominacionCualitativa.ProcesamientoLexico == 1){
+      this.popupsave = true;
+    }
+    if (this.DenominacionCualitativa.ProcesamientoLexico == 1 &&
+      (this.DenominacionCualitativa.PLAnomia == null || this.DenominacionCualitativa.PLAnomia == false)&&
+      (this.DenominacionCualitativa.PLCircunloquios == null || this.DenominacionCualitativa.PLCircunloquios == false)&&
+      (this.DenominacionCualitativa.PLEstereotipias == null || this.DenominacionCualitativa.PLEstereotipias == false)&&
+      (this.DenominacionCualitativa.PLMuletillas == null || this.DenominacionCualitativa.PLMuletillas == false)&&
+      (this.DenominacionCualitativa.PLNeologismos == null || this.DenominacionCualitativa.PLNeologismos == false)&&
+      (this.DenominacionCualitativa.PLParafasiasFormales == null || this.DenominacionCualitativa.PLParafasiasFormales == false)&&
+      (this.DenominacionCualitativa.PLParafasiasMorfologicas == null || this.DenominacionCualitativa.PLParafasiasMorfologicas == false)&&
+      (this.DenominacionCualitativa.PLParafasiasSemanticas == null || this.DenominacionCualitativa.PLParafasiasSemanticas == false)&&
+      (this.DenominacionCualitativa.PLPerseveraciones == null || this.DenominacionCualitativa.PLPerseveraciones == false)){
+      this.popupsave = false
+    } else {
+      this.popupsave = true
+    }
   }
   open(register){
     const modalRef = this._ModalService.open(register, { size: 'xl' })
   }
-
   suspend(){
     this.DenominacionCuantitativa.WasSuspended = true;
   }
-
   total(){
     this.DenominacionCuantitativa.SubTotal=this.DenominacionCuantitativa.LaminaCama+
                                             this.DenominacionCuantitativa.LaminaCome+
@@ -58,8 +103,6 @@ CopyDenominacionCualitativa:Denominacion_CualitativaDTO= new Denominacion_Cualit
     this.CopyDenominacionCualitativa.PLParafasiasSemanticas=this.DenominacionCualitativa.PLParafasiasSemanticas;
     this.CopyDenominacionCualitativa.PLPerseveraciones=this.DenominacionCualitativa.PLPerseveraciones;
     this.CopyDenominacionCualitativa.ProcesamientoLexico=this.DenominacionCualitativa.ProcesamientoLexico;
-
-
   }
   cancel(){
     this.DenominacionCualitativa.Articulacion=this.CopyDenominacionCualitativa.Articulacion;
@@ -75,11 +118,27 @@ CopyDenominacionCualitativa:Denominacion_CualitativaDTO= new Denominacion_Cualit
     this.DenominacionCualitativa.PLPerseveraciones=this.CopyDenominacionCualitativa.PLPerseveraciones;
     this.DenominacionCualitativa.ProcesamientoLexico=this.CopyDenominacionCualitativa.ProcesamientoLexico;
   }
-
+cuantitativoFieldValidation():boolean{
+  if ((this.DenominacionCuantitativa.LaminaCama == null || this.DenominacionCuantitativa.LaminaCome == null ||
+    this.DenominacionCuantitativa.LaminaRema == null || this.DenominacionCuantitativa.LaminaViolin == null) &&
+    this.DenominacionCuantitativa.WasSuspended == false){
+    return false;
+  }
+  if (this.DenominacionCuantitativa.WasSuspended == true) {
+    return true;
+  }
+  if (this.DenominacionCuantitativa.LaminaCama != null || this.DenominacionCuantitativa.LaminaCome ||
+      this.DenominacionCuantitativa.LaminaRema != null || this.DenominacionCuantitativa.LaminaViolin){
+    return true
+  }
+}
   next() {
-    this.event.emit(1)
-    this.emitCualitativa.emit(this.DenominacionCualitativa);
-    this.emitCuantitativa.emit(this.DenominacionCuantitativa);
+    if(this.cuantitativoFieldValidation()){
+      this.event.emit(1)
+      this.emitCualitativa.emit(this.DenominacionCualitativa);
+      this.emitCuantitativa.emit(this.DenominacionCuantitativa);
+    }
+
   }
   back() {
     this.event.emit(-1)

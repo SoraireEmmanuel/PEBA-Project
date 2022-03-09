@@ -95,11 +95,9 @@ export class RepetitionComponent implements OnInit {
   open(register) {
     const modalRef = this._ModalService.open(register, { size: 'xl' })
   }
-
   suspend() {
     this.RepeticionCuantitativa.WasSuspended = true;
   }
-
   total() {
     this.RepeticionCuantitativa.SubTotal = this.RepeticionCuantitativa.Almusipa +
       this.RepeticionCuantitativa.ElHombreGuardo +

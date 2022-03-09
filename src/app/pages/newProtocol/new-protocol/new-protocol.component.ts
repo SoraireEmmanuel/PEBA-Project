@@ -23,7 +23,7 @@ import { Repeticion_CuantitativaDTO } from 'src/app/clases/Repeticion_Cuantitati
 export class NewProtocolComponent implements OnInit {
   Protocol: ProtocoloDTO = new ProtocoloDTO();
   PatientIdentification: PatientIdentification = new PatientIdentification()
-  Progress: number = 0;
+  Progress: number = 6;
   constructor() {
 
 
