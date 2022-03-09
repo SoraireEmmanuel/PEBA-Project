@@ -120,8 +120,6 @@ popUpValidation(){
     }else{
       this.popupsave=false
     }
-
-
   }
   open(register){
     const modalRef = this._ModalService.open(register, { size: 'xl' })
