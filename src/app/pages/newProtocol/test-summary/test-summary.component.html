@@ -66,43 +66,50 @@
       <tbody>
         <tr>
           <th scope="row">Comprensión auditiva:</th>
-          <td> {{SummaryCualitative[0].EmparejamientoPalabraOida}}<br>
-          {{SummaryCualitative[0].ComandosOidos}} </td>
+          <td> {{summaryCualitativa.auditivaEmparejamientoPalabraOida}}<br>
+          {{summaryCualitativa.auditivaComandosOidos}} </td>
         </tr>
         <tr>
           <th scope="row">Expresión oral:</th>
-          <td>
-
-          </td>
+          <td>{{summaryCualitativa.oralFluencia}}<br *ngIf="summaryCualitativa.oralProsodia!=null">
+            {{summaryCualitativa.oralProsodia}}<br *ngIf="summaryCualitativa.oralArticulacion!=null">
+            {{summaryCualitativa.oralArticulacion}}<br *ngIf="summaryCualitativa.oralCodificacionFonologica!=null">
+            {{summaryCualitativa.oralCodificacionFonologica}}<br *ngIf="summaryCualitativa.oralProcesamientoSintaxtico!=null">
+            {{summaryCualitativa.oralProcesamientoSintaxtico}}<br *ngIf="summaryCualitativa.oralProcesamientoLexico!=null">
+            {{summaryCualitativa.oralProcesamientoLexico}}</td>
         </tr>
         <tr>
           <th scope="row">Repetición: </th>
-          <td>
-
-          </td>
+          <td>{{summaryCualitativa.repeticionArticulacion}}<br *ngIf="summaryCualitativa.repeticionCodificacionFonologica!=null">
+            {{summaryCualitativa.repeticionCodificacionFonologica}}<br *ngIf="summaryCualitativa.repeticionProcesamientoLexico!=null">
+            {{summaryCualitativa.repeticionProcesamientoLexico}}<br *ngIf="summaryCualitativa.repeticionProcesamientoSintaxtico!=null">
+            {{summaryCualitativa.repeticionProcesamientoSintaxtico}}          </td>
         </tr>
         <tr>
           <th scope="row">Denominación: </th>
-          <td>
-
-          </td>
+          <td>{{summaryCualitativa.denominacionArticulacion}}<br *ngIf="summaryCualitativa.denominacionCodificacionFonologica!=null">
+            {{summaryCualitativa.denominacionCodificacionFonologica}}<br *ngIf="summaryCualitativa.denominacionProcesamientoLexico!=null">
+            {{summaryCualitativa.denominacionProcesamientoLexico}}          </td>
         </tr>
         <tr>
           <th scope="row">Lectura: </th>
-          <td>
-
-          </td>
+          <td>{{summaryCualitativa.lecturaLecturaNoPalabras}}<br *ngIf="summaryCualitativa.lecturaLecturaPalabras!=null">
+            {{summaryCualitativa.lecturaLecturaPalabras}}<br *ngIf="summaryCualitativa.lecturaEmparejamientoPalabraEscrita!=null">
+            {{summaryCualitativa.lecturaEmparejamientoPalabraEscrita}}<br *ngIf="summaryCualitativa.lecturaComprensionComandoEscrito!=null">
+            {{summaryCualitativa.lecturaComprensionComandoEscrito}}</td>
         </tr>
         <tr>
           <th scope="row">Escritura:</th>
-          <td>
-
-          </td>
+          <td>{{summaryCualitativa.escrituraMovilidadManoDominante}}<br *ngIf="summaryCualitativa.escrituraManoNoDominante!=null">
+            {{summaryCualitativa.escrituraManoNoDominante}}<br *ngIf="summaryCualitativa.escrituraGrafismo!=null">
+            {{summaryCualitativa.escrituraGrafismo}}<br *ngIf="summaryCualitativa.escrituraDeletreo!=null">
+            {{summaryCualitativa.escrituraDeletreo}}<br *ngIf="summaryCualitativa.escrituraOrtografia!=null">
+            {{summaryCualitativa.escrituraOrtografia}}</td>
         </tr>
       </tbody>
     </table>
     <!--Conclusiones y comentarios-->
-    <h5 class="mb-0">Conclusiones y comentarios</h5>
+    <h5 class="mb-0 mt-3">Conclusiones y comentarios</h5>
     <hr class="mt-0">
     <div class="mt-1 mb-4">
       <div class="form-floating">
@@ -121,7 +128,3 @@
     </div>
   </div>
 </div>
-
-
-
-{{ProtocolSummary|json}}

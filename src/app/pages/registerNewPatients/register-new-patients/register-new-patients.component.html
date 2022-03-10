@@ -6,7 +6,7 @@
     <div class="row  ">
     <div class="col-auto">
       <label for="iniciales" class="form-label "> Iniciales del Paciente</label>
-      <input class="form-control" type="text" placeholder="Ej: MES" name="iniciales" id="iniciales" [(ngModel)]="patient.initials"/>
+      <input class="form-control" type="text" placeholder="Ej: MES" name="iniciales" id="iniciales" [(ngModel)]="patient.initials" (keyup)="convertirMayuscula()" />
       </div>
     <div class="col-auto ">
       <label for="nacimiento" class="form-label ">Fecha de Nacimiento</label>
@@ -51,10 +51,10 @@
       </select>
     </div>
     <div class="col-12 mt-4 text-center ">
-      <button type="submit" class="btn btn-outline-light">
+      <button type="submit" class="btn btn-outline-light" (click)="crearPaciente()">
         Registrar Paciente
       </button>
     </div>
   </div>
 </div>
-
+{{patient|json}}
