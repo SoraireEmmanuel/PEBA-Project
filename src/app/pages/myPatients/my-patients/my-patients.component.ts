@@ -20,4 +20,7 @@ this.optionreturn=number;
   navigateNewProtocol(){
     this.route.navigate(['newProtocol'])
   }
+  allProtocolsByPatient(){
+    this.route.navigate(['allProtocolsByPatient'])
+  }
 }

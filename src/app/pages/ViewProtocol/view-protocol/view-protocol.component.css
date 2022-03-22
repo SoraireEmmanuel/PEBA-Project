@@ -1,0 +1,19 @@
+h5{
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+hr{
+  margin-top: 0%;
+  margin-bottom: 5px;
+  border-top: rgba(0, 0, 0, 0.63) 1px solid;
+
+}
+.b{
+  border: rgba(0, 0, 0, 0.63) 3px solid;
+  border-radius: 5px;
+}
+.b2{
+  border: rgba(0, 0, 0, 0.63) 2px solid;
+  border-radius: 5px;
+}

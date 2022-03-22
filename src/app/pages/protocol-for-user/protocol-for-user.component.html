@@ -1,1 +1,37 @@
-<p>protocol-for-user works!</p>
+<div  class="container-sm mt-3 bg-success bg-gradient text-white border shadow-lg p-3 mb-5 bg-body rounded">
+  <div class="text-center">
+    <h3>Protocolos del Paciente: XXXX</h3>
+  </div>
+  <div class="container mt-3">
+    <table class="table table-bordered tabl-striped table-light">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col" class="tableTitle">Id Paciente</th>
+          <th scope="col" class="tableTitle">Fecha del Protocolo</th>
+          <th scope="col" class="tableTitle">Puntuacion General</th>
+          <th scope="col" class="tableTitle">Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">c</th>
+          <td>a</td>
+          <td>b</td>
+          <td>
+            <div>
+              <button class="btn btn-success ms-1 rounded-3" (click)="viewProtocol(1)">
+                Ver
+              </button>
+              <button class="btn btn-success m-1 rounded-3" >
+                Descargar Completo
+              </button>
+              <button class="btn btn-success ms-1 rounded-3">
+                Descargar Resumen
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

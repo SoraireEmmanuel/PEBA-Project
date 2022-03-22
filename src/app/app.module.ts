@@ -27,6 +27,7 @@ import { DenominationComponent } from './pages/newProtocol/denomination/denomina
 import { ReadingComponent } from './pages/newProtocol/reading/reading.component';
 import { WritingComponent } from './pages/newProtocol/writing/writing.component';
 import { TestSummaryComponent } from './pages/newProtocol/test-summary/test-summary.component';
+import { ViewProtocolComponent } from './pages/ViewProtocol/view-protocol/view-protocol.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { TestSummaryComponent } from './pages/newProtocol/test-summary/test-summ
     DenominationComponent,
     ReadingComponent,
     WritingComponent,
-    TestSummaryComponent
+    TestSummaryComponent,
+    ViewProtocolComponent
   ],
   imports: [
     BrowserModule,
