@@ -4,7 +4,7 @@ import html2canvas from 'html2canvas';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts'
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
-
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'app-view-protocol',
@@ -21,14 +21,18 @@ export class ViewProtocolComponent implements OnInit {
   @ViewChild('P6E') P6E: ElementRef;
   @ViewChild('TablaCuantitativa') TablaCuantitativa: ElementRef;
   @ViewChild('TablaCualitativa') TablaCualitativa: ElementRef;
-  constructor() {
+  @ViewChild('spiner') spiner: ElementRef;
 
+  constructor(public _ModalService:NgbModal, config: NgbModalConfig) {
+    config.backdrop = 'static';
+    config.keyboard = false;
   }
 
   ngOnInit(): void {
 
   }
-  createFullPDF() {
+  createFullPDF(modal) {
+    const modalRef = this._ModalService.open(modal, {size: 'xl', centered: true});
     html2canvas(this.Encabezado.nativeElement).then((canvas) => {
       const encabezado = canvas.toDataURL();
       html2canvas(this.P1CA.nativeElement).then((canvas) => {
@@ -95,6 +99,7 @@ export class ViewProtocolComponent implements OnInit {
                       }]
                       }
                       pdfMake.createPdf(docDefinition).open();
+                      modalRef.close();
                     })
                   })
                 })
@@ -105,7 +110,8 @@ export class ViewProtocolComponent implements OnInit {
       })
     })
   }
-  createSummaryPDF(){
+  createSummaryPDF(modal){
+    const modalRef = this._ModalService.open(modal, {size: 'xl', centered: true});
     html2canvas(this.Encabezado.nativeElement).then((canvas) => {
       const encabezado = canvas.toDataURL()
       html2canvas(this.TablaCuantitativa.nativeElement).then((canvas) => {
@@ -128,10 +134,12 @@ export class ViewProtocolComponent implements OnInit {
             }]
           }
           pdfMake.createPdf(pdf).open();
+          modalRef.close();
         })
       })
     })
-
   }
-
+  open(register){
+    const modalRef = this._ModalService.open(register, { size: 'xl' })
+  }
 }

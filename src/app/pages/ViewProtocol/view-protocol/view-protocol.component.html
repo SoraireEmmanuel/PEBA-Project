@@ -577,9 +577,22 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-6 text-center"><button class="btn btn-info" (click)="createFullPDF()">Descargar Protocolo
+  <div class="col-md-6 text-center"><button class="btn btn-info" (click)="createFullPDF(spiner)">Descargar Protocolo
       Completo</button></div>
-  <div class="col-md-6 text-center"><button class="btn btn-info" (click)="createSummaryPDF()" >Descargar Protocolo
+  <div class="col-md-6 text-center"><button class="btn btn-info" (click)="createSummaryPDF(spiner)" >Descargar Protocolo
       Resumido</button></div>
 </div>
+
+
+<!--Pop Up wait generating the pdf file-->
+<ng-template #spiner let-modal let-c="close" let-d="dismiss">
+  <div class="modal-body">
+    <div class="d-flex justify-content-center">
+      <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden" >Loading...</span>
+      </div>
+      <span style="font-size:  2rem; margin-bottom: 1rem; margin-left: 1rem;"> Generando su PDF, por favor espere unos segundos... </span>
+    </div>
+  </div>
+</ng-template>
 
