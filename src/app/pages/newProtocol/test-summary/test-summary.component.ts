@@ -1,9 +1,8 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { stringify } from 'querystring';
 import { ProtocoloDTO } from 'src/app/clases/ProtocoloDTO';
 import { summaryCualitativeTable } from 'src/app/clases/summaryCualitativeTable';
 import { Valuation } from 'src/app/clases/valuation';
-import { SummaryTableServicesService } from 'src/app/services/summaryTableServices/summary-table-services.service';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'app-test-summary',
@@ -18,7 +17,10 @@ export class TestSummaryComponent implements OnInit {
   ProtocolSummary: ProtocoloDTO = new ProtocoloDTO();
   valuation:Valuation=new Valuation();
   summaryCualitativa:summaryCualitativeTable=new summaryCualitativeTable();
-  constructor() { }
+  constructor(public _ModalService:NgbModal,
+    config: NgbModalConfig) {
+    config.backdrop = 'static';
+    config.keyboard = false; }
 
   ngOnInit(): void {
     this.ProtocolSummary = this.protocol;
@@ -50,7 +52,14 @@ export class TestSummaryComponent implements OnInit {
   back() {
     this.event.emit(-1)
   }
-  sendProtocolFunction() {
-    this.sendProtocol.emit(this.ProtocolSummary);
+  sendProtocolFunction(modal) {
+    const modalSpiner = this._ModalService.open(modal, {size: 'xl', centered: true})
+      setTimeout(() => {
+        modalSpiner.close();
+        localStorage.setItem('protocol', JSON.stringify(this.ProtocolSummary));
+        //this.sendProtocol.emit(this.ProtocolSummary);
+
+      }, 5000);
+
   }
 }

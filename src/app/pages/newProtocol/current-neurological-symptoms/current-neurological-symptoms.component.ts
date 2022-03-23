@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { NeurologicalSymptomsDropdownOption } from 'src/app/clases/NeurologicalSymptomsDropdownOption';
 import { SintomasNeurologicosDTO } from 'src/app/clases/SintomasNeurologicosDTO';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-current-neurological-symptoms',
@@ -13,7 +14,7 @@ export class CurrentNeurologicalSymptomsComponent implements OnInit {
   @Output() protocolSymptoms = new EventEmitter<SintomasNeurologicosDTO>()
   symptoms: SintomasNeurologicosDTO = new SintomasNeurologicosDTO();
   dropdownOptions: NeurologicalSymptomsDropdownOption = new NeurologicalSymptomsDropdownOption;
-  constructor() { }
+  constructor(private _toastr:ToastrService) { }
 
   ngOnInit(): void {
     this.symptoms = this.symptomsEntry;
@@ -111,15 +112,15 @@ export class CurrentNeurologicalSymptomsComponent implements OnInit {
   //Validaciones de sintomas neurologicos
   alertaValidation(): boolean {
     if (this.symptoms.Alerta == null) {
-      console.log('El campo Alerta es obligatorio')
+      this._toastr.error('El campo Alerta es obligatorio','Compruebe los campos');
       return false
     } else {
       if (this.symptoms.Alerta == 'ALTERADO' && this.symptoms.AlertaTipoAlteracion == null) {
-        console.log('Debe seleccionar una alteracion para Alerta')
+        this._toastr.error('Debe seleccionar una alteracion para Alerta','Compruebe los campos');
         return false
       } else {
         if (this.symptoms.Alerta == 'ALTERADO' && this.symptoms.AlertaTipoAlteracion == 'Otro' && (this.symptoms.AlertaTipoAlteracionOtro == null || this.symptoms.AlertaTipoAlteracionOtro == '')) {
-          console.log('Debe escribir el tipo de alteracion')
+          this._toastr.error('Debe escribir el tipo de alteracion para Alerta','Compruebe los campos');
           return false
         } else {
           return true
@@ -129,15 +130,15 @@ export class CurrentNeurologicalSymptomsComponent implements OnInit {
   }
   estadoEmocionalValidation(): boolean {
     if (this.symptoms.EstadoEmocional == null) {
-      console.log('El campo Estado Emocional es obligatorio')
+      this._toastr.error('El campo Estado Emocional es obligatorio','Compruebe los campos');
       return false
     } else {
       if (this.symptoms.EstadoEmocional == 'ALTERADO' && this.symptoms.EstadoEmocionalTipoAlteracion == null) {
-        console.log('Debe seleccionar una alteracion para Estado Emocional')
+        this._toastr.error('Debe seleccionar una alteracion para Estado Emocional','Compruebe los campos');
         return false
       } else {
         if (this.symptoms.EstadoEmocional == 'ALTERADO' && this.symptoms.EstadoEmocionalTipoAlteracion == 'Otro' && (this.symptoms.EstadoEmocionalTipoAlteracionOtro == null || this.symptoms.EstadoEmocionalTipoAlteracionOtro == '')) {
-          console.log('Debe escribir el tipo de alteracion para estado emocional')
+          this._toastr.error('Debe escribir el tipo de alteracion para estado emocional','Compruebe los campos');
           return false
         } else {
           return true
@@ -147,15 +148,15 @@ export class CurrentNeurologicalSymptomsComponent implements OnInit {
   }
   fuerzaValidation(): boolean {
     if (this.symptoms.Fuerza == null) {
-      console.log('El campo fuerza es obligatorio')
+      this._toastr.error('El campo fuerza es obligatorio','Compruebe los campos');
       return false
     } else {
       if (this.symptoms.Fuerza == 'ALTERADO' && this.symptoms.FuerzaTipoAlteracion == null) {
-        console.log('Debe seleccionar una alteracion para Fuerza')
+        this._toastr.error('Debe seleccionar una alteracion para Fuerza','Compruebe los campos');
         return false
       } else {
         if (this.symptoms.Fuerza == 'ALTERADO' && this.symptoms.FuerzaTipoAlteracion == 'Otro' && (this.symptoms.FuerzaTipoAlteracionOtro == null || this.symptoms.FuerzaTipoAlteracionOtro == '')) {
-          console.log('Debe escribir el tipo de alteracion')
+          this._toastr.error('Debe escribir el tipo de alteracion para Fuerza','Compruebe los campos');
           return false
         } else {
           return true
@@ -165,16 +166,16 @@ export class CurrentNeurologicalSymptomsComponent implements OnInit {
   }
   coordinacionMotoraValidation(): boolean {
     if (this.symptoms.CondicionMotora == null) {
-      console.log('El campo Alerta es obligatorio')
+      this._toastr.error('El campo Coordinacion Motora es obligatorio','Compruebe los campos');
       return false
     } else {
       if (this.symptoms.CondicionMotora == 'ALTERADO' && this.symptoms.CondicionMotoraTipoAlteracion == null) {
-        console.log('Debe seleccionar una alteracion para Alerta')
+        this._toastr.error('Debe seleccionar una alteracion para Coordinacion Motora','Compruebe los campos');
         return false
       } else {
         if (this.symptoms.CondicionMotora == 'ALTERADO' && this.symptoms.CondicionMotoraTipoAlteracion == 'Otro' &&
           (this.symptoms.CondicionMotoraTipoAlteracionOtro == null || this.symptoms.CondicionMotoraTipoAlteracionOtro == '')) {
-          console.log('Debe escribir el tipo de alteracion')
+            this._toastr.error('Debe escribir el tipo de alteracion para Coordinacion Motora','Compruebe los campos');
           return false
         } else {
           return true
@@ -184,16 +185,16 @@ export class CurrentNeurologicalSymptomsComponent implements OnInit {
   }
   sensibilidadValidation(): boolean {
     if (this.symptoms.Sensibilidad == null) {
-      console.log('El campo Sensibilidad es obligatorio')
+      this._toastr.error('El campo Sensibilidad es obligatorio','Compruebe los campos');
       return false
     } else {
       if (this.symptoms.Sensibilidad == 'ALTERADO' && this.symptoms.SensibilidadTipoAlteracion == null) {
-        console.log('Debe seleccionar una alteracion para Sensibilidad')
+        this._toastr.error('Debe seleccionar una alteracion para Sensibilidad','Compruebe los campos');
         return false
       } else {
         if (this.symptoms.Sensibilidad == 'ALTERADO' && this.symptoms.SensibilidadTipoAlteracion == 'Otro' &&
           (this.symptoms.SensibilidadTipoAlteracionOtro == null || this.symptoms.SensibilidadTipoAlteracionOtro == '')) {
-          console.log('Debe escribir el tipo de alteracion')
+          this._toastr.error('Debe escribir el tipo de alteracion para Sensibilidad','Compruebe los campos');
           return false
         } else {
           return true
@@ -203,25 +204,24 @@ export class CurrentNeurologicalSymptomsComponent implements OnInit {
   }
   visionValidation(): boolean {
     if (this.symptoms.Vision == null) {
-      console.log('El campo vision es obligatorio')
+      this._toastr.error('El campo vision es obligatorio','Compruebe los campos');
       return false
     } else {
       if (this.symptoms.Vision == 'ALTERADO' && (this.symptoms.VisionTipoAlteracion == null || this.symptoms.VisionTipoAlteracionOtro == null)) {
-        console.log('Debe seleccionar una alteracion para vision')
+        this._toastr.error('Debe seleccionar una alteracion para vision','Compruebe los campos');
         return false
       } else {
         return true
-
       }
     }
   }
   audicionValidation(): boolean {
     if (this.symptoms.Audicion == null) {
-      console.log('El campo Audicion es obligatorio')
+      this._toastr.error('El campo Audicion es obligatorio','Compruebe los campos');
       return false
     } else {
       if (this.symptoms.Audicion == 'ALTERADO' && (this.symptoms.AudicionTipoAlteracion == null || this.symptoms.AudicionTipoAlteracionOtro == null)) {
-        console.log('Debe seleccionar una alteracion para Audicion')
+        this._toastr.error('Debe seleccionar una alteracion para Audicion','Compruebe los campos');
         return false
       } else {
         return true
@@ -230,11 +230,11 @@ export class CurrentNeurologicalSymptomsComponent implements OnInit {
   }
   atencionEspacialValidation(): boolean {
     if (this.symptoms.AtencionEspacial == null) {
-      console.log('El campo Atencion Espacial es obligatorio')
+      this._toastr.error('El campo Atencion Espacial es obligatorio','Compruebe los campos');
       return false
     } else {
       if (this.symptoms.AtencionEspacial == 'ALTERADO' && this.symptoms.AtencionEspacialTipoAlteracion == null) {
-        console.log('Debe seleccionar una alteracion para Atencion Espacial')
+        this._toastr.error('Debe seleccionar una alteracion para Atencion Espacial','Compruebe los campos');
         return false
       } else {
         return true
@@ -243,11 +243,11 @@ export class CurrentNeurologicalSymptomsComponent implements OnInit {
   }
   praxiaManualValidation(): boolean {
     if (this.symptoms.PraxiaManual == null) {
-      console.log('El campo Praxia Manual es obligatorio')
+      this._toastr.error('El campo Praxia Manual es obligatorio','Compruebe los campos');
       return false
     } else {
       if (this.symptoms.PraxiaManual == 'ALTERADO' && this.symptoms.PraxiaManualTipoAlteracion == null) {
-        console.log('Debe seleccionar una alteracion para Praxia Manual')
+        this._toastr.error('Debe seleccionar una alteracion para Praxia Manual','Compruebe los campos');
         return false
       } else {
         return true
@@ -256,7 +256,7 @@ export class CurrentNeurologicalSymptomsComponent implements OnInit {
   }
   praxiaOrolinguofacialesValidation(): boolean {
     if (this.symptoms.Alerta == null) {
-      console.log('El campo Praxia Orolinguofaciales es obligatorio')
+      this._toastr.error('El campo Praxia Orolinguofaciales es obligatorio','Compruebe los campos');
       return false
     } else {
           return true
@@ -264,11 +264,11 @@ export class CurrentNeurologicalSymptomsComponent implements OnInit {
   }
   deglucionValidation(): boolean {
     if (this.symptoms.Deglucion == null) {
-      console.log('El campo Alerta es obligatorio')
+      this._toastr.error('El campo Deglucion es obligatorio','Compruebe los campos');
       return false
     } else {
       if (this.symptoms.Deglucion == 'ALTERADO' && this.symptoms.DeglucionTipoAlteracion == null) {
-        console.log('Debe seleccionar una alteracion para Alerta')
+        this._toastr.error('Debe seleccionar una alteracion para Deglucion','Compruebe los campos');
         return false
       } else {
           return true

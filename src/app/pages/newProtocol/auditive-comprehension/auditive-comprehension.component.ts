@@ -3,6 +3,7 @@ import { ComprensionAuditiva_CuantitativaDTO } from 'src/app/clases/ComprensionA
 import { QuestionsStep1 } from 'src/app/clases/QuestionsStep1';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap'
 import { ComprensionAuditiva_CualitativaDTO } from 'src/app/clases/ComprensionAuditiva_CualitativaDTO';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-auditive-comprehension',
@@ -20,7 +21,8 @@ export class AuditiveComprehensionComponent implements OnInit {
   ComprensionAuditivaCualitativa:ComprensionAuditiva_CualitativaDTO=new ComprensionAuditiva_CualitativaDTO();
   CopyComprensionAuditivaCaulitativa:ComprensionAuditiva_CualitativaDTO= new ComprensionAuditiva_CualitativaDTO();
   popupsave:boolean;
-  constructor( public _ModalService:NgbModal, config: NgbModalConfig) {
+  constructor( public _ModalService:NgbModal, config: NgbModalConfig,
+              private _toastr:ToastrService) {
     config.backdrop = 'static';
     config.keyboard = false;
   }
@@ -139,7 +141,7 @@ export class AuditiveComprehensionComponent implements OnInit {
       this.ComprensionAuditivaCuantitativa.SenialeLaOveja==null || this.ComprensionAuditivaCuantitativa.SenialeLaPuerta==null ||
       this.ComprensionAuditivaCuantitativa.ToqueseLaOreja==null)&& this.ComprensionAuditivaCuantitativa.WasSuspended==false
       ){
-        console.log('todos los campos cuantitativos son requeridos. Si el ')
+        this._toastr.error('Todos los campos cuantitativos son requeridos. Si el usuario no puede finalizar el paso, suspenda el paso actual y continue con el siguiente','Compruebe los campos');
         return
       }
     if(this.ComprensionAuditivaCuantitativa.WasSuspended==true){

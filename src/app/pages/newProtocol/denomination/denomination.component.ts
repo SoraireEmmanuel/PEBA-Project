@@ -3,6 +3,7 @@ import { Denominacion_CualitativaDTO } from 'src/app/clases/Denominacion_Cualita
 import { Denominacion_CuantitativaDTO } from 'src/app/clases/Denominacion_CuantitativaDTO';
 import { QuestionStep4 } from 'src/app/clases/QuestionStep4';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-denomination',
@@ -20,7 +21,7 @@ DropdownOptions:QuestionStep4=new QuestionStep4();
 DenominacionCualitativa:Denominacion_CualitativaDTO= new Denominacion_CualitativaDTO();
 CopyDenominacionCualitativa:Denominacion_CualitativaDTO= new Denominacion_CualitativaDTO();
 popupsave:boolean;
-  constructor(public _ModalService:NgbModal, config: NgbModalConfig) {
+  constructor(public _ModalService:NgbModal, config: NgbModalConfig, private _toastr:ToastrService) {
     config.backdrop = 'static';
     config.keyboard = false;
    }
@@ -122,6 +123,7 @@ cuantitativoFieldValidation():boolean{
   if ((this.DenominacionCuantitativa.LaminaCama == null || this.DenominacionCuantitativa.LaminaCome == null ||
     this.DenominacionCuantitativa.LaminaRema == null || this.DenominacionCuantitativa.LaminaViolin == null) &&
     this.DenominacionCuantitativa.WasSuspended == false){
+      this._toastr.error('Todos los campos cuantitativos son requeridos. Si el usuario no puede finalizar el paso, suspenda el paso actual y continue con el siguiente','Compruebe los campos');
     return false;
   }
   if (this.DenominacionCuantitativa.WasSuspended == true) {

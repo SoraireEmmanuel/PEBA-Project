@@ -29,6 +29,8 @@ import { WritingComponent } from './pages/newProtocol/writing/writing.component'
 import { TestSummaryComponent } from './pages/newProtocol/test-summary/test-summary.component';
 import { ViewProtocolComponent } from './pages/ViewProtocol/view-protocol/view-protocol.component';
 
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +61,13 @@ import { ViewProtocolComponent } from './pages/ViewProtocol/view-protocol/view-p
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

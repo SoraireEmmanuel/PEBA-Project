@@ -3,7 +3,7 @@ import { Lectura_CualitativaDTO } from 'src/app/clases/Lectura_CualitativaDTO';
 import { Lectura_CuantitativaDTO } from 'src/app/clases/Lectura_CuantitativaDTO';
 import { QuestionStep5 } from 'src/app/clases/QuestionStep5';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -22,7 +22,7 @@ LecturaCuantitativa:Lectura_CuantitativaDTO=new Lectura_CuantitativaDTO();
 LecturaCualitativa:Lectura_CualitativaDTO=new Lectura_CualitativaDTO();
 CopyLecturaCualitativa:Lectura_CualitativaDTO=new Lectura_CualitativaDTO();
 popupsave:boolean;
-  constructor(public _ModalService:NgbModal, config: NgbModalConfig) {
+  constructor(public _ModalService:NgbModal, config: NgbModalConfig, private _toastr:ToastrService) {
     config.backdrop = 'static';
     config.keyboard = false;
    }
@@ -190,6 +190,7 @@ cuantitativoFieldValidation():boolean{
     this.LecturaCuantitativa.Tudipro == null) &&
     this.LecturaCuantitativa.WasSuspended == false
   ) {
+    this._toastr.error('Todos los campos cuantitativos son requeridos. Si el usuario no puede finalizar el paso, suspenda el paso actual y continue con el siguiente','Compruebe los campos');
     return false;
   }
   if (this.LecturaCuantitativa.WasSuspended == true) {

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import pdfMake from 'pdfmake/build/pdfmake';
@@ -22,7 +22,7 @@ export class ViewProtocolComponent implements OnInit {
   @ViewChild('TablaCuantitativa') TablaCuantitativa: ElementRef;
   @ViewChild('TablaCualitativa') TablaCualitativa: ElementRef;
   @ViewChild('spiner') spiner: ElementRef;
-
+  @ViewChild('protocolDetail') protocolDetail: TemplateRef<any>;
   constructor(public _ModalService:NgbModal, config: NgbModalConfig) {
     config.backdrop = 'static';
     config.keyboard = false;
@@ -30,6 +30,16 @@ export class ViewProtocolComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+  ngAfterViewInit(): void {
+    this.dataLoadComponent();
+  }
+  dataLoadComponent() {
+    const modalRef = this._ModalService.open(this.protocolDetail, {size: 'xl', centered: true});
+    setTimeout(() => {
+      modalRef.close();
+
+    }, 5000);
   }
   createFullPDF(modal) {
     const modalRef = this._ModalService.open(modal, {size: 'xl', centered: true});

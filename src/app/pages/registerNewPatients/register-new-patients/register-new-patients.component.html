@@ -51,10 +51,25 @@
       </select>
     </div>
     <div class="col-12 mt-4 text-center ">
-      <button type="submit" class="btn btn-outline-light" (click)="crearPaciente()">
+      <button type="submit" class="btn btn-light" (click)="crearPaciente(patientRegister)">
         Registrar Paciente
+      </button>
+      <button type="submit" class="btn btn-info ms-5" (click)="clearForm()">
+        Limpiar Formulario
       </button>
     </div>
   </div>
 </div>
-{{patient|json}}
+
+
+<!--Pop Up wait patient register-->
+<ng-template #patientRegister let-modal let-c="close" let-d="dismiss">
+  <div class="modal-body">
+    <div class="d-flex justify-content-center">
+      <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden" >Loading...</span>
+      </div>
+      <span style="font-size:  2rem; margin-bottom: 1rem; margin-left: 1rem;"> Registrando Paciente, por favor espere unos segundos... </span>
+    </div>
+  </div>
+</ng-template>

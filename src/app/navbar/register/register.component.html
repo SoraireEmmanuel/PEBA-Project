@@ -76,15 +76,32 @@
   </div>
   <div class="modal-footer">
     <div class="row">
-      <div class="col-md-6 mt-2" >
-        <button class="btn btn-success" type="button" (click)="registerUser()" >Registrar</button>
+      <div class="col-md-3 mt-2" >
+        <button class="btn btn-success" type="button" (click)="registerUser(userRegister)" >Registrar</button>
       </div>
-      <div class="col-md-6 mt-2">
+      <div class="col-md-3 mt-2">
         <button type="button" class="btn btn-danger" (click)="modal.close()">
           Cancelar
         </button>
       </div>
+      <div class="col-md-6 mt-2">
+        <button type="button" class="btn btn-info" (click)="clearForm()">
+          Limpiar Formulario
+        </button>
+      </div>
     </div>
   </div>
+</ng-template>
 
+
+<!--Pop Up wait user register-->
+<ng-template #userRegister let-modal let-c="close" let-d="dismiss">
+  <div class="modal-body">
+    <div class="d-flex justify-content-center">
+      <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden" >Loading...</span>
+      </div>
+      <span style="font-size:  2rem; margin-bottom: 1rem; margin-left: 1rem;"> Realizando el registro, por favor espere unos segundos... </span>
+    </div>
+  </div>
 </ng-template>

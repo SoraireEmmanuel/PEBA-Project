@@ -124,7 +124,20 @@
       <button class="btn btn-success" (click)="back()" >Anterior</button>
     </div>
     <div class="col-md-6 text-right">
-      <button class="btn btn-success me-1" (click)="sendProtocolFunction()" >Finalizar Protocolo</button>
+      <button class="btn btn-success me-1" (click)="sendProtocolFunction(sendProtocol)" >Finalizar Protocolo</button>
     </div>
   </div>
 </div>
+
+
+<!--Pop Up wait send protocol-->
+<ng-template #sendProtocol let-modal let-c="close" let-d="dismiss">
+  <div class="modal-body">
+    <div class="d-flex justify-content-center">
+      <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden" >Loading...</span>
+      </div>
+      <span style="font-size:  2rem; margin-bottom: 1rem; margin-left: 1rem;"> Guardando Protocolo, por favor espere unos segundos... </span>
+    </div>
+  </div>
+</ng-template>

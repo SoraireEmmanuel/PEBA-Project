@@ -1,6 +1,18 @@
 <div class="form-check-inline ">
   <input class="form-control me-2" type="text" placeholder="Usuario (mail)" aria-label="User">
   <input class="form-control me-2" type="password" placeholder="Contraseña" aria-label="Password">
-  <button class="btn btn-outline-success ms-1" type="submit" (click)="login()" >Ingresar</button>
+  <button class="btn btn-outline-success ms-1" type="submit" (click)="login(loginSpiner)" >Ingresar</button>
   <app-register></app-register>
 </div>
+
+<!--Pop Up wait Login-->
+<ng-template #loginSpiner let-modal let-c="close" let-d="dismiss">
+  <div class="modal-body">
+    <div class="d-flex justify-content-center">
+      <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden" >Loading...</span>
+      </div>
+      <span style="font-size:  2rem; margin-bottom: 1rem; margin-left: 1rem;"> Iniciando Sesion, por favor espere unos segundos... </span>
+    </div>
+  </div>
+</ng-template>

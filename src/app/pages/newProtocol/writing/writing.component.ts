@@ -3,6 +3,7 @@ import { Escritura_CualitativaDTO } from 'src/app/clases/Escritura_CualitativaDT
 import { Escritura_CuantitativaDTO } from 'src/app/clases/Escritura_CuantitativaDTO';
 import { QuestionStep6 } from 'src/app/clases/QuestionStep6';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-writing',
@@ -20,7 +21,7 @@ EscrituraCuantitativa:Escritura_CuantitativaDTO=new Escritura_CuantitativaDTO();
 EscruturaCualitativa:Escritura_CualitativaDTO=new Escritura_CualitativaDTO();
 CopyEscruturaCualitativa:Escritura_CualitativaDTO=new Escritura_CualitativaDTO();
 popupsave:boolean;
-  constructor(public _ModalService:NgbModal, config: NgbModalConfig) {
+  constructor(public _ModalService:NgbModal, config: NgbModalConfig, private _toastr:ToastrService) {
     config.backdrop = 'static';
     config.keyboard = false;
   }
@@ -111,11 +112,9 @@ popupsave:boolean;
   open(register){
     const modalRef = this._ModalService.open(register, { size: 'xl' })
   }
-
   suspend(){
     this.EscrituraCuantitativa.WasSuspended = true;
   }
-
   total(){
     this.EscrituraCuantitativa.SubTotal=this.EscrituraCuantitativa.Aclaracion+
                                         this.EscrituraCuantitativa.Dirchole+
@@ -170,6 +169,7 @@ popupsave:boolean;
       this.EscrituraCuantitativa.ZETA == null) &&
       this.EscrituraCuantitativa.WasSuspended == false
     ) {
+      this._toastr.error('Todos los campos cuantitativos son requeridos. Si el usuario no puede finalizar el paso, suspenda el paso actual y continue con el siguiente','Compruebe los campos');
       return false;
     }
     if (this.EscrituraCuantitativa.WasSuspended == true) {

@@ -22,12 +22,6 @@
               <button class="btn btn-success ms-1 rounded-3" (click)="viewProtocol(1)">
                 Ver
               </button>
-              <button class="btn btn-success m-1 rounded-3" >
-                Descargar Completo
-              </button>
-              <button class="btn btn-success ms-1 rounded-3">
-                Descargar Resumen
-              </button>
             </div>
           </td>
         </tr>
@@ -35,3 +29,16 @@
     </table>
   </div>
 </div>
+
+
+<!--Pop Up wait protocol history-->
+<ng-template #protocolHistory let-modal let-c="close" let-d="dismiss">
+  <div class="modal-body">
+    <div class="d-flex justify-content-center">
+      <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden" >Loading...</span>
+      </div>
+      <span style="font-size:  2rem; margin-bottom: 1rem; margin-left: 1rem;"> Recuperando protocolos historicos, por favor espere unos segundos... </span>
+    </div>
+  </div>
+</ng-template>

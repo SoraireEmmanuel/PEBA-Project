@@ -3,7 +3,7 @@ import { QuestionsStep3 } from 'src/app/clases/QuestionsStep3';
 import { Repeticion_CuantitativaDTO } from 'src/app/clases/Repeticion_CuantitativaDTO';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Repeticion_CualitativaDTO } from 'src/app/clases/Repeticion_CualitativaDTO';
-import { IfStmt } from '@angular/compiler';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-repetition',
@@ -21,7 +21,7 @@ export class RepetitionComponent implements OnInit {
   RepeticionCualitativa: Repeticion_CualitativaDTO = new Repeticion_CualitativaDTO();
   CopyRepeticionCualitativa: Repeticion_CualitativaDTO = new Repeticion_CualitativaDTO();
   popupsave: boolean;
-  constructor(public _ModalService: NgbModal, config: NgbModalConfig) {
+  constructor(public _ModalService: NgbModal, config: NgbModalConfig, private _toastr:ToastrService) {
     config.backdrop = 'static';
     config.keyboard = false;
   }
@@ -146,6 +146,7 @@ export class RepetitionComponent implements OnInit {
       this.RepeticionCuantitativa.Treyo == null) &&
       this.RepeticionCuantitativa.WasSuspended == false
     ) {
+      this._toastr.error('Todos los campos cuantitativos son requeridos. Si el usuario no puede finalizar el paso, suspenda el paso actual y continue con el siguiente','Compruebe los campos');
       return false;
     }
     if (this.RepeticionCuantitativa.WasSuspended == true) {
