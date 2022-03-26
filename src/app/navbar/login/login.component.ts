@@ -10,7 +10,10 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  user={
+    user:'',
+    password:''
+  }
   constructor(private _authentication:AuthenticationService,
     public _ModalService:NgbModal,
     private _route:Router,
@@ -27,7 +30,7 @@ export class LoginComponent implements OnInit {
     const modalRef = this._ModalService.open(modal, {size: 'xl', centered: true});
     this._toastr.error('Por favor compruebe usuario y contraseña','No se pudo iniciar sesion.');
     setTimeout(() => {
-      this._authentication.login();
+      this._authentication.login(this.user.user,this.user.password);
       modalRef.close();
       this._toastr.success('Vienvenido XXXXX','Inicio de sesion exitoso');
       this._route.navigate(['myPatients'])

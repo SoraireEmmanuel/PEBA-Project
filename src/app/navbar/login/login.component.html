@@ -1,6 +1,6 @@
 <div class="form-check-inline ">
-  <input class="form-control me-2" type="text" placeholder="Usuario (mail)" aria-label="User">
-  <input class="form-control me-2" type="password" placeholder="Contraseña" aria-label="Password">
+  <input class="form-control me-2" type="text" placeholder="Usuario (mail)" aria-label="User" [(ngModel)]="user.user">
+  <input class="form-control me-2" type="password" placeholder="Contraseña" aria-label="Password" [(ngModel)]="user.password">
   <button class="btn btn-outline-success ms-1" type="submit" (click)="login(loginSpiner)" >Ingresar</button>
   <app-register></app-register>
 </div>

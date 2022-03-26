@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Account } from 'src/app/clases/user';
 import { AuthenticationService } from 'src/app/services/Authentication/authentication.service';
-import { TycService } from 'src/app/services/tyc.service';
+import { LocalServiceService } from 'src/app/services/CryptoServices/LocalService/local-service.service';
+
 
 @Component({
   selector: 'app-navbar',
@@ -10,12 +10,15 @@ import { TycService } from 'src/app/services/tyc.service';
 })
 export class NavbarComponent implements OnInit {
   loginstate:boolean;
-  constructor(private _ViewComponent:AuthenticationService) {
+  constructor(private _ViewComponent:AuthenticationService,
+              private _localService:LocalServiceService) {
   }
   ngOnInit(): void {
+    this.loginstate=this._ViewComponent.validationLogin();
     this._ViewComponent.updateLoginState.subscribe(res=>{
       this.loginstate=res
     })
+    console.log(this._localService.getJsonValue('protocolo enviado'))
   }
 
 }

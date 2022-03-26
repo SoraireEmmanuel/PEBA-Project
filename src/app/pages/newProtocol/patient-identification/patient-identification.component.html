@@ -7,36 +7,61 @@
   <div class="row">
     <div class="col-auto">
       <label for="paciente" class="form-label">
-        Paciente: {{patient.initialWithBrithDate}}
+        Paciente: {{PatientIdentification.initialWithBrithDate}}
       </label>
     </div>
     <div class="col-auto">
       <label class="form-label">
-        Fecha de Nacimiento: {{patient.brithDate}}
+        Fecha de Nacimiento: {{PatientIdentification.brithDate}}
       </label>
     </div>
     <div class="col-auto">
       <label class="form-label">
-        Lengua Materna: {{patient.nativeLanguage}}
+        Lengua Materna:
+        <span *ngFor="let item of PatientOption.lengua">
+          <span *ngIf="this.item.value == PatientIdentification.nativeLanguage && PatientIdentification.nativeLanguage != 3">
+            {{item.description}}
+          </span>
+        </span>
+        <span *ngIf="PatientIdentification.nativeLanguage == 3">
+          {{PatientIdentification.otherLenguage}}
+        </span>
       </label>
     </div>
     <div class="col-auto">
       <label class="form-label">
-        ¿Es bilungüe?: {{patient.isBilingual}}
+        ¿Es bilungüe?:
+        <span *ngFor="let item of PatientOption.bilingue">
+          <span *ngIf="PatientIdentification.isBilingual == item.value">
+             {{item.description}}
+          </span>
+        </span>
+      </label>
+    </div>
+    <div class="col-auto" *ngIf="PatientIdentification.isBilingual == 1">
+      <label class="form-label">
+        ¿Cual idioma?: {{PatientIdentification.bilingualLanguage}}
       </label>
     </div>
     <div class="col-auto">
       <label class="form-label">
-        ¿Cual idioma?: {{patient.bilingualLanguage}}
-      </label>
+        Dominancia Manual:
+          <span *ngFor="let item of PatientOption.dominancia" >
+            <span *ngIf="item.value == PatientIdentification.handDominance" >
+              {{item.description}}
+            </span>
+          </span>
+        </label>
     </div>
     <div class="col-auto">
       <label class="form-label">
-        Dominancia Manual: {{patient.handDominance}}</label>
-    </div>
-    <div class="col-auto">
-      <label class="form-label">
-        Escolaridad: {{patient.studies}} </label>
+        Escolaridad:
+          <span *ngFor="let item of PatientOption.estudios" >
+            <span *ngIf="item.value == PatientIdentification.studies" >
+              {{item.description}}
+            </span>
+          </span>
+        </label>
     </div>
   </div>
   <h5 class="mb-0">Datos del Protocolo</h5>

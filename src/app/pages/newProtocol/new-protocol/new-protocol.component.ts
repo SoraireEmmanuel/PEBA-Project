@@ -9,6 +9,7 @@ import { ExpresionOral_CualitativaDTO } from 'src/app/clases/ExpresionOral_Cuali
 import { ExpresionOral_CuantitativaDTO } from 'src/app/clases/ExpresionOral_CuantitativaDTO';
 import { Lectura_CualitativaDTO } from 'src/app/clases/Lectura_CualitativaDTO';
 import { Lectura_CuantitativaDTO } from 'src/app/clases/Lectura_CuantitativaDTO';
+import { patient } from 'src/app/clases/patient';
 import { PatientIdentification } from 'src/app/clases/PatientIdentification';
 import { ProtocoloDTO } from 'src/app/clases/ProtocoloDTO';
 import { Repeticion_CualitativaDTO } from 'src/app/clases/Repeticion_CualitativaDTO';
@@ -25,8 +26,16 @@ export class NewProtocolComponent implements OnInit {
   PatientIdentification: PatientIdentification = new PatientIdentification()
   Progress: number = 0;
   constructor() {
-
-
+  //line only for test, in  producttion must be remove
+    this.PatientIdentification.brithDate = '01/02/89';
+    this.PatientIdentification.handDominance = 1
+    this.PatientIdentification.initialWithBrithDate = 'MES01/02/89'
+    this.PatientIdentification.initials = 'MES'
+    this.PatientIdentification.nativeLanguage = 3
+    this.PatientIdentification.studies = 5
+    this.PatientIdentification.isBilingual = 1
+    this.PatientIdentification.otherLenguage = 'Chino'
+    this.PatientIdentification.bilingualLanguage = 'Español'
   }
   ngOnInit(): void {
   }
@@ -89,7 +98,6 @@ export class NewProtocolComponent implements OnInit {
     this.Protocol.totalCalcultaion();
   }
   sendProtocol(event: ProtocoloDTO){
-    //console.log(event);
     localStorage.setItem('tt',JSON.stringify(event));
   }
 }

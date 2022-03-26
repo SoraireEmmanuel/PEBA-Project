@@ -2,6 +2,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { patient } from 'src/app/clases/patient';
 import { PatientIdentification } from 'src/app/clases/PatientIdentification';
 import { ToastrService } from 'ngx-toastr';
+import { RegisterOptions } from 'src/app/clases/RegisterOptions';
 
 @Component({
   selector: 'app-patient-identification',
@@ -15,11 +16,14 @@ export class PatientIdentificationComponent implements OnInit {
   @Output() protocolPatien = new EventEmitter<PatientIdentification>();
   PatientIdentification: PatientIdentification = new PatientIdentification();
   patient:patient=new patient();
+  PatientOption: RegisterOptions = new RegisterOptions();
   constructor(private _toastr:ToastrService) {
 
   }
   ngOnInit(): void {
     this.PatientIdentification=this.protocolEntry;
+
+
   }
 
   next() {

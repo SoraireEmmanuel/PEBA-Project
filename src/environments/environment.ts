@@ -4,8 +4,10 @@
 
 export const environment = {
   production: false,
-  PEBA_Api_URL_Base:''
+  PEBA_Api_URL_Base:'',
+  cryptoCode:'x5grgrr'
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

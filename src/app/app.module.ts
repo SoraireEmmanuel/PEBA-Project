@@ -16,7 +16,6 @@ import { LogoutComponent } from './navbar/logout/logout.component';
 import { MyPatientsComponent } from './pages/myPatients/my-patients/my-patients.component';
 import { RegisterNewPatientsComponent } from './pages/registerNewPatients/register-new-patients/register-new-patients.component';
 import { NewProtocolComponent } from './pages/newProtocol/new-protocol/new-protocol.component';
-import { HistoricalComponent } from './pages/historical/historical/historical.component';
 import { ProtocolForUserComponent } from './pages/protocol-for-user/protocol-for-user.component';
 import { PatientIdentificationComponent } from './pages/newProtocol/patient-identification/patient-identification.component';
 import { CurrentNeurologicalSymptomsComponent } from './pages/newProtocol/current-neurological-symptoms/current-neurological-symptoms.component';
@@ -31,6 +30,7 @@ import { ViewProtocolComponent } from './pages/ViewProtocol/view-protocol/view-p
 
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { ToastrModule } from 'ngx-toastr';
+import { WithoutAccessComponent } from './pages/WithoutAccess/without-access/without-access.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +43,6 @@ import { ToastrModule } from 'ngx-toastr';
     MyPatientsComponent,
     RegisterNewPatientsComponent,
     NewProtocolComponent,
-    HistoricalComponent,
     ProtocolForUserComponent,
     PatientIdentificationComponent,
     CurrentNeurologicalSymptomsComponent,
@@ -54,7 +53,8 @@ import { ToastrModule } from 'ngx-toastr';
     ReadingComponent,
     WritingComponent,
     TestSummaryComponent,
-    ViewProtocolComponent
+    ViewProtocolComponent,
+    WithoutAccessComponent
   ],
   imports: [
     BrowserModule,

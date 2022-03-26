@@ -124,7 +124,7 @@
       <button class="btn btn-success" (click)="back()" >Anterior</button>
     </div>
     <div class="col-md-6 text-right">
-      <button class="btn btn-success me-1" (click)="sendProtocolFunction(sendProtocol)" >Finalizar Protocolo</button>
+      <button class="btn btn-success me-1" (click)="sendProtocolFunction(sendProtocol, action)" >Finalizar Protocolo</button>
     </div>
   </div>
 </div>
@@ -138,6 +138,28 @@
         <span class="visually-hidden" >Loading...</span>
       </div>
       <span style="font-size:  2rem; margin-bottom: 1rem; margin-left: 1rem;"> Guardando Protocolo, por favor espere unos segundos... </span>
+    </div>
+  </div>
+</ng-template>
+
+
+<!--Pop Up action after send protocol-->
+<ng-template #action let-modal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4>Guardado Exitoso</h4>
+  </div>
+  <div class="modal-body">
+    <span>El protocolo fue guardado correctamente, podra acceder al mismo navegando desde la opcion "Mis Pacientes" identificando al
+      usuario y accediendo a "Protocolos Previos" o realice click en <i>"Ver Resumen"</i></span>
+  </div>
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col-md-6 d-grid gap-2">
+        <button class="btn btn-success" type="button"  (click)="modal.close()" >Ver Resumen</button>
+      </div>
+      <div class="col-md-6 d-grid gap-2">
+        <button type="button" class="btn btn-danger"  (click)="modal.close()">Ir a mis Pacientes</button>
+      </div>
     </div>
   </div>
 </ng-template>

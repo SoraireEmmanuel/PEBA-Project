@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap'
 import { exit } from 'process';
 import { register } from 'src/app/clases/register';
-import { TycService } from 'src/app/services/tyc.service';
+import { TycService } from 'src/app/services/tyc/tyc.service';
 import { ToastrService } from 'ngx-toastr';
 
 //Modal Terminos y Condiciones Component

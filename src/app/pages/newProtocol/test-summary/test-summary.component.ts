@@ -3,6 +3,9 @@ import { ProtocoloDTO } from 'src/app/clases/ProtocoloDTO';
 import { summaryCualitativeTable } from 'src/app/clases/summaryCualitativeTable';
 import { Valuation } from 'src/app/clases/valuation';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap'
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router'
+import { LocalServiceService } from 'src/app/services/CryptoServices/LocalService/local-service.service';
 
 @Component({
   selector: 'app-test-summary',
@@ -18,6 +21,9 @@ export class TestSummaryComponent implements OnInit {
   valuation:Valuation=new Valuation();
   summaryCualitativa:summaryCualitativeTable=new summaryCualitativeTable();
   constructor(public _ModalService:NgbModal,
+    private _Route:Router,
+    private _toastr: ToastrService,
+    private _localService:LocalServiceService,
     config: NgbModalConfig) {
     config.backdrop = 'static';
     config.keyboard = false; }
@@ -52,14 +58,21 @@ export class TestSummaryComponent implements OnInit {
   back() {
     this.event.emit(-1)
   }
-  sendProtocolFunction(modal) {
+  sendProtocolFunction(modal, modalSuccess) {
     const modalSpiner = this._ModalService.open(modal, {size: 'xl', centered: true})
+    this._toastr.error('Por favor espere unos segundos e intente de nuevamente','Error Inesperado del servidor')
       setTimeout(() => {
         modalSpiner.close();
+        this._localService.setJsonValue('protocolo enviado',this.ProtocolSummary)
         localStorage.setItem('protocol', JSON.stringify(this.ProtocolSummary));
-        //this.sendProtocol.emit(this.ProtocolSummary);
-
+        const success= this._ModalService.open(modalSuccess, {size: 'xl', centered: true})
+                //this.sendProtocol.emit(this.ProtocolSummary);
       }, 5000);
+  }
+  viewProtocol(){
+
+  }
+  goMisPacientes(){
 
   }
 }
