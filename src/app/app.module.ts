@@ -64,7 +64,7 @@ import { WithoutAccessComponent } from './pages/WithoutAccess/without-access/wit
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut: 10000,
+      timeOut: 15000,
       positionClass: 'toast-top-right',
       preventDuplicates: true,
     })

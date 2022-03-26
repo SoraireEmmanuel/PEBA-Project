@@ -3,7 +3,6 @@ import * as CryptoJS from 'crypto-js';
 import { environment } from '../../../../environments/environment'
 
 const SecureStorage = require('secure-web-storage');
-//const SECRET_KEY = 'Ber1g0';
 const SECRET_KEY = environment.cryptoCode;
 
 @Injectable({

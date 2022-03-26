@@ -16,7 +16,10 @@ export class LogoutComponent implements OnInit {
   }
 logout(){
   this._Authentication.logout();
-  this._route.navigate(['home'])
+  setTimeout(() => {
+    this._route.navigate(['home'])
+  }, 10);
+
 }
 
 }

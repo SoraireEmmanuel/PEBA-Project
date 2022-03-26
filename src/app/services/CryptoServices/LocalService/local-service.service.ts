@@ -17,4 +17,9 @@ export class LocalServiceService {
   clearToken() {
     return this.storageService.secureStorage.clear();
   }
+  removeKey(key: string){
+    const codKey = this.storageService.secureStorage.key(key);
+    localStorage.removeItem(codKey);
+  }
+
 }

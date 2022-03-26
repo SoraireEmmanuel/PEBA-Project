@@ -8,11 +8,12 @@ import { RegisterNewPatientsComponent } from './pages/registerNewPatients/regist
 import { ViewProtocolComponent } from './pages/ViewProtocol/view-protocol/view-protocol.component';
 import { WithoutAccessComponent } from './pages/WithoutAccess/without-access/without-access.component';
 import { AuthGuard } from './guard/auth.guard';
+import { CanDeactivateNewProtocolGuard } from './guard/can-deactivate-new-protocol.guard';
 
 const routes: Routes = [
   {path: 'myPatients', component:MyPatientsComponent, canActivate: [AuthGuard]},
   {path: 'registerNewPatient', component:RegisterNewPatientsComponent, canActivate: [AuthGuard]},
-  {path: 'newProtocol', component:NewProtocolComponent, canActivate: [AuthGuard]},
+  {path: 'newProtocol', component:NewProtocolComponent, canDeactivate: [CanDeactivateNewProtocolGuard],canActivate: [AuthGuard]},
   {path: 'allProtocolsByPatient', component:ProtocolForUserComponent, canActivate: [AuthGuard]},
   {path: 'viewProtocol', component:ViewProtocolComponent, canActivate: [AuthGuard]},
   {path: 'home', component:HomeComponent },

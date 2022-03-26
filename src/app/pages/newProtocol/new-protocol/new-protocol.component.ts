@@ -14,6 +14,7 @@ import { PatientIdentification } from 'src/app/clases/PatientIdentification';
 import { ProtocoloDTO } from 'src/app/clases/ProtocoloDTO';
 import { Repeticion_CualitativaDTO } from 'src/app/clases/Repeticion_CualitativaDTO';
 import { Repeticion_CuantitativaDTO } from 'src/app/clases/Repeticion_CuantitativaDTO';
+import { LocalServiceService } from 'src/app/services/CryptoServices/LocalService/local-service.service';
 
 
 @Component({
@@ -25,7 +26,8 @@ export class NewProtocolComponent implements OnInit {
   Protocol: ProtocoloDTO = new ProtocoloDTO();
   PatientIdentification: PatientIdentification = new PatientIdentification()
   Progress: number = 0;
-  constructor() {
+  constructor(private _loadService:LocalServiceService) {
+    _loadService.setJsonValue('ExitProtocol',{ExitProtocol: true})
   //line only for test, in  producttion must be remove
     this.PatientIdentification.brithDate = '01/02/89';
     this.PatientIdentification.handDominance = 1
@@ -36,6 +38,7 @@ export class NewProtocolComponent implements OnInit {
     this.PatientIdentification.isBilingual = 1
     this.PatientIdentification.otherLenguage = 'Chino'
     this.PatientIdentification.bilingualLanguage = 'Español'
+
   }
   ngOnInit(): void {
   }
@@ -98,6 +101,7 @@ export class NewProtocolComponent implements OnInit {
     this.Protocol.totalCalcultaion();
   }
   sendProtocol(event: ProtocoloDTO){
-    localStorage.setItem('tt',JSON.stringify(event));
+    this._loadService.removeKey('ExitProtocol')
   }
+
 }
