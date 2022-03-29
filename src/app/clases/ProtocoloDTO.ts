@@ -25,12 +25,12 @@ export class ProtocoloDTO{
   ExpresionOral_CuantitativaSTO:ExpresionOral_CuantitativaDTO=new ExpresionOral_CuantitativaDTO();
   Lectura_CuantitativaDTO:Lectura_CuantitativaDTO=new Lectura_CuantitativaDTO();
   Repeticion_CuantitativaDTO:Repeticion_CuantitativaDTO= new Repeticion_CuantitativaDTO();
-  ComprensionAuditiva_CualitativaDTO:ComprensionAuditiva_CualitativaDTO= new ComprensionAuditiva_CualitativaDTO();
-  Denominacion_CualitativaDTO:Denominacion_CualitativaDTO= new Denominacion_CualitativaDTO();
-  Escritura_CualitativaDTO:Escritura_CualitativaDTO= new Escritura_CualitativaDTO();
-  ExpresionOral_CualitativaSTO:ExpresionOral_CualitativaDTO = new ExpresionOral_CualitativaDTO();
-  Lectura_CualitativaDTO:Lectura_CualitativaDTO =new Lectura_CualitativaDTO();
-  Repeticion_CualitativaDTO:Repeticion_CualitativaDTO= new Repeticion_CualitativaDTO();
+  ComprensionAuditiva_CualitativaDTO?:ComprensionAuditiva_CualitativaDTO= new ComprensionAuditiva_CualitativaDTO();
+  Denominacion_CualitativaDTO?:Denominacion_CualitativaDTO= new Denominacion_CualitativaDTO();
+  Escritura_CualitativaDTO?:Escritura_CualitativaDTO= new Escritura_CualitativaDTO();
+  ExpresionOral_CualitativaSTO?:ExpresionOral_CualitativaDTO = new ExpresionOral_CualitativaDTO();
+  Lectura_CualitativaDTO?:Lectura_CualitativaDTO =new Lectura_CualitativaDTO();
+  Repeticion_CualitativaDTO?:Repeticion_CualitativaDTO= new Repeticion_CualitativaDTO();
 
   constructor(){
 
@@ -40,7 +40,7 @@ export class ProtocoloDTO{
                 this.Repeticion_CuantitativaDTO.SubTotal+
                 this.Lectura_CuantitativaDTO.SubTotal+
                 this.Escritura_CuantitativaDTO.SubTotal+
-                this.ExpresionOral_CuantitativaSTO.SubTotal+
-                this.ComprensionAuditiva_CuantitativaDTO.Subtotal;
+                this.ExpresionOral_CuantitativaSTO.SubTotal;//+
+               // this.ComprensionAuditiva_CuantitativaDTO.Subtotal;
   }
 }

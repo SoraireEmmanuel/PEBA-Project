@@ -1,4 +1,5 @@
 export class ComprensionAuditiva_CualitativaDTO{
+  Id_ComprensionAuditiva_Cualitativa?:number=null;
   PalabraOidaAlterada:number=null;
   POErroresFormales:boolean=null;
   POErroresSemanticos:boolean=null;

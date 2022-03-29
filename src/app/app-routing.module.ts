@@ -13,9 +13,9 @@ import { CanDeactivateNewProtocolGuard } from './guard/can-deactivate-new-protoc
 const routes: Routes = [
   {path: 'myPatients', component:MyPatientsComponent, canActivate: [AuthGuard]},
   {path: 'registerNewPatient', component:RegisterNewPatientsComponent, canActivate: [AuthGuard]},
-  {path: 'newProtocol', component:NewProtocolComponent, canDeactivate: [CanDeactivateNewProtocolGuard],canActivate: [AuthGuard]},
-  {path: 'allProtocolsByPatient', component:ProtocolForUserComponent, canActivate: [AuthGuard]},
-  {path: 'viewProtocol', component:ViewProtocolComponent, canActivate: [AuthGuard]},
+  {path: 'newProtocol/:Bilingual/:BilingualIdioma/:Cod_Paciente/:Dominancia/:Estudios/:FechaNacimiento/:Id_Paciente/:Iniciales/:Lengua', component:NewProtocolComponent, canDeactivate: [CanDeactivateNewProtocolGuard], canActivate: [AuthGuard]},//
+  {path: 'allProtocolsByPatient/:PatientId', component:ProtocolForUserComponent, canActivate: [AuthGuard]},
+  {path: 'viewProtocol/:Id_Protocolo/:Id_Paciente', component:ViewProtocolComponent, canActivate: [AuthGuard]},
   {path: 'home', component:HomeComponent },
   {path: 'withoutAccess', component:WithoutAccessComponent },
   {path: '**', pathMatch: 'full', redirectTo:'home'}

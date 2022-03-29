@@ -6,86 +6,109 @@
       </div>
       <div class="row">
         <div class=" col-md-8"></div>
-        <div class="col-md-4"><span><strong>Fecha del Protocolo:</strong>18/03/2021</span></div>
+        <div class="col-md-4"><span><strong>Fecha del Protocolo:</strong>
+          {{protocol.Fecha_Protocolo }}
+          </span></div>
       </div>
       <h5>Datos del Paciente </h5>
       <hr>
       <div class="row ms-2">
-        <div class="col-md-4"><span><strong>Paciente: </strong>MES</span></div>
-        <div class="col-md-4"><span><strong>Fecha de Nacimiento: </strong>18/03/1989</span></div>
-        <div class="col-md-4"><span><strong>Lengua Materna: </strong>Español</span></div>
-        <div class="col-md-4"><span><strong>¿Es Bilingüe?: </strong>Si</span></div>
-        <div class="col-md-4"><span><strong>¿Cual Idioma?: </strong>Guarani</span></div>
-        <div class="col-md-4"><span><strong>Dominancia Manual: </strong>Diestro</span></div>
-        <div class="col-md-4"><span><strong>Escolaridad: </strong>Universitario Incompleto</span></div>
+        <div class="col-md-4"><span><strong>Paciente: </strong>{{protocol.PacienteCod_Paciente}} </span></div>
+        <div class="col-md-4"><span><strong>Fecha de Nacimiento: </strong>{{protocol.PacienteFechaNacimiento}}</span></div>
+        <div class="col-md-4"><span><strong>Lengua Materna: </strong>{{protocol.PacienteLengua}}</span></div>
+        <div class="col-md-4"><span><strong>¿Es Bilingüe?: </strong>{{protocol.PacienteBilingual}}</span></div>
+        <div class="col-md-4"><span><strong>¿Cual Idioma?: </strong>{{protocol.PacienteBilingualIdioma}}</span></div>
+        <div class="col-md-4"><span><strong>Dominancia Manual: </strong>{{protocol.PacienteDominancia}}</span></div>
+        <div class="col-md-4"><span><strong>Escolaridad: </strong>{{protocol.PacienteEstudios}}</span></div>
       </div>
-      <div class=" col ms-2"><span><strong>Resumen Clinico: </strong>El paciente presenta un grave caso de bla bla bla
-          bla</span></div>
+      <div class=" col ms-2"><span><strong>Resumen Clinico: </strong> {{protocol.ResumenClinico}}</span></div>
     </div>
-
     <h5>Sintomas Neurológicos </h5>
     <hr>
     <div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Alerta</strong></span></div>
-        <div class="col-md-3"><span><strong>Estado: </strong>CONSERVADO</span></div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion: </strong>Otro</span></div>
-        <div class="col-md-3"><span><strong>¿Cual? </strong>Otro</span></div>
+        <div class="col-md-3"><span><strong>Estado: </strong>{{protocol.SintomasNeurologicos.Alerta}}</span></div>
+        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+            </strong>{{protocol.SintomasNeurologicos.AlertaTipoAlteracion}}</span></div>
+        <div class="col-md-3"><span><strong>¿Cual?
+            </strong>{{protocol.SintomasNeurologicos.AlertaTipoAlteracionOtro}}</span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Estado Emocional</strong></span></div>
-        <div class="col-md-3"><span><strong>Estado: </strong>CONSERVADO</span></div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion: </strong>Otro</span></div>
-        <div class="col-md-3"><span><strong>¿Cual? </strong>Otro</span></div>
+        <div class="col-md-3"><span><strong>Estado: </strong>{{protocol.SintomasNeurologicos.EstadoEmocional}}</span>
+        </div>
+        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+            </strong>{{protocol.SintomasNeurologicos.EstadoEmocionalTipoAlteracion}}</span></div>
+        <div class="col-md-3"><span><strong>¿Cual?
+            </strong>{{protocol.SintomasNeurologicos.EstadoEmocionalTipoAlteracionOtro}}</span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Fuerza</strong></span></div>
-        <div class="col-md-3"><span><strong>Estado: </strong>CONSERVADO</span></div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion: </strong>Otro</span></div>
-        <div class="col-md-3"><span><strong>¿Cual? </strong>Otro</span></div>
+        <div class="col-md-3"><span><strong>Estado: </strong>{{protocol.SintomasNeurologicos.Fuerza}}</span></div>
+        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+            </strong>{{protocol.SintomasNeurologicos.FuerzaTipoAlteracion}}</span></div>
+        <div class="col-md-3"><span><strong>¿Cual?
+            </strong>{{protocol.SintomasNeurologicos.FuerzaTipoAlteracionOtro}}</span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Coordinación Motora</strong></span></div>
-        <div class="col-md-3"><span><strong>Estado: </strong>CONSERVADO</span></div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion: </strong>Otro</span></div>
-        <div class="col-md-3"><span><strong>¿Cual? </strong>Otro</span></div>
+        <div class="col-md-3"><span><strong>Estado: </strong>{{protocol.SintomasNeurologicos.CondicionMotora}}</span>
+        </div>
+        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+            </strong>{{protocol.SintomasNeurologicos.CondicionMotoraTipoAlteracion}}</span></div>
+        <div class="col-md-3"><span><strong>¿Cual?
+            </strong>{{protocol.SintomasNeurologicos.CondicionMotoraTipoAlteracionOtro}}</span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Sensibilidad</strong></span></div>
-        <div class="col-md-3"><span><strong>Estado: </strong>CONSERVADO</span></div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion: </strong>Otro</span></div>
-        <div class="col-md-3"><span><strong>¿Cual? </strong>Otro</span></div>
+        <div class="col-md-3"><span><strong>Estado: </strong>{{protocol.SintomasNeurologicos.Sensibilidad}}</span>
+        </div>
+        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+            </strong>{{protocol.SintomasNeurologicos.SensibilidadTipoAlteracion}}</span></div>
+        <div class="col-md-3"><span><strong>¿Cual?
+            </strong>{{protocol.SintomasNeurologicos.SensibilidadTipoAlteracionOtro}}</span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Visión</strong></span></div>
-        <div class="col-md-3"><span><strong>Estado: </strong>CONSERVADO</span></div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion: </strong>Otro</span></div>
-        <div class="col-md-3"><span><strong>¿Usa Lentes? </strong>Si</span></div>
+        <div class="col-md-3"><span><strong>Estado: </strong>{{protocol.SintomasNeurologicos.Vision}}</span></div>
+        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+            </strong>{{protocol.SintomasNeurologicos.VisionTipoAlteracion}}</span></div>
+        <div class="col-md-3"><span><strong>¿Usa Lentes?
+            </strong>{{protocol.SintomasNeurologicos.VisionTipoAlteracionOtro}}</span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Audición</strong></span></div>
-        <div class="col-md-3"><span><strong>Estado: </strong>CONSERVADO</span></div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion: </strong>Otro</span></div>
-        <div class="col-md-3"><span><strong>¿Usa Audifono? </strong>Si</span></div>
+        <div class="col-md-3"><span><strong>Estado: </strong>{{protocol.SintomasNeurologicos.Audicion}}</span></div>
+        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+            </strong>{{protocol.SintomasNeurologicos.AudicionTipoAlteracion}}</span></div>
+        <div class="col-md-3"><span><strong>¿Usa Audifono?
+            </strong>{{protocol.SintomasNeurologicos.AudicionTipoAlteracionOtro}}</span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Atencion Espacial</strong></span></div>
-        <div class="col-md-3"><span><strong>Estado: </strong>CONSERVADO</span></div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion: </strong>Otro</span></div>
+        <div class="col-md-3"><span><strong>Estado:
+            </strong>{{protocol.SintomasNeurologicos.AtencionEspacial}}</span></div>
+        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+            </strong>{{protocol.SintomasNeurologicos.AtencionEspacialTipoAlteracion}}</span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Praxia manual</strong></span></div>
-        <div class="col-md-3"><span><strong>Estado: </strong>CONSERVADO</span></div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion: </strong>Otro</span></div>
+        <div class="col-md-3"><span><strong>Estado: </strong>{{protocol.SintomasNeurologicos.PraxiaManual}}</span>
+        </div>
+        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+            </strong>{{protocol.SintomasNeurologicos.PraxiaManualTipoAlteracion}}</span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Praxia orolinguofaciales</strong></span></div>
-        <div class="col-md-3"><span><strong>Estado: </strong>CONSERVADO</span></div>
+        <div class="col-md-3"><span><strong>Estado:
+            </strong>{{protocol.SintomasNeurologicos.PraxiaOrolinguofaciales}}</span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Deglución</strong></span></div>
-        <div class="col-md-3"><span><strong>Estado: </strong>CONSERVADO</span></div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion: </strong>Otro</span></div>
+        <div class="col-md-3"><span><strong>Estado: </strong>{{protocol.SintomasNeurologicos.Deglucion}}</span></div>
+        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+            </strong>{{protocol.SintomasNeurologicos.DeglucionTipoAlteracion}}</span></div>
       </div>
     </div>
   </div>
@@ -98,44 +121,93 @@
       <div class="ms-4">
         <div class="row">
           <div class="col-md-4"><span><strong>Señale la OVEJA</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5"> <span>
+              <span *ngFor="let item of QStep1.Question1and2and3">
+                <span *ngIf="item.valor == protocol.ComprensionAuditiva_Cuantitativa.SenialeLaOveja">
+                  {{item.etiqueta}}
+                </span>
+              </span>
+              <span *ngIf="protocol.ComprensionAuditiva_Cuantitativa.SenialeLaOveja == null">
+                {{OptionNotCharge}}
+              </span>
+            </span> </div>
+          <div class="col-md-3"> <span>Puntuacion:
+            </span>{{protocol.ComprensionAuditiva_Cuantitativa.SenialeLaOveja}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Señale el PLATO</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+            <span *ngFor="let item of QStep1.Question1and2and3">
+              <span *ngIf="item.valor == protocol.ComprensionAuditiva_Cuantitativa.SenialeElPato">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.ComprensionAuditiva_Cuantitativa.SenialeElPato==null">
+              {{OptionNotCharge}}
+            </span> </div>
+          <div class="col-md-3"> <span>Puntuacion: </span>{{protocol.ComprensionAuditiva_Cuantitativa.SenialeElPato}}
+          </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Tóquese la oreja</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5"> <span *ngFor="let item of QStep1.Question1and2and3">
+            <span *ngIf="item.valor == protocol.ComprensionAuditiva_Cuantitativa.ToqueseLaOreja">
+              {{item.etiqueta}}
+            </span>
+          </span>
+          <span *ngIf="protocol.ComprensionAuditiva_Cuantitativa.ToqueseLaOreja==null">
+            {{OptionNotCharge}}
+          </span> </div>
+          <div class="col-md-3"> <span>Puntuacion:
+            </span>{{protocol.ComprensionAuditiva_Cuantitativa.ToqueseLaOreja}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Señale el techo y luego mueva su cabeza</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+            <span *ngFor="let item of QStep1.Question4">
+              <span *ngIf="item.valor == protocol.ComprensionAuditiva_Cuantitativa.SenialeElTecho ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.ComprensionAuditiva_Cuantitativa.SenialeElTecho==null">
+              {{OptionNotCharge}}
+            </span>
+           </div>
+          <div class="col-md-3"> <span>Puntuacion:
+            </span>{{protocol.ComprensionAuditiva_Cuantitativa.SenialeElTecho}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Señale la puerta, abra la boca y luego cierre los ojos</strong></span>
           </div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+            <span *ngFor="let item of QStep1.Question5">
+              <span *ngIf="item.valor == protocol.ComprensionAuditiva_Cuantitativa.SenialeLaPuerta ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.ComprensionAuditiva_Cuantitativa.SenialeLaPuerta==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span>
+            {{protocol.ComprensionAuditiva_Cuantitativa.SenialeLaPuerta}}</div>
         </div>
         <div class="row m-2">
           <div class="col-md-6"></div>
-          <div class="b col-md-6"> <span><strong>Total del Paso: </strong></span> <br>
-            <span><strong>El paso fue completado </strong></span>
+          <div class="b col-md-6"> <span><strong>Total del Paso:
+              </strong>{{protocol.ComprensionAuditiva_Cuantitativa.SubTotal}} </span> <br>
+            <span *ngIf="!protocol.ComprensionAuditiva_Cuantitativa.WasSuspended"><strong>El paso fue completado
+              </strong></span>
+            <span *ngIf="protocol.ComprensionAuditiva_Cuantitativa.WasSuspended"><strong>El paso fue suspendido
+              </strong></span>
           </div>
         </div>
       </div>
       <span><i><u>Evaluacion Cualitativa</u></i></span>
-
       <div class="ms-4">
-        <span>Se observaron las siguientes Alteraciones en las Palabras Oídas: Errores formales</span><br>
-        <span>Se observaron las siguientes Alteraciones en los comandos oídos: Omite parte del Comando</span>
+        <span> {{summaryCualitativa.auditivaEmparejamientoPalabraOida}}<br>
+          {{summaryCualitativa.auditivaComandosOidos}}</span>
       </div>
-
     </div>
   </div>
   <div #P2EO>
@@ -145,36 +217,85 @@
       <div class="ms-4">
         <div class="row">
           <div class="col-md-4"><span><strong>Diga su nombre completo</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+            <span *ngFor="let item of QStep2.Question1and2">
+              <span *ngIf="item.valor == protocol.ExpresionOral_Cuantitativa.DigaSuNombre ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.ExpresionOral_Cuantitativa.DigaSuNombre==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.ExpresionOral_Cuantitativa.DigaSuNombre}}
+          </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>¿En que ciudad nacio?</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+            <span *ngFor="let item of QStep2.Question1and2">
+              <span *ngIf="item.valor == protocol.ExpresionOral_Cuantitativa.EnQueCiudadNacio ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.ExpresionOral_Cuantitativa.EnQueCiudadNacio==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.ExpresionOral_Cuantitativa.EnQueCiudadNacio}}
+          </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Diga que ve en la lamina (lamina: "El Parque")</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+            <span *ngFor="let item of QStep2.Question3and4">
+              <span *ngIf="item.valor == protocol.ExpresionOral_Cuantitativa.LaminaElParque  ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.ExpresionOral_Cuantitativa.LaminaElParque ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.ExpresionOral_Cuantitativa.LaminaElParque}}
+          </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Diga que ve en la lamina (lamina: "Consulta Medica")</strong></span>
           </div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+            <span *ngFor="let item of QStep2.Question3and4">
+              <span *ngIf="item.valor == protocol.ExpresionOral_Cuantitativa.LaminaConsultaMedica  ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.ExpresionOral_Cuantitativa.LaminaConsultaMedica ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span>{{protocol.ExpresionOral_Cuantitativa.LaminaConsultaMedica}} </div>
         </div>
         <div class="row m-2">
           <div class="col-md-6"></div>
-          <div class="b col-md-6"> <span><strong>Total del Paso: </strong></span> <br>
-            <span><strong>El paso fue completado </strong></span>
+          <div class="b col-md-6"> <span><strong>Total del Paso:
+              </strong>{{protocol.ExpresionOral_Cuantitativa.SubTotal}}</span> <br>
+            <span *ngIf="!protocol.ExpresionOral_Cuantitativa.WasSuspended"><strong>El paso fue completado
+              </strong></span>
+            <span *ngIf="protocol.ExpresionOral_Cuantitativa.WasSuspended"><strong>El paso fue suspendido
+              </strong></span>
           </div>
         </div>
       </div>
       <span><i><u>Evaluacion Cualitativa</u></i></span>
       <div class="ms-4">
-        <span>Se observaron las siguientes Alteraciones en las Palabras Oídas: Errores formales</span><br>
-        <span>Se observaron las siguientes Alteraciones en los comandos oídos: Omite parte del Comando</span>
+        <span> {{summaryCualitativa.oralFluencia}}<br *ngIf="summaryCualitativa.oralProsodia!=null">
+          {{summaryCualitativa.oralProsodia}}<br *ngIf="summaryCualitativa.oralArticulacion!=null">
+          {{summaryCualitativa.oralArticulacion}}<br *ngIf="summaryCualitativa.oralCodificacionFonologica!=null">
+          {{summaryCualitativa.oralCodificacionFonologica}}<br
+            *ngIf="summaryCualitativa.oralProcesamientoSintaxtico!=null">
+          {{summaryCualitativa.oralProcesamientoSintaxtico}}<br
+            *ngIf="summaryCualitativa.oralProcesamientoLexico!=null">
+          {{summaryCualitativa.oralProcesamientoLexico}}</span>
       </div>
     </div>
   </div>
@@ -185,61 +306,151 @@
       <div class="ms-4">
         <div class="row">
           <div class="col-md-4"><span><strong>Sol</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+            <span *ngFor="let item of QStep3.Q1">
+              <span *ngIf="item.valor == protocol.Repeticion_Cuantitativa.Sol  ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Repeticion_Cuantitativa.Sol ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Repeticion_Cuantitativa.Sol}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Precio</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+                        <span *ngFor="let item of QStep3.Q1">
+              <span *ngIf="item.valor == protocol.Repeticion_Cuantitativa.Precio  ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Repeticion_Cuantitativa.Precio ==null">
+              {{OptionNotCharge}}
+            </span>
+           </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Repeticion_Cuantitativa.Precio}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Pensamiento</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+                        <span *ngFor="let item of QStep3.Q1">
+              <span *ngIf="item.valor == protocol.Repeticion_Cuantitativa.Pensamiento  ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Repeticion_Cuantitativa.Pensamiento ==null">
+              {{OptionNotCharge}}
+            </span>
+           </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Repeticion_Cuantitativa.Pensamiento}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Mucho Ruido</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+                      <span *ngFor="let item of QStep3.Q2">
+              <span *ngIf="item.valor == protocol.Repeticion_Cuantitativa.MuchoRuido  ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Repeticion_Cuantitativa.MuchoRuido ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Repeticion_Cuantitativa.MuchoRuido}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>El hombre guardo las herramientas</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+                      <span *ngFor="let item of QStep3.Q3">
+              <span *ngIf="item.valor == protocol.Repeticion_Cuantitativa.ElHombreGuardo  ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Repeticion_Cuantitativa.ElHombreGuardo ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Repeticion_Cuantitativa.ElHombreGuardo}}</div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>La mujer le regalo un libro a su hijo</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+                      <span *ngFor="let item of QStep3.Q3">
+              <span *ngIf="item.valor == protocol.Repeticion_Cuantitativa.LaMujerRegalo  ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Repeticion_Cuantitativa.LaMujerRegalo ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Repeticion_Cuantitativa.LaMujerRegalo}}</div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Fo</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+                      <span *ngFor="let item of QStep3.Q4">
+              <span *ngIf="item.valor == protocol.Repeticion_Cuantitativa.Fo  ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Repeticion_Cuantitativa.Fo ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span>{{protocol.Repeticion_Cuantitativa.Fo}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Treyo</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+                      <span *ngFor="let item of QStep3.Q4">
+              <span *ngIf="item.valor == protocol.Repeticion_Cuantitativa.Treyo  ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Repeticion_Cuantitativa.Treyo ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span>{{protocol.Repeticion_Cuantitativa.Treyo}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Almusipa</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+                      <span *ngFor="let item of QStep3.Q4">
+              <span *ngIf="item.valor == protocol.Repeticion_Cuantitativa.Almusipa  ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Repeticion_Cuantitativa.Almusipa ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Repeticion_Cuantitativa.Almusipa}}</div>
         </div>
         <div class="row m-2">
           <div class="col-md-6"></div>
-          <div class="b col-md-6"> <span><strong>Total del Paso: </strong></span> <br>
-            <span><strong>El paso fue completado </strong></span>
+          <div class="b col-md-6"> <span><strong>Total del Paso:
+              </strong>{{protocol.Repeticion_Cuantitativa.SubTotal}}</span> <br>
+            <span *ngIf="!protocol.Repeticion_Cuantitativa.WasSuspended"><strong>El paso fue completado
+              </strong></span>
+            <span *ngIf="protocol.Repeticion_Cuantitativa.WasSuspended"><strong>El paso fue suspendido
+              </strong></span>
           </div>
         </div>
       </div>
       <span><i><u>Evaluacion Cualitativa</u></i></span>
 
       <div class="ms-4">
-        <span>Se observaron las siguientes Alteraciones en las Palabras Oídas: Errores formales</span><br>
-        <span>Se observaron las siguientes Alteraciones en los comandos oídos: Omite parte del Comando</span>
+        <span> {{summaryCualitativa.repeticionArticulacion}}<br
+            *ngIf="summaryCualitativa.repeticionCodificacionFonologica!=null">
+          {{summaryCualitativa.repeticionCodificacionFonologica}}<br
+            *ngIf="summaryCualitativa.repeticionProcesamientoLexico!=null">
+          {{summaryCualitativa.repeticionProcesamientoLexico}}<br
+            *ngIf="summaryCualitativa.repeticionProcesamientoSintaxtico!=null">
+          {{summaryCualitativa.repeticionProcesamientoSintaxtico}}</span>
       </div>
     </div>
   </div>
@@ -250,36 +461,79 @@
       <div class="ms-4">
         <div class="row">
           <div class="col-md-4"><span><strong>¿Qué es esto? (Lámina “cama”)</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+            <span *ngFor="let item of QStep4.Question1and3">
+              <span *ngIf="item.valor == protocol.Denominacion_Cuantitativa.LaminaCama  ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Denominacion_Cuantitativa.LaminaCama ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Denominacion_Cuantitativa.LaminaCama}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>¿Qué es esto? (Lámina “violín”)</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+            <span *ngFor="let item of QStep4.Question2and4">
+              <span *ngIf="item.valor == protocol.Denominacion_Cuantitativa.LaminaViolin  ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Denominacion_Cuantitativa.LaminaViolin ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Denominacion_Cuantitativa.LaminaViolin}}</div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>¿Qué hace esta persona? (Lámina “come”)</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+            <span *ngFor="let item of QStep4.Question1and3">
+              <span *ngIf="item.valor == protocol.Denominacion_Cuantitativa.LaminaCome ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Denominacion_Cuantitativa.LaminaCome ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Denominacion_Cuantitativa.LaminaCome}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>¿Qué hace esta persona? (Lámina “rema”)</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+            <span *ngFor="let item of QStep4.Question2and4">
+              <span *ngIf="item.valor == protocol.Denominacion_Cuantitativa.LaminaRema ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Denominacion_Cuantitativa.LaminaRema ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Denominacion_Cuantitativa.LaminaRema}} </div>
         </div>
         <div class="row m-2">
           <div class="col-md-6"></div>
-          <div class="b col-md-6"> <span><strong>Total del Paso: </strong></span> <br>
-            <span><strong>El paso fue completado </strong></span>
+          <div class="b col-md-6"> <span><strong>Total del Paso: </strong>
+              {{protocol.Denominacion_Cuantitativa.SubTotal}} </span> <br>
+            <span *ngIf="!protocol.Denominacion_Cuantitativa.WasSuspended"><strong>El paso fue completado
+              </strong></span>
+            <span *ngIf="protocol.Denominacion_Cuantitativa.WasSuspended"><strong>El paso fue suspendido
+              </strong></span>
           </div>
         </div>
       </div>
       <span><i><u>Evaluacion Cualitativa</u></i></span>
 
       <div class="ms-4">
-        <span>Se observaron las siguientes Alteraciones en las Palabras Oídas: Errores formales</span><br>
-        <span>Se observaron las siguientes Alteraciones en los comandos oídos: Omite parte del Comando</span>
+        <span> {{summaryCualitativa.denominacionArticulacion}}<br
+            *ngIf="summaryCualitativa.denominacionCodificacionFonologica!=null">
+          {{summaryCualitativa.denominacionCodificacionFonologica}}<br
+            *ngIf="summaryCualitativa.denominacionProcesamientoLexico!=null">
+          {{summaryCualitativa.denominacionProcesamientoLexico}}</span>
       </div>
     </div>
   </div>
@@ -290,70 +544,176 @@
       <div class="ms-4">
         <div class="row">
           <div class="col-md-4"><span><strong>Mono (lámina: reloj, mono, león, moño)</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep5.QuestionBetween1to10">
+              <span *ngIf="item.valor == protocol.Lectura_Cuantitativa.Mono ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Lectura_Cuantitativa.Mono ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Lectura_Cuantitativa.Mono}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Arco (lámina: martillo, flecha, arco, barco)</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep5.QuestionBetween1to10">
+              <span *ngIf="item.valor == protocol.Lectura_Cuantitativa.Arco ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Lectura_Cuantitativa.Arco ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Lectura_Cuantitativa.Arco}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Casa</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep5.QuestionBetween1to10">
+              <span *ngIf="item.valor == protocol.Lectura_Cuantitativa.Casa ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Lectura_Cuantitativa.Casa ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Lectura_Cuantitativa.Casa}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Grito</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep5.QuestionBetween1to10">
+              <span *ngIf="item.valor == protocol.Lectura_Cuantitativa.Grito ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Lectura_Cuantitativa.Grito ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Lectura_Cuantitativa.Grito}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Estatua</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep5.QuestionBetween1to10">
+              <span *ngIf="item.valor == protocol.Lectura_Cuantitativa.Estatua ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Lectura_Cuantitativa.Estatua ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Lectura_Cuantitativa.Estatua}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Comunidad</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep5.QuestionBetween1to10">
+              <span *ngIf="item.valor == protocol.Lectura_Cuantitativa.Comunidad ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Lectura_Cuantitativa.Comunidad ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Lectura_Cuantitativa.Comunidad}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Ne</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep5.QuestionBetween1to10">
+              <span *ngIf="item.valor == protocol.Lectura_Cuantitativa.Ne ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Lectura_Cuantitativa.Ne ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Lectura_Cuantitativa.Ne}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Cho</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep5.QuestionBetween1to10">
+              <span *ngIf="item.valor == protocol.Lectura_Cuantitativa.Cho ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Lectura_Cuantitativa.Cho ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Lectura_Cuantitativa.Cho}}</div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Bleja</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep5.QuestionBetween1to10">
+              <span *ngIf="item.valor == protocol.Lectura_Cuantitativa.Bleja ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Lectura_Cuantitativa.Bleja ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Lectura_Cuantitativa.Bleja}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Tudipro</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep5.QuestionBetween1to10">
+              <span *ngIf="item.valor == protocol.Lectura_Cuantitativa.Tudipro">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Lectura_Cuantitativa.Tudipro ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Lectura_Cuantitativa.Tudipro}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Saque la lengua y salude con la mano</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep5.Question11">
+              <span *ngIf="item.valor == protocol.Lectura_Cuantitativa.SaqueLaMano ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Lectura_Cuantitativa.SaqueLaMano ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Lectura_Cuantitativa.SaqueLaMano}} </div>
         </div>
         <div class="row m-2">
           <div class="col-md-6"></div>
-          <div class="b col-md-6"> <span><strong>Total del Paso: </strong></span> <br>
-            <span><strong>El paso fue completado </strong></span>
+          <div class="b col-md-6"> <span><strong>Total del Paso: </strong></span>
+            {{protocol.Lectura_Cuantitativa.SubTotal}} <br>
+            <span *ngIf="!protocol.Lectura_Cuantitativa.WasSuspended"><strong>El paso fue completado </strong></span>
+            <span *ngIf="protocol.Lectura_Cuantitativa.WasSuspended"><strong>El paso fue suspendido </strong></span>
           </div>
         </div>
       </div>
       <span><i><u>Evaluacion Cualitativa</u></i></span>
       <div class="ms-4">
-        <span>Se observaron las siguientes Alteraciones en las Palabras Oídas: Errores formales</span><br>
-        <span>Se observaron las siguientes Alteraciones en los comandos oídos: Omite parte del Comando</span>
+        <span> {{summaryCualitativa.lecturaLecturaNoPalabras}}<br
+            *ngIf="summaryCualitativa.lecturaLecturaPalabras!=null">
+          {{summaryCualitativa.lecturaLecturaPalabras}}<br
+            *ngIf="summaryCualitativa.lecturaEmparejamientoPalabraEscrita!=null">
+          {{summaryCualitativa.lecturaEmparejamientoPalabraEscrita}}<br
+            *ngIf="summaryCualitativa.lecturaComprensionComandoEscrito!=null">
+          {{summaryCualitativa.lecturaComprensionComandoEscrito}}</span>
       </div>
     </div>
   </div>
@@ -364,60 +724,149 @@
       <div class="ms-4">
         <div class="row">
           <div class="col-md-4"><span><strong>EME</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep6.Question1and2and3and4and7and8">
+              <span *ngIf="item.valor == protocol.Escritura_Cuantitativa.EME ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Escritura_Cuantitativa.EME ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Escritura_Cuantitativa.EME}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>ZETA</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep6.Question1and2and3and4and7and8">
+              <span *ngIf="item.valor == protocol.Escritura_Cuantitativa.ZETA">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Escritura_Cuantitativa.ZETA==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Escritura_Cuantitativa.ZETA}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Mano</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep6.Question1and2and3and4and7and8">
+              <span *ngIf="item.valor == protocol.Escritura_Cuantitativa.ManoMano ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Escritura_Cuantitativa.ManoMano ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Escritura_Cuantitativa.ManoMano}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Gente</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep6.Question1and2and3and4and7and8">
+              <span *ngIf="item.valor == protocol.Escritura_Cuantitativa.Gente ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Escritura_Cuantitativa.Gente ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Escritura_Cuantitativa.Gente}}</div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Esperanza</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep6.Question5and6and9">
+              <span *ngIf="item.valor == protocol.Escritura_Cuantitativa.Esperanza ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Escritura_Cuantitativa.Esperanza ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Escritura_Cuantitativa.Esperanza}}</div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Aclaración</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep6.Question5and6and9">
+              <span *ngIf="item.valor == protocol.Escritura_Cuantitativa.Aclaracion ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Escritura_Cuantitativa.Aclaracion ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Escritura_Cuantitativa.Aclaracion}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Jo</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep6.Question1and2and3and4and7and8">
+              <span *ngIf="item.valor == protocol.Escritura_Cuantitativa.Jo">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Escritura_Cuantitativa.Jo==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Escritura_Cuantitativa.Jo}}</div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Guela</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep6.Question1and2and3and4and7and8">
+              <span *ngIf="item.valor == protocol.Escritura_Cuantitativa.Guela ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf="protocol.Escritura_Cuantitativa.Guela ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Escritura_Cuantitativa.Guela}}</div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Dirchole</strong></span></div>
-          <div class="col-md-5"> <span>0:Ejecucion INCORRECTA</span> </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> </div>
+          <div class="col-md-5">
+           <span *ngFor="let item of QStep6.Question5and6and9">
+              <span *ngIf="item.valor == protocol.Escritura_Cuantitativa.Dirchole ">
+                {{item.etiqueta}}
+              </span>
+            </span>
+            <span *ngIf=" protocol.Escritura_Cuantitativa.Dirchole ==null">
+              {{OptionNotCharge}}
+            </span>
+          </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Escritura_Cuantitativa.Dirchole}} </div>
         </div>
         <div class="row m-2">
           <div class="col-md-6"></div>
-          <div class="b col-md-6"> <span><strong>Total del Paso: </strong></span> <br>
-            <span><strong>El paso fue completado </strong></span>
+          <div class="b col-md-6"> <span><strong>Total del Paso: </strong>
+              {{protocol.Escritura_Cuantitativa.SubTotal}} </span> <br>
+            <span *ngIf="!protocol.Escritura_Cuantitativa.WasSuspended"><strong>El paso fue completado
+              </strong></span>
+            <span *ngIf="protocol.Escritura_Cuantitativa.WasSuspended"><strong>El paso fue suspendido
+              </strong></span>
           </div>
         </div>
       </div>
       <span><i><u>Evaluacion Cualitativa</u></i></span>
       <div class="ms-4">
-        <span>Se observaron las siguientes Alteraciones en las Palabras Oídas: Errores formales</span><br>
-        <span>Se observaron las siguientes Alteraciones en los comandos oídos: Omite parte del Comando</span>
+        <span> {{summaryCualitativa.escrituraMovilidadManoDominante}}<br
+            *ngIf="summaryCualitativa.escrituraManoNoDominante!=null">
+          {{summaryCualitativa.escrituraManoNoDominante}}<br *ngIf="summaryCualitativa.escrituraGrafismo!=null">
+          {{summaryCualitativa.escrituraGrafismo}}<br *ngIf="summaryCualitativa.escrituraDeletreo!=null">
+          {{summaryCualitativa.escrituraDeletreo}}<br *ngIf="summaryCualitativa.escrituraOrtografia!=null">
+          {{summaryCualitativa.escrituraOrtografia}}</span>
       </div>
     </div>
   </div>
@@ -437,55 +886,55 @@
           <tr>
             <th scope="row">Comprensión auditiva</th>
             <td>
-              <!--{{ProtocolSummary.ComprensionAuditiva_CuantitativaDTO.Subtotal}}/6-->
+              {{protocol.ComprensionAuditiva_Cuantitativa.SubTotal}}/6
             </td>
             <td>
-              <!--{{valuation.Auditiva}} -->
+              {{valuation.Auditiva}}
             </td>
           </tr>
           <tr>
             <th scope="row">Expresión oral:</th>
             <td>
-              <!--{{ProtocolSummary.ExpresionOral_CuantitativaSTO.SubTotal}}/6-->
+              {{protocol.ExpresionOral_Cuantitativa.SubTotal}}/6
             </td>
             <td>
-              <!-- {{valuation.Oral}} -->
+              {{valuation.Oral}}
             </td>
           </tr>
           <tr>
             <th scope="row">Repetición: </th>
             <td>
-              <!--{{ProtocolSummary.Repeticion_CuantitativaDTO.SubTotal}}/6-->
+              {{protocol.Repeticion_Cuantitativa.SubTotal}}/6
             </td>
             <td>
-              <!-- {{valuation.Repeticion}}  -->
+              {{valuation.Repeticion}}
             </td>
           </tr>
           <tr>
             <th scope="row">Denominación: </th>
             <td>
-              <!--{{ProtocolSummary.Denominacion_CuantitativaDTO.SubTotal}}/6-->
+              {{protocol.Denominacion_Cuantitativa.SubTotal}}/6
             </td>
             <td>
-              <!-- {{valuation.Denominacion}} -->
+              {{valuation.Denominacion}}
             </td>
           </tr>
           <tr>
             <th scope="row">Lectura: </th>
             <td>
-              <!--{{ProtocolSummary.Lectura_CuantitativaDTO.SubTotal}}/6-->
+              {{protocol.Lectura_Cuantitativa.SubTotal}}/6
             </td>
             <td>
-              <!--{{valuation.Lectura}}  -->
+              {{valuation.Lectura}}
             </td>
           </tr>
           <tr>
             <th scope="row">Escritura:</th>
             <td>
-              <!--{{ProtocolSummary.Escritura_CuantitativaDTO.SubTotal}}/6-->
+              {{protocol.Escritura_Cuantitativa.SubTotal}}/6
             </td>
             <td>
-              <!-- {{valuation.Escritura}} -->
+              {{valuation.Escritura}}
             </td>
           </tr>
         </tbody>
@@ -493,7 +942,7 @@
           <tr>
             <th scope="row">Total</th>
             <td colspan="2">
-              <!--{{ProtocolSummary.Total}}/36-->
+              {{protocol.Total}}/36
             </td>
           </tr>
         </tfoot>
@@ -517,55 +966,66 @@
           <tr>
             <th scope="row">Comprensión auditiva:</th>
             <td>
-              <!--{{summaryCualitativa.auditivaEmparejamientoPalabraOida}}<br>
-          {{summaryCualitativa.auditivaComandosOidos}} -->
+              {{summaryCualitativa.auditivaEmparejamientoPalabraOida}}<br>
+              {{summaryCualitativa.auditivaComandosOidos}}
             </td>
           </tr>
           <tr>
             <th scope="row">Expresión oral:</th>
             <td>
-              <!--{{summaryCualitativa.oralFluencia}}<br *ngIf="summaryCualitativa.oralProsodia!=null">
-            {{summaryCualitativa.oralProsodia}}<br *ngIf="summaryCualitativa.oralArticulacion!=null">
-            {{summaryCualitativa.oralArticulacion}}<br *ngIf="summaryCualitativa.oralCodificacionFonologica!=null">
-            {{summaryCualitativa.oralCodificacionFonologica}}<br *ngIf="summaryCualitativa.oralProcesamientoSintaxtico!=null">
-            {{summaryCualitativa.oralProcesamientoSintaxtico}}<br *ngIf="summaryCualitativa.oralProcesamientoLexico!=null">
-            {{summaryCualitativa.oralProcesamientoLexico}}-->
+              {{summaryCualitativa.oralFluencia}}<br *ngIf="summaryCualitativa.oralProsodia!=null">
+              {{summaryCualitativa.oralProsodia}}<br *ngIf="summaryCualitativa.oralArticulacion!=null">
+              {{summaryCualitativa.oralArticulacion}}<br *ngIf="summaryCualitativa.oralCodificacionFonologica!=null">
+              {{summaryCualitativa.oralCodificacionFonologica}}<br
+                *ngIf="summaryCualitativa.oralProcesamientoSintaxtico!=null">
+              {{summaryCualitativa.oralProcesamientoSintaxtico}}<br
+                *ngIf="summaryCualitativa.oralProcesamientoLexico!=null">
+              {{summaryCualitativa.oralProcesamientoLexico}}
             </td>
           </tr>
           <tr>
             <th scope="row">Repetición: </th>
             <td>
-              <!--{{summaryCualitativa.repeticionArticulacion}}<br *ngIf="summaryCualitativa.repeticionCodificacionFonologica!=null">
-            {{summaryCualitativa.repeticionCodificacionFonologica}}<br *ngIf="summaryCualitativa.repeticionProcesamientoLexico!=null">
-            {{summaryCualitativa.repeticionProcesamientoLexico}}<br *ngIf="summaryCualitativa.repeticionProcesamientoSintaxtico!=null">
-            {{summaryCualitativa.repeticionProcesamientoSintaxtico}}          -->
+              {{summaryCualitativa.repeticionArticulacion}}<br
+                *ngIf="summaryCualitativa.repeticionCodificacionFonologica!=null">
+              {{summaryCualitativa.repeticionCodificacionFonologica}}<br
+                *ngIf="summaryCualitativa.repeticionProcesamientoLexico!=null">
+              {{summaryCualitativa.repeticionProcesamientoLexico}}<br
+                *ngIf="summaryCualitativa.repeticionProcesamientoSintaxtico!=null">
+              {{summaryCualitativa.repeticionProcesamientoSintaxtico}}
             </td>
           </tr>
           <tr>
             <th scope="row">Denominación: </th>
             <td>
-              <!--{{summaryCualitativa.denominacionArticulacion}}<br *ngIf="summaryCualitativa.denominacionCodificacionFonologica!=null">
-            {{summaryCualitativa.denominacionCodificacionFonologica}}<br *ngIf="summaryCualitativa.denominacionProcesamientoLexico!=null">
-            {{summaryCualitativa.denominacionProcesamientoLexico}}          -->
+              {{summaryCualitativa.denominacionArticulacion}}<br
+                *ngIf="summaryCualitativa.denominacionCodificacionFonologica!=null">
+              {{summaryCualitativa.denominacionCodificacionFonologica}}<br
+                *ngIf="summaryCualitativa.denominacionProcesamientoLexico!=null">
+              {{summaryCualitativa.denominacionProcesamientoLexico}}
             </td>
           </tr>
           <tr>
             <th scope="row">Lectura: </th>
             <td>
-              <!--{{summaryCualitativa.lecturaLecturaNoPalabras}}<br *ngIf="summaryCualitativa.lecturaLecturaPalabras!=null">
-            {{summaryCualitativa.lecturaLecturaPalabras}}<br *ngIf="summaryCualitativa.lecturaEmparejamientoPalabraEscrita!=null">
-            {{summaryCualitativa.lecturaEmparejamientoPalabraEscrita}}<br *ngIf="summaryCualitativa.lecturaComprensionComandoEscrito!=null">
-            {{summaryCualitativa.lecturaComprensionComandoEscrito}}-->
+              {{summaryCualitativa.lecturaLecturaNoPalabras}}<br
+                *ngIf="summaryCualitativa.lecturaLecturaPalabras!=null">
+              {{summaryCualitativa.lecturaLecturaPalabras}}<br
+                *ngIf="summaryCualitativa.lecturaEmparejamientoPalabraEscrita!=null">
+              {{summaryCualitativa.lecturaEmparejamientoPalabraEscrita}}<br
+                *ngIf="summaryCualitativa.lecturaComprensionComandoEscrito!=null">
+              {{summaryCualitativa.lecturaComprensionComandoEscrito}}
             </td>
           </tr>
           <tr>
             <th scope="row">Escritura:</th>
             <td>
-              <!--{{summaryCualitativa.escrituraMovilidadManoDominante}}<br *ngIf="summaryCualitativa.escrituraManoNoDominante!=null">
-            {{summaryCualitativa.escrituraManoNoDominante}}<br *ngIf="summaryCualitativa.escrituraGrafismo!=null">
-            {{summaryCualitativa.escrituraGrafismo}}<br *ngIf="summaryCualitativa.escrituraDeletreo!=null">
-            {{summaryCualitativa.escrituraDeletreo}}<br *ngIf="summaryCualitativa.escrituraOrtografia!=null">
-            {{summaryCualitativa.escrituraOrtografia}}-->
+              {{summaryCualitativa.escrituraMovilidadManoDominante}}<br
+                *ngIf="summaryCualitativa.escrituraManoNoDominante!=null">
+              {{summaryCualitativa.escrituraManoNoDominante}}<br *ngIf="summaryCualitativa.escrituraGrafismo!=null">
+              {{summaryCualitativa.escrituraGrafismo}}<br *ngIf="summaryCualitativa.escrituraDeletreo!=null">
+              {{summaryCualitativa.escrituraDeletreo}}<br *ngIf="summaryCualitativa.escrituraOrtografia!=null">
+              {{summaryCualitativa.escrituraOrtografia}}
             </td>
           </tr>
         </tbody>
@@ -573,13 +1033,13 @@
     </div>
     <h5>Conclusiones</h5>
     <hr>
-    <span class="ms-4"><i>Se recomienda bla bla bla bla bla bla bla bla bla bla bla. . . .</i></span>
+    <span class="ms-4"><i>{{protocol.ConclusionesRecomendaciones}}</i></span>
   </div>
 </div>
 <div class="row">
   <div class="col-md-6 text-center"><button class="btn btn-info" (click)="createFullPDF(spiner)">Descargar Protocolo
       Completo</button></div>
-  <div class="col-md-6 text-center"><button class="btn btn-info" (click)="createSummaryPDF(spiner)" >Descargar Protocolo
+  <div class="col-md-6 text-center"><button class="btn btn-info" (click)="createSummaryPDF(spiner)">Descargar Protocolo
       Resumido</button></div>
 </div>
 
@@ -589,9 +1049,10 @@
   <div class="modal-body">
     <div class="d-flex justify-content-center">
       <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
-        <span class="visually-hidden" >Loading...</span>
+        <span class="visually-hidden">Loading...</span>
       </div>
-      <span style="font-size:  2rem; margin-bottom: 1rem; margin-left: 1rem;"> Generando su PDF, por favor espere unos segundos... </span>
+      <span style="font-size:  2rem; margin-bottom: 1rem; margin-left: 1rem;"> Generando su PDF, por favor espere unos
+        segundos... </span>
     </div>
   </div>
 </ng-template>
@@ -602,9 +1063,10 @@
   <div class="modal-body">
     <div class="d-flex justify-content-center">
       <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
-        <span class="visually-hidden" >Loading...</span>
+        <span class="visually-hidden">Loading...</span>
       </div>
-      <span style="font-size:  2rem; margin-bottom: 1rem; margin-left: 1rem;"> Recuperando informacion del protocolo, por favor espere unos segundos... </span>
+      <span style="font-size:  2rem; margin-bottom: 1rem; margin-left: 1rem;"> Recuperando informacion del protocolo,
+        por favor espere unos segundos... </span>
     </div>
   </div>
 </ng-template>

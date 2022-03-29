@@ -5,7 +5,7 @@ export class ComprensionAuditiva_CuantitativaDTO{
   SenialeLaPuerta:number=null;
   SenialeLaOveja:number=null;
   isComplete:boolean = null;
-  Subtotal:number = 0;
+  SubTotal:number = 0;
   WasSuspended:boolean=false;
   contrustor(){
 

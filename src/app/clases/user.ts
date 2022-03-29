@@ -1,10 +1,11 @@
 export class User{
-  user:string='';
-  password:string='';
-  token:string='';
-  tokenCreate:Date= new Date();
-  tokenExpiration:Date=new Date();
-  signIn:boolean=false;
+  Id_Usuario:number=null;
+  Token:string='';
+  CreacionToken:Date= new Date();
+  VencimientoToken:Date=new Date();
+  Mail:string='';
+  SegundaClave:string='';
+  signIn?:boolean=false;
   contrustor(){
   }
 }

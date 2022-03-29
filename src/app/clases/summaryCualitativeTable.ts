@@ -3,6 +3,7 @@ import { Denominacion_CualitativaDTO } from "./Denominacion_CualitativaDTO";
 import { Escritura_CualitativaDTO } from "./Escritura_CualitativaDTO";
 import { ExpresionOral_CualitativaDTO } from "./ExpresionOral_CualitativaDTO";
 import { Lectura_CualitativaDTO } from "./Lectura_CualitativaDTO";
+import { ProtocolDTO } from "./ProtocolDTO";
 import { ProtocoloDTO } from "./ProtocoloDTO";
 import { Repeticion_CualitativaDTO } from "./Repeticion_CualitativaDTO";
 
@@ -33,13 +34,13 @@ export class summaryCualitativeTable {
   escrituraOrtografia: string;
   constructor() {
   }
-  summary(protocol: ProtocoloDTO) {
-    this.summaryAuditivaCualitativa(protocol.ComprensionAuditiva_CualitativaDTO);
-    this.summaryOralCualitativa(protocol.ExpresionOral_CualitativaSTO);
-    this.summaryRepeticionCualitativa(protocol.Repeticion_CualitativaDTO);
-    this.summaryDenominacionCualitativa(protocol.Denominacion_CualitativaDTO);
-    this.summaryLecturaCualitativa(protocol.Lectura_CualitativaDTO);
-    this.summaryEscrituraCualitativa(protocol.Escritura_CualitativaDTO);
+  summary(protocol: ProtocolDTO) {
+    this.summaryAuditivaCualitativa(protocol.ComprensionAuditiva_Cualitativa);
+    this.summaryOralCualitativa(protocol.ExpresionOral_Cualitativa);
+    this.summaryRepeticionCualitativa(protocol.Repeticion_Cualitativa);
+    this.summaryDenominacionCualitativa(protocol.Denominacion_Cualitativa);
+    this.summaryLecturaCualitativa(protocol.Lectura_Cualitativa);
+    this.summaryEscrituraCualitativa(protocol.Escritura_Cualitativa);
   }
   private summaryAuditivaCualitativa(ComprensionAuditiva_CualitativaDTO: ComprensionAuditiva_CualitativaDTO) {
     if (ComprensionAuditiva_CualitativaDTO.ComandosOidosAlterada == null &&

@@ -3,15 +3,14 @@
     <h3>Mis Pacientes </h3>
   </div>
   <div class="row container mt-3">
+    hola: {{datalistContent}}
     <div class=" col-md-12 " >
       <label for="exampleDataList" class="form-label">Buscar Paciente:</label>
-      <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-      <datalist id="datalistOptions" >
-        <option [ngValue]="0" (click)="fa(1)" >Todos mis pacientes</option>
-        <option [ngValue]="1">New York</option>
-        <option [ngValue]="2">Seattle</option>
-        <option [ngValue]="3">Los Angeles</option>
-        <option [ngValue]="4">Chicago</option>
+      <input class="form-control" list="datalistOptions" id="search" placeholder="Type to search..."
+      [(ngModel)]="datalistContent" (ngModelChange)="fa()" >
+      <datalist id="datalistOptions"   >
+        <option  >Todos mis pacientes</option>
+        <option *ngFor="let item of patientListCopy">{{item.Cod_Paciente}}</option>
       </datalist>
     </div>
   </div>
@@ -27,16 +26,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">c</th>
-          <td>a</td>
-          <td>b</td>
+        <tr *ngFor="let item of patientList" >
+          <th scope="row">{{item.Cod_Paciente}}</th>
+          <td> {{item.Iniciales}}</td>
+          <td>{{item.FechaNacimiento}}</td>
           <td>
             <div>
-              <button class="btn btn-success m-1 rounded-3" (click)="navigateNewProtocol()">
+              <button class="btn btn-success m-1 rounded-3"
+              (click)="navigateNewProtocol(item)">
                 Nuevo Protocolo
               </button>
-              <button class="btn btn-success ms-1 rounded-3" (click)="allProtocolsByPatient()" >
+              <button class="btn btn-success ms-1 rounded-3" (click)="allProtocolsByPatient(item)" >
                 Protocolos Previos
               </button>
             </div>

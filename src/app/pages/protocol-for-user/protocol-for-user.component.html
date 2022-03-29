@@ -13,13 +13,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">c</th>
-          <td>a</td>
-          <td>b</td>
+        <tr *ngFor="let item of protocoloslist" >
+          <th scope="row">{{item.Cod_Paciente}}</th>
+          <td>{{item.Fecha_Protocolo}}</td>
+          <td><i> <strong>{{item.Total}}</strong>/36 </i></td>
           <td>
             <div>
-              <button class="btn btn-success ms-1 rounded-3" (click)="viewProtocol(1)">
+              <button class="btn btn-success ms-1 rounded-3" (click)="viewProtocol(item)">
                 Ver
               </button>
             </div>

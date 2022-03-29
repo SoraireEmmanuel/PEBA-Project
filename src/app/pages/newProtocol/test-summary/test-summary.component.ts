@@ -20,7 +20,9 @@ export class TestSummaryComponent implements OnInit {
   ProtocolSummary: ProtocoloDTO = new ProtocoloDTO();
   valuation:Valuation=new Valuation();
   summaryCualitativa:summaryCualitativeTable=new summaryCualitativeTable();
+  success:any;
   constructor(public _ModalService:NgbModal,
+    private _loadService:LocalServiceService,
     private _Route:Router,
     private _toastr: ToastrService,
     private _localService:LocalServiceService,
@@ -36,8 +38,7 @@ export class TestSummaryComponent implements OnInit {
     this.valuation.Denominacion = this.valuationCharge(this.ProtocolSummary.Denominacion_CuantitativaDTO.SubTotal);
     this.valuation.Lectura = this.valuationCharge(this.ProtocolSummary.Lectura_CuantitativaDTO.SubTotal);
     this.valuation.Escritura = this.valuationCharge(this.ProtocolSummary.Escritura_CuantitativaDTO.SubTotal);
-    this.summaryCualitativa.summary(this.protocol);
-    console.log(this.summaryCualitativa)
+    //this.summaryCualitativa.summary(this.protocol);
   }
   //Funciones de pre carga de los resumenes
   valuationCharge(value: number): string {
@@ -63,16 +64,19 @@ export class TestSummaryComponent implements OnInit {
     this._toastr.error('Por favor espere unos segundos e intente de nuevamente','Error Inesperado del servidor')
       setTimeout(() => {
         modalSpiner.close();
-        this._localService.setJsonValue('protocolo enviado',this.ProtocolSummary)
-        localStorage.setItem('protocol', JSON.stringify(this.ProtocolSummary));
-        const success= this._ModalService.open(modalSuccess, {size: 'xl', centered: true})
+        this._localService.setJsonValue('protocoloEnviado',this.ProtocolSummary)
+        //localStorage.setItem('protocol', JSON.stringify(this.ProtocolSummary));
+        this._loadService.setJsonValue('ExitProtocol',{ExitProtocol: false})
+        this.success= this._ModalService.open(modalSuccess, {size: 'xl', centered: true})
                 //this.sendProtocol.emit(this.ProtocolSummary);
       }, 5000);
   }
   viewProtocol(){
-
+    this.success.close();
+    this._Route.navigate(['viewProtocol'])
   }
   goMisPacientes(){
-
+    this.success.close();
+    this._Route.navigate(['myPatients'])
   }
 }

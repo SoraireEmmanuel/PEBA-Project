@@ -27,7 +27,6 @@ export class NewProtocolComponent implements OnInit {
   PatientIdentification: PatientIdentification = new PatientIdentification()
   Progress: number = 0;
   constructor(private _loadService:LocalServiceService) {
-    _loadService.setJsonValue('ExitProtocol',{ExitProtocol: true})
   //line only for test, in  producttion must be remove
     this.PatientIdentification.brithDate = '01/02/89';
     this.PatientIdentification.handDominance = 1
@@ -38,9 +37,10 @@ export class NewProtocolComponent implements OnInit {
     this.PatientIdentification.isBilingual = 1
     this.PatientIdentification.otherLenguage = 'Chino'
     this.PatientIdentification.bilingualLanguage = 'Español'
-
+    this._loadService.setJsonValue('patient', this.PatientIdentification)
   }
   ngOnInit(): void {
+    this._loadService.setJsonValue('ExitProtocol',{ExitProtocol: true})
   }
 
   progressEvent(event: number) {

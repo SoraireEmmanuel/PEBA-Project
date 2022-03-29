@@ -31,6 +31,7 @@ import { ViewProtocolComponent } from './pages/ViewProtocol/view-protocol/view-p
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { ToastrModule } from 'ngx-toastr';
 import { WithoutAccessComponent } from './pages/WithoutAccess/without-access/without-access.component';
+import { HttpClientModule } from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +59,7 @@ import { WithoutAccessComponent } from './pages/WithoutAccess/without-access/wit
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,

@@ -2,6 +2,11 @@ import { Injectable, EventEmitter, Output } from '@angular/core';
 import { User } from 'src/app/clases/user';
 import { LocalServiceService } from 'src/app/services/CryptoServices/LocalService/local-service.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
+import { Login } from 'src/app/clases/login';
+
+const URI = environment.PEBA_Api_URL_Base;
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +14,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 export class AuthenticationService {
   @Output() updateLoginState: EventEmitter<any> = new EventEmitter();
   currentUser:User= new User();
-  constructor(private _localService:LocalServiceService) {
+  constructor(private _localService:LocalServiceService,
+              private _http:HttpClient) {
       this.updateLoginState.emit(false)
 }
 
@@ -22,13 +28,12 @@ validationLogin():boolean{
     return user.signIn //if a user is logged in return true
   }
 }
-
-login(user:string, password: string){
-  this.currentUser.user=user;
-  this.currentUser.password=password;
-  this.currentUser.signIn=true
-  this._localService.setJsonValue('User',this.currentUser)
-  this.updateLoginState.emit(true)
+loginState(){
+  this.updateLoginState.emit(true);
+}
+login(user:Login): Observable<any>{
+  var resp: any = this._http.post(`${URI}login`, user);
+  return resp;
 }
 
 logout(){
