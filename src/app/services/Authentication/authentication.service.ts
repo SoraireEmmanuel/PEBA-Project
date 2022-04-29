@@ -5,6 +5,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Login } from 'src/app/clases/login';
+import { register } from 'src/app/clases/register';
+import { PasswordServiceService } from '../CryptoServices/PasswordService/password-service.service';
 
 const URI = environment.PEBA_Api_URL_Base;
 
@@ -15,7 +17,9 @@ export class AuthenticationService {
   @Output() updateLoginState: EventEmitter<any> = new EventEmitter();
   currentUser:User= new User();
   constructor(private _localService:LocalServiceService,
-              private _http:HttpClient) {
+              private _passwordCrypto:PasswordServiceService,
+              private _http:HttpClient
+              ) {
       this.updateLoginState.emit(false)
 }
 
@@ -35,7 +39,6 @@ login(user:Login): Observable<any>{
   var resp: any = this._http.post(`${URI}login`, user);
   return resp;
 }
-
 logout(){
   this._localService.clearToken();
   this.updateLoginState.emit(false)
@@ -43,4 +46,25 @@ logout(){
 tokenTimeValidation(){
 
 }
+
+registerProfesional(profesional: register):Observable<any>{
+  var RegistrarProfesional = {
+    Id_Profesional:0,
+    Nombre:`${profesional.nombre}`,
+    Apellido:`${profesional.apellido}`,
+    Profesion:`${profesional.profesion}`,
+    PasswordCuenta:`${profesional.password1}`,
+    Matricula:`${profesional.matricula}`,
+    Mail:`${profesional.mail}`,
+    Terminosycondicioes:`${profesional.terminosycondiciones}`,
+    ValidatedEmail:true
+  };
+  return this._http.post(`${URI}RegistrarProfesional`, RegistrarProfesional);
+}
+
+accountActivetion(code:string, mail:string):Observable<any>{
+  return this._http.get(`${URI}activarCuenta/${code}/${mail}`)
+}
+
+
 }

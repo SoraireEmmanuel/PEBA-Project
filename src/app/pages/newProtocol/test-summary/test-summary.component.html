@@ -1,4 +1,4 @@
-<div class="container-sm mt-2 bg-success bg-gradient text-black border shadow-lg p-3 mb-5 bg-body rounded">
+<div class="container-sm mt-2 text-white border shadow-lg p-3 mb-5  rounded" style="background-color: #2587AD;">
   <div class="text-center">
     <h2>Evaluacion del Lenguaje - Resultados</h2>
   </div>
@@ -16,32 +16,32 @@
       <tbody>
         <tr>
           <th scope="row">Comprensión auditiva</th>
-          <td>{{ProtocolSummary.ComprensionAuditiva_CuantitativaDTO.Subtotal}}/6</td>
+          <td>{{ProtocolSummary.ComprensionAuditiva_Cuantitativa.SubTotal}}/6</td>
           <td> {{valuation.Auditiva}} </td>
         </tr>
         <tr>
           <th scope="row">Expresión oral:</th>
-          <td>{{ProtocolSummary.ExpresionOral_CuantitativaSTO.SubTotal}}/6</td>
+          <td>{{ProtocolSummary.ExpresionOral_Cuantitativa.SubTotal}}/6</td>
           <td> {{valuation.Oral}} </td>
         </tr>
         <tr>
           <th scope="row">Repetición: </th>
-          <td>{{ProtocolSummary.Repeticion_CuantitativaDTO.SubTotal}}/6</td>
+          <td>{{ProtocolSummary.Repeticion_Cuantitativa.SubTotal}}/6</td>
           <td> {{valuation.Repeticion}}  </td>
         </tr>
         <tr>
           <th scope="row">Denominación: </th>
-          <td>{{ProtocolSummary.Denominacion_CuantitativaDTO.SubTotal}}/6</td>
+          <td>{{ProtocolSummary.Denominacion_Cuantitativa.SubTotal}}/6</td>
           <td> {{valuation.Denominacion}} </td>
         </tr>
         <tr>
           <th scope="row">Lectura: </th>
-          <td>{{ProtocolSummary.Lectura_CuantitativaDTO.SubTotal}}/6</td>
+          <td>{{ProtocolSummary.Lectura_Cuantitativa.SubTotal}}/6</td>
           <td> {{valuation.Lectura}}  </td>
         </tr>
         <tr>
           <th scope="row">Escritura:</th>
-          <td>{{ProtocolSummary.Escritura_CuantitativaDTO.SubTotal}}/6</td>
+          <td>{{ProtocolSummary.Escritura_Cuantitativa.SubTotal}}/6</td>
           <td> {{valuation.Escritura}} </td>
         </tr>
       </tbody>
@@ -114,7 +114,7 @@
     <div class="mt-1 mb-4">
       <div class="form-floating">
         <textarea class="form-control" id="conclusiones" style="height: 70px" name="conclusiones"
-          placeholder="Conclusiones y recomendaciones"></textarea>
+          placeholder="Conclusiones y recomendaciones" [(ngModel)]="ProtocolSummary.ConclusionesRecomendaciones" ></textarea>
         <label for="conclusiones">Introduzca sus Conclusiones y Comentarios</label>
       </div>
     </div>
@@ -163,3 +163,5 @@
     </div>
   </div>
 </ng-template>
+
+<pre>{{ProtocolSummary | json}}</pre>

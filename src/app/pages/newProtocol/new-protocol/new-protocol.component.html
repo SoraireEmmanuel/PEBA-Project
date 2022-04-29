@@ -1,13 +1,13 @@
 <div class="progress">
-  <div *ngIf="Progress >= 0" class="progress-bar progress-bar-striped" role="progressbar" style="width: 12%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">Identificacion del Paciente</div>
-  <div *ngIf="Progress >= 1" class="progress-bar progress-bar-striped" role="progressbar" style="width: 12%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">Sintomas Neurologicos</div>
-  <div *ngIf="Progress >= 2" class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">Comprensión Auditiva</div>
-  <div *ngIf="Progress >= 3" class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">Expresion Oral</div>
-  <div *ngIf="Progress >= 4" class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">Repetición</div>
-  <div *ngIf="Progress >= 5" class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">Denominación</div>
-  <div *ngIf="Progress >= 6" class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">Lectura</div>
-  <div *ngIf="Progress >= 7" class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">Escritura</div>
-  <div *ngIf="Progress >= 8" class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 16%" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100">Resumen</div>
+  <div *ngIf="Progress >= 0" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 15%; background-color:  #2587AD;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" >Identificacion del Paciente</div>
+  <div *ngIf="Progress >= 1" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 15%; background-color:  #2587AD; " aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" >Sintomas Neurologicos</div>
+  <div *ngIf="Progress >= 2" class="progress-bar progress-bar-striped progress-bar-animated " role="progressbar" style="width: 10%; background-color: #625b83" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" >Comprensión Auditiva</div>
+  <div *ngIf="Progress >= 3" class="progress-bar progress-bar-striped progress-bar-animated " role="progressbar" style="width: 10%; background-color: #625b83" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" >Expresion Oral</div>
+  <div *ngIf="Progress >= 4" class="progress-bar progress-bar-striped progress-bar-animated " role="progressbar" style="width: 10%; background-color: #625b83" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" >Repetición</div>
+  <div *ngIf="Progress >= 5" class="progress-bar progress-bar-striped progress-bar-animated " role="progressbar" style="width: 10%; background-color: #625b83" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" >Denominación</div>
+  <div *ngIf="Progress >= 6" class="progress-bar progress-bar-striped progress-bar-animated " role="progressbar" style="width: 10%; background-color: #625b83" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" >Lectura</div>
+  <div *ngIf="Progress >= 7" class="progress-bar progress-bar-striped progress-bar-animated " role="progressbar" style="width: 10%; background-color: #625b83" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" >Escritura</div>
+  <div *ngIf="Progress >= 8" class="progress-bar progress-bar-striped progress-bar-animated " role="progressbar" style="width: 10%; background-color:  #2587AD;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" >Resumen</div>
 </div>
 <app-patient-identification
 [protocolEntry]="PatientIdentification"
@@ -15,55 +15,56 @@
 (event)="progressEvent($event)"
 (protocolPatien)="chargePatientIdentificator($event)"
 *ngIf="Progress==0" ></app-patient-identification>
+
 <app-current-neurological-symptoms
-[symptomsEntry]="Protocol.SintomasNeurologicosDTO"
+[symptomsEntry]="Prot.SintomasNeurologicos"
 (event)="progressEvent($event)"
 *ngIf="Progress==1"></app-current-neurological-symptoms>
 <app-auditive-comprehension
-  [auditivecuantitativa]="Protocol.ComprensionAuditiva_CuantitativaDTO"
-  [auditivecualitativa]="Protocol.ComprensionAuditiva_CualitativaDTO"
+  [auditivecuantitativa]="Prot.ComprensionAuditiva_Cuantitativa"
+  [auditivecualitativa]="Prot.ComprensionAuditiva_Cualitativa"
   (emitCualitativa)="chargeAuditiveCuantitativa($event)"
   (emitCuantitativa)="chargeAuditiveCuantitativa($event)"
   (event)="progressEvent($event)"
   *ngIf="Progress==2"></app-auditive-comprehension>
 <app-oral-expression
   (event)="progressEvent($event)"
-  [oralcuantitativa]="Protocol.ExpresionOral_CuantitativaSTO"
-  [oralcualitativa]="Protocol.ExpresionOral_CualitativaSTO"
+  [oralcuantitativa]="Prot.ExpresionOral_Cuantitativa"
+  [oralcualitativa]="Prot.ExpresionOral_Cualitativa"
   (emitCualitativa)="chargeOralCuantitativa($event)"
   (emitCuantitativa)="chargeOralCuantitativa($event)"
   *ngIf="Progress==3"></app-oral-expression>
 <app-repetition
   (event)="progressEvent($event)"
-  [repeticioncuantitativa]="Protocol.Repeticion_CuantitativaDTO"
-  [repeticioncualitativa]="Protocol.Repeticion_CualitativaDTO"
+  [repeticioncuantitativa]="Prot.Repeticion_Cuantitativa"
+  [repeticioncualitativa]="Prot.Repeticion_Cualitativa"
   (emitCualitativa)="chargeRepeticionCualitativa($event)"
   (emitCuantitativa)="chargeRepeticionCuantitativa($event)"
   *ngIf="Progress==4"></app-repetition>
 <app-denomination
   (event)="progressEvent($event)"
-  [denominacioncuantitativa]="Protocol.Denominacion_CuantitativaDTO"
-  [denominacioncualitativa]="Protocol.Denominacion_CualitativaDTO"
+  [denominacioncuantitativa]="Prot.Denominacion_Cuantitativa"
+  [denominacioncualitativa]="Prot.Denominacion_Cualitativa"
   (emitCualitativa)="chargeDeniminacionCualitativa($event)"
   (emitCuantitativa)="chargeDenominacionCuantitativa($event)"
   *ngIf="Progress==5"></app-denomination>
 <app-reading
   (event)="progressEvent($event)"
-  [lecturacuantitativa]="Protocol.Lectura_CuantitativaDTO"
-  [lecturacualitativa]="Protocol.Lectura_CualitativaDTO"
+  [lecturacuantitativa]="Prot.Lectura_Cuantitativa"
+  [lecturacualitativa]="Prot.Lectura_Cualitativa"
   (emitCualitativa)="chargeReadingCualitativa($event)"
   (emitCuantitativa)="chargeReadingCuantitativa($event)"
   *ngIf="Progress==6"></app-reading>
 <app-writing
 (event)="progressEvent($event)"
-[escrituracuantitativa]="Protocol.Escritura_CuantitativaDTO"
-[escrituracualitativa]="Protocol.Escritura_CualitativaDTO"
+[escrituracuantitativa]="Prot.Escritura_Cuantitativa"
+[escrituracualitativa]="Prot.Escritura_Cualitativa"
 (emitCualitativa)="chargeWritingCualitativa($event)"
 (emitCuantitativa)="chargeWritingCuantitativa($event)"
 *ngIf="Progress==7"></app-writing>
 <app-test-summary
 (event)="progressEvent($event)"
-[protocol]="Protocol"
+[protocol]="Prot"
 (sendProtocol)="sendProtocol($event)"
 *ngIf="Progress==8"></app-test-summary>
 

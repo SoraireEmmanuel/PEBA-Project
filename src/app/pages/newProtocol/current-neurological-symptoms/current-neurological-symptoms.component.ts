@@ -22,53 +22,53 @@ export class CurrentNeurologicalSymptomsComponent implements OnInit {
   //Limpieza de las opciones.
   clearAlerta() {
     if (this.symptoms.Alerta == 'CONSERVADO') {
-      this.symptoms.AlertaTipoAlteracion = null;
-      this.symptoms.AlertaTipoAlteracionOtro = null;
+      this.symptoms.AlertaTipoAlteracion = '';
+      this.symptoms.AlertaTipoAlteracionOtro = '';
     }
   }
   clearAlertaCual() {
     if (this.symptoms.Alerta != 'Otro') {
-      this.symptoms.AlertaTipoAlteracionOtro = null;
+      this.symptoms.AlertaTipoAlteracionOtro = '';
     }
   }
   clearEstadoEmocional() {
     if (this.symptoms.EstadoEmocional == 'CONSERVADO') {
-      this.symptoms.EstadoEmocionalTipoAlteracion = null;
-      this.symptoms.EstadoEmocionalTipoAlteracionOtro = null;
+      this.symptoms.EstadoEmocionalTipoAlteracion = '';
+      this.symptoms.EstadoEmocionalTipoAlteracionOtro = '';
     }
   }
   clearEstadoEmocionalCual() {
     if (this.symptoms.EstadoEmocional != 'Otro') {
-      this.symptoms.EstadoEmocionalTipoAlteracionOtro = null;
+      this.symptoms.EstadoEmocionalTipoAlteracionOtro = '';
     }
   }
   clearCoordinacion() {
     if (this.symptoms.CondicionMotora == 'CONSERVADO') {
-      this.symptoms.CondicionMotoraTipoAlteracion = null;
-      this.symptoms.CondicionMotoraTipoAlteracionOtro = null;
+      this.symptoms.CondicionMotoraTipoAlteracion = '';
+      this.symptoms.CondicionMotoraTipoAlteracionOtro = '';
     }
   }
   clearCoordinacionCual() {
     if (this.symptoms.CondicionMotora != 'Otro') {
-      this.symptoms.CondicionMotoraTipoAlteracionOtro = null;
+      this.symptoms.CondicionMotoraTipoAlteracionOtro = '';
     }
   }
   clearSensibilidad() {
     if (this.symptoms.Sensibilidad == 'CONSERVADO') {
-      this.symptoms.SensibilidadTipoAlteracion = null;
-      this.symptoms.SensibilidadTipoAlteracionOtro = null;
+      this.symptoms.SensibilidadTipoAlteracion = '';
+      this.symptoms.SensibilidadTipoAlteracionOtro = '';
     }
   }
   clearSensibilidadCual() {
     if (this.symptoms.Sensibilidad != 'Otro') {
-      this.symptoms.SensibilidadTipoAlteracionOtro = null;
+      this.symptoms.SensibilidadTipoAlteracionOtro = '';
     }
   }
 
   clearFuerza() {
     if (this.symptoms.Fuerza == 'CONSERVADO') {
-      this.symptoms.FuerzaTipoAlteracion = null;
-      this.symptoms.FuerzaTipoAlteracionOtro = null;
+      this.symptoms.FuerzaTipoAlteracion = '';
+      this.symptoms.FuerzaTipoAlteracionOtro = '';
     }
   }
   clearFuerzaCual() {
@@ -79,34 +79,31 @@ export class CurrentNeurologicalSymptomsComponent implements OnInit {
 
   clearVision() {
     if (this.symptoms.Vision == 'CONSERVADO') {
-      this.symptoms.VisionTipoAlteracion = null;
-      this.symptoms.VisionTipoAlteracionOtro = null;
+      this.symptoms.VisionTipoAlteracion = '';
+      this.symptoms.UsaAnteojos = null;
     }
   }
 
   clearAudicion() {
     if (this.symptoms.Audicion == 'CONSERVADO') {
-      this.symptoms.AudicionTipoAlteracion = null;
-      this.symptoms.AudicionTipoAlteracionOtro = null;
+      this.symptoms.AudicionTipoAlteracion = '';
+      this.symptoms.UsaAudifono = null;
     }
   }
 
   clearAtencionEspacial() {
     if (this.symptoms.AtencionEspacial == 'CONSERVADO') {
-      this.symptoms.AtencionEspacialTipoAlteracion = null;
-      this.symptoms.AtencionEspacialTipoAlteracionOtro = null;
+      this.symptoms.AtencionEspacialTipoAlteracion = '';
     }
   }
   clearPraxiaManual() {
     if (this.symptoms.PraxiaManual == 'CONSERVADO') {
-      this.symptoms.PraxiaManualTipoAlteracion = null;
-      this.symptoms.PraxiaManualTipoAlteracionOtro = null;
+      this.symptoms.PraxiaManualTipoAlteracion = '';
     }
   }
   clearDeglucion() {
     if (this.symptoms.Deglucion == 'CONSERVADO') {
-      this.symptoms.DeglucionTipoAlteracion = null;
-      this.symptoms.DeglucionTipoAlteracionOtro = null;
+      this.symptoms.DeglucionTipoAlteracion = '';
     }
   }
   //Validaciones de sintomas neurologicos
@@ -207,7 +204,7 @@ export class CurrentNeurologicalSymptomsComponent implements OnInit {
       this._toastr.error('El campo vision es obligatorio','Compruebe los campos');
       return false
     } else {
-      if (this.symptoms.Vision == 'ALTERADO' && (this.symptoms.VisionTipoAlteracion == null || this.symptoms.VisionTipoAlteracionOtro == null)) {
+      if (this.symptoms.Vision == 'ALTERADO' && (this.symptoms.VisionTipoAlteracion == null || this.symptoms.UsaAnteojos == null)) {
         this._toastr.error('Debe seleccionar una alteracion para vision','Compruebe los campos');
         return false
       } else {
@@ -220,7 +217,7 @@ export class CurrentNeurologicalSymptomsComponent implements OnInit {
       this._toastr.error('El campo Audicion es obligatorio','Compruebe los campos');
       return false
     } else {
-      if (this.symptoms.Audicion == 'ALTERADO' && (this.symptoms.AudicionTipoAlteracion == null || this.symptoms.AudicionTipoAlteracionOtro == null)) {
+      if (this.symptoms.Audicion == 'ALTERADO' && (this.symptoms.AudicionTipoAlteracion == null || this.symptoms.UsaAudifono == null)) {
         this._toastr.error('Debe seleccionar una alteracion para Audicion','Compruebe los campos');
         return false
       } else {

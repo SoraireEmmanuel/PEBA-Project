@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ComprensionAuditiva_CualitativaDTO } from 'src/app/clases/ComprensionAuditiva_CualitativaDTO';
 import { ComprensionAuditiva_CuantitativaDTO } from 'src/app/clases/ComprensionAuditiva_CuantitativaDTO';
 import { Denominacion_CualitativaDTO } from 'src/app/clases/Denominacion_CualitativaDTO';
@@ -9,11 +10,14 @@ import { ExpresionOral_CualitativaDTO } from 'src/app/clases/ExpresionOral_Cuali
 import { ExpresionOral_CuantitativaDTO } from 'src/app/clases/ExpresionOral_CuantitativaDTO';
 import { Lectura_CualitativaDTO } from 'src/app/clases/Lectura_CualitativaDTO';
 import { Lectura_CuantitativaDTO } from 'src/app/clases/Lectura_CuantitativaDTO';
+import { NeurologicalSymptomsDropdownOption } from 'src/app/clases/NeurologicalSymptomsDropdownOption';
 import { patient } from 'src/app/clases/patient';
 import { PatientIdentification } from 'src/app/clases/PatientIdentification';
+import { ProtocolDTO } from 'src/app/clases/ProtocolDTO';
 import { ProtocoloDTO } from 'src/app/clases/ProtocoloDTO';
 import { Repeticion_CualitativaDTO } from 'src/app/clases/Repeticion_CualitativaDTO';
 import { Repeticion_CuantitativaDTO } from 'src/app/clases/Repeticion_CuantitativaDTO';
+import { User } from 'src/app/clases/user';
 import { LocalServiceService } from 'src/app/services/CryptoServices/LocalService/local-service.service';
 
 
@@ -24,23 +28,41 @@ import { LocalServiceService } from 'src/app/services/CryptoServices/LocalServic
 })
 export class NewProtocolComponent implements OnInit {
   Protocol: ProtocoloDTO = new ProtocoloDTO();
+  Prot:ProtocolDTO=new ProtocolDTO();
   PatientIdentification: PatientIdentification = new PatientIdentification()
   Progress: number = 0;
-  constructor(private _loadService:LocalServiceService) {
-  //line only for test, in  producttion must be remove
-    this.PatientIdentification.brithDate = '01/02/89';
-    this.PatientIdentification.handDominance = 1
-    this.PatientIdentification.initialWithBrithDate = 'MES01/02/89'
-    this.PatientIdentification.initials = 'MES'
-    this.PatientIdentification.nativeLanguage = 3
-    this.PatientIdentification.studies = 5
-    this.PatientIdentification.isBilingual = 1
-    this.PatientIdentification.otherLenguage = 'Chino'
-    this.PatientIdentification.bilingualLanguage = 'Español'
-    this._loadService.setJsonValue('patient', this.PatientIdentification)
+  constructor(private _loadService:LocalServiceService,
+                  private _rutaActiva: ActivatedRoute,) {
+
   }
   ngOnInit(): void {
     this._loadService.setJsonValue('ExitProtocol',{ExitProtocol: true})
+    this.loadParams();
+
+  }
+
+  loadParams(){
+    this._rutaActiva.queryParams.subscribe(params =>{
+      this.PatientIdentification.brithDate = params.FechaNacimiento;
+      this.Prot.PacienteFechaNacimiento=params.FechaNacimiento;
+      this.PatientIdentification.handDominance = params.Dominancia;
+      this.Prot.PacienteDominancia= params.Dominancia
+      this.PatientIdentification.initialWithBrithDate = params.Cod_Paciente;
+      this.Prot.PacienteCod_Paciente=params.Cod_Paciente
+      this.PatientIdentification.nativeLanguage = params.Lengua;
+      this.Prot.PacienteLengua=params.Lengua
+      this.PatientIdentification.studies = params.Estudios;
+      this.Prot.PacienteEstudios =params.Estudios;
+      this.PatientIdentification.isBilingual = params.Bilingual;
+      this.Prot.PacienteBilingual== params.Bilingual;
+      this.PatientIdentification.bilingualLanguage = params.BilingualIdioma;
+      this.Prot.PacienteBilingualIdioma = params.BilingualIdioma;
+      this.Prot.Id_Paciente= params.Id_Paciente;
+      var CurrentUser:User=this._loadService.getJsonValue('User');
+      this.Prot.Id_Profesional=CurrentUser.Id_Usuario;
+      console.log(this.Prot);
+
+    })
   }
 
   progressEvent(event: number) {
@@ -57,48 +79,103 @@ export class NewProtocolComponent implements OnInit {
     this.Protocol.Fecha_Protocolo = event.FechaProtocolo;
     this.PatientIdentification.ResumenClinico = event.ResumenClinico;
     this.PatientIdentification.FechaProtocolo = event.FechaProtocolo;
+
+    //cambio al nuevo tipo de objeto
+    this.Prot.ResumenClinico = event.ResumenClinico;
+    this.Prot.Fecha_Protocolo = event.FechaProtocolo;
+    this.Prot.ResumenClinico = event.ResumenClinico;
+    this.Prot.Fecha_Protocolo = event.FechaProtocolo;
   }
+chargeSintomasNeurologicos(event:NeurologicalSymptomsDropdownOption){
+  //console.log(event)
+
+}
+
   chargeAuditiveCuantitativa(event: ComprensionAuditiva_CuantitativaDTO) {
     this.Protocol.ComprensionAuditiva_CuantitativaDTO = event;
     this.Protocol.totalCalcultaion();
+
+    //new logic
+    this.Prot.ComprensionAuditiva_Cuantitativa=event;
+    this.Prot.totalCalcultaion();
   }
   chargeAuditiveCualitativa(event: ComprensionAuditiva_CualitativaDTO) {
     this.Protocol.ComprensionAuditiva_CualitativaDTO = event;
+
+    //new logic
+    this.Prot.ComprensionAuditiva_Cualitativa=event;
   }
   chargeOralCuantitativa(event: ExpresionOral_CuantitativaDTO) {
     this.Protocol.ExpresionOral_CuantitativaSTO = event;
     this.Protocol.totalCalcultaion();
+
+    //new logic
+    this.Prot.ExpresionOral_Cuantitativa=event;
+    this.Prot.totalCalcultaion();
   }
+
   chargeOralCualitativa(event: ExpresionOral_CualitativaDTO) {
     this.Protocol.ExpresionOral_CualitativaSTO = event;
+
+    //new logic
+    this.Prot.ExpresionOral_Cualitativa=event;
   }
   chargeRepeticionCuantitativa(event: Repeticion_CuantitativaDTO) {
     this.Protocol.Repeticion_CuantitativaDTO = event;
     this.Protocol.totalCalcultaion();
+
+    //new logic
+    this.Prot.Repeticion_Cuantitativa=event;
+    this.Prot.totalCalcultaion();
   }
   chargeRepeticionCualitativa(event: Repeticion_CualitativaDTO) {
     this.Protocol.Repeticion_CualitativaDTO = event;
+
+    //new logic
+    this.Prot.Repeticion_Cualitativa = event;
+
   }
   chargeDeniminacionCualitativa(event: Denominacion_CualitativaDTO) {
     this.Protocol.Denominacion_CualitativaDTO = event;
+
+    //new logic
+    this.Prot.Denominacion_Cualitativa = event;
+
   }
   chargeDenominacionCuantitativa(event: Denominacion_CuantitativaDTO) {
     this.Protocol.Denominacion_CuantitativaDTO = event;
     this.Protocol.totalCalcultaion();
+
+    //new logic
+    this.Prot.Denominacion_Cuantitativa=event;
+    this.Prot.totalCalcultaion();
   }
   chargeReadingCualitativa(event: Lectura_CualitativaDTO) {
     this.Protocol.Lectura_CualitativaDTO = event;
+
+    //new logic
+    this.Prot.Lectura_Cualitativa = event;
   }
   chargeReadingCuantitativa(event: Lectura_CuantitativaDTO) {
     this.Protocol.Lectura_CuantitativaDTO = event;
     this.Protocol.totalCalcultaion();
+
+    //new logic
+    this.Prot.Lectura_Cuantitativa=event;
+    this.Prot.totalCalcultaion();
   }
   chargeWritingCualitativa(event:Escritura_CualitativaDTO){
     this.Protocol.Escritura_CualitativaDTO=event;
+
+    //new logic
+    this.Prot.Escritura_Cualitativa=event;
   }
   chargeWritingCuantitativa(event:Escritura_CuantitativaDTO){
     this.Protocol.Escritura_CuantitativaDTO=event;
     this.Protocol.totalCalcultaion();
+
+    this.Prot.Escritura_Cuantitativa=event;
+    this.Prot.totalCalcultaion();
   }
   sendProtocol(event: ProtocoloDTO){
     this._loadService.removeKey('ExitProtocol')

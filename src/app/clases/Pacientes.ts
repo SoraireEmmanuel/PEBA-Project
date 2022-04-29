@@ -1,14 +1,15 @@
 export class Pacientes{
+  Id_Paciente?:number= 0;
+  Cod_Paciente:string = null;
+  Iniciales:string =null;
+  FechaNacimiento:string = null;
+  Lengua:string = null;
+  Dominancia:number = null ;
+  Estudios: number=null;
+  Bilingual:boolean = null;
+  BilingualIdioma:string = '';
 
-Bilingual:string = null;
-BilingualIdioma:string = null;
-Cod_Paciente:string = null;
-Dominancia:string = null ;
-Estudios: string=null;
-FechaNacimiento:string = null;
-Id_Paciente:number= 24;
-Iniciales:string =null;
-Lengua:string = null;
+Id_Profesional:number=null
   contrustor(){
   }
 }

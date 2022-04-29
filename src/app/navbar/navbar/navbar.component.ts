@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
     this._ViewComponent.updateLoginState.subscribe(res=>{
       this.loginstate=res
     })
-    console.log(this._localService.getJsonValue('protocolo enviado'))
+
   }
 
 }

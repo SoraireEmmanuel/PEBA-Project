@@ -113,7 +113,7 @@ export class AuditiveComprehensionComponent implements OnInit {
   }
 
   total(){
-    this.ComprensionAuditivaCuantitativa.Subtotal=this.ComprensionAuditivaCuantitativa.SenialeElPato+this.ComprensionAuditivaCuantitativa.SenialeElTecho+this.ComprensionAuditivaCuantitativa.SenialeLaOveja+this.ComprensionAuditivaCuantitativa.SenialeLaPuerta+this.ComprensionAuditivaCuantitativa.ToqueseLaOreja;
+    this.ComprensionAuditivaCuantitativa.SubTotal=this.ComprensionAuditivaCuantitativa.SenialeElPato+this.ComprensionAuditivaCuantitativa.SenialeElTecho+this.ComprensionAuditivaCuantitativa.SenialeLaOveja+this.ComprensionAuditivaCuantitativa.SenialeLaPuerta+this.ComprensionAuditivaCuantitativa.ToqueseLaOreja;
   }
   saved(){
     this.CopyComprensionAuditivaCaulitativa.COCambiaElOrdenDelComando=this.ComprensionAuditivaCualitativa.COCambiaElOrdenDelComando;

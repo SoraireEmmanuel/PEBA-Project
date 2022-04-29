@@ -1,6 +1,6 @@
 import { isNgTemplate } from '@angular/compiler';
 import { Component, OnInit, ViewChild, ElementRef, TemplateRef } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router  } from '@angular/router';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { strictEqual } from 'assert';
 import { error } from 'console';
@@ -54,7 +54,10 @@ export class MyPatientsComponent implements OnInit {
 
   }
   navigateNewProtocol(patient:Pacientes) {
-    this._route.navigate(['newProtocol/:Bilingual/:BilingualIdioma/:Cod_Paciente/:Dominancia/:Estudios/:FechaNacimiento/:Id_Paciente/:Iniciales/:Lengua'])
+    console.log(patient)
+    this._route.navigate(['newProtocol'],{queryParams:{Bilingual:patient.Bilingual,BilingualIdioma: patient.BilingualIdioma, Id_Profesional: patient.Id_Profesional, Dominancia: patient.Dominancia, Estudios: patient.Estudios, FechaNacimiento: patient.FechaNacimiento, Id_Paciente: patient.Id_Paciente,Cod_Paciente: patient.Cod_Paciente, Lengua: patient.Lengua}})
+    //this._route.navigate([`newProtocol/${patient.Bilingual}/${patient.BilingualIdioma}/${patient.Id_Profesional}/${patient.Dominancia}/${patient.Estudios}/${patient.FechaNacimiento}/${patient.Id_Paciente}/${patient.Iniciales}/${patient.Lengua}`])
+
   }
   allProtocolsByPatient(patient:Pacientes) {
     this._route.navigate([`allProtocolsByPatient/${patient.Id_Paciente}`])

@@ -5,7 +5,7 @@ export class patient{
   brithDate:string='';
   nativeLanguage:number=null;
   otherLenguage?:string='';
-  isBilingual:number=null;
+  isBilingual:boolean=null;
   bilingualLanguage:string='';
   handDominance:number=null;
   studies:number=null;

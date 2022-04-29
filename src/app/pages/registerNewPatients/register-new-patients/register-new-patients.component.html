@@ -1,4 +1,4 @@
-<div class="container-sm bg-success bg-gradient mt-3 border shadow-lg p-3 mb-5 bg-body rounded">
+<div class="container-sm mt-3  text-white border shadow-lg p-3 mb-5 rounded" style="background-color: #ad2525;">
   <div class="text-center">
     <h3>Registrar Nuevo Paciente</h3>
   </div>
@@ -34,7 +34,7 @@
     <div class="col-auto"  >
       <label for="bilingueCual" class=" form-label"> ¿Idioma?</label>
       <input class="form-control" type="text" placeholder="¿Idioma?" name="bilingueCual" [(ngModel)]="patient.bilingualLanguage"
-        id="bilingueCual" [disabled]="patient.isBilingual!=1"/>
+        id="bilingueCual" [disabled]="patient.isBilingual!=true"/>
     </div>
     <div class="col-auto">
       <label for="dominancia" class="form-label ">Dominancia Manual: </label>

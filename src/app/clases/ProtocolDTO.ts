@@ -40,6 +40,22 @@ export class ProtocolDTO{
   Lectura_Cuantitativa?:Lectura_CuantitativaDTO=new Lectura_CuantitativaDTO();
   Repeticion_Cuantitativa?:Repeticion_CuantitativaDTO= new Repeticion_CuantitativaDTO();
 
+Id_ComprensionAuditiva_Cualitativa:number=0;
+Id_Denominacion_Cualitativa:number=0;
+Id_Escritura_Cualitativa:number=0;
+Id_ExpresionOral_Cualitativa:number=0;
+Id_Lectura_Cualitativa:number=0;
+Id_Repeticion_Cualitativa:number=0;
+Id_SintomasNeurologicos:number=0;
+Id_ComprensionAuditiva_Cuantitativa:number=0;
+Id_Denominacion_Cuantitativa:number=0;
+Id_Escritura_Cuantitativa:number=0;
+Id_ExpresionOral_Cuantitativa:number=0;
+Id_Lectura_Cuantitativa:number=0;
+Id_Repeticion_Cuantitativa:number=0;
+Id_Paciente:number= 1;
+Id_Profesional:number= 1;
+Id_Protocolo:number= 0;
   constructor(){
 
   }
@@ -52,3 +68,8 @@ export class ProtocolDTO{
                 this.ComprensionAuditiva_Cuantitativa.SubTotal;
   }
 }
+
+
+
+
+

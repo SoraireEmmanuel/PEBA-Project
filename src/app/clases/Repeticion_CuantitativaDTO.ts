@@ -1,14 +1,13 @@
 export class Repeticion_CuantitativaDTO{
-  Sol:number=null;
-  Precio :number=null;
-  Pensamiento :number=null;
-  MuchoRuido:number=null;
-  ElHombreGuardo:number=null;
-  LaMujerRegalo:number=null;
-  Fo:number=null;
-  Treyo:number=null;
-  Almusipa:number=null;
-  isComplete:boolean = null;
+  Sol:number=0;
+  Precio :number=0;
+  Pensamiento :number=0;
+  MuchoRuido:number=0;
+  ElHombreGuardo:number=0;
+  LaMujerRegalo:number=0;
+  Fo:number=0;
+  Treyo:number=0;
+  Almusipa:number=0;
   SubTotal:number=0;
   WasSuspended:boolean=false;
   constructor(){

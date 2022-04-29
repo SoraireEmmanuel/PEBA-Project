@@ -44,12 +44,5 @@ viewProtocol(protocolo:Protocolos){
   this._router.navigate([`viewProtocol/${protocolo.id_Protocolo}/${protocolo.Id_Paciente}`])
 }
 
-downloadFullProtocol(){
-
-}
-
-dowloadSummaryProtocol(){
-
-}
 
 }

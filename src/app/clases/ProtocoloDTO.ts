@@ -40,7 +40,7 @@ export class ProtocoloDTO{
                 this.Repeticion_CuantitativaDTO.SubTotal+
                 this.Lectura_CuantitativaDTO.SubTotal+
                 this.Escritura_CuantitativaDTO.SubTotal+
-                this.ExpresionOral_CuantitativaSTO.SubTotal;//+
-               // this.ComprensionAuditiva_CuantitativaDTO.Subtotal;
+                this.ExpresionOral_CuantitativaSTO.SubTotal+
+                this.ComprensionAuditiva_CuantitativaDTO.SubTotal;
   }
 }

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  PEBA_Api_URL_Base:'https://apipeba.azurewebsites.net/api/',
+  //PEBA_Api_URL_Base:'https://apipeba.azurewebsites.net/api/',
+  PEBA_Api_URL_Base:'https://localhost:44312/api/',
   cryptoCode:'6fe35720-ab45-45d3-b2a2-c606e9d10441'
 };
 

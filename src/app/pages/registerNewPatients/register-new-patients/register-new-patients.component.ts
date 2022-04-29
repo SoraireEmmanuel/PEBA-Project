@@ -3,6 +3,8 @@ import { patient } from 'src/app/clases/patient';
 import { RegisterOptions } from 'src/app/clases/RegisterOptions';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap'
 import { ToastrService } from 'ngx-toastr';
+import { PatientService } from 'src/app/services/Patient/patient.service';
+import { Pacientes } from 'src/app/clases/Pacientes';
 
 @Component({
   selector: 'app-register-new-patients',
@@ -12,8 +14,10 @@ import { ToastrService } from 'ngx-toastr';
 export class RegisterNewPatientsComponent implements OnInit {
   registerOptions: RegisterOptions = new RegisterOptions();
   patient: patient = new patient();
+  paciente:Pacientes=new Pacientes();
   constructor(public _ModalService:NgbModal,
              config: NgbModalConfig,
+             private _patientServices:PatientService,
              private _toastr:ToastrService) {
               config.backdrop = 'static';
               config.keyboard = false;
@@ -72,19 +76,38 @@ export class RegisterNewPatientsComponent implements OnInit {
     }
     return true
   }
+  chargePaciente(){
+    this.paciente.Bilingual=this.patient.isBilingual;
+    this.paciente.BilingualIdioma=this.patient.bilingualLanguage;
+    this.paciente.Cod_Paciente=this.patient.initialWithBrithDate;
+    this.paciente.Dominancia=this.patient.handDominance;
+    this.paciente.Estudios=this.patient.studies;
+    this.paciente.FechaNacimiento=this.patient.brithDate;
+    this.paciente.Iniciales=this.patient.initials;
+    this.paciente.Cod_Paciente=this.patient.initials+this.patient.brithDate;
+    if(this.patient.nativeLanguage == 3){
+      this.paciente.Lengua=this.patient.otherLenguage
+    }else{
+      this.paciente.Lengua= String(this.patient.nativeLanguage )
+    }
+  }
   crearPaciente(modal) {
-
+    const modalSpiner = this._ModalService.open(modal, {size: 'xl', centered: true})
     if (!this.formValidation()) {
 
     }
     else{
-      const modalSpiner = this._ModalService.open(modal, {size: 'xl', centered: true})
-      this._toastr.error('No pudo realizarse el registro, intenete nuevamente en unos segundos','Fallo el registro');
-      setTimeout(() => {
-        modalSpiner.close();
+      this.chargePaciente();
+      this._patientServices.patientRegister(this.paciente).subscribe(resp=>{
+        console.log(resp)
         this._toastr.success('Se registro el paciente exitosamente','Registro Exitoso');
-
-      }, 5000);
+        modalSpiner.close();
+        this.clearForm();
+      },(error)=>{
+        console.log(error)
+        modalSpiner.close();
+        this._toastr.error('No pudo realizarse el registro, intenete nuevamente en unos segundos','Fallo el registro');
+      })
     }
   }
 }

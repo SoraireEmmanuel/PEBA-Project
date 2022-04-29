@@ -21,5 +21,9 @@ export class LocalServiceService {
     const codKey = this.storageService.secureStorage.key(key);
     localStorage.removeItem(codKey);
   }
+  encodekey(key:string){
+    return this.storageService.secureStorage.encodePassword(key);
+
+  }
 
 }

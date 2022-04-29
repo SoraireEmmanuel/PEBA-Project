@@ -1,4 +1,4 @@
-<div class="container-sm mt-2 bg-warning bg-gradient text-black border shadow-lg p-3 mb-5 bg-body rounded">
+<div class="container-sm mt-2  text-white border shadow-lg p-3 mb-5  rounded" style="background-color: #625b83">
   <div class="text-center">
     <h2>Evaluacion del Lenguaje - Carga de las respuestas del paciente</h2>
     <h3>Comprensión Auditiva</h3>
@@ -97,7 +97,7 @@
       <button class="btn btn-secondary" (click)="open(cualitat)">Agregar Observaciones Cualitativas</button>
     </div>
     <div class="col-md-2 ">
-      <span>Total: {{ComprensionAuditivaCuantitativa.Subtotal}}</span>
+      <span>Total: {{ComprensionAuditivaCuantitativa.SubTotal}}</span>
     </div>
   </div>
   <hr class="mt-1">
@@ -107,7 +107,7 @@
       <button class="btn btn-success " (click)="back()" >Anterior</button>
     </div>
     <div class="col-md-4 text-center">
-      <button class="btn btn-danger " (click)="open(suspended)" [disabled]="ComprensionAuditivaCuantitativa.WasSuspended">Suspender Paso del Protocolo</button>
+      <button class="btn btn-danger " (click)="open(suspended)" [disabled]="ComprensionAuditivaCuantitativa.WasSuspended" style="background-color: #CE054B;">Suspender Paso del Protocolo</button>
     </div>
     <div class="col-md-4 text-right">
       <button class=" btn btn-success" (click)="next()" >Siguiente</button>

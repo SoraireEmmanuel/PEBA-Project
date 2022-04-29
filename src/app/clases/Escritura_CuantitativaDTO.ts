@@ -1,15 +1,14 @@
 export class Escritura_CuantitativaDTO{
 
-  EME:number=null;
-  ManoMano:number=null;
-  Gente:number=null;
-  Esperanza:number=null;
-  Aclaracion:number=null;
-  Jo:number=null;
-  Guela:number=null;
-  Dirchole:number=null;
-  ZETA:number=null;
-  isComplete:boolean = null;
+  EME:number=0;
+  Mano:number=0;
+  Gente:number=0;
+  Esperanza:number=0;
+  Aclaracion:number=0;
+  Jo:number=0;
+  Guela:number=0;
+  Dirchole:number=0;
+  ZETA:number=0;
   SubTotal:number=0;
   WasSuspended:boolean=false;
   constructor(){

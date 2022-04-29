@@ -6,6 +6,9 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap'
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router'
 import { LocalServiceService } from 'src/app/services/CryptoServices/LocalService/local-service.service';
+import { ProtocolDTO } from 'src/app/clases/ProtocolDTO';
+import { PatientService } from 'src/app/services/Patient/patient.service';
+import { ViewProtocol } from 'src/app/clases/ViewProtocol';
 
 @Component({
   selector: 'app-test-summary',
@@ -13,47 +16,30 @@ import { LocalServiceService } from 'src/app/services/CryptoServices/LocalServic
   styleUrls: ['./test-summary.component.css']
 })
 export class TestSummaryComponent implements OnInit {
-  @Input() protocol: ProtocoloDTO;
+  @Input() protocol: ProtocolDTO;
   @Output() event = new EventEmitter<number>();
   @Output() sendProtocol = new EventEmitter<ProtocoloDTO>();
 
-  ProtocolSummary: ProtocoloDTO = new ProtocoloDTO();
+  ProtocolSummary: ProtocolDTO = new ProtocolDTO();
   valuation:Valuation=new Valuation();
   summaryCualitativa:summaryCualitativeTable=new summaryCualitativeTable();
   success:any;
+  viewProtocolo:ViewProtocol = new ViewProtocol();
   constructor(public _ModalService:NgbModal,
     private _loadService:LocalServiceService,
     private _Route:Router,
     private _toastr: ToastrService,
     private _localService:LocalServiceService,
+    private _patientService:PatientService,
     config: NgbModalConfig) {
     config.backdrop = 'static';
     config.keyboard = false; }
 
   ngOnInit(): void {
     this.ProtocolSummary = this.protocol;
-    this.valuation.Auditiva = this.valuationCharge(this.ProtocolSummary.ComprensionAuditiva_CuantitativaDTO.Subtotal)
-    this.valuation.Oral = this.valuationCharge(this.ProtocolSummary.ExpresionOral_CuantitativaSTO.SubTotal);
-    this.valuation.Repeticion = this.valuationCharge(this.ProtocolSummary.Repeticion_CuantitativaDTO.SubTotal);
-    this.valuation.Denominacion = this.valuationCharge(this.ProtocolSummary.Denominacion_CuantitativaDTO.SubTotal);
-    this.valuation.Lectura = this.valuationCharge(this.ProtocolSummary.Lectura_CuantitativaDTO.SubTotal);
-    this.valuation.Escritura = this.valuationCharge(this.ProtocolSummary.Escritura_CuantitativaDTO.SubTotal);
-    //this.summaryCualitativa.summary(this.protocol);
-  }
-  //Funciones de pre carga de los resumenes
-  valuationCharge(value: number): string {
-    if (value == 6) {
-      return 'Conservado';
-    }
-    if (value < 6 && value >= 5) {
-      return 'Alteración Leve';
-    }
-    if (value < 5 && value >= 3) {
-      return 'Alteración Moderada';
-    }
-    if (value < 3 && value >= 0) {
-      return 'Alteración Severa';
-    }
+    this.valuation.valuationChargeAll(this.ProtocolSummary);
+    this.summaryCualitativa.summary(this.ProtocolSummary);
+    console.log(this.ProtocolSummary)
   }
   //Funciones de Navegacion
   back() {
@@ -61,19 +47,25 @@ export class TestSummaryComponent implements OnInit {
   }
   sendProtocolFunction(modal, modalSuccess) {
     const modalSpiner = this._ModalService.open(modal, {size: 'xl', centered: true})
-    this._toastr.error('Por favor espere unos segundos e intente de nuevamente','Error Inesperado del servidor')
-      setTimeout(() => {
-        modalSpiner.close();
-        this._localService.setJsonValue('protocoloEnviado',this.ProtocolSummary)
-        //localStorage.setItem('protocol', JSON.stringify(this.ProtocolSummary));
+    this._patientService.saveProtocol(this.ProtocolSummary).subscribe(
+      resp => {
+        console.log(resp)
         this._loadService.setJsonValue('ExitProtocol',{ExitProtocol: false})
         this.success= this._ModalService.open(modalSuccess, {size: 'xl', centered: true})
-                //this.sendProtocol.emit(this.ProtocolSummary);
-      }, 5000);
+        modalSpiner.close();
+        this.viewProtocolo.Id_Protocol=resp.Id_Protocolo;
+        this.viewProtocolo.Id_Paciente=resp.Id_Paciente;
+        //this.success = this._ModalService.open(modalSuccess, {size: 'xl', centered: true})
+      }, (error)=>{
+        modalSpiner.close();
+        this._toastr.error('Por favor espere unos segundos e intente de nuevamente','Error Inesperado del servidor')
+        console.log(error)
+      }
+    )
   }
   viewProtocol(){
     this.success.close();
-    this._Route.navigate(['viewProtocol'])
+    this._Route.navigate([`viewProtocol/${this.viewProtocolo.Id_Protocol}/${this.viewProtocolo.Id_Paciente}`])
   }
   goMisPacientes(){
     this.success.close();

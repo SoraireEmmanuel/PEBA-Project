@@ -1,16 +1,15 @@
 export class Lectura_CuantitativaDTO{
-  Mono:number=null;
-  Arco:number=null;
-  Casa:number=null;
-  Grito:number=null;
-  Estatua: number= null;
-  Comunidad: number = null;
-  Ne: number = null;
-  Cho:number = null;
-  Bleja:number = null;
-  Tudipro:number = null;
-  SaqueLaMano:number = null;
-  isComplete:boolean = null;
+  Mono:number=0;
+  Arco:number=0;
+  Casa:number=0;
+  Grito:number=0;
+  Estatua: number= 0;
+  Comunidad: number = 0;
+  Ne: number = 0;
+  Cho:number = 0;
+  Bleja:number = 0;
+  Tudipro:number = 0;
+  SaqueLaMano:number = 0;
   SubTotal:number = 0;
   WasSuspended:boolean=false;
   constructor(){

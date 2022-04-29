@@ -31,7 +31,11 @@ import { ViewProtocolComponent } from './pages/ViewProtocol/view-protocol/view-p
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { ToastrModule } from 'ngx-toastr';
 import { WithoutAccessComponent } from './pages/WithoutAccess/without-access/without-access.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { AccountManagementComponent } from './pages/AccountManagement/account-management/account-management.component';
+import { AccountActivationComponent } from './pages/AccountManagement/account-activation/account-activation.component';
+import { RecoverPasswordComponent } from './pages/AccountManagement/recover-password/recover-password.component';
+import { PasswordUpdateComponent } from './pages/AccountManagement/password-update/password-update.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +59,11 @@ import { HttpClientModule } from '@angular/common/http'
     WritingComponent,
     TestSummaryComponent,
     ViewProtocolComponent,
-    WithoutAccessComponent
+    WithoutAccessComponent,
+    AccountManagementComponent,
+    AccountActivationComponent,
+    RecoverPasswordComponent,
+    PasswordUpdateComponent
   ],
   imports: [
     BrowserModule,

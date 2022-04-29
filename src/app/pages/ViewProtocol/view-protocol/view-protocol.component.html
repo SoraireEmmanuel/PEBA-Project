@@ -74,8 +74,16 @@
         <div class="col-md-3"><span><strong>Estado: </strong>{{protocol.SintomasNeurologicos.Vision}}</span></div>
         <div class="col-md-4"><span><strong>Tipo de Alteracion:
             </strong>{{protocol.SintomasNeurologicos.VisionTipoAlteracion}}</span></div>
-        <div class="col-md-3"><span><strong>¿Usa Lentes?
-            </strong>{{protocol.SintomasNeurologicos.VisionTipoAlteracionOtro}}</span></div>
+        <div class="col-md-3"><span><strong>¿Usa Lentes?</strong>
+          <div *ngIf="protocol.SintomasNeurologicos.UsaAnteojos == true" >
+            Si
+          </div>
+          <div *ngIf="protocol.SintomasNeurologicos.UsaAnteojos == false">
+            No
+          </div>
+          <div *ngIf="protocol.SintomasNeurologicos.UsaAnteojos == null">
+          </div>
+          </span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Audición</strong></span></div>
@@ -83,7 +91,7 @@
         <div class="col-md-4"><span><strong>Tipo de Alteracion:
             </strong>{{protocol.SintomasNeurologicos.AudicionTipoAlteracion}}</span></div>
         <div class="col-md-3"><span><strong>¿Usa Audifono?
-            </strong>{{protocol.SintomasNeurologicos.AudicionTipoAlteracionOtro}}</span></div>
+            </strong>{{protocol.SintomasNeurologicos.UsaAudifono}}</span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Atencion Espacial</strong></span></div>
@@ -102,7 +110,7 @@
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Praxia orolinguofaciales</strong></span></div>
         <div class="col-md-3"><span><strong>Estado:
-            </strong>{{protocol.SintomasNeurologicos.PraxiaOrolinguofaciales}}</span></div>
+            </strong>{{protocol.SintomasNeurologicos.PraxiaOronguofaciales}}</span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Deglución</strong></span></div>
@@ -113,7 +121,7 @@
     </div>
   </div>
   <div #P1CA>
-    <h5>Pasos del Protocolo</h5>
+    <h5>Partes del Protocolo</h5>
     <hr>
     <h6 class="ms-4 mt-2 mb-0">Comprencion Auditiva</h6>
     <div class="ms-4 b2 rounded-3 p-1">
@@ -194,11 +202,11 @@
         </div>
         <div class="row m-2">
           <div class="col-md-6"></div>
-          <div class="b col-md-6"> <span><strong>Total del Paso:
+          <div class="b col-md-6"> <span><strong>Total:
               </strong>{{protocol.ComprensionAuditiva_Cuantitativa.SubTotal}} </span> <br>
-            <span *ngIf="!protocol.ComprensionAuditiva_Cuantitativa.WasSuspended"><strong>El paso fue completado
+            <span *ngIf="!protocol.ComprensionAuditiva_Cuantitativa.WasSuspended"><strong>Esta parte fue completada
               </strong></span>
-            <span *ngIf="protocol.ComprensionAuditiva_Cuantitativa.WasSuspended"><strong>El paso fue suspendido
+            <span *ngIf="protocol.ComprensionAuditiva_Cuantitativa.WasSuspended"><strong>Esta parte fue suspendida
               </strong></span>
           </div>
         </div>
@@ -277,11 +285,11 @@
         </div>
         <div class="row m-2">
           <div class="col-md-6"></div>
-          <div class="b col-md-6"> <span><strong>Total del Paso:
+          <div class="b col-md-6"> <span><strong>Total:
               </strong>{{protocol.ExpresionOral_Cuantitativa.SubTotal}}</span> <br>
-            <span *ngIf="!protocol.ExpresionOral_Cuantitativa.WasSuspended"><strong>El paso fue completado
+            <span *ngIf="!protocol.ExpresionOral_Cuantitativa.WasSuspended"><strong>Esta parte fue completada
               </strong></span>
-            <span *ngIf="protocol.ExpresionOral_Cuantitativa.WasSuspended"><strong>El paso fue suspendido
+            <span *ngIf="protocol.ExpresionOral_Cuantitativa.WasSuspended"><strong>Esta parte fue suspendida
               </strong></span>
           </div>
         </div>
@@ -432,11 +440,11 @@
         </div>
         <div class="row m-2">
           <div class="col-md-6"></div>
-          <div class="b col-md-6"> <span><strong>Total del Paso:
+          <div class="b col-md-6"> <span><strong>Total:
               </strong>{{protocol.Repeticion_Cuantitativa.SubTotal}}</span> <br>
-            <span *ngIf="!protocol.Repeticion_Cuantitativa.WasSuspended"><strong>El paso fue completado
+            <span *ngIf="!protocol.Repeticion_Cuantitativa.WasSuspended"><strong>Esta parte fue completada
               </strong></span>
-            <span *ngIf="protocol.Repeticion_Cuantitativa.WasSuspended"><strong>El paso fue suspendido
+            <span *ngIf="protocol.Repeticion_Cuantitativa.WasSuspended"><strong>Esta parte fue suspendida
               </strong></span>
           </div>
         </div>
@@ -517,11 +525,11 @@
         </div>
         <div class="row m-2">
           <div class="col-md-6"></div>
-          <div class="b col-md-6"> <span><strong>Total del Paso: </strong>
+          <div class="b col-md-6"> <span><strong>Total: </strong>
               {{protocol.Denominacion_Cuantitativa.SubTotal}} </span> <br>
-            <span *ngIf="!protocol.Denominacion_Cuantitativa.WasSuspended"><strong>El paso fue completado
+            <span *ngIf="!protocol.Denominacion_Cuantitativa.WasSuspended"><strong>Esta parte fue completada
               </strong></span>
-            <span *ngIf="protocol.Denominacion_Cuantitativa.WasSuspended"><strong>El paso fue suspendido
+            <span *ngIf="protocol.Denominacion_Cuantitativa.WasSuspended"><strong>Esta parte fue suspendida
               </strong></span>
           </div>
         </div>
@@ -698,10 +706,10 @@
         </div>
         <div class="row m-2">
           <div class="col-md-6"></div>
-          <div class="b col-md-6"> <span><strong>Total del Paso: </strong></span>
+          <div class="b col-md-6"> <span><strong>Total: </strong></span>
             {{protocol.Lectura_Cuantitativa.SubTotal}} <br>
-            <span *ngIf="!protocol.Lectura_Cuantitativa.WasSuspended"><strong>El paso fue completado </strong></span>
-            <span *ngIf="protocol.Lectura_Cuantitativa.WasSuspended"><strong>El paso fue suspendido </strong></span>
+            <span *ngIf="!protocol.Lectura_Cuantitativa.WasSuspended"><strong>Esta parte fue completada </strong></span>
+            <span *ngIf="protocol.Lectura_Cuantitativa.WasSuspended"><strong>Esta parte fue suspendida </strong></span>
           </div>
         </div>
       </div>
@@ -754,15 +762,15 @@
           <div class="col-md-4"><span><strong>Mano</strong></span></div>
           <div class="col-md-5">
            <span *ngFor="let item of QStep6.Question1and2and3and4and7and8">
-              <span *ngIf="item.valor == protocol.Escritura_Cuantitativa.ManoMano ">
+              <span *ngIf="item.valor == protocol.Escritura_Cuantitativa.Mano">
                 {{item.etiqueta}}
               </span>
             </span>
-            <span *ngIf="protocol.Escritura_Cuantitativa.ManoMano ==null">
+            <span *ngIf="protocol.Escritura_Cuantitativa.Mano ==null">
               {{OptionNotCharge}}
             </span>
           </div>
-          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Escritura_Cuantitativa.ManoMano}} </div>
+          <div class="col-md-3"> <span>Puntuacion: </span> {{protocol.Escritura_Cuantitativa.Mano}} </div>
         </div>
         <div class="row">
           <div class="col-md-4"><span><strong>Gente</strong></span></div>
@@ -850,11 +858,11 @@
         </div>
         <div class="row m-2">
           <div class="col-md-6"></div>
-          <div class="b col-md-6"> <span><strong>Total del Paso: </strong>
+          <div class="b col-md-6"> <span><strong>Total: </strong>
               {{protocol.Escritura_Cuantitativa.SubTotal}} </span> <br>
-            <span *ngIf="!protocol.Escritura_Cuantitativa.WasSuspended"><strong>El paso fue completado
+            <span *ngIf="!protocol.Escritura_Cuantitativa.WasSuspended"><strong>Esta parte fue completada
               </strong></span>
-            <span *ngIf="protocol.Escritura_Cuantitativa.WasSuspended"><strong>El paso fue suspendido
+            <span *ngIf="protocol.Escritura_Cuantitativa.WasSuspended"><strong>Esta parte fue suspendida
               </strong></span>
           </div>
         </div>

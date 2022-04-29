@@ -1,4 +1,4 @@
-<div class="container-sm mt-2 bg-warning bg-gradient text-black border shadow-lg p-3 mb-5 bg-body rounded">
+<div class="container-sm mt-2  text-white border shadow-lg p-3 mb-5  rounded" style="background-color: #625b83">
   <div class="text-center">
     <h2> Evaluacion del Lenguaje - Carga de las respuestas del paciente </h2>
     <h3>Escritura </h3>
@@ -44,14 +44,14 @@
       <h6>Mano: </h6>
     </div>
     <div class="col-md-4 ">
-      <select class="form-select" name="p6p3" id="p6p3" [(ngModel)]="EscrituraCuantitativa.ManoMano"
+      <select class="form-select" name="p6p3" id="p6p3" [(ngModel)]="EscrituraCuantitativa.Mano"
       [disabled]="EscrituraCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
         <option *ngFor="let p of DropdownOptions.Question1and2and3and4and7and8 " [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
     </div>
     <div class="col-md-2 ">
-      <span>Puntuacion: {{EscrituraCuantitativa.ManoMano}}</span>
+      <span>Puntuacion: {{EscrituraCuantitativa.Mano}}</span>
     </div>
   </div>
   <div class="row mt-1">
@@ -165,7 +165,7 @@
       <button  class="btn btn-success" (click)="back()" >Anterior</button>
     </div>
     <div class="col-md-4 text-center">
-      <button class="btn btn-danger" [disabled]="EscrituraCuantitativa.WasSuspended" (click)="open(suspended)">
+      <button class="btn btn-danger" style="background-color: #CE054B;" [disabled]="EscrituraCuantitativa.WasSuspended" (click)="open(suspended)">
         Suspender Paso del Protocolo </button>
     </div>
     <div class="col-md-4 text-right">

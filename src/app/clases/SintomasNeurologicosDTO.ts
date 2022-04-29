@@ -1,35 +1,33 @@
 export class SintomasNeurologicosDTO{
-  Alerta:string=null;
-  AlertaTipoAlteracion:string=null;
-  AlertaTipoAlteracionOtro:string=null;
-  EstadoEmocional:string=null;
-  EstadoEmocionalTipoAlteracion:string=null;
-  EstadoEmocionalTipoAlteracionOtro:string =null;
-  Fuerza:string=null;
-  FuerzaTipoAlteracion:string=null;
-  FuerzaTipoAlteracionOtro:string=null;
-  CondicionMotora:string=null;
-  CondicionMotoraTipoAlteracion:string=null;
-  CondicionMotoraTipoAlteracionOtro:string=null;
-  Sensibilidad:string=null;
-  SensibilidadTipoAlteracion:string=null;
-  SensibilidadTipoAlteracionOtro:string=null;
-  Vision:string=null;
-  VisionTipoAlteracion:string=null;
-  VisionTipoAlteracionOtro:string=null;
-  Audicion:string=null;
-  AudicionTipoAlteracion:string=null;
-  AudicionTipoAlteracionOtro:string=null;
-  AtencionEspacial:string=''
-  AtencionEspacialTipoAlteracion:string=null;
-  AtencionEspacialTipoAlteracionOtro:string=null;
-  PraxiaManual:string=null;
-  PraxiaManualTipoAlteracion:string=null;
-  PraxiaManualTipoAlteracionOtro:string=null;
-  PraxiaOrolinguofaciales:string=null;
-  Deglucion:string=null;
-  DeglucionTipoAlteracion:string=null;
-  DeglucionTipoAlteracionOtro:string=null;
+  Alerta:string='';
+  AlertaTipoAlteracion:string='';
+  AlertaTipoAlteracionOtro:string='';
+  EstadoEmocional:string='';
+  EstadoEmocionalTipoAlteracion:string='';
+  EstadoEmocionalTipoAlteracionOtro:string ='';
+  Fuerza:string='';
+  FuerzaTipoAlteracion:string='';
+  FuerzaTipoAlteracionOtro:string='';
+  CondicionMotora:string='';
+  CondicionMotoraTipoAlteracion:string='';
+  CondicionMotoraTipoAlteracionOtro:string='';
+  Sensibilidad:string='';
+  SensibilidadTipoAlteracion:string='';
+  SensibilidadTipoAlteracionOtro:string='';
+  Vision:string='';
+  VisionTipoAlteracion:string='';
+  UsaAnteojos:boolean=null;
+  Audicion:string='';
+  AudicionTipoAlteracion:string='';
+  UsaAudifono:boolean=null;
+  AtencionEspacial:string='';
+  AtencionEspacialTipoAlteracion:string='';
+  PraxiaManual:string='';
+  PraxiaManualTipoAlteracion:string='';
+  PraxiaOronguofaciales:string='';
+  Deglucion:string='';
+  DeglucionTipoAlteracion:string='';
+
 
   constructor(){
 

@@ -123,7 +123,7 @@ popupsave:boolean;
                                         this.EscrituraCuantitativa.Gente+
                                         this.EscrituraCuantitativa.Guela+
                                         this.EscrituraCuantitativa.Jo+
-                                        this.EscrituraCuantitativa.ManoMano+
+                                        this.EscrituraCuantitativa.Mano+
                                         this.EscrituraCuantitativa.ZETA;
   }
   saved(){
@@ -165,7 +165,7 @@ popupsave:boolean;
     if ((this.EscrituraCuantitativa.Aclaracion == null || this.EscrituraCuantitativa.Dirchole == null ||
       this.EscrituraCuantitativa.EME == null || this.EscrituraCuantitativa.Esperanza == null ||
       this.EscrituraCuantitativa.Gente == null || this.EscrituraCuantitativa.Guela == null ||
-      this.EscrituraCuantitativa.Jo == null || this.EscrituraCuantitativa.ManoMano == null ||
+      this.EscrituraCuantitativa.Jo == null || this.EscrituraCuantitativa.Mano == null ||
       this.EscrituraCuantitativa.ZETA == null) &&
       this.EscrituraCuantitativa.WasSuspended == false
     ) {
@@ -178,7 +178,7 @@ popupsave:boolean;
     if (this.EscrituraCuantitativa.Aclaracion != null && this.EscrituraCuantitativa.Dirchole != null &&
       this.EscrituraCuantitativa.EME != null && this.EscrituraCuantitativa.Esperanza != null &&
       this.EscrituraCuantitativa.Gente != null && this.EscrituraCuantitativa.Guela != null &&
-      this.EscrituraCuantitativa.Jo != null && this.EscrituraCuantitativa.ManoMano != null &&
+      this.EscrituraCuantitativa.Jo != null && this.EscrituraCuantitativa.Mano != null &&
       this.EscrituraCuantitativa.ZETA != null ) {
       return true;
    }

@@ -19,7 +19,10 @@ logout(){
   setTimeout(() => {
     this._route.navigate(['home'])
   }, 10);
+}
 
+passwordUpdate(){
+  this._route.navigate(['passwordUpdate'])
 }
 
 }
