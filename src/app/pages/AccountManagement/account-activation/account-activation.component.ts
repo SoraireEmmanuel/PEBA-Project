@@ -17,16 +17,24 @@ user:string='';
               private _auth:AuthenticationService) { }
 
   ngOnInit(): void {
-    this.code= this._rutaActiva.snapshot.params.code;
-    this.mail=this._rutaActiva.snapshot.params.mail;
-    //this.activation(this.code, this.mail);
+    this.loadParams();
+    this.activation(this.code, this.mail);
+  }
+  loadParams(){
+    this._rutaActiva.queryParams.subscribe(params =>{
+      this.code = params.ACode;
+      this.mail=params.Mail;
+      console.log(this.code);
+      console.log(this.mail);
+    })
   }
   activation(code:string, mail:string){
     this._auth.accountActivetion(code,mail).subscribe(resp=>{
       this.viewtemplate=1;
-      this.user=resp.nombre;
+      this.user=resp.Nombre;
     },(error)=>{
       this.viewtemplate=2;
+      console.log(error);
     })
   }
 }

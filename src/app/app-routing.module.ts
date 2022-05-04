@@ -22,7 +22,7 @@ const routes: Routes = [
   {path: 'viewProtocol/:Id_Protocolo/:Id_Paciente', component:ViewProtocolComponent, canActivate: [AuthGuard]},
   {path: 'home', component:HomeComponent },
   {path: 'withoutAccess', component:WithoutAccessComponent },
-  {path: 'accountActivation/:code/:mail', component:AccountActivationComponent},
+  {path: 'accountActivation', component:AccountActivationComponent},
   {path: 'passwordRecover/:code/:mail', component:RecoverPasswordComponent},
   {path: 'passwordUpdate', component:PasswordUpdateComponent},
   {path: '**', pathMatch: 'full', redirectTo:'home'}

@@ -36,6 +36,9 @@ import { AccountManagementComponent } from './pages/AccountManagement/account-ma
 import { AccountActivationComponent } from './pages/AccountManagement/account-activation/account-activation.component';
 import { RecoverPasswordComponent } from './pages/AccountManagement/recover-password/recover-password.component';
 import { PasswordUpdateComponent } from './pages/AccountManagement/password-update/password-update.component'
+
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +82,9 @@ import { PasswordUpdateComponent } from './pages/AccountManagement/password-upda
       preventDuplicates: true,
     })
   ],
-  providers: [],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

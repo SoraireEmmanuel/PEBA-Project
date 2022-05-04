@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { User } from 'src/app/clases/user';
 import { LocalServiceService } from 'src/app/services/CryptoServices/LocalService/local-service.service';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HttpHeaders  } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Login } from 'src/app/clases/login';
@@ -63,7 +63,11 @@ registerProfesional(profesional: register):Observable<any>{
 }
 
 accountActivetion(code:string, mail:string):Observable<any>{
-  return this._http.get(`${URI}activarCuenta/${code}/${mail}`)
+  var activarCuenta = {
+    Mail: `${mail}`,
+    Code:`${code}`
+  };
+  return this._http.post(`${URI}activarCuenta`, activarCuenta);
 }
 
 

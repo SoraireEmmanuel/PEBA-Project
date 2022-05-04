@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/78ca2660-810d-4a63-a41d-b743b4c78ef9/resourceGroups/PS/providers/Microsoft.Web/sites/PEBAFE",
+    "appService.deploySubpath": "dist\\PEBA-Project"
+}
