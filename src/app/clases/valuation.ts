@@ -20,7 +20,7 @@ export class Valuation{
 
   valuationCharge(value: number): string {
     if (value == 6) {
-      return 'Conservado';
+      return 'Conservada';
     }
     if (value < 6 && value >= 5) {
       return 'Alteración Leve';

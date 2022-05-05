@@ -44,7 +44,7 @@
       <select  class="form-select" name="p3p3" id="p3p3" [(ngModel)]="RepeticionCuantitativa.Pensamiento"
       [disabled]="RepeticionCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
-        <option *ngFor="let p of DropdownOptions.Q1" [ngValue]=p.valor>{{p.etiqueta}}</option>
+        <option *ngFor="let p of DropdownOptions.Q2a" [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
     </div>
     <div class="col-md-2 ">
@@ -92,7 +92,7 @@
       <select class="form-select" name="p3p6" id="p3p6" [(ngModel)]="RepeticionCuantitativa.LaMujerRegalo"
       [disabled]="RepeticionCuantitativa.WasSuspended" (change)="total()">
         <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
-        <option *ngFor="let p of DropdownOptions.Q3" [ngValue]=p.valor>{{p.etiqueta}}</option>
+        <option *ngFor="let p of DropdownOptions.Q3a" [ngValue]=p.valor>{{p.etiqueta}}</option>
       </select>
     </div>
     <div class="col-md-2 ">
@@ -185,7 +185,7 @@
   </div>
   <div class="modal-body">
     <div class="row">
-      <div class="col-md-3"><label class="">Artuculación</label></div>
+      <div class="col-md-3"><label class="">Articulación</label></div>
       <div class="col-md-3">
         <select class="form-select" name="Articulacion" id="Articulacion" [(ngModel)]="RepeticionCualitativa.Articulacion">
           <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
@@ -223,7 +223,7 @@
           [(ngModel)]="RepeticionCualitativa.ProcesamientoLexico">
           <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
           <option [ngValue]="0">Normal</option>
-          <option [ngValue]="1">Alterada</option>
+          <option [ngValue]="1">Alterado</option>
         </select>
       </div>
       <div class="col-md-6" *ngIf="RepeticionCualitativa.ProcesamientoLexico == 1">

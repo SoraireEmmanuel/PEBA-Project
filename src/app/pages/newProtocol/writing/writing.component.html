@@ -192,7 +192,7 @@
         [(ngModel)]="EscruturaCualitativa.MovilidadDeLaManoDominante">
           <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
           <option [ngValue]="0">Normal</option>
-          <option [ngValue]="1">Alterada No fluente</option>
+          <option [ngValue]="1">Alterada</option>
         </select>
       </div>
       <div class="col-md-6" *ngIf="EscruturaCualitativa.MovilidadDeLaManoDominante==1">
@@ -202,7 +202,7 @@
         </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="MMDP2" [(ngModel)]="EscruturaCualitativa.MMDParesiaDeLaManoDominante" (change)="popUpValidation()">
-          <label class="form-check-label" for="MMDP2">Paresia de la mano dominante</label>
+          <label class="form-check-label" for="MMDP2">Paresia</label>
         </div>
       </div>
     </div>
@@ -234,21 +234,21 @@
          [(ngModel)]="EscruturaCualitativa.Deletreo">
           <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
           <option [ngValue]="0">Normal</option>
-          <option [ngValue]="1">Alterada</option>
+          <option [ngValue]="1">Alterado</option>
         </select>
       </div>
       <div class="col-md-6" *ngIf="EscruturaCualitativa.Deletreo==1">
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="D1" [(ngModel)]="EscruturaCualitativa.DOmision" (change)="popUpValidation()">
-          <label class="form-check-label" for="D1">Omisión</label>
+          <label class="form-check-label" for="D1">Omisión de letras</label>
         </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="D2" [(ngModel)]="EscruturaCualitativa.DSustitucion" (change)="popUpValidation()">
-          <label class="form-check-label" for="D2">Sustitución</label>
+          <label class="form-check-label" for="D2">Sustitución de letras</label>
         </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="D3" [(ngModel)]="EscruturaCualitativa.DAdicionDeLetrasQueResultanEnNoPalabra" (change)="popUpValidation()">
-          <label class="form-check-label" for="D3">Adición de letras que resultan en no palabra</label>
+          <label class="form-check-label" for="D3">Adición de letras</label>
         </div>
       </div>
     </div>

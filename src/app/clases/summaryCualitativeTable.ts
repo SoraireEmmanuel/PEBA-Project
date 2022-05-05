@@ -50,7 +50,7 @@ export class summaryCualitativeTable {
     }
     if (ComprensionAuditiva_CualitativaDTO.PalabraOidaAlterada != null) {
       if (ComprensionAuditiva_CualitativaDTO.PalabraOidaAlterada == 1) {
-        this.auditivaEmparejamientoPalabraOida = 'Se observaron las siguientes Alteraciones en las Palabras Oídas: '
+        this.auditivaEmparejamientoPalabraOida = 'Comprensión de Palabras oídas: Alteraciones '
         if (ComprensionAuditiva_CualitativaDTO.POErroresFormales == true) {
           this.auditivaEmparejamientoPalabraOida = this.auditivaEmparejamientoPalabraOida + '<Errores formales>'
         }
@@ -65,11 +65,11 @@ export class summaryCualitativeTable {
         this.auditivaEmparejamientoPalabraOida = 'No se observaron Alteraciones en el emparejamiento palabra Oída-dibujo'
       }
     } else {
-      this.auditivaEmparejamientoPalabraOida = '<No se cargaron observaciones en el emparejamiento palabra Oída-dibujo>'
+      this.auditivaEmparejamientoPalabraOida = 'No se cargaron observaciones en el emparejamiento palabra Oída-dibujo'
     }
     if (ComprensionAuditiva_CualitativaDTO.ComandosOidosAlterada != null) {
       if (ComprensionAuditiva_CualitativaDTO.ComandosOidosAlterada == 1) {
-        this.auditivaComandosOidos = 'Se observaron las siguientes Alteraciones en los comandos oídos: '
+        this.auditivaComandosOidos = 'Comprensión de Comandos oídos: Alteraciones '
         if (ComprensionAuditiva_CualitativaDTO.COCambiaElOrdenDelComando == true) {
           this.auditivaComandosOidos = this.auditivaComandosOidos + '<Cambia el orden del comando> '
         }
@@ -81,10 +81,10 @@ export class summaryCualitativeTable {
         }
       }
       if (ComprensionAuditiva_CualitativaDTO.ComandosOidosAlterada == 0) {
-        this.auditivaComandosOidos = 'No se observaron Alteraciones en los comandos oídos'
+        this.auditivaComandosOidos = 'No se observaron Alteraciones en los Comandos oídos'
       }
     } else {
-      this.auditivaComandosOidos = 'No se cargaron observaciones en los comandos oídos'
+      this.auditivaComandosOidos = 'No se cargaron observaciones en los Comandos oídos'
     }
 
   }
@@ -96,64 +96,70 @@ export class summaryCualitativeTable {
       return
     }
     if (ExpresionOral.Fluencia != null) {
+      this.oralFluencia = 'Fluencia: '
       if (ExpresionOral.Fluencia == 0) {
-        this.oralFluencia = 'Se observo Fluencia Normal'
+        this.oralFluencia = this.oralFluencia + 'Normal'
       }
       if (ExpresionOral.Fluencia == 1) {
-        this.oralFluencia = 'Se observo Alterada no Fluente'
+        this.oralFluencia = this.oralFluencia + 'Alteraciones <no Fluente>'
       }
       if (ExpresionOral.Fluencia == 2) {
-        this.oralFluencia = 'Se observo Alterada no Gorrea'
+        this.oralFluencia = this.oralFluencia +'Alteraciones <Logorrea>'
       }
     } else {
       this.oralFluencia = 'No se cargaron observaciones en Fluencia'
     }
     if (ExpresionOral.Prosodia != null) {
+      this.oralProsodia = 'Prosodia: '
       if (ExpresionOral.Prosodia == 0) {
-        this.oralProsodia = 'Se observo Prosodia Normal'
+        this.oralProsodia = this.oralProsodia + 'Normal'
       }
       if (ExpresionOral.Prosodia == 1) {
-        this.oralProsodia = 'Se observo Alterada Disprosodia'
+        this.oralProsodia = this.oralProsodia +'Alteraciones <Disprosodia>'
       }
     } else {
       this.oralProsodia = 'No se cargaron observaciones en Prosodia'
     }
     if (ExpresionOral.Articulacion != null) {
+      this.oralArticulacion = 'Articulacion: '
       if (ExpresionOral.Articulacion == 0) {
-        this.oralArticulacion = 'Se observo Articulacion Normal'
+        this.oralArticulacion = this.oralArticulacion+ 'Normal'
       }
       if (ExpresionOral.Articulacion == 1) {
-        this.oralArticulacion = 'Se observo Articulacion Alterada Errores Fonéticos'
+        this.oralArticulacion = this.oralArticulacion +'Alteraciones <Errores Fonéticos>'
       }
     } else {
       this.oralArticulacion = 'No se cargaron observaciones en Articulacion'
     }
     if (ExpresionOral.CodificacionFonologica != null) {
+      this.oralCodificacionFonologica = 'Codificación Fonologica: '
       if (ExpresionOral.CodificacionFonologica == 0) {
-        this.oralCodificacionFonologica = 'Se observo Codificación Fonologica Normal'
+        this.oralCodificacionFonologica = this.oralCodificacionFonologica +'Normal'
       }
       if (ExpresionOral.CodificacionFonologica == 1) {
-        this.oralCodificacionFonologica = 'Se observo Alterada la codificación fonológica: Errores fonémicos'
+        this.oralCodificacionFonologica = this.oralCodificacionFonologica + 'Alteraciones <Errores fonémicos>'
       }
     } else {
       this.oralCodificacionFonologica = 'No se cargaron observaciones en codificación fonológica'
     }
     if (ExpresionOral.ProcesamientoSintaxtico != null) {
+      this.oralProcesamientoSintaxtico = 'Procesamiento Sintactico: '
       if (ExpresionOral.ProcesamientoSintaxtico == 0) {
-        this.oralProcesamientoSintaxtico = 'Se observo Procesamiento Sintactico Normal'
+        this.oralProcesamientoSintaxtico = this.oralProcesamientoSintaxtico + 'Normal'
       }
       if (ExpresionOral.ProcesamientoSintaxtico == 1) {
-        this.oralProcesamientoSintaxtico = 'Se observo Procesamiento Sintactico Alterado: Agramatismos'
+        this.oralProcesamientoSintaxtico = this.oralProcesamientoSintaxtico + 'Alterado <Agramatismos>'
       }
     } else {
       this.auditivaComandosOidos = 'No se cargaron observaciones en Procesamiento Sintactico'
     }
     if (ExpresionOral.ProcesamientoLexicoAlterado != null) {
+      this.oralFluencia = 'Procesamiento Lexico: '
       if (ExpresionOral.ProcesamientoLexicoAlterado == 0) {
-        this.oralFluencia = 'Se observo Procesamiento Lexico Normal'
+        this.oralFluencia = this.oralFluencia + 'Normal'
       }
       if (ExpresionOral.ProcesamientoLexicoAlterado == 1) {
-        this.oralProcesamientoLexico = 'Se observaron las siguientes Alteraciones en el Procesamiento Lexico: '
+        this.oralProcesamientoLexico = this.oralFluencia + 'Alterado '
         if (ExpresionOral.PLAnomias == true) {
           this.oralProcesamientoLexico = this.oralProcesamientoLexico + '<Anomia> '
         }
@@ -184,21 +190,23 @@ export class summaryCualitativeTable {
       return
     }
     if (Repeticion.Articulacion != null) {
+      this.repeticionArticulacion = 'Articulación: '
       if (Repeticion.Articulacion == 0) {
-        this.repeticionArticulacion = 'Se observo Articulacion Normal'
+        this.repeticionArticulacion = this.repeticionArticulacion+'Normal'
       }
       if (Repeticion.Articulacion == 1) {
-        this.repeticionArticulacion = 'Se observo Articulacion Alterada: Errores Fonéticos'
+        this.repeticionArticulacion = this.repeticionArticulacion+'Alteraciones <Errores Fonéticos>'
       }
     } else {
-      this.repeticionArticulacion = 'No se cargaron observaciones en Articulacion'
+      this.repeticionArticulacion = 'No se cargaron observaciones en Articulación'
     }
     if (Repeticion.CodificacionFonologica != null) {
+      this.repeticionCodificacionFonologica = 'Codificación Fonológica: '
       if (Repeticion.CodificacionFonologica == 0) {
-        this.repeticionCodificacionFonologica = 'Se observo Codificación Fonológica Normal'
+        this.repeticionCodificacionFonologica = this.repeticionCodificacionFonologica+ 'Normal'
       }
       if (Repeticion.CodificacionFonologica == 1) {
-        this.repeticionCodificacionFonologica = 'Se observo las siguientes alteraciones en la Codificación Fonológica'
+        this.repeticionCodificacionFonologica = this.repeticionCodificacionFonologica +'Alteraciones '
         if (Repeticion.CFFonemicos == true) {
           this.repeticionCodificacionFonologica = this.repeticionCodificacionFonologica + '<Fonémicos> '
         }
@@ -210,11 +218,12 @@ export class summaryCualitativeTable {
       this.oralProsodia = 'No se cargaron observaciones en Codificación Fonológica'
     }
     if (Repeticion.ProcesamientoLexico != null) {
+      this.repeticionProcesamientoLexico = 'Procesamiento Léxico: '
       if (Repeticion.ProcesamientoLexico == 0) {
-        this.repeticionProcesamientoLexico = 'Se observo Procesamiento Léxico Normal'
+        this.repeticionProcesamientoLexico = this.repeticionProcesamientoLexico + ' Normal'
       }
       if (Repeticion.ProcesamientoLexico == 1) {
-        this.repeticionProcesamientoLexico = 'Se observo las siguientes alteraciones en el Procesamiento Léxico:'
+        this.repeticionProcesamientoLexico = this.repeticionProcesamientoLexico  +'Alteraciones '
         if (Repeticion.PLEstereotipias) {
           this.repeticionProcesamientoLexico = this.repeticionProcesamientoLexico + '<Estereotipias> '
         }
@@ -238,11 +247,12 @@ export class summaryCualitativeTable {
       this.repeticionProcesamientoLexico = 'No se cargaron observaciones en Procesamiento Léxico'
     }
     if (Repeticion.ProcesamientoSintaxtico != null) {
+      this.repeticionProcesamientoSintaxtico = 'Procesamiento Sintáctico: '
       if (Repeticion.ProcesamientoSintaxtico == 0) {
-        this.repeticionProcesamientoSintaxtico = 'Se observo Procesamiento Sintáctico Normal'
+        this.repeticionProcesamientoSintaxtico = this.repeticionProcesamientoSintaxtico+'Normal'
       }
       if (Repeticion.ProcesamientoSintaxtico == 1) {
-        this.repeticionProcesamientoSintaxtico = 'Se observo Alterado el Procesamiento Sintáctico: Agramatismos'
+        this.repeticionProcesamientoSintaxtico = this.repeticionProcesamientoSintaxtico+'Alterado <Agramatismos>'
       }
     } else {
       this.repeticionProcesamientoSintaxtico = 'No se cargaron observaciones en el Procesamiento Sintáctico'
@@ -255,31 +265,34 @@ export class summaryCualitativeTable {
       return
     }
     if (denominacion.Articulacion != null) {
+      this.denominacionArticulacion = 'Articulación: '
       if (denominacion.Articulacion == 0) {
-        this.denominacionArticulacion = 'Se observo Articulacion Normal'
+        this.denominacionArticulacion = this.denominacionArticulacion+'Normal'
       }
       if (denominacion.Articulacion == 1) {
-        this.denominacionArticulacion = 'Se observo Articulacion Alterada: Errores Fonéticos'
+        this.denominacionArticulacion = this.denominacionArticulacion+'Alteraciones <Errores Fonéticos>'
       }
     } else {
-      this.denominacionArticulacion = 'No se cargaron observaciones en Articulacion'
+      this.denominacionArticulacion = 'No se cargaron observaciones en Articulación'
     }
     if (denominacion.CodificacionFonologica != null) {
+      this.denominacionCodificacionFonologica = 'Codificación Fonológica: '
       if (denominacion.CodificacionFonologica == 0) {
-        this.denominacionCodificacionFonologica = 'Se observo Codificación Fonológica Normal'
+        this.denominacionCodificacionFonologica = this.denominacionCodificacionFonologica+'Normal'
       }
       if (denominacion.CodificacionFonologica == 1) {
-        this.repeticionCodificacionFonologica = 'Se observo alteraciones en la Codificación Fonológica: Errores Fonemicos'
+        this.repeticionCodificacionFonologica = this.denominacionCodificacionFonologica+'Alteraciones <Errores Fonemicos>'
       }
     } else {
       this.oralProsodia = '<No se cargaron observaciones en Codificación Fonológica>'
     }
     if (denominacion.ProcesamientoLexico != null) {
+      this.denominacionProcesamientoLexico = 'Procesamiento Léxico: '
       if (denominacion.ProcesamientoLexico == 0) {
-        this.denominacionProcesamientoLexico = 'Se observo Procesamiento Léxico Normal'
+        this.denominacionProcesamientoLexico = this.denominacionProcesamientoLexico+'Normal'
       }
       if (denominacion.ProcesamientoLexico == 1) {
-        this.denominacionProcesamientoLexico = 'Se observo las siguientes alteraciones en el Procesamiento Léxico:'
+        this.denominacionProcesamientoLexico = this.denominacionProcesamientoLexico+'Alteraciones '
         if (denominacion.PLAnomia) {
           this.denominacionProcesamientoLexico = this.denominacionProcesamientoLexico + '<Anomia> '
         }
@@ -319,11 +332,12 @@ export class summaryCualitativeTable {
       return
     }
     if (Lectura.ComprensionDeComandoEscrito != null) {
+      this.lecturaComprensionComandoEscrito = 'Comprension de Comando Escrito: '
       if (Lectura.ComprensionDeComandoEscrito == 0) {
-        this.lecturaComprensionComandoEscrito = 'Se observo Comprension de Comando Escrito Normal'
+        this.lecturaComprensionComandoEscrito = this.lecturaComprensionComandoEscrito+ 'Normal'
       }
       if (Lectura.ComprensionDeComandoEscrito == 1) {
-        this.lecturaComprensionComandoEscrito = 'Se observaron las siguientes Alteraciones en la Comprension de Comandos Escritos:'
+        this.lecturaComprensionComandoEscrito = this.lecturaComprensionComandoEscrito+'Alteraciones '
         if (Lectura.CDCEAlteracionDelOrden) {
           this.lecturaComprensionComandoEscrito = this.lecturaComprensionComandoEscrito + '<Alteracion Del Orden>'
         }
@@ -338,11 +352,12 @@ export class summaryCualitativeTable {
       this.lecturaComprensionComandoEscrito = 'No se cargaron observaciones en Comprension de Comando Escrito'
     }
     if (Lectura.LecturaDeNoPalabras != null) {
+      this.lecturaLecturaNoPalabras = 'Lectura de No Palabras: '
       if (Lectura.LecturaDeNoPalabras == 0) {
-        this.lecturaLecturaNoPalabras = 'Se observo Lectura de No Palabras Normal'
+        this.lecturaLecturaNoPalabras = this.lecturaLecturaNoPalabras+'Normal'
       }
       if (Lectura.LecturaDeNoPalabras == 1) {
-        this.lecturaLecturaNoPalabras = 'Se observo las siguientes alteraciones en la Lectura de No Palabras'
+        this.lecturaLecturaNoPalabras = this.lecturaLecturaNoPalabras+'Alteraciones '
         if (Lectura.LNPLexicalizacionDeNoPalabras == true) {
           this.lecturaLecturaNoPalabras = this.lecturaLecturaNoPalabras + '<Lexicalizacion De No Palabras> '
         }
@@ -354,11 +369,12 @@ export class summaryCualitativeTable {
       this.lecturaLecturaNoPalabras = 'No se cargaron observaciones en Lectura de No Palabras'
     }
     if (Lectura.LecturaDePalabras != null) {
+      this.lecturaLecturaPalabras = 'Lectura de Palabras: '
       if (Lectura.LecturaDePalabras == 0) {
-        this.lecturaLecturaPalabras = 'Se observo Lectura de Palabras Normal'
+        this.lecturaLecturaPalabras = this.lecturaLecturaPalabras+'Normal'
       }
       if (Lectura.LecturaDePalabras == 1) {
-        this.lecturaLecturaPalabras = 'Se observo las siguientes alteraciones en la Lectura de Palabras:'
+        this.lecturaLecturaPalabras = this.lecturaLecturaPalabras+'Alteraciones '
         if (Lectura.LPParalexiasFormales) {
           this.lecturaLecturaPalabras = this.lecturaLecturaPalabras + '<Paralexias Formales> '
         }
@@ -376,11 +392,12 @@ export class summaryCualitativeTable {
       this.lecturaLecturaPalabras = 'No se cargaron observaciones en Lectura de Palabras'
     }
     if (Lectura.EmparejamientoPalabraEscritaDibujo != null) {
+      this.lecturaEmparejamientoPalabraEscrita = 'Emparejamiento de palabra escrita con dibujo: '
       if (Lectura.EmparejamientoPalabraEscritaDibujo == 0) {
-        this.lecturaEmparejamientoPalabraEscrita = 'Se observo Emparejamiento de palabra escrita con dibujo Normal'
+        this.lecturaEmparejamientoPalabraEscrita = this.lecturaEmparejamientoPalabraEscrita+'Normal'
       }
       if (Lectura.EmparejamientoPalabraEscritaDibujo == 1) {
-        this.lecturaEmparejamientoPalabraEscrita = 'Se observo las siguientes alteraciones en el Emparejamiento de palabra escrita con dibujo:'
+        this.lecturaEmparejamientoPalabraEscrita = this.lecturaEmparejamientoPalabraEscrita+'Alteraciones '
         if(Lectura.EPEDErroresFormales){
           this.lecturaEmparejamientoPalabraEscrita=this.lecturaEmparejamientoPalabraEscrita+'<Errores Formales>'
         }
@@ -403,46 +420,49 @@ export class summaryCualitativeTable {
       return
     }
     if (Escritura.MovilidadDeLaManoDominante != null) {
+      this.escrituraMovilidadManoDominante = 'Escritura Mano Dominante: '
       if (Escritura.MovilidadDeLaManoDominante == 0) {
-        this.escrituraMovilidadManoDominante = 'Se observo Escritura Mano Dominante Normal'
+        this.escrituraMovilidadManoDominante = this.escrituraMovilidadManoDominante+'Normal'
       }
       if (Escritura.MovilidadDeLaManoDominante == 1) {
-        this.escrituraMovilidadManoDominante = 'Se observaron las siguientes Alteraciones en la Movilidad de la mano dominante:'
+        this.escrituraMovilidadManoDominante = this.escrituraMovilidadManoDominante+'Alteraciones '
         if (Escritura.MMDPlejia) {
           this.escrituraMovilidadManoDominante = this.escrituraMovilidadManoDominante + '<Plejia>'
         }
         if (Escritura.MMDParesiaDeLaManoDominante) {
-          this.escrituraMovilidadManoDominante = this.escrituraMovilidadManoDominante + '<Parecia De La Mano Dominante>'
+          this.escrituraMovilidadManoDominante = this.escrituraMovilidadManoDominante + '<Parecia>'
         }
       }
     } else {
       this.escrituraMovilidadManoDominante = 'No se cargaron observaciones en Movilidad Mano Dominante'
     }
     if (Escritura.Deletreo != null) {
+      this.escrituraDeletreo = 'Deletreo: '
       if (Escritura.Deletreo == 0) {
-        this.escrituraDeletreo = 'Se observo Deletreo Normal'
+        this.escrituraDeletreo = this.escrituraDeletreo+'Normal'
       }
       if (Escritura.Deletreo == 1) {
-        this.escrituraDeletreo = 'Se observaron las siguientes Alteraciones en la Movilidad de la mano dominante:'
+        this.escrituraDeletreo = this.escrituraDeletreo+'Alteraciones '
         if (Escritura.DAdicionDeLetrasQueResultanEnNoPalabra) {
-          this.escrituraDeletreo = this.escrituraDeletreo + '<Adición de letras que resultan en no palabra>'
+          this.escrituraDeletreo = this.escrituraDeletreo + '<Adición de letras>'
         }
         if (Escritura.DOmision) {
-          this.escrituraDeletreo = this.escrituraDeletreo + '<Omisión>'
+          this.escrituraDeletreo = this.escrituraDeletreo + '<Omisión de letras>'
         }
         if (Escritura.DSustitucion) {
-          this.escrituraDeletreo = this.escrituraDeletreo + '<Sustitución>'
+          this.escrituraDeletreo = this.escrituraDeletreo + '<Sustitución de letras>'
         }
       }
     } else {
       this.escrituraDeletreo = 'No se cargaron observaciones en Deletreo'
     }
     if (Escritura.Ortografia != null) {
+      this.escrituraOrtografia = 'Ortografía: '
       if (Escritura.Ortografia == 0) {
-        this.escrituraOrtografia = 'Se observo Ortografía Normal'
+        this.escrituraOrtografia = this.escrituraOrtografia+' Normal'
       }
       if (Escritura.Ortografia == 1) {
-        this.escrituraOrtografia = 'Se observaron las siguientes Alteraciones en la Ortografía:'
+        this.escrituraOrtografia = this.escrituraOrtografia+'Alteraciones '
         if (Escritura.OErroresFonologicamentePlausibles) {
           this.escrituraOrtografia = this.escrituraOrtografia + '<Errores fonológicamente plausibles>'
         }

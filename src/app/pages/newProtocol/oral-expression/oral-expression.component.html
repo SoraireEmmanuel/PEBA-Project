@@ -146,16 +146,6 @@
       </div>
     </div>
     <div class="row mt-3">
-      <div class="col-md-3"><label class="">Procesamiento Sintáctico</label></div>
-      <div class="col-md-3">
-        <select class="form-select" name="PS" id="PS" [(ngModel)]="ExpresionOralCualitativa.ProcesamientoSintaxtico">
-          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
-          <option [ngValue]="0">Normal</option>
-          <option [ngValue]="1">Alterada Agramatismo</option>
-        </select>
-      </div>
-    </div>
-    <div class="row mt-3">
       <div class="col-md-3"><label class="">Procesamiento Léxico</label></div>
       <div class="col-md-3">
         <select class="form-select" name="PL" id="PL"
@@ -163,7 +153,7 @@
           (change)="popUpValidation()">
           <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
           <option [ngValue]="0">Normal</option>
-          <option [ngValue]="1">Alterada</option>
+          <option [ngValue]="1">Alterado</option>
         </select>
       </div>
       <div class="col-md-6" *ngIf="ExpresionOralCualitativa.ProcesamientoLexicoAlterado==1">
@@ -193,6 +183,16 @@
           <input class="form-check-input" type="checkbox" id="PL6" [(ngModel)]="ExpresionOralCualitativa.PLMuletillas" (change)="popUpValidation()">
           <label class="form-check-label" for="PL6">Muletillas</label>
         </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-3"><label class="">Procesamiento Sintáctico</label></div>
+      <div class="col-md-3">
+        <select class="form-select" name="PS" id="PS" [(ngModel)]="ExpresionOralCualitativa.ProcesamientoSintaxtico">
+          <option [ngValue]="null" disabled selected>Seleccione una respuesta</option>
+          <option [ngValue]="0">Normal</option>
+          <option [ngValue]="1">Alterado Agramatismo</option>
+        </select>
       </div>
     </div>
   </div>
