@@ -2,7 +2,7 @@
   <div #Encabezado>
     <div id="FullProtocol">
       <div class="text-center">
-        <h2> Resumen del Protocolo</h2>
+        <h2> Datos Completos del Protocolo PEBA</h2>
       </div>
       <div class="row">
         <div class=" col-md-8"></div>
@@ -29,82 +29,83 @@
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Alerta</strong></span></div>
         <div class="col-md-3"><span><strong>Estado: </strong>{{protocol.SintomasNeurologicos.Alerta}}</span></div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+        <div class="col-md-4"><span *ngIf="protocol.SintomasNeurologicos.Alerta != 'CONSERVADO'" ><strong>Tipo de Alteracion:
             </strong>{{protocol.SintomasNeurologicos.AlertaTipoAlteracion}}</span></div>
-        <div class="col-md-3"><span><strong>¿Cual?
+        <div class="col-md-3"><span *ngIf="protocol.SintomasNeurologicos.Alerta != 'CONSERVADO' && protocol.SintomasNeurologicos.AlertaTipoAlteracion == 'Otro'"><strong>¿Cual?
             </strong>{{protocol.SintomasNeurologicos.AlertaTipoAlteracionOtro}}</span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Estado Emocional</strong></span></div>
         <div class="col-md-3"><span><strong>Estado: </strong>{{protocol.SintomasNeurologicos.EstadoEmocional}}</span>
         </div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+        <div class="col-md-4"><span *ngIf="protocol.SintomasNeurologicos.EstadoEmocional != 'CONSERVADO'"><strong>Tipo de Alteracion:
             </strong>{{protocol.SintomasNeurologicos.EstadoEmocionalTipoAlteracion}}</span></div>
-        <div class="col-md-3"><span><strong>¿Cual?
+        <div class="col-md-3"><span *ngIf="protocol.SintomasNeurologicos.EstadoEmocional != 'CONSERVADO' && protocol.SintomasNeurologicos.EstadoEmocionalTipoAlteracion == 'Otro'"><strong>¿Cual?
             </strong>{{protocol.SintomasNeurologicos.EstadoEmocionalTipoAlteracionOtro}}</span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Fuerza</strong></span></div>
-        <div class="col-md-3"><span><strong>Estado: </strong>{{protocol.SintomasNeurologicos.Fuerza}}</span></div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+        <div class="col-md-3"><span ><strong>Estado: </strong>{{protocol.SintomasNeurologicos.Fuerza}}</span></div>
+        <div class="col-md-4"><span *ngIf="protocol.SintomasNeurologicos.Fuerza != 'CONSERVADO'"><strong>Tipo de Alteracion:
             </strong>{{protocol.SintomasNeurologicos.FuerzaTipoAlteracion}}</span></div>
-        <div class="col-md-3"><span><strong>¿Cual?
+        <div class="col-md-3"><span *ngIf="protocol.SintomasNeurologicos.Fuerza != 'CONSERVADO' && protocol.SintomasNeurologicos.FuerzaTipoAlteracion == 'Otro'"><strong>¿Cual?
             </strong>{{protocol.SintomasNeurologicos.FuerzaTipoAlteracionOtro}}</span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Coordinación Motora</strong></span></div>
         <div class="col-md-3"><span><strong>Estado: </strong>{{protocol.SintomasNeurologicos.CondicionMotora}}</span>
         </div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+        <div class="col-md-4"><span *ngIf="protocol.SintomasNeurologicos.CondicionMotora != 'CONSERVADO' "><strong>Tipo de Alteracion:
             </strong>{{protocol.SintomasNeurologicos.CondicionMotoraTipoAlteracion}}</span></div>
-        <div class="col-md-3"><span><strong>¿Cual?
+        <div class="col-md-3"><span *ngIf="protocol.SintomasNeurologicos.CondicionMotora != 'CONSERVADO' && protocol.SintomasNeurologicos.CondicionMotoraTipoAlteracion == 'Otro'"><strong>¿Cual?
             </strong>{{protocol.SintomasNeurologicos.CondicionMotoraTipoAlteracionOtro}}</span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Sensibilidad</strong></span></div>
         <div class="col-md-3"><span><strong>Estado: </strong>{{protocol.SintomasNeurologicos.Sensibilidad}}</span>
         </div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+        <div class="col-md-4"><span *ngIf="protocol.SintomasNeurologicos.Sensibilidad != 'CONSERVADO'"><strong>Tipo de Alteracion:
             </strong>{{protocol.SintomasNeurologicos.SensibilidadTipoAlteracion}}</span></div>
-        <div class="col-md-3"><span><strong>¿Cual?
+        <div class="col-md-3"><span *ngIf="protocol.SintomasNeurologicos.Sensibilidad != 'CONSERVADO' && protocol.SintomasNeurologicos.SensibilidadTipoAlteracion == 'Otro'"><strong>¿Cual?
             </strong>{{protocol.SintomasNeurologicos.SensibilidadTipoAlteracionOtro}}</span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Visión</strong></span></div>
         <div class="col-md-3"><span><strong>Estado: </strong>{{protocol.SintomasNeurologicos.Vision}}</span></div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+        <div class="col-md-4"><span *ngIf="protocol.SintomasNeurologicos.Vision != 'CONSERVADO'"><strong>Tipo de Alteracion:
             </strong>{{protocol.SintomasNeurologicos.VisionTipoAlteracion}}</span></div>
-        <div class="col-md-3"><span><strong>¿Usa Lentes?</strong>
-          <div *ngIf="protocol.SintomasNeurologicos.UsaAnteojos == true" >
+        <div class="col-md-3"><span *ngIf="protocol.SintomasNeurologicos.Vision != 'CONSERVADO'"><strong>¿Usa Lentes?</strong>
+          <span *ngIf="protocol.SintomasNeurologicos.UsaAnteojos == true" >
             Si
-          </div>
-          <div *ngIf="protocol.SintomasNeurologicos.UsaAnteojos == false">
+          </span>
+          <span *ngIf="protocol.SintomasNeurologicos.UsaAnteojos == false">
             No
-          </div>
-          <div *ngIf="protocol.SintomasNeurologicos.UsaAnteojos == null">
-          </div>
+          </span>
           </span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Audición</strong></span></div>
         <div class="col-md-3"><span><strong>Estado: </strong>{{protocol.SintomasNeurologicos.Audicion}}</span></div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+        <div class="col-md-4"><span *ngIf="protocol.SintomasNeurologicos.Audicion != 'CONSERVADO'"><strong>Tipo de Alteracion:
             </strong>{{protocol.SintomasNeurologicos.AudicionTipoAlteracion}}</span></div>
-        <div class="col-md-3"><span><strong>¿Usa Audifono?
-            </strong>{{protocol.SintomasNeurologicos.UsaAudifono}}</span></div>
+        <div class="col-md-3"><span *ngIf="protocol.SintomasNeurologicos.Audicion != 'CONSERVADO'"><strong>¿Usa Audifono?
+            </strong>
+            <span *ngIf="protocol.SintomasNeurologicos.UsaAudifono" >Si</span>
+            <span *ngIf="!protocol.SintomasNeurologicos.UsaAudifono" >No</span>
+          </span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Atencion Espacial</strong></span></div>
-        <div class="col-md-3"><span><strong>Estado:
+        <div class="col-md-3"><span ><strong>Estado:
             </strong>{{protocol.SintomasNeurologicos.AtencionEspacial}}</span></div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+        <div class="col-md-4"><span *ngIf="protocol.SintomasNeurologicos.AtencionEspacial != 'CONSERVADO'"><strong>Tipo de Alteracion:
             </strong>{{protocol.SintomasNeurologicos.AtencionEspacialTipoAlteracion}}</span></div>
       </div>
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Praxia manual</strong></span></div>
         <div class="col-md-3"><span><strong>Estado: </strong>{{protocol.SintomasNeurologicos.PraxiaManual}}</span>
         </div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+        <div class="col-md-4"><span *ngIf="protocol.SintomasNeurologicos.PraxiaManual != 'CONSERVADO'"><strong>Tipo de Alteracion:
             </strong>{{protocol.SintomasNeurologicos.PraxiaManualTipoAlteracion}}</span></div>
       </div>
       <div class="row ms-2">
@@ -115,7 +116,7 @@
       <div class="row ms-2">
         <div class="col-md-2"><span><strong>Deglución</strong></span></div>
         <div class="col-md-3"><span><strong>Estado: </strong>{{protocol.SintomasNeurologicos.Deglucion}}</span></div>
-        <div class="col-md-4"><span><strong>Tipo de Alteracion:
+        <div class="col-md-4"><span *ngIf="protocol.SintomasNeurologicos.Deglucion != 'CONSERVADO'"><strong>Tipo de Alteracion:
             </strong>{{protocol.SintomasNeurologicos.DeglucionTipoAlteracion}}</span></div>
       </div>
     </div>
@@ -885,8 +886,8 @@
       <table class="table  table-secondary table-sm table-striped table-bordered mb-0">
         <thead>
           <tr class="text-white">
-            <th class="bg-secondary" scope="col">Tarea</th>
-            <th class="bg-secondary" scope="col">Puntaje</th>
+            <th class="bg-secondary" scope="col" [width]="250" >Tarea</th>
+            <th class="bg-secondary" scope="col" [width]="150">Puntaje</th>
             <th class="bg-secondary" scope="col">Valoracion</th>
           </tr>
         </thead>
@@ -966,7 +967,7 @@
       <table class="table  table-secondary table-sm table-striped table-bordered mb-0 ">
         <thead>
           <tr class="text-white">
-            <th class="bg-secondary" scope="col">Tarea</th>
+            <th class="bg-secondary" scope="col" [width]="400">Tarea</th>
             <th class="bg-secondary" scope="col">Observaciones Cualitativas</th>
           </tr>
         </thead>

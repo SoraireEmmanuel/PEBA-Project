@@ -31,15 +31,15 @@
     <div class="col-auto">
       <label class="form-label">
         ¿Es bilingüe?:
-          <span *ngIf="!PatientIdentification.isBilingual">
+          <span *ngIf="PatientIdentification.isBilingual == true">
             {{PatientOption.bilingue[0].description}}
           </span>
-          <span *ngIf="PatientIdentification.isBilingual ">
+          <span *ngIf="PatientIdentification.isBilingual == false">
             {{PatientOption.bilingue[1].description}}
          </span>
       </label>
     </div>
-    <div class="col-auto" *ngIf="PatientIdentification.isBilingual == true">
+    <div class="col-auto" *ngIf="PatientIdentification.isBilingual">
       <label class="form-label">
         ¿Cual idioma?: {{PatientIdentification.bilingualLanguage}}
       </label>
@@ -89,5 +89,5 @@
       <button class="btn btn-success" (click)="next()">Siguiente</button>
     </div>
   </div>
-  {{PatientIdentification.isBilingual|json}}
+
 </div>

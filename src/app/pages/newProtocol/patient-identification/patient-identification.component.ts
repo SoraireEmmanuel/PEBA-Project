@@ -17,13 +17,14 @@ export class PatientIdentificationComponent implements OnInit {
   PatientIdentification: PatientIdentification = new PatientIdentification();
   patient:patient=new patient();
   PatientOption: RegisterOptions = new RegisterOptions();
+  bilingual:boolean;
   constructor(private _toastr:ToastrService) {
 
   }
   ngOnInit(): void {
     this.PatientIdentification=this.protocolEntry;
-
-
+    this.bilingual= this.PatientIdentification.isBilingual;
+    console.log(this.PatientIdentification)
   }
 
   next() {

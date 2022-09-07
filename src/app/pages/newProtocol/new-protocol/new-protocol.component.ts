@@ -53,7 +53,13 @@ export class NewProtocolComponent implements OnInit {
       this.Prot.PacienteLengua=params.Lengua
       this.PatientIdentification.studies = params.Estudios;
       this.Prot.PacienteEstudios =params.Estudios;
-      this.PatientIdentification.isBilingual = params.Bilingual;
+      if(params.Bilingual == 'true'){
+        this.PatientIdentification.isBilingual = true;
+      }
+      else{
+        this.PatientIdentification.isBilingual = false;
+      }
+
       this.Prot.PacienteBilingual== params.Bilingual;
       this.PatientIdentification.bilingualLanguage = params.BilingualIdioma;
       this.Prot.PacienteBilingualIdioma = params.BilingualIdioma;

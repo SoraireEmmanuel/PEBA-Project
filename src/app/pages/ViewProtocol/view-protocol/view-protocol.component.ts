@@ -74,12 +74,13 @@ export class ViewProtocolComponent implements OnInit {
       console.log(resp)
       console.log('Este es Protocol')
       console.log(this.protocol)
-      this.valuation.Auditiva = this.valuationCharge(this.protocol.ComprensionAuditiva_Cuantitativa.SubTotal)
-      this.valuation.Oral = this.valuationCharge(this.protocol.ExpresionOral_Cuantitativa.SubTotal);
-      this.valuation.Repeticion = this.valuationCharge(this.protocol.Repeticion_Cuantitativa.SubTotal);
-      this.valuation.Denominacion = this.valuationCharge(this.protocol.Denominacion_Cuantitativa.SubTotal);
-      this.valuation.Lectura = this.valuationCharge(this.protocol.Lectura_Cuantitativa.SubTotal);
-      this.valuation.Escritura = this.valuationCharge(this.protocol.Escritura_Cuantitativa.SubTotal);
+      //this.valuation.Oral = this.valuationCharge(this.protocol.ExpresionOral_Cuantitativa.SubTotal);
+      //this.valuation.Auditiva = this.valuationCharge(this.protocol.ComprensionAuditiva_Cuantitativa.SubTotal)
+      //this.valuation.Repeticion = this.valuationCharge(this.protocol.Repeticion_Cuantitativa.SubTotal);
+      //this.valuation.Denominacion = this.valuationCharge(this.protocol.Denominacion_Cuantitativa.SubTotal);
+      //this.valuation.Lectura = this.valuationCharge(this.protocol.Lectura_Cuantitativa.SubTotal);
+      //this.valuation.Escritura = this.valuationCharge(this.protocol.Escritura_Cuantitativa.SubTotal);
+      this.valuation.valuationChargeAll(this.protocol)
       this.summaryCualitativa.summary(this.protocol);
       modalRef.close();
     },(error)=>{

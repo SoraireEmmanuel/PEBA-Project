@@ -40,6 +40,7 @@ export class TestSummaryComponent implements OnInit {
     this.valuation.valuationChargeAll(this.ProtocolSummary);
     this.summaryCualitativa.summary(this.ProtocolSummary);
     console.log(this.ProtocolSummary)
+    console.log(this.summaryCualitativa)
   }
   //Funciones de Navegacion
   back() {
