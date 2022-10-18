@@ -40,13 +40,14 @@ export class TestSummaryComponent implements OnInit {
     this.valuation.valuationChargeAll(this.ProtocolSummary);
     this.summaryCualitativa.summary(this.ProtocolSummary);
     console.log(this.ProtocolSummary)
-    console.log(this.summaryCualitativa)
+    console.log(this.protocol)
   }
   //Funciones de Navegacion
   back() {
     this.event.emit(-1)
   }
   sendProtocolFunction(modal, modalSuccess) {
+    console.log(this.ProtocolSummary)
     const modalSpiner = this._ModalService.open(modal, {size: 'xl', centered: true})
     this._patientService.saveProtocol(this.ProtocolSummary).subscribe(
       resp => {

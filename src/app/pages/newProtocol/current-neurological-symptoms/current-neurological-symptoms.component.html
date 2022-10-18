@@ -21,10 +21,10 @@
       </div>
     </div>
     <div class="col-md-5" *ngIf="symptoms.Alerta === 'ALTERADO'">
-          <label for="alertaDropdown" class="form-label ">Tipo de alteracion</label>
+          <label for="alertaDropdown" class="form-label ">Tipo de alteración</label>
           <select class="form-select" id="alertaDropdown" name="alertaDropdown" [(ngModel)]="symptoms.AlertaTipoAlteracion"
           (change)="clearAlertaCual()">
-            <option [disabled]="true" [selected]="true" [ngValue]="null">Seleccione un tipo de alteracion</option>
+            <option [disabled]="true" [selected]="true" [ngValue]="null">Seleccione un tipo de alteración</option>
             <option *ngFor="let alert of dropdownOptions.alertaOpciones" [ngValue]="alert">{{alert}} </option>
           </select>
     </div>
@@ -55,10 +55,10 @@
       </div>
     </div>
     <div class="col-md-5 " *ngIf="symptoms.EstadoEmocional === 'ALTERADO'">
-      <label for="estadoEmocionalDropdown" class="form-label">Tipo de alteracion</label>
+      <label for="estadoEmocionalDropdown" class="form-label">Tipo de alteración</label>
       <select class="form-select" name="estadoEmocionalDropdown" id="estadoEmocionalDropdown"
         [(ngModel)]="symptoms.EstadoEmocionalTipoAlteracion" (change)="clearEstadoEmocionalCual()">
-        <option [disabled]="true" [selected]="true" [ngValue]="null"  >Seleccione un tipo de alteracion</option>
+        <option [disabled]="true" [selected]="true" [ngValue]="null"  >Seleccione un tipo de alteración</option>
         <option *ngFor="let estado of dropdownOptions.estadoEmocionalOpciones" [ngValue]="estado">{{estado}}</option>
       </select>
     </div>
@@ -88,10 +88,10 @@
       </div>
     </div>
     <div class="col-md-5 " *ngIf="symptoms.Fuerza === 'ALTERADO'">
-      <label for="fuerzaopcion" class=" form-label">Tipo de alteracion</label>
+      <label for="fuerzaopcion" class=" form-label">Tipo de alteración</label>
       <select class="form-select" name="fuerzaOpcion" id="fuerzaopcion" [(ngModel)]="symptoms.FuerzaTipoAlteracion"
       (change)="clearFuerzaCual()">
-        <option [disabled]="true"  [ngValue]="null" [selected]="true">Seleccione un tipo de alteracion</option>
+        <option [disabled]="true"  [ngValue]="null" [selected]="true">Seleccione un tipo de alteración</option>
         <option *ngFor="let fuerza of dropdownOptions.fuerzaOpciones" [ngValue]="fuerza">{{fuerza}}</option>
       </select>
     </div>
@@ -120,10 +120,10 @@
       </div>
     </div>
     <div class="col-md-5 " *ngIf="symptoms.CondicionMotora === 'ALTERADO'">
-      <label for="fuerzaopcion" class=" form-label ">Tipo de alteracion</label>
+      <label for="fuerzaopcion" class=" form-label ">Tipo de alteración</label>
       <select class="form-select" name="coordinacionmotoraOpcion" id="coordinacioncopcion"
         [(ngModel)]="symptoms.CondicionMotoraTipoAlteracion" (change)="clearCoordinacionCual()">
-        <option [disabled]="true" [ngValue]="null" [selected]="true">Seleccione un tipo de alteracion</option>
+        <option [disabled]="true" [ngValue]="null" [selected]="true">Seleccione un tipo de alteración</option>
         <option *ngFor="let coordinacion of dropdownOptions.coordinacioncOpciones" [ngValue]="coordinacion">
           {{coordinacion}}</option>
       </select>
@@ -153,10 +153,10 @@
       </div>
     </div>
     <div class="col-md-5 " *ngIf="symptoms.Sensibilidad === 'ALTERADO'">
-      <label for="fuerzaopcion" class="form-label">Tipo de alteracion</label>
+      <label for="fuerzaopcion" class="form-label">Tipo de alteración</label>
       <select class="form-select" name="sensibilidadOpcion" id="sensibilidadopcion"
         [(ngModel)]="symptoms.SensibilidadTipoAlteracion" (change)="clearSensibilidadCual()">
-        <option [disabled]="true" [selected]="true" [ngValue]="null" >Seleccione un tipo de alteracion</option>
+        <option [disabled]="true" [selected]="true" [ngValue]="null" >Seleccione un tipo de alteración</option>
         <option *ngFor="let sensibilidad of dropdownOptions.sensibilidadOpciones" [ngValue]="sensibilidad">
           {{sensibilidad}} </option>
       </select>
@@ -186,9 +186,9 @@
       </div>
     </div>
     <div class="col-md-5" *ngIf="symptoms.Vision === 'ALTERADO'">
-      <label for="visionopcion" class="form-label">Tipo de alteracion</label>
+      <label for="visionopcion" class="form-label">Tipo de alteración</label>
       <select class="form-select" name="visionOpcion" id="visionopcion" [(ngModel)]="symptoms.VisionTipoAlteracion">
-        <option [disabled]="true" [selected]="true"  [ngValue]="null" >Seleccione un tipo de alteracion</option>
+        <option [disabled]="true" [selected]="true"  [ngValue]="null" >Seleccione un tipo de alteración</option>
         <option *ngFor="let vision of dropdownOptions.visionOpciones" [ngValue]="vision">{{vision}}</option>
       </select>
     </div>
@@ -220,10 +220,10 @@
       </div>
     </div>
     <div class="col-md-5" *ngIf="symptoms.Audicion === 'ALTERADO'">
-      <label for="audicionopcion" class="form-label">Tipo de alteracion</label>
+      <label for="audicionopcion" class="form-label">Tipo de alteración</label>
       <select class="form-select" name="audicionOpcion" id="audicionopcion"
         [(ngModel)]="symptoms.AudicionTipoAlteracion">
-        <option [disabled]="true" [ngValue]="null"[selected]="true">Seleccione un tipo de alteracion</option>
+        <option [disabled]="true" [ngValue]="null"[selected]="true">Seleccione un tipo de alteración</option>
         <option *ngFor="let audicion of dropdownOptions.audicionOpciones" [ngValue]="audicion" >{{audicion}}</option>
       </select>
     </div>
@@ -255,10 +255,10 @@
       </div>
     </div>
     <div class="col-md-5" *ngIf="symptoms.AtencionEspacial ==='ALTERADO'">
-      <label for="atencionespacialopcion" class="form-label">Tipo de alteracion</label>
+      <label for="atencionespacialopcion" class="form-label">Tipo de alteración</label>
       <select class="form-select" name="atencionespacialOpcion" id="atencionespacialOpcion"
         [(ngModel)]="symptoms.AtencionEspacialTipoAlteracion">
-        <option [disabled]="true" [ngValue]="null" [selected]="true">Seleccione un tipo de alteracion</option>
+        <option [disabled]="true" [ngValue]="null" [selected]="true">Seleccione un tipo de alteración</option>
         <option *ngFor="let atencionEspacial of dropdownOptions.atencionespacialOpciones" [ngValue]="atencionEspacial">
           {{atencionEspacial}}</option>
       </select>
@@ -283,10 +283,10 @@
       </div>
     </div>
     <div class="col-md-5" *ngIf="symptoms.PraxiaManual==='ALTERADO'">
-      <label for="praxiamanualopcion" class="form-label">Tipo de alteracion</label>
+      <label for="praxiamanualopcion" class="form-label">Tipo de alteración</label>
       <select class="form-select" name="praxiaManualOpcion" id="praxiamanualopcion"
         [(ngModel)]="symptoms.PraxiaManualTipoAlteracion">
-        <option [disabled]="true" [selected]="true" [ngValue]="null" >Seleccione un tipo de alteracion</option>
+        <option [disabled]="true" [selected]="true" [ngValue]="null" >Seleccione un tipo de alteración</option>
         <option *ngFor="let praxiaManual of dropdownOptions.praxiamanualOpciones" [ngValue]="praxiaManual">
           {{praxiaManual}}</option>
       </select>
@@ -331,10 +331,10 @@
       </div>
     </div>
     <div class="col-md-5" *ngIf="symptoms.Deglucion ==='ALTERADO'">
-      <label for="deglucionopcion" class="ml-3">Tipo de alteracion</label>
+      <label for="deglucionopcion" class="ml-3">Tipo de alteración</label>
       <select class="form-select" name="deglucionOpcion" id="deglucionopcion"
         [(ngModel)]="symptoms.DeglucionTipoAlteracion">
-        <option [disabled]="true" [ngValue]="null" [selected]="true">Seleccione un tipo de alteracion</option>
+        <option [disabled]="true" [ngValue]="null" [selected]="true">Seleccione un tipo de alteración</option>
         <option *ngFor="let deglucion of dropdownOptions.deglucionOpciones" [ngValue]="deglucion">{{deglucion}}</option>
       </select>
     </div>
