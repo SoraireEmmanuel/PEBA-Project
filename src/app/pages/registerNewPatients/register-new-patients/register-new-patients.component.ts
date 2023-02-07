@@ -94,7 +94,7 @@ export class RegisterNewPatientsComponent implements OnInit {
   crearPaciente(modal) {
     const modalSpiner = this._ModalService.open(modal, {size: 'xl', centered: true})
     if (!this.formValidation()) {
-
+      modalSpiner.close();
     }
     else{
       this.chargePaciente();
